@@ -58,7 +58,8 @@
         }
 
 
-        img {
+        img,
+        video {
             max-width: 100%;
         }
 
@@ -500,12 +501,6 @@
         .project-gallery {
             display: grid;
 
-            /*
-            Six columns lets us make:
-            Row 1: three equal images
-            Row 2: two equal wider images
-            */
-
             grid-template-columns: repeat(6, minmax(0, 1fr));
 
             gap: 1px;
@@ -517,16 +512,12 @@
         }
 
 
-        /* First three images */
-
         .project-gallery .project-image:nth-child(1),
         .project-gallery .project-image:nth-child(2),
         .project-gallery .project-image:nth-child(3) {
             grid-column: span 2;
         }
 
-
-        /* Last two images */
 
         .project-gallery .project-image:nth-child(4),
         .project-gallery .project-image:nth-child(5) {
@@ -587,6 +578,53 @@
 
             font-size: 0.76rem;
             font-weight: 500;
+        }
+
+
+
+        /* PROJECT VIDEO */
+
+        .project-video {
+            padding: 30px 34px;
+
+            background: #f3f5f5;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .project-video-title {
+            margin-bottom: 14px;
+
+            color: var(--text);
+
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+
+        .project-video video {
+            display: block;
+
+            width: 100%;
+            max-height: 620px;
+
+            margin: 0 auto;
+
+            border-radius: 10px;
+
+            background: #000;
+        }
+
+
+        .project-video-caption {
+            margin-top: 10px;
+
+            color: var(--text-soft);
+
+            font-size: 0.78rem;
         }
 
 
@@ -792,7 +830,8 @@
 
 
             .featured-content,
-            .featured-bottom {
+            .featured-bottom,
+            .project-video {
                 padding-left: 24px;
                 padding-right: 24px;
             }
@@ -991,64 +1030,18 @@
                 <div class="skills">
 
 
-                    <span class="skill">
-                        PCB Design
-                    </span>
-
-
-                    <span class="skill">
-                        Altium
-                    </span>
-
-
-                    <span class="skill">
-                        STM32
-                    </span>
-
-
-                    <span class="skill">
-                        Embedded Systems
-                    </span>
-
-
-                    <span class="skill">
-                        SystemVerilog
-                    </span>
-
-
-                    <span class="skill">
-                        FPGA
-                    </span>
-
-
-                    <span class="skill">
-                        RTL Design
-                    </span>
-
-
-                    <span class="skill">
-                        Power Electronics
-                    </span>
-
-
-                    <span class="skill">
-                        CAN
-                    </span>
-
-
-                    <span class="skill">
-                        Python
-                    </span>
-
-
-                    <span class="skill">
-                        C / C++
-                    </span>
-
-
-                    <span class="skill">
-                        VNA
-                    </span>
+                    <span class="skill">PCB Design</span>
+                    <span class="skill">Altium</span>
+                    <span class="skill">STM32</span>
+                    <span class="skill">Embedded Systems</span>
+                    <span class="skill">SystemVerilog</span>
+                    <span class="skill">FPGA</span>
+                    <span class="skill">RTL Design</span>
+                    <span class="skill">Power Electronics</span>
+                    <span class="skill">CAN</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">C / C++</span>
+                    <span class="skill">VNA</span>
 
 
                 </div>
@@ -1148,46 +1141,26 @@
 
 
                             <span>
-
-                                <strong>
-                                    71
-                                </strong>
-
+                                <strong>71</strong>
                                 components
-
                             </span>
 
 
                             <span>
-
-                                <strong>
-                                    4-layer
-                                </strong>
-
+                                <strong>4-layer</strong>
                                 PCB
-
                             </span>
 
 
                             <span>
-
-                                <strong>
-                                    5
-                                </strong>
-
+                                <strong>5</strong>
                                 boards assembled
-
                             </span>
 
 
                             <span>
-
-                                <strong>
-                                    21 to 29.4 V
-                                </strong>
-
+                                <strong>21 to 29.4 V</strong>
                                 input
-
                             </span>
 
 
@@ -1200,35 +1173,26 @@
 
                     <!-- LIGHTING BOARD IMAGE GALLERY -->
 
-
                     <div class="project-gallery">
 
 
 
                         <!-- IMAGE 1 -->
 
-
                         <figure class="project-image">
 
-
                             <div class="project-image-image">
-
 
                                 <img
                                     src="assets/lighting1.png"
                                     alt="Component side 3D render of Rover lighting control PCB"
                                     loading="lazy">
 
-
                             </div>
 
-
                             <figcaption>
-
                                 Component Side | 3D Render
-
                             </figcaption>
-
 
                         </figure>
 
@@ -1236,28 +1200,20 @@
 
                         <!-- IMAGE 2 -->
 
-
                         <figure class="project-image">
 
-
                             <div class="project-image-image">
-
 
                                 <img
                                     src="assets/lighting2.png"
                                     alt="LED side 3D render of Rover lighting control PCB"
                                     loading="lazy">
 
-
                             </div>
 
-
                             <figcaption>
-
                                 LED Side | 3D Render
-
                             </figcaption>
-
 
                         </figure>
 
@@ -1265,28 +1221,20 @@
 
                         <!-- IMAGE 3 -->
 
-
                         <figure class="project-image">
 
-
                             <div class="project-image-image">
-
 
                                 <img
                                     src="assets/lighting3.png"
                                     alt="Top side PCB layout and routing of Rover lighting controller"
                                     loading="lazy">
 
-
                             </div>
 
-
                             <figcaption>
-
                                 Layout & Routing | Top Side
-
                             </figcaption>
-
 
                         </figure>
 
@@ -1294,28 +1242,20 @@
 
                         <!-- IMAGE 4 -->
 
-
                         <figure class="project-image">
 
-
                             <div class="project-image-image">
-
 
                                 <img
                                     src="assets/lighting4.png"
                                     alt="PCB polygon pours of Rover lighting controller"
                                     loading="lazy">
 
-
                             </div>
 
-
                             <figcaption>
-
                                 PCB Layout | Polygon Pours
-
                             </figcaption>
-
 
                         </figure>
 
@@ -1323,31 +1263,54 @@
 
                         <!-- IMAGE 5 -->
 
-
                         <figure class="project-image">
 
-
                             <div class="project-image-image">
-
 
                                 <img
                                     src="assets/lighting5.png"
                                     alt="Five assembled and hand soldered Rover lighting control boards"
                                     loading="lazy">
 
-
                             </div>
 
-
                             <figcaption>
-
                                 Assembled Hardware | Five Hand-Soldered Boards
-
                             </figcaption>
-
 
                         </figure>
 
+
+                    </div>
+
+
+
+                    <!-- LIGHTING BOARD VIDEO -->
+
+                    <div class="project-video">
+
+                        <div class="project-video-title">
+                            Hardware Demo
+                        </div>
+
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata">
+
+                            <source
+                                src="assets/lighting.mov"
+                                type="video/quicktime">
+
+                            Your browser does not support this video.
+
+                        </video>
+
+
+                        <div class="project-video-caption">
+                            Rover Lighting Control System | Hardware Operation
+                        </div>
 
                     </div>
 
@@ -1358,41 +1321,13 @@
 
                         <div class="tags">
 
-
-                            <span class="tag">
-                                Altium
-                            </span>
-
-
-                            <span class="tag">
-                                STM32
-                            </span>
-
-
-                            <span class="tag">
-                                PCB Design
-                            </span>
-
-
-                            <span class="tag">
-                                Power Electronics
-                            </span>
-
-
-                            <span class="tag">
-                                CAN
-                            </span>
-
-
-                            <span class="tag">
-                                Python
-                            </span>
-
-
-                            <span class="tag">
-                                Hardware Bring-Up
-                            </span>
-
+                            <span class="tag">Altium</span>
+                            <span class="tag">STM32</span>
+                            <span class="tag">PCB Design</span>
+                            <span class="tag">Power Electronics</span>
+                            <span class="tag">CAN</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Hardware Bring-Up</span>
 
                         </div>
 
@@ -1457,46 +1392,14 @@
 
                     <div class="tags">
 
-
-                        <span class="tag">
-                            SystemVerilog
-                        </span>
-
-
-                        <span class="tag">
-                            RTL
-                        </span>
-
-
-                        <span class="tag">
-                            FPGA
-                        </span>
-
-
-                        <span class="tag">
-                            SIMD
-                        </span>
-
-
-                        <span class="tag">
-                            BRAM
-                        </span>
-
-
-                        <span class="tag">
-                            Python
-                        </span>
-
-
-                        <span class="tag">
-                            C
-                        </span>
-
-
-                        <span class="tag">
-                            Verification
-                        </span>
-
+                        <span class="tag">SystemVerilog</span>
+                        <span class="tag">RTL</span>
+                        <span class="tag">FPGA</span>
+                        <span class="tag">SIMD</span>
+                        <span class="tag">BRAM</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Verification</span>
 
                     </div>
 
@@ -1559,46 +1462,14 @@
 
                     <div class="tags">
 
-
-                        <span class="tag">
-                            SystemVerilog
-                        </span>
-
-
-                        <span class="tag">
-                            RTL Design
-                        </span>
-
-
-                        <span class="tag">
-                            FPGA
-                        </span>
-
-
-                        <span class="tag">
-                            FSM
-                        </span>
-
-
-                        <span class="tag">
-                            Register File
-                        </span>
-
-
-                        <span class="tag">
-                            ALU
-                        </span>
-
-
-                        <span class="tag">
-                            ModelSim
-                        </span>
-
-
-                        <span class="tag">
-                            Quartus
-                        </span>
-
+                        <span class="tag">SystemVerilog</span>
+                        <span class="tag">RTL Design</span>
+                        <span class="tag">FPGA</span>
+                        <span class="tag">FSM</span>
+                        <span class="tag">Register File</span>
+                        <span class="tag">ALU</span>
+                        <span class="tag">ModelSim</span>
+                        <span class="tag">Quartus</span>
 
                     </div>
 
@@ -1664,46 +1535,26 @@
 
 
                         <span>
-
-                            <strong>
-                                ±0.1°C
-                            </strong>
-
+                            <strong>±0.1°C</strong>
                             calibrated accuracy
-
                         </span>
 
 
                         <span>
-
-                            <strong>
-                                4-coefficient
-                            </strong>
-
+                            <strong>4-coefficient</strong>
                             Steinhart-Hart model
-
                         </span>
 
 
                         <span>
-
-                            <strong>
-                                10-bit
-                            </strong>
-
+                            <strong>10-bit</strong>
                             ADC
-
                         </span>
 
 
                         <span>
-
-                            <strong>
-                                PWM
-                            </strong>
-
+                            <strong>PWM</strong>
                             fan control
-
                         </span>
 
 
@@ -1726,56 +1577,16 @@
 
                     <div class="tags">
 
-
-                        <span class="tag">
-                            Analog Circuit Design
-                        </span>
-
-
-                        <span class="tag">
-                            NTC Thermistor
-                        </span>
-
-
-                        <span class="tag">
-                            Wheatstone Bridge
-                        </span>
-
-
-                        <span class="tag">
-                            Instrumentation Amplifier
-                        </span>
-
-
-                        <span class="tag">
-                            Arduino
-                        </span>
-
-
-                        <span class="tag">
-                            555 Timer
-                        </span>
-
-
-                        <span class="tag">
-                            PWM
-                        </span>
-
-
-                        <span class="tag">
-                            Python
-                        </span>
-
-
-                        <span class="tag">
-                            Multisim
-                        </span>
-
-
-                        <span class="tag">
-                            Calibration
-                        </span>
-
+                        <span class="tag">Analog Circuit Design</span>
+                        <span class="tag">NTC Thermistor</span>
+                        <span class="tag">Wheatstone Bridge</span>
+                        <span class="tag">Instrumentation Amplifier</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">555 Timer</span>
+                        <span class="tag">PWM</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Multisim</span>
+                        <span class="tag">Calibration</span>
 
                     </div>
 
@@ -1837,31 +1648,11 @@
 
                     <div class="tags">
 
-
-                        <span class="tag">
-                            VNA
-                        </span>
-
-
-                        <span class="tag">
-                            Oscilloscope
-                        </span>
-
-
-                        <span class="tag">
-                            Signal Analysis
-                        </span>
-
-
-                        <span class="tag">
-                            Experimental Design
-                        </span>
-
-
-                        <span class="tag">
-                            Python
-                        </span>
-
+                        <span class="tag">VNA</span>
+                        <span class="tag">Oscilloscope</span>
+                        <span class="tag">Signal Analysis</span>
+                        <span class="tag">Experimental Design</span>
+                        <span class="tag">Python</span>
 
                     </div>
 
@@ -1903,7 +1694,6 @@
 
             <!-- KARDIUM -->
 
-
             <div class="experience-item">
 
 
@@ -1911,16 +1701,12 @@
 
 
                     <h3>
-
                         Kardium | Hardware Electronics Co-op
-
                     </h3>
 
 
                     <span class="date">
-
                         Sep. 2026 to Apr. 2027
-
                     </span>
 
 
@@ -1943,7 +1729,6 @@
 
             <!-- ADAMIST LAB -->
 
-
             <div class="experience-item">
 
 
@@ -1951,16 +1736,12 @@
 
 
                     <h3>
-
                         UBC AdaMist Lab | Research Assistant
-
                     </h3>
 
 
                     <span class="date">
-
                         Sep. 2025 to Dec. 2025
-
                     </span>
 
 
@@ -1983,7 +1764,6 @@
 
             <!-- AECON -->
 
-
             <div class="experience-item">
 
 
@@ -1991,16 +1771,12 @@
 
 
                     <h3>
-
                         Aecon | Summer Internship
-
                     </h3>
 
 
                     <span class="date">
-
                         Summer 2026
-
                     </span>
 
 
@@ -2024,9 +1800,7 @@
 
 
             <h2 class="section-title">
-
                 Let's Connect
-
             </h2>
 
 
