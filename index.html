@@ -11,6 +11,7 @@
           content="Electrical Engineering portfolio focused on hardware, embedded systems, PCB design, FPGA, and digital systems.">
 
     <style>
+
         :root {
             --text: #17202a;
             --text-soft: #5f6b76;
@@ -22,15 +23,18 @@
             --dark: #111827;
         }
 
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
+
 
         body {
             font-family:
@@ -47,19 +51,23 @@
             line-height: 1.65;
         }
 
+
         a {
             color: inherit;
             text-decoration: none;
         }
 
+
         img {
             max-width: 100%;
         }
+
 
         .container {
             width: min(1120px, 90%);
             margin: 0 auto;
         }
+
 
 
         /* NAVIGATION */
@@ -71,8 +79,10 @@
 
             background: rgba(255, 255, 255, 0.92);
             border-bottom: 1px solid rgba(227, 232, 236, 0.9);
+
             backdrop-filter: blur(14px);
         }
+
 
         .nav-inner {
             min-height: 68px;
@@ -80,14 +90,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             gap: 30px;
         }
+
 
         .logo {
             font-size: 1rem;
             font-weight: 700;
             letter-spacing: -0.01em;
         }
+
 
         .nav-links {
             display: flex;
@@ -98,13 +111,16 @@
             color: var(--text-soft);
         }
 
+
         .nav-links a {
             transition: color 0.2s ease;
         }
 
+
         .nav-links a:hover {
             color: var(--accent);
         }
+
 
 
         /* HERO */
@@ -125,9 +141,11 @@
                 );
         }
 
+
         .hero-content {
             max-width: 850px;
         }
+
 
         .eyebrow {
             display: inline-block;
@@ -142,6 +160,7 @@
             text-transform: uppercase;
         }
 
+
         .hero h1 {
             font-size: clamp(3rem, 7vw, 5rem);
             line-height: 0.98;
@@ -150,6 +169,7 @@
 
             margin-bottom: 24px;
         }
+
 
         .hero .headline {
             max-width: 740px;
@@ -164,6 +184,7 @@
             margin-bottom: 18px;
         }
 
+
         .hero .description {
             max-width: 720px;
 
@@ -174,12 +195,17 @@
             margin-bottom: 32px;
         }
 
+
+
+        /* BUTTONS */
+
         .buttons {
             display: flex;
             align-items: center;
             gap: 12px;
             flex-wrap: wrap;
         }
+
 
         .button {
             display: inline-flex;
@@ -202,20 +228,24 @@
                 background 0.2s ease;
         }
 
+
         .button.primary {
             background: var(--dark);
             border-color: var(--dark);
             color: white;
         }
 
+
         .button:hover {
             transform: translateY(-2px);
             border-color: #aeb8c1;
         }
 
+
         .button.primary:hover {
             background: #253040;
         }
+
 
 
         /* GENERAL SECTIONS */
@@ -223,6 +253,7 @@
         section {
             padding: 90px 0;
         }
+
 
         .section-heading {
             display: flex;
@@ -234,16 +265,20 @@
             margin-bottom: 42px;
         }
 
+
         .section-title {
             font-size: clamp(1.8rem, 3vw, 2.2rem);
+
             letter-spacing: -0.035em;
             line-height: 1.1;
         }
+
 
         .section-label {
             color: var(--text-soft);
             font-size: 0.86rem;
         }
+
 
 
         /* ABOUT */
@@ -252,11 +287,14 @@
             border-bottom: 1px solid var(--border);
         }
 
+
         .about-grid {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
+
             gap: 80px;
         }
+
 
         .about-text {
             max-width: 620px;
@@ -265,16 +303,21 @@
             color: #4d5964;
         }
 
+
         .about-text p + p {
             margin-top: 18px;
         }
 
+
         .skills {
             display: flex;
             flex-wrap: wrap;
+
             gap: 9px;
+
             align-content: flex-start;
         }
+
 
         .skill {
             padding: 7px 12px;
@@ -291,6 +334,7 @@
         }
 
 
+
         /* PROJECTS */
 
         #projects {
@@ -298,10 +342,12 @@
             border-bottom: 1px solid var(--border);
         }
 
+
         .projects {
             display: grid;
             gap: 24px;
         }
+
 
         .project {
             background: white;
@@ -317,6 +363,7 @@
                 border-color 0.2s ease;
         }
 
+
         .project:hover {
             transform: translateY(-3px);
 
@@ -326,14 +373,17 @@
                 0 15px 40px rgba(15, 23, 42, 0.06);
         }
 
+
         .project.featured {
             padding: 0;
             overflow: hidden;
         }
 
+
         .featured-content {
             padding: 34px 34px 28px;
         }
+
 
         .project-header {
             display: flex;
@@ -344,6 +394,7 @@
 
             margin-bottom: 14px;
         }
+
 
         .project-category {
             display: block;
@@ -358,12 +409,14 @@
             text-transform: uppercase;
         }
 
+
         .project h3 {
             font-size: 1.4rem;
 
             line-height: 1.25;
             letter-spacing: -0.025em;
         }
+
 
         .project p {
             max-width: 850px;
@@ -372,6 +425,7 @@
 
             margin-bottom: 20px;
         }
+
 
         .status {
             flex-shrink: 0;
@@ -392,11 +446,13 @@
             white-space: nowrap;
         }
 
+
         .featured .status {
             background: var(--accent-soft);
             color: var(--accent);
             border-color: #cee9e4;
         }
+
 
 
         /* PROJECT HIGHLIGHTS */
@@ -410,9 +466,11 @@
             margin: 24px 0 26px;
         }
 
+
         .project-highlights span {
             display: flex;
             align-items: baseline;
+
             gap: 5px;
 
             padding: 8px 12px;
@@ -427,6 +485,7 @@
             font-size: 0.8rem;
         }
 
+
         .project-highlights strong {
             color: var(--text);
 
@@ -435,11 +494,19 @@
         }
 
 
-        /* PROJECT IMAGE GALLERY */
+
+        /* LIGHTING PROJECT IMAGE GALLERY */
 
         .project-gallery {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            /*
+            Six columns lets us make:
+            Row 1: three equal images
+            Row 2: two equal wider images
+            */
+
+            grid-template-columns: repeat(6, minmax(0, 1fr));
 
             gap: 1px;
 
@@ -449,39 +516,71 @@
             border-bottom: 1px solid var(--border);
         }
 
+
+        /* First three images */
+
+        .project-gallery .project-image:nth-child(1),
+        .project-gallery .project-image:nth-child(2),
+        .project-gallery .project-image:nth-child(3) {
+            grid-column: span 2;
+        }
+
+
+        /* Last two images */
+
+        .project-gallery .project-image:nth-child(4),
+        .project-gallery .project-image:nth-child(5) {
+            grid-column: span 3;
+        }
+
+
         .project-image {
+            display: flex;
+            flex-direction: column;
+
+            min-width: 0;
+
             background: #f3f5f5;
         }
+
 
         .project-image-image {
             display: flex;
             justify-content: center;
             align-items: center;
 
-            min-height: 260px;
+            height: 280px;
 
             padding: 15px;
+
+            overflow: hidden;
         }
+
 
         .project-image img {
             display: block;
 
             width: 100%;
-            height: 250px;
+            height: 100%;
 
             object-fit: contain;
 
             transition: transform 0.3s ease;
         }
 
+
         .project-image:hover img {
             transform: scale(1.018);
         }
 
+
         .project-image figcaption {
+            min-height: 44px;
+
             padding: 11px 14px;
 
             background: white;
+
             border-top: 1px solid var(--border);
 
             color: #6a747d;
@@ -490,9 +589,11 @@
             font-weight: 500;
         }
 
+
         .featured-bottom {
             padding: 25px 34px 32px;
         }
+
 
 
         /* TAGS */
@@ -500,8 +601,10 @@
         .tags {
             display: flex;
             flex-wrap: wrap;
+
             gap: 7px;
         }
+
 
         .tag {
             padding: 5px 9px;
@@ -517,6 +620,7 @@
         }
 
 
+
         /* EXPERIENCE */
 
         .experience-item {
@@ -525,9 +629,11 @@
             border-top: 1px solid var(--border);
         }
 
+
         .experience-item:last-child {
             border-bottom: 1px solid var(--border);
         }
+
 
         .experience-header {
             display: flex;
@@ -537,10 +643,12 @@
             gap: 30px;
         }
 
+
         .experience-header h3 {
             font-size: 1.12rem;
             letter-spacing: -0.015em;
         }
+
 
         .experience-item p {
             max-width: 800px;
@@ -550,6 +658,7 @@
             margin-top: 9px;
         }
 
+
         .date {
             color: var(--text-soft);
 
@@ -557,6 +666,7 @@
 
             white-space: nowrap;
         }
+
 
 
         /* CONTACT */
@@ -568,9 +678,11 @@
             padding: 80px 0;
         }
 
+
         #contact .section-title {
             margin-bottom: 20px;
         }
+
 
         .contact-text {
             max-width: 650px;
@@ -580,10 +692,12 @@
             margin-bottom: 26px;
         }
 
+
         #contact .button {
             color: white;
             border-color: #475569;
         }
+
 
         #contact .button.primary {
             background: white;
@@ -591,9 +705,11 @@
             color: var(--dark);
         }
 
+
         #contact .button:hover {
             border-color: #8794a3;
         }
+
 
 
         /* FOOTER */
@@ -610,30 +726,49 @@
         }
 
 
+
         /* RESPONSIVE */
 
         @media (max-width: 900px) {
 
             .project-gallery {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+
+            .project-gallery .project-image:nth-child(1),
+            .project-gallery .project-image:nth-child(2),
+            .project-gallery .project-image:nth-child(3),
+            .project-gallery .project-image:nth-child(4) {
+                grid-column: span 1;
+            }
+
+
+            .project-gallery .project-image:nth-child(5) {
+                grid-column: span 2;
             }
         }
+
 
         @media (max-width: 800px) {
 
             .about-grid {
                 grid-template-columns: 1fr;
+
                 gap: 40px;
             }
+
 
             .hero {
                 padding: 80px 0 75px;
             }
 
+
             section {
                 padding: 70px 0;
             }
         }
+
 
         @media (max-width: 650px) {
 
@@ -641,16 +776,20 @@
                 display: none;
             }
 
+
             .project-header,
             .experience-header,
             .section-heading {
                 flex-direction: column;
+
                 gap: 8px;
             }
+
 
             .project {
                 padding: 24px;
             }
+
 
             .featured-content,
             .featured-bottom {
@@ -658,10 +797,12 @@
                 padding-right: 24px;
             }
 
+
             .hero h1 {
                 font-size: 3.2rem;
             }
         }
+
 
         @media (max-width: 550px) {
 
@@ -669,17 +810,25 @@
                 grid-template-columns: 1fr;
             }
 
-            .project-image img {
-                height: auto;
-                max-height: 420px;
+
+            .project-gallery .project-image:nth-child(1),
+            .project-gallery .project-image:nth-child(2),
+            .project-gallery .project-image:nth-child(3),
+            .project-gallery .project-image:nth-child(4),
+            .project-gallery .project-image:nth-child(5) {
+                grid-column: span 1;
             }
 
+
             .project-image-image {
-                min-height: auto;
+                height: 300px;
             }
         }
+
     </style>
+
 </head>
+
 
 
 <body>
@@ -695,12 +844,24 @@
                 Yasaman Kheradmand
             </div>
 
+
             <div class="nav-links">
 
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
 
             </div>
 
@@ -718,38 +879,52 @@
 
             <div class="hero-content">
 
+
                 <span class="eyebrow">
                     Electrical Engineering | UBC
                 </span>
+
 
                 <h1>
                     Yasaman<br>
                     Kheradmand
                 </h1>
 
+
                 <p class="headline">
                     I design and build electronic hardware.
                 </p>
 
+
                 <p class="description">
+
                     Electrical Engineering student at the University of British
                     Columbia working across PCB design, embedded systems,
                     digital hardware, and FPGA development.
+
                 </p>
+
 
                 <div class="buttons">
 
+
                     <a class="button primary"
                        href="#projects">
+
                         View Projects
+
                     </a>
+
 
                     <a class="button"
                        href="https://www.linkedin.com/in/yasamankh"
                        target="_blank"
                        rel="noopener noreferrer">
+
                         LinkedIn
+
                     </a>
+
 
                 </div>
 
@@ -767,54 +942,117 @@
 
         <div class="container">
 
+
             <div class="section-heading">
+
 
                 <h2 class="section-title">
                     About
                 </h2>
 
+
                 <span class="section-label">
                     Hardware | Embedded | Digital
                 </span>
 
+
             </div>
+
 
 
             <div class="about-grid">
 
+
                 <div class="about-text">
 
+
                     <p>
+
                         I am an Electrical Engineering student at UBC interested
                         in hardware design, embedded systems, digital systems,
                         and FPGA development.
+
                     </p>
 
+
                     <p>
+
                         My projects span multilayer PCB design, power electronics,
                         STM32 based embedded systems, hardware bring-up,
                         instrumentation, and SystemVerilog based digital design.
+
                     </p>
 
+
                 </div>
+
 
 
                 <div class="skills">
 
-                    <span class="skill">PCB Design</span>
-                    <span class="skill">Altium</span>
-                    <span class="skill">STM32</span>
-                    <span class="skill">Embedded Systems</span>
-                    <span class="skill">SystemVerilog</span>
-                    <span class="skill">FPGA</span>
-                    <span class="skill">RTL Design</span>
-                    <span class="skill">Power Electronics</span>
-                    <span class="skill">CAN</span>
-                    <span class="skill">Python</span>
-                    <span class="skill">C / C++</span>
-                    <span class="skill">VNA</span>
+
+                    <span class="skill">
+                        PCB Design
+                    </span>
+
+
+                    <span class="skill">
+                        Altium
+                    </span>
+
+
+                    <span class="skill">
+                        STM32
+                    </span>
+
+
+                    <span class="skill">
+                        Embedded Systems
+                    </span>
+
+
+                    <span class="skill">
+                        SystemVerilog
+                    </span>
+
+
+                    <span class="skill">
+                        FPGA
+                    </span>
+
+
+                    <span class="skill">
+                        RTL Design
+                    </span>
+
+
+                    <span class="skill">
+                        Power Electronics
+                    </span>
+
+
+                    <span class="skill">
+                        CAN
+                    </span>
+
+
+                    <span class="skill">
+                        Python
+                    </span>
+
+
+                    <span class="skill">
+                        C / C++
+                    </span>
+
+
+                    <span class="skill">
+                        VNA
+                    </span>
+
 
                 </div>
+
 
             </div>
 
@@ -830,186 +1068,283 @@
 
         <div class="container">
 
+
             <div class="section-heading">
+
 
                 <h2 class="section-title">
                     Selected Projects
                 </h2>
 
+
                 <span class="section-label">
                     Hardware & Digital Systems
                 </span>
 
+
             </div>
 
 
+
             <div class="projects">
+
 
 
                 <!-- ROVER LIGHTING CONTROL SYSTEM -->
 
                 <article class="project featured">
 
+
                     <div class="featured-content">
+
 
                         <div class="project-header">
 
+
                             <div>
 
+
                                 <span class="project-category">
+
                                     Embedded Hardware | PCB Design
+
                                 </span>
 
+
                                 <h3>
+
                                     Rover Lighting Control System
+
                                 </h3>
+
 
                             </div>
 
+
                             <span class="status">
+
                                 Completed
+
                             </span>
+
 
                         </div>
 
 
+
                         <p>
+
                             Designed and validated an embedded lighting controller
                             PCB for a rover electrical system, integrating DC-DC
                             power conversion, constant-current LED driving,
                             STM32 control, CAN communication, voltage regulation,
                             and transient protection.
+
                         </p>
+
 
 
                         <div class="project-highlights">
 
+
                             <span>
-                                <strong>71</strong>
+
+                                <strong>
+                                    71
+                                </strong>
+
                                 components
+
                             </span>
 
+
                             <span>
-                                <strong>4-layer</strong>
+
+                                <strong>
+                                    4-layer
+                                </strong>
+
                                 PCB
+
                             </span>
 
+
                             <span>
-                                <strong>5</strong>
+
+                                <strong>
+                                    5
+                                </strong>
+
                                 boards assembled
+
                             </span>
 
+
                             <span>
-                                <strong>21 to 29.4 V</strong>
+
+                                <strong>
+                                    21 to 29.4 V
+                                </strong>
+
                                 input
+
                             </span>
+
 
                         </div>
+
 
                     </div>
 
 
+
                     <!-- LIGHTING BOARD IMAGE GALLERY -->
+
 
                     <div class="project-gallery">
 
 
+
                         <!-- IMAGE 1 -->
+
 
                         <figure class="project-image">
 
+
                             <div class="project-image-image">
+
 
                                 <img
                                     src="assets/lighting1.png"
                                     alt="Component side 3D render of Rover lighting control PCB"
                                     loading="lazy">
 
+
                             </div>
 
+
                             <figcaption>
+
                                 Component Side | 3D Render
+
                             </figcaption>
+
 
                         </figure>
 
 
+
                         <!-- IMAGE 2 -->
+
 
                         <figure class="project-image">
 
+
                             <div class="project-image-image">
+
 
                                 <img
                                     src="assets/lighting2.png"
                                     alt="LED side 3D render of Rover lighting control PCB"
                                     loading="lazy">
 
+
                             </div>
 
+
                             <figcaption>
+
                                 LED Side | 3D Render
+
                             </figcaption>
 
+
                         </figure>
+
 
 
                         <!-- IMAGE 3 -->
 
+
                         <figure class="project-image">
+
 
                             <div class="project-image-image">
 
+
                                 <img
                                     src="assets/lighting3.png"
-                                    alt="PCB component placement and routing for Rover lighting controller"
+                                    alt="Top side PCB layout and routing of Rover lighting controller"
                                     loading="lazy">
+
 
                             </div>
 
+
                             <figcaption>
-                                PCB Layout | Component Placement and Routing
+
+                                Layout & Routing | Top Side
+
                             </figcaption>
 
+
                         </figure>
+
 
 
                         <!-- IMAGE 4 -->
 
+
                         <figure class="project-image">
+
 
                             <div class="project-image-image">
 
+
                                 <img
                                     src="assets/lighting4.png"
-                                    alt="PCB polygon pours for Rover lighting controller"
+                                    alt="PCB polygon pours of Rover lighting controller"
                                     loading="lazy">
+
 
                             </div>
 
+
                             <figcaption>
+
                                 PCB Layout | Polygon Pours
+
                             </figcaption>
+
 
                         </figure>
 
 
+
                         <!-- IMAGE 5 -->
+
 
                         <figure class="project-image">
 
+
                             <div class="project-image-image">
+
 
                                 <img
                                     src="assets/lighting5.png"
                                     alt="Five assembled and hand soldered Rover lighting control boards"
                                     loading="lazy">
 
+
                             </div>
 
+
                             <figcaption>
+
                                 Assembled Hardware | Five Hand-Soldered Boards
+
                             </figcaption>
+
 
                         </figure>
 
@@ -1017,21 +1352,53 @@
                     </div>
 
 
+
                     <div class="featured-bottom">
+
 
                         <div class="tags">
 
-                            <span class="tag">Altium</span>
-                            <span class="tag">STM32</span>
-                            <span class="tag">PCB Design</span>
-                            <span class="tag">Power Electronics</span>
-                            <span class="tag">CAN</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">Hardware Bring-Up</span>
+
+                            <span class="tag">
+                                Altium
+                            </span>
+
+
+                            <span class="tag">
+                                STM32
+                            </span>
+
+
+                            <span class="tag">
+                                PCB Design
+                            </span>
+
+
+                            <span class="tag">
+                                Power Electronics
+                            </span>
+
+
+                            <span class="tag">
+                                CAN
+                            </span>
+
+
+                            <span class="tag">
+                                Python
+                            </span>
+
+
+                            <span class="tag">
+                                Hardware Bring-Up
+                            </span>
+
 
                         </div>
 
+
                     </div>
+
 
                 </article>
 
@@ -1041,48 +1408,98 @@
 
                 <article class="project">
 
+
                     <div class="project-header">
+
 
                         <div>
 
+
                             <span class="project-category">
+
                                 Digital Hardware | FPGA
+
                             </span>
 
+
                             <h3>
+
                                 FPGA SIMD Processing Core & Verification Platform
+
                             </h3>
+
 
                         </div>
 
+
                         <span class="status">
+
                             In Development
+
                         </span>
+
 
                     </div>
 
 
+
                     <p>
+
                         Designing a pipelined SystemVerilog processing core with
                         instruction fetch and decode, a scalar ALU and register
                         file, BRAM backed memory, and a four-lane SIMD datapath.
                         Developing self-checking RTL verification and Python and C
                         reference models for architectural validation.
+
                     </p>
+
 
 
                     <div class="tags">
 
-                        <span class="tag">SystemVerilog</span>
-                        <span class="tag">RTL</span>
-                        <span class="tag">FPGA</span>
-                        <span class="tag">SIMD</span>
-                        <span class="tag">BRAM</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">C</span>
-                        <span class="tag">Verification</span>
+
+                        <span class="tag">
+                            SystemVerilog
+                        </span>
+
+
+                        <span class="tag">
+                            RTL
+                        </span>
+
+
+                        <span class="tag">
+                            FPGA
+                        </span>
+
+
+                        <span class="tag">
+                            SIMD
+                        </span>
+
+
+                        <span class="tag">
+                            BRAM
+                        </span>
+
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+
+                        <span class="tag">
+                            C
+                        </span>
+
+
+                        <span class="tag">
+                            Verification
+                        </span>
+
 
                     </div>
+
 
                 </article>
 
@@ -1092,49 +1509,99 @@
 
                 <article class="project">
 
+
                     <div class="project-header">
+
 
                         <div>
 
+
                             <span class="project-category">
+
                                 Digital Logic | Processor Design
+
                             </span>
 
+
                             <h3>
+
                                 Simple RISC Machine
+
                             </h3>
+
 
                         </div>
 
+
                         <span class="status">
+
                             Completed
+
                         </span>
+
 
                     </div>
 
 
+
                     <p>
+
                         Designed and implemented a Simple RISC Machine in
                         SystemVerilog using a datapath and control architecture.
                         Developed the register file, ALU, instruction decoding
                         logic, and finite state machine controller used to
                         sequence arithmetic and logical instructions, and
                         verified processor behavior through RTL simulation.
+
                     </p>
+
 
 
                     <div class="tags">
 
-                        <span class="tag">SystemVerilog</span>
-                        <span class="tag">RTL Design</span>
-                        <span class="tag">FPGA</span>
-                        <span class="tag">FSM</span>
-                        <span class="tag">Register File</span>
-                        <span class="tag">ALU</span>
-                        <span class="tag">ModelSim</span>
-                        <span class="tag">Quartus</span>
+
+                        <span class="tag">
+                            SystemVerilog
+                        </span>
+
+
+                        <span class="tag">
+                            RTL Design
+                        </span>
+
+
+                        <span class="tag">
+                            FPGA
+                        </span>
+
+
+                        <span class="tag">
+                            FSM
+                        </span>
+
+
+                        <span class="tag">
+                            Register File
+                        </span>
+
+
+                        <span class="tag">
+                            ALU
+                        </span>
+
+
+                        <span class="tag">
+                            ModelSim
+                        </span>
+
+
+                        <span class="tag">
+                            Quartus
+                        </span>
+
 
                     </div>
+
 
                 </article>
 
@@ -1144,28 +1611,43 @@
 
                 <article class="project">
 
+
                     <div class="project-header">
+
 
                         <div>
 
+
                             <span class="project-category">
+
                                 Analog | Embedded Systems
+
                             </span>
 
+
                             <h3>
+
                                 Smart Temperature Monitoring & Control System
+
                             </h3>
+
 
                         </div>
 
+
                         <span class="status">
+
                             Completed
+
                         </span>
+
 
                     </div>
 
 
+
                     <p>
+
                         Designed a temperature monitoring and control system
                         using an NTC thermistor, Wheatstone bridge,
                         instrumentation amplifier, and Arduino based data
@@ -1173,58 +1655,130 @@
                         model in Python to convert measured resistance into
                         temperature and calibrated the system to approximately
                         ±0.1°C accuracy.
+
                     </p>
+
 
 
                     <div class="project-highlights">
 
+
                         <span>
-                            <strong>±0.1°C</strong>
+
+                            <strong>
+                                ±0.1°C
+                            </strong>
+
                             calibrated accuracy
+
                         </span>
 
+
                         <span>
-                            <strong>4-coefficient</strong>
+
+                            <strong>
+                                4-coefficient
+                            </strong>
+
                             Steinhart-Hart model
+
                         </span>
 
+
                         <span>
-                            <strong>10-bit</strong>
+
+                            <strong>
+                                10-bit
+                            </strong>
+
                             ADC
+
                         </span>
 
+
                         <span>
-                            <strong>PWM</strong>
+
+                            <strong>
+                                PWM
+                            </strong>
+
                             fan control
+
                         </span>
+
 
                     </div>
 
 
+
                     <p>
+
                         Comparator and logic circuitry implemented
                         temperature dependent control behavior, while a
                         555 timer operating in astable mode generated PWM
                         for variable motor speed. Temperature measurements
                         were displayed on an LCD and logged through the
                         microcontroller for characterization and calibration.
+
                     </p>
+
 
 
                     <div class="tags">
 
-                        <span class="tag">Analog Circuit Design</span>
-                        <span class="tag">NTC Thermistor</span>
-                        <span class="tag">Wheatstone Bridge</span>
-                        <span class="tag">Instrumentation Amplifier</span>
-                        <span class="tag">Arduino</span>
-                        <span class="tag">555 Timer</span>
-                        <span class="tag">PWM</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Multisim</span>
-                        <span class="tag">Calibration</span>
+
+                        <span class="tag">
+                            Analog Circuit Design
+                        </span>
+
+
+                        <span class="tag">
+                            NTC Thermistor
+                        </span>
+
+
+                        <span class="tag">
+                            Wheatstone Bridge
+                        </span>
+
+
+                        <span class="tag">
+                            Instrumentation Amplifier
+                        </span>
+
+
+                        <span class="tag">
+                            Arduino
+                        </span>
+
+
+                        <span class="tag">
+                            555 Timer
+                        </span>
+
+
+                        <span class="tag">
+                            PWM
+                        </span>
+
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+
+                        <span class="tag">
+                            Multisim
+                        </span>
+
+
+                        <span class="tag">
+                            Calibration
+                        </span>
+
 
                     </div>
+
 
                 </article>
 
@@ -1234,45 +1788,83 @@
 
                 <article class="project">
 
+
                     <div class="project-header">
+
 
                         <div>
 
+
                             <span class="project-category">
+
                                 Research | Instrumentation
+
                             </span>
 
+
                             <h3>
+
                                 PVDF Piezoelectric Film Characterization
+
                             </h3>
+
 
                         </div>
 
+
                         <span class="status">
+
                             Research
+
                         </span>
+
 
                     </div>
 
 
+
                     <p>
+
                         Developed an experimental characterization setup using
                         a VNA, oscilloscope, and function generator to study
                         PVDF piezoelectric films. Validated measured impedance
                         and resonance behavior against analytical predictions
                         and investigated an 18% resonance frequency shift.
+
                     </p>
+
 
 
                     <div class="tags">
 
-                        <span class="tag">VNA</span>
-                        <span class="tag">Oscilloscope</span>
-                        <span class="tag">Signal Analysis</span>
-                        <span class="tag">Experimental Design</span>
-                        <span class="tag">Python</span>
+
+                        <span class="tag">
+                            VNA
+                        </span>
+
+
+                        <span class="tag">
+                            Oscilloscope
+                        </span>
+
+
+                        <span class="tag">
+                            Signal Analysis
+                        </span>
+
+
+                        <span class="tag">
+                            Experimental Design
+                        </span>
+
+
+                        <span class="tag">
+                            Python
+                        </span>
+
 
                     </div>
+
 
                 </article>
 
@@ -1291,15 +1883,19 @@
 
         <div class="container">
 
+
             <div class="section-heading">
+
 
                 <h2 class="section-title">
                     Experience
                 </h2>
 
+
                 <span class="section-label">
                     Engineering & Research
                 </span>
+
 
             </div>
 
@@ -1307,26 +1903,39 @@
 
             <!-- KARDIUM -->
 
+
             <div class="experience-item">
+
 
                 <div class="experience-header">
 
+
                     <h3>
+
                         Kardium | Hardware Electronics Co-op
+
                     </h3>
 
+
                     <span class="date">
+
                         Sep. 2026 to Apr. 2027
+
                     </span>
+
 
                 </div>
 
 
+
                 <p>
+
                     Incoming hardware electronics co-op supporting custom
                     board development, PCB development, hardware bring-up,
                     circuit debugging, characterization, and design verification.
+
                 </p>
+
 
             </div>
 
@@ -1334,26 +1943,39 @@
 
             <!-- ADAMIST LAB -->
 
+
             <div class="experience-item">
+
 
                 <div class="experience-header">
 
+
                     <h3>
+
                         UBC AdaMist Lab | Research Assistant
+
                     </h3>
 
+
                     <span class="date">
+
                         Sep. 2025 to Dec. 2025
+
                     </span>
+
 
                 </div>
 
 
+
                 <p>
+
                     Characterized PVDF piezoelectric films using VNA,
                     oscilloscope, and function generator measurements and
                     developed repeatable experimental and data analysis workflows.
+
                 </p>
+
 
             </div>
 
@@ -1361,19 +1983,29 @@
 
             <!-- AECON -->
 
+
             <div class="experience-item">
+
 
                 <div class="experience-header">
 
+
                     <h3>
+
                         Aecon | Summer Internship
+
                     </h3>
 
+
                     <span class="date">
+
                         Summer 2026
+
                     </span>
 
+
                 </div>
+
 
             </div>
 
@@ -1390,32 +2022,47 @@
 
         <div class="container">
 
+
             <h2 class="section-title">
+
                 Let's Connect
+
             </h2>
 
 
+
             <p class="contact-text">
+
                 Interested in hardware, digital systems, embedded systems,
                 and FPGA development. Feel free to reach out or connect with me.
+
             </p>
+
 
 
             <div class="buttons">
 
+
                 <a class="button primary"
                    href="mailto:Nasayasi7@gmail.com">
+
                     Email Me
+
                 </a>
+
 
                 <a class="button"
                    href="https://www.linkedin.com/in/yasamankh"
                    target="_blank"
                    rel="noopener noreferrer">
+
                     LinkedIn
+
                 </a>
 
+
             </div>
+
 
         </div>
 
@@ -1428,7 +2075,9 @@
     <footer>
 
         <div class="container">
+
             © 2026 Yasaman Kheradmand
+
         </div>
 
     </footer>
