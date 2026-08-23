@@ -452,7 +452,7 @@
         .project-gallery {
             display: grid;
 
-            grid-template-columns: repeat(6, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
 
             gap: 1px;
 
@@ -460,17 +460,6 @@
 
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
-        }
-
-        .project-gallery .project-image:nth-child(1),
-        .project-gallery .project-image:nth-child(2),
-        .project-gallery .project-image:nth-child(3) {
-            grid-column: span 2;
-        }
-
-        .project-gallery .project-image:nth-child(4),
-        .project-gallery .project-image:nth-child(5) {
-            grid-column: span 3;
         }
 
         .project-image {
@@ -651,7 +640,7 @@
         }
 
         .video-cover-description {
-            max-width: 480px;
+            max-width: 500px;
 
             margin-bottom: 23px;
 
@@ -727,7 +716,6 @@
             border-bottom: 5px solid transparent;
             border-left: 8px solid #111827;
         }
-
 
         .project-video-caption {
             margin-top: 11px;
@@ -867,17 +855,6 @@
             .project-gallery {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
-
-            .project-gallery .project-image:nth-child(1),
-            .project-gallery .project-image:nth-child(2),
-            .project-gallery .project-image:nth-child(3),
-            .project-gallery .project-image:nth-child(4) {
-                grid-column: span 1;
-            }
-
-            .project-gallery .project-image:nth-child(5) {
-                grid-column: span 2;
-            }
         }
 
         @media (max-width: 800px) {
@@ -943,14 +920,6 @@
 
             .project-gallery {
                 grid-template-columns: 1fr;
-            }
-
-            .project-gallery .project-image:nth-child(1),
-            .project-gallery .project-image:nth-child(2),
-            .project-gallery .project-image:nth-child(3),
-            .project-gallery .project-image:nth-child(4),
-            .project-gallery .project-image:nth-child(5) {
-                grid-column: span 1;
             }
 
             .project-image-image {
@@ -1174,7 +1143,9 @@
                             PCB for a rover electrical system, integrating DC-DC
                             power conversion, constant-current LED driving,
                             STM32 control, CAN communication, voltage regulation,
-                            and transient protection.
+                            and transient protection. The completed system was
+                            integrated onto the rover and used during competition
+                            tasks requiring PWM controlled lighting behavior.
 
                         </p>
 
@@ -1212,6 +1183,8 @@
                     <div class="project-gallery">
 
 
+                        <!-- IMAGE 1 -->
+
                         <figure class="project-image">
 
                             <div class="project-image-image">
@@ -1229,6 +1202,8 @@
 
                         </figure>
 
+
+                        <!-- IMAGE 2 -->
 
                         <figure class="project-image">
 
@@ -1248,6 +1223,8 @@
                         </figure>
 
 
+                        <!-- IMAGE 3 -->
+
                         <figure class="project-image">
 
                             <div class="project-image-image">
@@ -1265,6 +1242,8 @@
 
                         </figure>
 
+
+                        <!-- IMAGE 4 -->
 
                         <figure class="project-image">
 
@@ -1284,6 +1263,8 @@
                         </figure>
 
 
+                        <!-- IMAGE 5 -->
+
                         <figure class="project-image">
 
                             <div class="project-image-image">
@@ -1297,6 +1278,26 @@
 
                             <figcaption>
                                 Assembled Hardware | Five Hand-Soldered Boards
+                            </figcaption>
+
+                        </figure>
+
+
+                        <!-- IMAGE 6 -->
+
+                        <figure class="project-image">
+
+                            <div class="project-image-image">
+
+                                <img
+                                    src="assets/lighting6.jpg"
+                                    alt="Rover lighting system operating during integrated rover testing for Morse code and obstacle approach tasks"
+                                    loading="lazy">
+
+                            </div>
+
+                            <figcaption>
+                                Rover Integration | PWM Lighting for Morse Code and Obstacle Approach
                             </figcaption>
 
                         </figure>
@@ -1419,8 +1420,10 @@
                             <span class="tag">PCB Design</span>
                             <span class="tag">Power Electronics</span>
                             <span class="tag">CAN</span>
+                            <span class="tag">PWM</span>
                             <span class="tag">Python</span>
                             <span class="tag">Hardware Bring-Up</span>
+                            <span class="tag">System Integration</span>
 
                         </div>
 
