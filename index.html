@@ -29,18 +29,15 @@
             --green: #7ee6c4;
         }
 
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
-
 
         body {
             position: relative;
@@ -76,7 +73,6 @@
                 var(--bg);
         }
 
-
         body::before {
             content: "";
 
@@ -102,18 +98,15 @@
             z-index: -2;
         }
 
-
         a {
             color: inherit;
             text-decoration: none;
         }
 
-
         img,
         video {
             max-width: 100%;
         }
-
 
         .container {
             width: min(1120px, 90%);
@@ -136,7 +129,6 @@
             backdrop-filter: blur(18px);
         }
 
-
         .nav-inner {
             min-height: 70px;
 
@@ -147,14 +139,12 @@
             gap: 30px;
         }
 
-
         .logo {
             font-size: 1rem;
             font-weight: 700;
 
             letter-spacing: -0.01em;
         }
-
 
         .logo::before {
             content: "";
@@ -174,7 +164,6 @@
                 0 0 10px rgba(105, 216, 255, 0.65);
         }
 
-
         .nav-links {
             display: flex;
             align-items: center;
@@ -186,11 +175,9 @@
             color: var(--text-soft);
         }
 
-
         .nav-links a {
             transition: color 0.2s ease;
         }
-
 
         .nav-links a:hover {
             color: var(--cyan);
@@ -210,7 +197,6 @@
             border-bottom: 1px solid var(--border);
         }
 
-
         .hero-content {
             position: relative;
 
@@ -218,7 +204,6 @@
 
             z-index: 2;
         }
-
 
         .eyebrow {
             display: inline-flex;
@@ -248,7 +233,6 @@
             text-transform: uppercase;
         }
 
-
         .eyebrow::before {
             content: "";
 
@@ -259,7 +243,6 @@
 
             background: var(--cyan);
         }
-
 
         .hero h1 {
             margin-bottom: 25px;
@@ -273,7 +256,6 @@
 
             color: #f3f7ff;
         }
-
 
         .hero .headline {
             max-width: 740px;
@@ -289,7 +271,6 @@
 
             color: #dce8fa;
         }
-
 
         .hero .description {
             max-width: 700px;
@@ -313,7 +294,6 @@
 
             flex-wrap: wrap;
         }
-
 
         .button {
             display: inline-flex;
@@ -343,7 +323,6 @@
                 background 0.2s ease;
         }
 
-
         .button.primary {
             color: #05101a;
 
@@ -351,7 +330,6 @@
 
             border-color: #78d9ff;
         }
-
 
         .button:hover {
             transform: translateY(-2px);
@@ -362,7 +340,6 @@
             background:
                 rgba(105,216,255,0.06);
         }
-
 
         .button.primary:hover {
             background: #91e2ff;
@@ -379,7 +356,6 @@
                 1px solid var(--border);
         }
 
-
         .section-heading {
             display: flex;
             justify-content: space-between;
@@ -390,7 +366,6 @@
             margin-bottom: 42px;
         }
 
-
         .section-title {
             font-size:
                 clamp(1.8rem, 3vw, 2.25rem);
@@ -399,7 +374,6 @@
 
             line-height: 1.1;
         }
-
 
         .section-title::after {
             content: "";
@@ -416,7 +390,6 @@
             background: var(--cyan);
         }
 
-
         .section-label {
             color: var(--text-muted);
 
@@ -432,7 +405,6 @@
                 rgba(7, 11, 22, 0.25);
         }
 
-
         .about-grid {
             display: grid;
 
@@ -442,7 +414,6 @@
             gap: 80px;
         }
 
-
         .about-text {
             max-width: 620px;
 
@@ -451,11 +422,9 @@
             font-size: 1.04rem;
         }
 
-
         .about-text p + p {
             margin-top: 18px;
         }
-
 
         .skills {
             display: flex;
@@ -465,7 +434,6 @@
 
             align-content: flex-start;
         }
-
 
         .skill {
             padding: 7px 12px;
@@ -493,13 +461,11 @@
                 rgba(8, 14, 27, 0.55);
         }
 
-
         .projects {
             display: grid;
 
             gap: 25px;
         }
-
 
         .project {
             position: relative;
@@ -525,7 +491,6 @@
                 border-color 0.22s ease;
         }
 
-
         .project:hover {
             transform: translateY(-4px);
 
@@ -536,16 +501,13 @@
                 0 22px 60px rgba(0,0,0,0.26);
         }
 
-
         .project.featured {
             padding: 0;
         }
 
-
         .featured-content {
             padding: 36px 36px 29px;
         }
-
 
         .project-header {
             display: flex;
@@ -556,7 +518,6 @@
 
             margin-bottom: 14px;
         }
-
 
         .project-category {
             display: block;
@@ -573,7 +534,6 @@
             text-transform: uppercase;
         }
 
-
         .project h3 {
             font-size: 1.42rem;
 
@@ -584,7 +544,6 @@
             color: #f1f6ff;
         }
 
-
         .project p {
             max-width: 880px;
 
@@ -592,7 +551,6 @@
 
             color: var(--text-soft);
         }
-
 
         .status {
             flex-shrink: 0;
@@ -614,7 +572,6 @@
 
             white-space: nowrap;
         }
-
 
         .featured .status {
             color: var(--green);
@@ -639,7 +596,6 @@
             margin: 24px 0 26px;
         }
 
-
         .project-highlights span {
             display: flex;
             align-items: baseline;
@@ -661,13 +617,126 @@
             font-size: 0.79rem;
         }
 
-
         .project-highlights strong {
             color: #f0f7ff;
 
             font-size: 0.88rem;
 
             font-weight: 700;
+        }
+
+
+
+        /* SCHEMATIC LINK */
+
+        .schematic-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
+
+            width: 100%;
+
+            margin-top: 4px;
+
+            padding: 18px 20px;
+
+            background: #0a1220;
+
+            border:
+                1px solid rgba(150, 175, 215, 0.16);
+
+            border-radius: 9px;
+
+            transition:
+                border-color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .schematic-link:hover {
+            transform: translateY(-1px);
+
+            background: #0d1728;
+
+            border-color:
+                rgba(105, 216, 255, 0.38);
+        }
+
+        .schematic-left {
+            min-width: 0;
+        }
+
+        .schematic-label {
+            margin-bottom: 3px;
+
+            color: var(--cyan);
+
+            font-size: 0.66rem;
+            font-weight: 700;
+
+            letter-spacing: 0.11em;
+
+            text-transform: uppercase;
+        }
+
+        .schematic-title {
+            margin-bottom: 2px;
+
+            color: #edf4ff;
+
+            font-size: 0.98rem;
+            font-weight: 600;
+
+            letter-spacing: -0.01em;
+        }
+
+        .schematic-description {
+            color: var(--text-muted);
+
+            font-size: 0.78rem;
+        }
+
+        .schematic-action {
+            display: flex;
+            align-items: center;
+
+            gap: 9px;
+
+            flex-shrink: 0;
+
+            color: #aab9cc;
+
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .schematic-pdf {
+            padding: 4px 7px;
+
+            border:
+                1px solid rgba(150, 175, 215, 0.16);
+
+            border-radius: 4px;
+
+            color: #8f9fb5;
+
+            font-size: 0.64rem;
+
+            letter-spacing: 0.07em;
+        }
+
+        .schematic-arrow {
+            color: var(--cyan);
+
+            font-size: 1rem;
+
+            transition: transform 0.2s ease;
+        }
+
+        .schematic-link:hover .schematic-arrow {
+            transform: translate(2px, -2px);
         }
 
 
@@ -692,7 +761,6 @@
                 1px solid var(--border);
         }
 
-
         .project-image {
             display: flex;
             flex-direction: column;
@@ -701,7 +769,6 @@
 
             background: #0a1020;
         }
-
 
         .project-image-image {
             display: flex;
@@ -717,7 +784,6 @@
             background: #0d1526;
         }
 
-
         .project-image img {
             display: block;
 
@@ -731,13 +797,11 @@
                 filter 0.3s ease;
         }
 
-
         .project-image:hover img {
             transform: scale(1.02);
 
             filter: brightness(1.05);
         }
-
 
         .project-image figcaption {
             min-height: 44px;
@@ -754,7 +818,6 @@
             font-size: 0.75rem;
             font-weight: 500;
         }
-
 
         .project-image.rover-integration img {
             object-fit: cover;
@@ -774,13 +837,11 @@
                 1px solid var(--border);
         }
 
-
         .project-video-inner {
             width: min(720px, 100%);
 
             margin: 0 auto;
         }
-
 
         .project-video-heading {
             margin-bottom: 13px;
@@ -818,7 +879,6 @@
             box-shadow:
                 0 12px 35px rgba(0,0,0,0.28);
         }
-
 
         .video-frame video {
             display: block;
@@ -858,7 +918,6 @@
                 visibility 0.2s ease;
         }
 
-
         .video-cover.hidden {
             opacity: 0;
 
@@ -867,12 +926,10 @@
             pointer-events: none;
         }
 
-
         .video-cover-content {
             width: 100%;
             max-width: 520px;
         }
-
 
         .video-cover-label {
             margin-bottom: 8px;
@@ -887,7 +944,6 @@
             text-transform: uppercase;
         }
 
-
         .video-cover h4 {
             margin-bottom: 9px;
 
@@ -901,7 +957,6 @@
             color: #f2f6fc;
         }
 
-
         .video-cover-description {
             max-width: 470px;
 
@@ -913,7 +968,6 @@
 
             line-height: 1.55;
         }
-
 
         .video-meta {
             display: flex;
@@ -928,7 +982,6 @@
             font-size: 0.72rem;
         }
 
-
         .video-meta span + span::before {
             content: "•";
 
@@ -936,7 +989,6 @@
 
             color: #526177;
         }
-
 
         .video-play-button {
             display: inline-flex;
@@ -968,7 +1020,6 @@
                 border-color 0.2s ease;
         }
 
-
         .video-play-button:hover {
             background:
                 rgba(105,216,255,0.07);
@@ -976,7 +1027,6 @@
             border-color:
                 rgba(105,216,255,0.35);
         }
-
 
         .play-icon {
             width: 0;
@@ -992,7 +1042,6 @@
                 7px solid var(--cyan);
         }
 
-
         .project-video-caption {
             margin-top: 11px;
 
@@ -1002,7 +1051,6 @@
 
             text-align: center;
         }
-
 
         .featured-bottom {
             padding: 25px 34px 32px;
@@ -1021,7 +1069,6 @@
 
             gap: 7px;
         }
-
 
         .tag {
             padding: 5px 9px;
@@ -1049,7 +1096,6 @@
                 rgba(5, 9, 18, 0.42);
         }
 
-
         .experience-item {
             padding: 28px 0;
 
@@ -1057,12 +1103,10 @@
                 1px solid var(--border);
         }
 
-
         .experience-item:last-child {
             border-bottom:
                 1px solid var(--border);
         }
-
 
         .experience-header {
             display: flex;
@@ -1072,7 +1116,6 @@
             gap: 30px;
         }
 
-
         .experience-header h3 {
             font-size: 1.12rem;
 
@@ -1081,7 +1124,6 @@
             color: #edf4ff;
         }
 
-
         .experience-item p {
             max-width: 800px;
 
@@ -1089,7 +1131,6 @@
 
             color: var(--text-soft);
         }
-
 
         .date {
             color: var(--text-muted);
@@ -1109,11 +1150,9 @@
             border-bottom: none;
         }
 
-
         #contact .section-title {
             margin-bottom: 20px;
         }
-
 
         .contact-text {
             max-width: 650px;
@@ -1150,6 +1189,7 @@
                 grid-template-columns:
                     repeat(2, minmax(0, 1fr));
             }
+
         }
 
 
@@ -1168,6 +1208,7 @@
             section {
                 padding: 70px 0;
             }
+
         }
 
 
@@ -1203,6 +1244,11 @@
             .video-cover {
                 padding: 24px;
             }
+
+            .schematic-link {
+                align-items: flex-start;
+            }
+
         }
 
 
@@ -1219,6 +1265,11 @@
             .video-meta {
                 display: none;
             }
+
+            .schematic-action span:not(.schematic-arrow) {
+                display: none;
+            }
+
         }
 
     </style>
@@ -1451,6 +1502,52 @@
                             </span>
 
                         </div>
+
+
+
+                        <!-- FULL SCHEMATIC LINK -->
+
+                        <a
+                            class="schematic-link"
+                            href="assets/lighting-schematic.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <div class="schematic-left">
+
+                                <div class="schematic-label">
+                                    Schematic
+                                </div>
+
+                                <div class="schematic-title">
+                                    Full Lighting Controller Schematic
+                                </div>
+
+                                <div class="schematic-description">
+                                    View the complete schematic for circuit review.
+                                </div>
+
+                            </div>
+
+
+                            <div class="schematic-action">
+
+                                <span class="schematic-pdf">
+                                    PDF
+                                </span>
+
+                                <span>
+                                    Open schematic
+                                </span>
+
+                                <span class="schematic-arrow">
+                                    ↗
+                                </span>
+
+                            </div>
+
+                        </a>
+
 
                     </div>
 
