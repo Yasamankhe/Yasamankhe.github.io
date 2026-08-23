@@ -243,6 +243,7 @@
 
         .section-title {
             font-size: clamp(1.8rem, 3vw, 2.2rem);
+
             letter-spacing: -0.035em;
             line-height: 1.1;
         }
@@ -539,7 +540,7 @@
             margin: 0 auto;
         }
 
-        .project-video-title {
+        .project-video-heading {
             margin-bottom: 13px;
 
             color: var(--text);
@@ -551,31 +552,182 @@
             text-transform: uppercase;
         }
 
+
+        /* VIDEO CONTAINER */
+
         .video-frame {
-            padding: 8px;
+            position: relative;
 
-            background: white;
+            width: 100%;
+            aspect-ratio: 16 / 9;
 
-            border: 1px solid var(--border);
+            overflow: hidden;
+
+            background: #111827;
+
+            border: 1px solid #dbe1e6;
             border-radius: 12px;
 
             box-shadow:
-                0 8px 25px rgba(15, 23, 42, 0.06);
+                0 8px 25px rgba(15, 23, 42, 0.08);
         }
 
-        .project-video video {
+        .video-frame video {
             display: block;
 
             width: 100%;
-
-            aspect-ratio: 16 / 9;
+            height: 100%;
 
             object-fit: contain;
 
-            border-radius: 7px;
-
             background: #000;
         }
+
+
+        /* VIDEO COVER */
+
+        .video-cover {
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 2;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 35px;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 70% 30%,
+                    rgba(15, 118, 110, 0.30),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #111827,
+                    #17242d
+                );
+
+            cursor: pointer;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
+        }
+
+        .video-cover.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .video-cover-label {
+            margin-bottom: 10px;
+
+            color: #6ee7d8;
+
+            font-size: 0.72rem;
+            font-weight: 700;
+
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .video-cover h4 {
+            margin-bottom: 12px;
+
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            line-height: 1.2;
+
+            letter-spacing: -0.025em;
+        }
+
+        .video-cover-description {
+            max-width: 480px;
+
+            margin-bottom: 23px;
+
+            color: #cbd5df;
+
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .video-cover-details {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 25px;
+        }
+
+        .video-cover-detail {
+            padding: 6px 10px;
+
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 20px;
+
+            background: rgba(255, 255, 255, 0.06);
+
+            color: #d8e0e8;
+
+            font-size: 0.72rem;
+        }
+
+
+        /* PLAY BUTTON */
+
+        .video-play-button {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 9px;
+
+            padding: 10px 17px;
+
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+
+            background: white;
+
+            color: #111827;
+
+            font-family: inherit;
+
+            font-size: 0.82rem;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .video-play-button:hover {
+            transform: translateY(-2px);
+            background: #f3f4f6;
+        }
+
+        .play-icon {
+            width: 0;
+            height: 0;
+
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 8px solid #111827;
+        }
+
 
         .project-video-caption {
             margin-top: 11px;
@@ -583,6 +735,8 @@
             color: var(--text-soft);
 
             font-size: 0.78rem;
+
+            text-align: center;
         }
 
         .featured-bottom {
@@ -771,6 +925,18 @@
             .hero h1 {
                 font-size: 3.2rem;
             }
+
+            .video-cover {
+                padding: 22px;
+            }
+
+            .video-cover-description {
+                font-size: 0.8rem;
+            }
+
+            .video-cover-details {
+                margin-bottom: 18px;
+            }
         }
 
         @media (max-width: 550px) {
@@ -791,9 +957,8 @@
                 height: 300px;
             }
 
-            .project-video {
-                padding-top: 30px;
-                padding-bottom: 30px;
+            .video-cover-details {
+                display: none;
             }
         }
 
@@ -1148,14 +1313,16 @@
                         <div class="project-video-inner">
 
 
-                            <div class="project-video-title">
-                                Hardware Validation Demo
+                            <div class="project-video-heading">
+                                Hardware Validation
                             </div>
 
 
                             <div class="video-frame">
 
+
                                 <video
+                                    id="lighting-video"
                                     controls
                                     playsinline
                                     preload="metadata">
@@ -1172,11 +1339,68 @@
 
                                 </video>
 
+
+
+                                <!-- CUSTOM VIDEO COVER -->
+
+                                <div
+                                    class="video-cover"
+                                    id="lighting-video-cover">
+
+
+                                    <div class="video-cover-label">
+                                        Lab Validation Video
+                                    </div>
+
+
+                                    <h4>
+                                        Rover Lighting Control System
+                                    </h4>
+
+
+                                    <div class="video-cover-description">
+                                        Bench setup, USB-CAN adapter communication,
+                                        and PWM controlled lighting validation.
+                                    </div>
+
+
+                                    <div class="video-cover-details">
+
+                                        <span class="video-cover-detail">
+                                            USB-CAN Communication
+                                        </span>
+
+                                        <span class="video-cover-detail">
+                                            PWM Control
+                                        </span>
+
+                                        <span class="video-cover-detail">
+                                            Hardware Bring-Up
+                                        </span>
+
+                                    </div>
+
+
+                                    <button
+                                        class="video-play-button"
+                                        id="lighting-play-button"
+                                        type="button">
+
+                                        <span class="play-icon"></span>
+
+                                        Play Video
+
+                                    </button>
+
+
+                                </div>
+
+
                             </div>
 
 
                             <div class="project-video-caption">
-                                PWM Lighting Control and System Bring-Up
+                                Bench validation of CAN communication and PWM controlled lighting
                             </div>
 
 
@@ -1622,6 +1846,61 @@
         </div>
 
     </footer>
+
+
+
+    <!-- VIDEO COVER SCRIPT -->
+
+    <script>
+
+        const lightingVideo = document.getElementById("lighting-video");
+        const lightingCover = document.getElementById("lighting-video-cover");
+        const lightingPlayButton = document.getElementById("lighting-play-button");
+
+
+        function playLightingVideo() {
+
+            lightingCover.classList.add("hidden");
+
+            lightingVideo.play();
+
+        }
+
+
+        lightingPlayButton.addEventListener(
+            "click",
+            function(event) {
+
+                event.stopPropagation();
+
+                playLightingVideo();
+
+            }
+        );
+
+
+        lightingCover.addEventListener(
+            "click",
+            function() {
+
+                playLightingVideo();
+
+            }
+        );
+
+
+        lightingVideo.addEventListener(
+            "ended",
+            function() {
+
+                lightingCover.classList.remove("hidden");
+
+                lightingVideo.currentTime = 0;
+
+            }
+        );
+
+    </script>
 
 
 </body>
