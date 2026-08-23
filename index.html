@@ -435,11 +435,11 @@
         }
 
 
-        /* PCB IMAGE GALLERY */
+        /* PROJECT IMAGE GALLERY */
 
         .project-gallery {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
 
             gap: 1px;
 
@@ -458,16 +458,16 @@
             justify-content: center;
             align-items: center;
 
-            min-height: 340px;
+            min-height: 260px;
 
-            padding: 22px;
+            padding: 15px;
         }
 
         .project-image img {
             display: block;
 
             width: 100%;
-            height: 330px;
+            height: 250px;
 
             object-fit: contain;
 
@@ -479,7 +479,7 @@
         }
 
         .project-image figcaption {
-            padding: 11px 16px;
+            padding: 11px 14px;
 
             background: white;
             border-top: 1px solid var(--border);
@@ -612,6 +612,13 @@
 
         /* RESPONSIVE */
 
+        @media (max-width: 900px) {
+
+            .project-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 800px) {
 
             .about-grid {
@@ -625,19 +632,6 @@
 
             section {
                 padding: 70px 0;
-            }
-
-            .project-gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .project-image img {
-                height: auto;
-                max-height: 420px;
-            }
-
-            .project-image-image {
-                min-height: auto;
             }
         }
 
@@ -666,6 +660,22 @@
 
             .hero h1 {
                 font-size: 3.2rem;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image img {
+                height: auto;
+                max-height: 420px;
+            }
+
+            .project-image-image {
+                min-height: auto;
             }
         }
     </style>
@@ -899,8 +909,12 @@
                     </div>
 
 
+                    <!-- LIGHTING BOARD IMAGE GALLERY -->
+
                     <div class="project-gallery">
 
+
+                        <!-- IMAGE 1 -->
 
                         <figure class="project-image">
 
@@ -908,17 +922,19 @@
 
                                 <img
                                     src="assets/lighting1.png"
-                                    alt="Component side of Rover lighting control PCB"
+                                    alt="Component side 3D render of Rover lighting control PCB"
                                     loading="lazy">
 
                             </div>
 
                             <figcaption>
-                                Component Side | PCB Layout and 3D Render
+                                Component Side | 3D Render
                             </figcaption>
 
                         </figure>
 
+
+                        <!-- IMAGE 2 -->
 
                         <figure class="project-image">
 
@@ -926,93 +942,73 @@
 
                                 <img
                                     src="assets/lighting2.png"
-                                    alt="LED side of Rover lighting control PCB"
+                                    alt="LED side 3D render of Rover lighting control PCB"
                                     loading="lazy">
 
                             </div>
 
                             <figcaption>
-                                LED Side | Lighting Array and Routing
+                                LED Side | 3D Render
                             </figcaption>
 
                         </figure>
 
 
-                    </div>
-   
-                     <figure class="project-image">
+                        <!-- IMAGE 3 -->
+
+                        <figure class="project-image">
 
                             <div class="project-image-image">
 
                                 <img
                                     src="assets/lighting3.png"
-                                    alt="Layout & Routing, Top side"
+                                    alt="PCB component placement and routing for Rover lighting controller"
                                     loading="lazy">
 
                             </div>
 
                             <figcaption>
-                                Layout & Routing, Top side
+                                PCB Layout | Component Placement and Routing
                             </figcaption>
 
                         </figure>
 
 
-                    </div>
+                        <!-- IMAGE 4 -->
 
-             <figure class="project-image">
-
-                            <div class="project-image-image">
-
-                                <img
-                                    src="assets/lighting3.png"
-                                    alt="LED side of Rover lighting control PCB"
-                                    loading="lazy">
-
-                            </div>
-
-                            <figcaption>
-                                LED Side | Lighting Array and Routing
-                            </figcaption>
-
-                        </figure>
-
-
-                    </div>
-   
-         <figure class="project-image">
+                        <figure class="project-image">
 
                             <div class="project-image-image">
 
                                 <img
                                     src="assets/lighting4.png"
-                                    alt="Polygon Pours"
+                                    alt="PCB polygon pours for Rover lighting controller"
                                     loading="lazy">
 
                             </div>
 
                             <figcaption>
-                                Polygon Pours
+                                PCB Layout | Polygon Pours
                             </figcaption>
 
                         </figure>
 
 
-                    </div>
-            
-         <figure class="project-image">
+                        <!-- IMAGE 5 -->
+
+                        <figure class="project-image">
 
                             <div class="project-image-image">
 
                                 <img
                                     src="assets/lighting5.png"
-                                    alt="Five Assembled & Hand Soldered Boards for the whole system"
+                                    alt="Five assembled and hand soldered Rover lighting control boards"
                                     loading="lazy">
 
                             </div>
 
                             <figcaption>
-                                Five Assembled & Hand Soldered Boards for the whole system
+                                Assembled Hardware | Five Hand-Soldered Boards
                             </figcaption>
 
                         </figure>
