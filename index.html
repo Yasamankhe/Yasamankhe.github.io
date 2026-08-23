@@ -17,7 +17,6 @@
             --bg-deep: #040711;
             --surface: #0d1424;
             --surface-2: #111b2e;
-            --surface-soft: rgba(17, 27, 46, 0.72);
 
             --text: #edf4ff;
             --text-soft: #a7b4c8;
@@ -27,15 +26,7 @@
             --border-bright: rgba(117, 211, 255, 0.28);
 
             --cyan: #69d8ff;
-            --cyan-soft: rgba(105, 216, 255, 0.12);
-
-            --violet: #a58cff;
-            --violet-soft: rgba(165, 140, 255, 0.12);
-
             --green: #7ee6c4;
-
-            --shadow:
-                0 18px 50px rgba(0, 0, 0, 0.28);
         }
 
 
@@ -74,18 +65,13 @@
             background:
                 radial-gradient(
                     circle at 15% 20%,
-                    rgba(72, 111, 255, 0.12),
+                    rgba(72, 111, 255, 0.10),
                     transparent 28%
                 ),
                 radial-gradient(
                     circle at 80% 10%,
-                    rgba(129, 79, 255, 0.11),
+                    rgba(129, 79, 255, 0.08),
                     transparent 25%
-                ),
-                radial-gradient(
-                    circle at 50% 80%,
-                    rgba(50, 196, 255, 0.06),
-                    transparent 30%
                 ),
                 var(--bg);
         }
@@ -99,46 +85,19 @@
 
             pointer-events: none;
 
-            opacity: 0.52;
+            opacity: 0.42;
 
             background-image:
-                radial-gradient(circle, rgba(255,255,255,0.82) 0 1px, transparent 1.2px),
-                radial-gradient(circle, rgba(105,216,255,0.55) 0 1px, transparent 1.2px),
-                radial-gradient(circle, rgba(165,140,255,0.48) 0 1px, transparent 1.1px);
+                radial-gradient(circle, rgba(255,255,255,0.70) 0 1px, transparent 1.2px),
+                radial-gradient(circle, rgba(105,216,255,0.40) 0 1px, transparent 1.2px);
 
             background-size:
-                110px 110px,
-                170px 170px,
-                230px 230px;
+                120px 120px,
+                190px 190px;
 
             background-position:
                 12px 18px,
-                52px 74px,
-                120px 25px;
-
-            z-index: -2;
-        }
-
-
-        body::after {
-            content: "";
-
-            position: fixed;
-
-            width: 620px;
-            height: 620px;
-
-            top: -310px;
-            right: -250px;
-
-            border: 1px solid rgba(105, 216, 255, 0.07);
-            border-radius: 50%;
-
-            box-shadow:
-                0 0 0 80px rgba(105,216,255,0.018),
-                0 0 0 160px rgba(165,140,255,0.012);
-
-            pointer-events: none;
+                58px 78px;
 
             z-index: -2;
         }
@@ -170,7 +129,7 @@
             top: 0;
             z-index: 1000;
 
-            background: rgba(7, 11, 22, 0.82);
+            background: rgba(7, 11, 22, 0.88);
 
             border-bottom: 1px solid var(--border);
 
@@ -190,8 +149,6 @@
 
 
         .logo {
-            position: relative;
-
             font-size: 1rem;
             font-weight: 700;
 
@@ -214,7 +171,7 @@
             background: var(--cyan);
 
             box-shadow:
-                0 0 12px rgba(105, 216, 255, 0.85);
+                0 0 10px rgba(105, 216, 255, 0.65);
         }
 
 
@@ -231,17 +188,12 @@
 
 
         .nav-links a {
-            transition:
-                color 0.2s ease,
-                text-shadow 0.2s ease;
+            transition: color 0.2s ease;
         }
 
 
         .nav-links a:hover {
             color: var(--cyan);
-
-            text-shadow:
-                0 0 18px rgba(105,216,255,0.35);
         }
 
 
@@ -256,54 +208,6 @@
             padding: 115px 0 105px;
 
             border-bottom: 1px solid var(--border);
-        }
-
-
-        .hero::before {
-            content: "";
-
-            position: absolute;
-
-            width: 470px;
-            height: 470px;
-
-            right: 4%;
-            top: 50%;
-
-            transform: translateY(-50%);
-
-            border: 1px solid rgba(105,216,255,0.09);
-            border-radius: 50%;
-
-            box-shadow:
-                inset 0 0 80px rgba(105,216,255,0.015),
-                0 0 80px rgba(105,216,255,0.025);
-
-            pointer-events: none;
-        }
-
-
-        .hero::after {
-            content: "";
-
-            position: absolute;
-
-            width: 330px;
-            height: 330px;
-
-            right: 8.5%;
-            top: 50%;
-
-            transform:
-                translateY(-50%)
-                rotate(-18deg);
-
-            border:
-                1px solid rgba(165,140,255,0.08);
-
-            border-radius: 50%;
-
-            pointer-events: none;
         }
 
 
@@ -329,10 +233,10 @@
             color: var(--cyan);
 
             background:
-                rgba(105, 216, 255, 0.06);
+                rgba(105, 216, 255, 0.05);
 
             border:
-                1px solid rgba(105, 216, 255, 0.18);
+                1px solid rgba(105, 216, 255, 0.15);
 
             border-radius: 20px;
 
@@ -354,9 +258,6 @@
             border-radius: 50%;
 
             background: var(--cyan);
-
-            box-shadow:
-                0 0 9px rgba(105, 216, 255, 0.95);
         }
 
 
@@ -370,18 +271,7 @@
 
             letter-spacing: -0.06em;
 
-            background:
-                linear-gradient(
-                    110deg,
-                    #ffffff 5%,
-                    #d9e7ff 55%,
-                    #8fe3ff 100%
-                );
-
-            -webkit-background-clip: text;
-            background-clip: text;
-
-            color: transparent;
+            color: #f3f7ff;
         }
 
 
@@ -450,7 +340,6 @@
             transition:
                 transform 0.2s ease,
                 border-color 0.2s ease,
-                box-shadow 0.2s ease,
                 background 0.2s ease;
         }
 
@@ -458,18 +347,9 @@
         .button.primary {
             color: #05101a;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #84e4ff,
-                    #71c9ff
-                );
+            background: #78d9ff;
 
-            border-color:
-                rgba(105,216,255,0.7);
-
-            box-shadow:
-                0 8px 24px rgba(68,184,255,0.17);
+            border-color: #78d9ff;
         }
 
 
@@ -485,15 +365,7 @@
 
 
         .button.primary:hover {
-            background:
-                linear-gradient(
-                    135deg,
-                    #9beaff,
-                    #85d4ff
-                );
-
-            box-shadow:
-                0 10px 30px rgba(68,184,255,0.23);
+            background: #91e2ff;
         }
 
 
@@ -541,15 +413,7 @@
 
             border-radius: 2px;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    var(--cyan),
-                    var(--violet)
-                );
-
-            box-shadow:
-                0 0 10px rgba(105,216,255,0.25);
+            background: var(--cyan);
         }
 
 
@@ -609,7 +473,7 @@
             color: #c9d8ec;
 
             background:
-                rgba(112, 157, 220, 0.055);
+                rgba(112, 157, 220, 0.045);
 
             border:
                 1px solid rgba(144, 171, 212, 0.14);
@@ -618,21 +482,6 @@
 
             font-size: 0.82rem;
             font-weight: 500;
-
-            transition:
-                border-color 0.2s ease,
-                color 0.2s ease,
-                transform 0.2s ease;
-        }
-
-
-        .skill:hover {
-            transform: translateY(-1px);
-
-            color: var(--cyan);
-
-            border-color:
-                rgba(105,216,255,0.35);
         }
 
 
@@ -641,11 +490,7 @@
 
         #projects {
             background:
-                linear-gradient(
-                    180deg,
-                    rgba(10, 17, 31, 0.72),
-                    rgba(7, 11, 22, 0.55)
-                );
+                rgba(8, 14, 27, 0.55);
         }
 
 
@@ -664,11 +509,7 @@
             padding: 30px;
 
             background:
-                linear-gradient(
-                    145deg,
-                    rgba(16, 26, 45, 0.92),
-                    rgba(10, 17, 31, 0.92)
-                );
+                rgba(13, 20, 36, 0.96);
 
             border:
                 1px solid var(--border);
@@ -682,30 +523,6 @@
                 transform 0.22s ease,
                 box-shadow 0.22s ease,
                 border-color 0.22s ease;
-        }
-
-
-        .project::before {
-            content: "";
-
-            position: absolute;
-
-            width: 180px;
-            height: 180px;
-
-            top: -100px;
-            right: -90px;
-
-            border-radius: 50%;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(105,216,255,0.08),
-                    transparent 70%
-                );
-
-            pointer-events: none;
         }
 
 
@@ -803,10 +620,10 @@
             color: var(--green);
 
             background:
-                rgba(126, 230, 196, 0.07);
+                rgba(126, 230, 196, 0.06);
 
             border-color:
-                rgba(126, 230, 196, 0.18);
+                rgba(126, 230, 196, 0.16);
         }
 
 
@@ -834,10 +651,10 @@
             color: var(--text-soft);
 
             background:
-                rgba(105,216,255,0.035);
+                rgba(105,216,255,0.025);
 
             border:
-                1px solid rgba(105,216,255,0.12);
+                1px solid rgba(105,216,255,0.10);
 
             border-radius: 7px;
 
@@ -882,8 +699,7 @@
 
             min-width: 0;
 
-            background:
-                #0a1020;
+            background: #0a1020;
         }
 
 
@@ -898,12 +714,7 @@
 
             overflow: hidden;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #10182a,
-                    #0a1020
-                );
+            background: #0d1526;
         }
 
 
@@ -935,20 +746,13 @@
 
             color: #aebbd0;
 
-            background:
-                #0d1526;
+            background: #0d1526;
 
             border-top:
                 1px solid var(--border);
 
             font-size: 0.75rem;
             font-weight: 500;
-        }
-
-
-        .project-image.rover-integration
-        .project-image-image {
-            background: #0a1020;
         }
 
 
@@ -959,17 +763,12 @@
 
 
 
-        /* HARDWARE VALIDATION VIDEO */
+        /* HARDWARE VALIDATION SECTION */
 
         .project-video {
             padding: 40px 34px;
 
-            background:
-                linear-gradient(
-                    180deg,
-                    #0c1424,
-                    #09101d
-                );
+            background: #09101d;
 
             border-bottom:
                 1px solid var(--border);
@@ -998,7 +797,7 @@
 
 
 
-        /* VIDEO CONTAINER */
+        /* VIDEO */
 
         .video-frame {
             position: relative;
@@ -1009,16 +808,15 @@
 
             overflow: hidden;
 
-            background: #03060c;
+            background: #070b12;
 
             border:
-                1px solid rgba(105,216,255,0.23);
+                1px solid rgba(150,175,215,0.18);
 
-            border-radius: 12px;
+            border-radius: 10px;
 
             box-shadow:
-                0 14px 45px rgba(0,0,0,0.32),
-                0 0 30px rgba(105,216,255,0.035);
+                0 12px 35px rgba(0,0,0,0.28);
         }
 
 
@@ -1035,7 +833,7 @@
 
 
 
-        /* VIDEO COVER */
+        /* SIMPLE VIDEO COVER */
 
         .video-cover {
             position: absolute;
@@ -1045,55 +843,19 @@
             z-index: 2;
 
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            align-items: flex-end;
 
-            padding: 35px;
-
-            text-align: center;
+            padding: 34px;
 
             color: white;
 
-            background:
-                radial-gradient(
-                    circle at 70% 25%,
-                    rgba(72, 112, 255, 0.22),
-                    transparent 40%
-                ),
-                radial-gradient(
-                    circle at 25% 80%,
-                    rgba(105, 216, 255, 0.10),
-                    transparent 38%
-                ),
-                linear-gradient(
-                    135deg,
-                    #080d1a,
-                    #10182c
-                );
+            background: #0b1322;
 
             cursor: pointer;
 
             transition:
-                opacity 0.25s ease,
-                visibility 0.25s ease;
-        }
-
-
-        .video-cover::before {
-            content: "";
-
-            position: absolute;
-
-            width: 220px;
-            height: 220px;
-
-            border:
-                1px solid rgba(105,216,255,0.07);
-
-            border-radius: 50%;
-
-            pointer-events: none;
+                opacity 0.2s ease,
+                visibility 0.2s ease;
         }
 
 
@@ -1106,74 +868,75 @@
         }
 
 
+        .video-cover-content {
+            width: 100%;
+            max-width: 520px;
+        }
+
+
         .video-cover-label {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
 
             color: var(--cyan);
 
-            font-size: 0.7rem;
+            font-size: 0.69rem;
             font-weight: 700;
 
-            letter-spacing: 0.13em;
+            letter-spacing: 0.11em;
 
             text-transform: uppercase;
         }
 
 
         .video-cover h4 {
-            margin-bottom: 12px;
+            margin-bottom: 9px;
 
             font-size:
-                clamp(1.3rem, 3vw, 1.8rem);
+                clamp(1.2rem, 3vw, 1.55rem);
 
             line-height: 1.2;
 
-            letter-spacing: -0.025em;
+            letter-spacing: -0.02em;
+
+            color: #f2f6fc;
         }
 
 
         .video-cover-description {
-            max-width: 500px;
+            max-width: 470px;
 
-            margin-bottom: 23px;
+            margin-bottom: 20px;
 
-            color: #aebcd0;
+            color: #9caabd;
 
-            font-size: 0.88rem;
-            line-height: 1.6;
+            font-size: 0.84rem;
+
+            line-height: 1.55;
         }
 
 
-        .video-cover-details {
+        .video-meta {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            align-items: center;
 
-            gap: 8px;
+            gap: 10px;
 
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+
+            color: #7f8da2;
+
+            font-size: 0.72rem;
         }
 
 
-        .video-cover-detail {
-            padding: 6px 10px;
+        .video-meta span + span::before {
+            content: "•";
 
-            color: #c6d4e8;
+            margin-right: 10px;
 
-            background:
-                rgba(255,255,255,0.035);
-
-            border:
-                1px solid rgba(150,175,215,0.16);
-
-            border-radius: 20px;
-
-            font-size: 0.71rem;
+            color: #526177;
         }
 
-
-
-        /* PLAY BUTTON */
 
         .video-play-button {
             display: inline-flex;
@@ -1181,43 +944,37 @@
 
             gap: 9px;
 
-            padding: 10px 17px;
+            padding: 9px 14px;
 
-            color: #06111b;
+            color: #dce8f5;
 
             background:
-                linear-gradient(
-                    135deg,
-                    #91e8ff,
-                    #73ccff
-                );
+                rgba(255,255,255,0.04);
 
             border:
-                1px solid rgba(105,216,255,0.5);
+                1px solid rgba(160,180,210,0.20);
 
-            border-radius: 8px;
+            border-radius: 6px;
 
             font-family: inherit;
 
-            font-size: 0.82rem;
-            font-weight: 700;
+            font-size: 0.79rem;
+            font-weight: 600;
 
             cursor: pointer;
 
-            box-shadow:
-                0 8px 24px rgba(70,180,255,0.16);
-
             transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
+                background 0.2s ease,
+                border-color 0.2s ease;
         }
 
 
         .video-play-button:hover {
-            transform: translateY(-2px);
+            background:
+                rgba(105,216,255,0.07);
 
-            box-shadow:
-                0 10px 30px rgba(70,180,255,0.24);
+            border-color:
+                rgba(105,216,255,0.35);
         }
 
 
@@ -1226,13 +983,13 @@
             height: 0;
 
             border-top:
-                5px solid transparent;
+                4px solid transparent;
 
             border-bottom:
-                5px solid transparent;
+                4px solid transparent;
 
             border-left:
-                8px solid #07121c;
+                7px solid var(--cyan);
         }
 
 
@@ -1272,7 +1029,7 @@
             color: #b7c7dc;
 
             background:
-                rgba(120, 151, 200, 0.04);
+                rgba(120, 151, 200, 0.035);
 
             border:
                 1px solid rgba(135, 162, 205, 0.14);
@@ -1347,39 +1104,9 @@
         /* CONTACT */
 
         #contact {
-            position: relative;
-
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle at 75% 20%,
-                    rgba(91, 90, 255, 0.10),
-                    transparent 32%
-                ),
-                #050914;
+            background: #050914;
 
             border-bottom: none;
-        }
-
-
-        #contact::before {
-            content: "";
-
-            position: absolute;
-
-            width: 300px;
-            height: 300px;
-
-            right: 7%;
-            bottom: -180px;
-
-            border:
-                1px solid rgba(105,216,255,0.07);
-
-            border-radius: 50%;
-
-            pointer-events: none;
         }
 
 
@@ -1422,11 +1149,6 @@
             .project-gallery {
                 grid-template-columns:
                     repeat(2, minmax(0, 1fr));
-            }
-
-            .hero::before,
-            .hero::after {
-                opacity: 0.45;
             }
         }
 
@@ -1478,21 +1200,8 @@
                 font-size: 3.25rem;
             }
 
-            .hero::before,
-            .hero::after {
-                display: none;
-            }
-
             .video-cover {
-                padding: 22px;
-            }
-
-            .video-cover-description {
-                font-size: 0.8rem;
-            }
-
-            .video-cover-details {
-                margin-bottom: 18px;
+                padding: 24px;
             }
         }
 
@@ -1507,7 +1216,7 @@
                 height: 300px;
             }
 
-            .video-cover-details {
+            .video-meta {
                 display: none;
             }
         }
@@ -1904,54 +1613,63 @@
 
 
 
+                                <!-- SIMPLE VIDEO COVER -->
+
                                 <div
                                     class="video-cover"
                                     id="lighting-video-cover">
 
 
-                                    <div class="video-cover-label">
-                                        Lab Validation Video
+                                    <div class="video-cover-content">
+
+
+                                        <div class="video-cover-label">
+                                            Lab Validation
+                                        </div>
+
+
+                                        <h4>
+                                            CAN and PWM Bench Test
+                                        </h4>
+
+
+                                        <div class="video-cover-description">
+                                            Testing USB-CAN communication,
+                                            command feedback, and PWM controlled
+                                            lighting during board bring-up.
+                                        </div>
+
+
+                                        <div class="video-meta">
+
+                                            <span>
+                                                31 sec
+                                            </span>
+
+                                            <span>
+                                                USB-CAN
+                                            </span>
+
+                                            <span>
+                                                PWM
+                                            </span>
+
+                                        </div>
+
+
+                                        <button
+                                            class="video-play-button"
+                                            id="lighting-play-button"
+                                            type="button">
+
+                                            <span class="play-icon"></span>
+
+                                            Watch validation clip
+
+                                        </button>
+
+
                                     </div>
-
-
-                                    <h4>
-                                        Rover Lighting Control System
-                                    </h4>
-
-
-                                    <div class="video-cover-description">
-                                        Bench setup, USB-CAN adapter communication,
-                                        and PWM controlled lighting validation.
-                                    </div>
-
-
-                                    <div class="video-cover-details">
-
-                                        <span class="video-cover-detail">
-                                            USB-CAN Communication
-                                        </span>
-
-                                        <span class="video-cover-detail">
-                                            PWM Control
-                                        </span>
-
-                                        <span class="video-cover-detail">
-                                            Hardware Bring-Up
-                                        </span>
-
-                                    </div>
-
-
-                                    <button
-                                        class="video-play-button"
-                                        id="lighting-play-button"
-                                        type="button">
-
-                                        <span class="play-icon"></span>
-
-                                        Play Video
-
-                                    </button>
 
 
                                 </div>
@@ -2383,7 +2101,7 @@
 
 
 
-    <!-- VIDEO COVER SCRIPT -->
+    <!-- VIDEO SCRIPT -->
 
     <script>
 
