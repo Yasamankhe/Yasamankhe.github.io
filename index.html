@@ -13,21 +13,27 @@
     <style>
 
         :root {
-            --bg: #070b16;
-            --bg-deep: #040711;
-            --surface: #0d1424;
-            --surface-2: #111b2e;
+            --background: #f3f2ee;
+            --surface: #fbfaf7;
+            --surface-soft: #eeefec;
 
-            --text: #edf4ff;
-            --text-soft: #a7b4c8;
-            --text-muted: #7d8ba2;
+            --text: #1d2730;
+            --text-soft: #66717b;
+            --text-muted: #899199;
 
-            --border: rgba(155, 178, 216, 0.15);
-            --border-bright: rgba(117, 211, 255, 0.28);
+            --border: #d9ddd9;
+            --border-dark: #c8ceca;
 
-            --cyan: #69d8ff;
-            --green: #7ee6c4;
+            --accent: #356c7d;
+            --accent-dark: #285766;
+            --accent-soft: #e5eef0;
+
+            --green: #537766;
+
+            --shadow:
+                0 14px 35px rgba(34, 46, 52, 0.06);
         }
+
 
         * {
             box-sizing: border-box;
@@ -35,13 +41,13 @@
             padding: 0;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
 
-        body {
-            position: relative;
 
+        body {
             min-height: 100vh;
 
             overflow-x: hidden;
@@ -59,54 +65,21 @@
 
             color: var(--text);
 
-            background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(72, 111, 255, 0.10),
-                    transparent 28%
-                ),
-                radial-gradient(
-                    circle at 80% 10%,
-                    rgba(129, 79, 255, 0.08),
-                    transparent 25%
-                ),
-                var(--bg);
+            background: var(--background);
         }
 
-        body::before {
-            content: "";
-
-            position: fixed;
-            inset: 0;
-
-            pointer-events: none;
-
-            opacity: 0.42;
-
-            background-image:
-                radial-gradient(circle, rgba(255,255,255,0.70) 0 1px, transparent 1.2px),
-                radial-gradient(circle, rgba(105,216,255,0.40) 0 1px, transparent 1.2px);
-
-            background-size:
-                120px 120px,
-                190px 190px;
-
-            background-position:
-                12px 18px,
-                58px 78px;
-
-            z-index: -2;
-        }
 
         a {
             color: inherit;
             text-decoration: none;
         }
 
+
         img,
         video {
             max-width: 100%;
         }
+
 
         .container {
             width: min(1120px, 90%);
@@ -122,47 +95,49 @@
             top: 0;
             z-index: 1000;
 
-            background: rgba(7, 11, 22, 0.88);
+            background: rgba(243, 242, 238, 0.92);
 
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(201, 206, 202, 0.8);
 
-            backdrop-filter: blur(18px);
+            backdrop-filter: blur(14px);
         }
+
 
         .nav-inner {
             min-height: 70px;
 
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
 
             gap: 30px;
         }
 
+
         .logo {
-            font-size: 1rem;
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            font-size: 0.98rem;
             font-weight: 700;
 
             letter-spacing: -0.01em;
         }
 
-        .logo::before {
-            content: "";
 
-            display: inline-block;
-
+        .logo-dot {
             width: 7px;
             height: 7px;
 
-            margin-right: 10px;
+            flex-shrink: 0;
 
             border-radius: 50%;
 
-            background: var(--cyan);
-
-            box-shadow:
-                0 0 10px rgba(105, 216, 255, 0.65);
+            background: var(--accent);
         }
+
 
         .nav-links {
             display: flex;
@@ -170,17 +145,19 @@
 
             gap: 28px;
 
-            font-size: 0.9rem;
-
             color: var(--text-soft);
+
+            font-size: 0.88rem;
         }
+
 
         .nav-links a {
             transition: color 0.2s ease;
         }
 
+
         .nav-links a:hover {
-            color: var(--cyan);
+            color: var(--accent);
         }
 
 
@@ -188,42 +165,23 @@
         /* HERO */
 
         .hero {
-            position: relative;
-
-            overflow: hidden;
-
-            padding: 115px 0 105px;
+            padding: 110px 0 100px;
 
             border-bottom: 1px solid var(--border);
         }
 
+
         .hero-content {
-            position: relative;
-
             max-width: 850px;
-
-            z-index: 2;
         }
 
+
         .eyebrow {
-            display: inline-flex;
-            align-items: center;
+            display: inline-block;
 
-            gap: 9px;
+            margin-bottom: 21px;
 
-            margin-bottom: 22px;
-
-            padding: 6px 10px;
-
-            color: var(--cyan);
-
-            background:
-                rgba(105, 216, 255, 0.05);
-
-            border:
-                1px solid rgba(105, 216, 255, 0.15);
-
-            border-radius: 20px;
+            color: var(--accent);
 
             font-size: 0.72rem;
             font-weight: 700;
@@ -233,34 +191,27 @@
             text-transform: uppercase;
         }
 
-        .eyebrow::before {
-            content: "";
-
-            width: 5px;
-            height: 5px;
-
-            border-radius: 50%;
-
-            background: var(--cyan);
-        }
 
         .hero h1 {
-            margin-bottom: 25px;
+            margin-bottom: 26px;
 
             font-size:
-                clamp(3.4rem, 7vw, 5.5rem);
+                clamp(3.4rem, 7vw, 5.4rem);
 
-            line-height: 0.95;
+            line-height: 0.96;
 
             letter-spacing: -0.06em;
 
-            color: #f3f7ff;
+            color: #182229;
         }
+
 
         .hero .headline {
             max-width: 740px;
 
-            margin-bottom: 17px;
+            margin-bottom: 15px;
+
+            color: #37434b;
 
             font-size:
                 clamp(1.5rem, 3vw, 2.05rem);
@@ -268,18 +219,17 @@
             font-weight: 500;
 
             letter-spacing: -0.025em;
-
-            color: #dce8fa;
         }
+
 
         .hero .description {
             max-width: 700px;
 
-            margin-bottom: 34px;
+            margin-bottom: 32px;
 
             color: var(--text-soft);
 
-            font-size: 1.04rem;
+            font-size: 1.02rem;
         }
 
 
@@ -295,105 +245,109 @@
             flex-wrap: wrap;
         }
 
+
         .button {
             display: inline-flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
 
             min-height: 44px;
 
             padding: 10px 18px;
 
-            border:
-                1px solid rgba(160, 180, 214, 0.22);
+            border: 1px solid var(--border-dark);
+            border-radius: 7px;
 
-            border-radius: 8px;
+            background: transparent;
 
-            background:
-                rgba(255,255,255,0.025);
+            color: #37434b;
 
-            color: #dbe7f7;
-
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
 
             transition:
                 transform 0.2s ease,
-                border-color 0.2s ease,
-                background 0.2s ease;
+                background 0.2s ease,
+                border-color 0.2s ease;
         }
 
-        .button.primary {
-            color: #05101a;
-
-            background: #78d9ff;
-
-            border-color: #78d9ff;
-        }
 
         .button:hover {
-            transform: translateY(-2px);
+            transform: translateY(-1px);
 
-            border-color:
-                rgba(105,216,255,0.5);
+            border-color: #aeb8b4;
 
-            background:
-                rgba(105,216,255,0.06);
+            background: rgba(255,255,255,0.4);
         }
+
+
+        .button.primary {
+            color: white;
+
+            border-color: var(--accent);
+
+            background: var(--accent);
+        }
+
 
         .button.primary:hover {
-            background: #91e2ff;
+            background: var(--accent-dark);
+
+            border-color: var(--accent-dark);
         }
 
 
 
-        /* GENERAL SECTIONS */
+        /* SECTIONS */
 
         section {
             padding: 90px 0;
 
-            border-bottom:
-                1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
+
 
         .section-heading {
             display: flex;
             justify-content: space-between;
-            align-items: end;
+            align-items: flex-end;
 
             gap: 30px;
 
             margin-bottom: 42px;
         }
 
-        .section-title {
-            font-size:
-                clamp(1.8rem, 3vw, 2.25rem);
 
-            letter-spacing: -0.035em;
+        .section-title {
+            color: #202a31;
+
+            font-size:
+                clamp(1.8rem, 3vw, 2.2rem);
 
             line-height: 1.1;
+
+            letter-spacing: -0.035em;
         }
+
 
         .section-title::after {
             content: "";
 
             display: block;
 
-            width: 42px;
+            width: 38px;
             height: 2px;
 
             margin-top: 12px;
 
-            border-radius: 2px;
-
-            background: var(--cyan);
+            background: var(--accent);
         }
+
 
         .section-label {
             color: var(--text-muted);
 
-            font-size: 0.84rem;
+            font-size: 0.82rem;
         }
 
 
@@ -401,54 +355,54 @@
         /* ABOUT */
 
         #about {
-            background:
-                rgba(7, 11, 22, 0.25);
+            background: #f7f6f2;
         }
+
 
         .about-grid {
             display: grid;
 
-            grid-template-columns:
-                1.1fr 1fr;
+            grid-template-columns: 1.1fr 1fr;
 
             gap: 80px;
         }
+
 
         .about-text {
             max-width: 620px;
 
             color: var(--text-soft);
 
-            font-size: 1.04rem;
+            font-size: 1.02rem;
         }
+
 
         .about-text p + p {
             margin-top: 18px;
         }
 
+
         .skills {
             display: flex;
             flex-wrap: wrap;
 
-            gap: 9px;
-
             align-content: flex-start;
+
+            gap: 8px;
         }
 
+
         .skill {
-            padding: 7px 12px;
+            padding: 7px 11px;
 
-            color: #c9d8ec;
+            color: #536068;
 
-            background:
-                rgba(112, 157, 220, 0.045);
+            background: #f1f1ed;
 
-            border:
-                1px solid rgba(144, 171, 212, 0.14);
+            border: 1px solid var(--border);
+            border-radius: 5px;
 
-            border-radius: 6px;
-
-            font-size: 0.82rem;
+            font-size: 0.81rem;
             font-weight: 500;
         }
 
@@ -457,57 +411,55 @@
         /* PROJECTS */
 
         #projects {
-            background:
-                rgba(8, 14, 27, 0.55);
+            background: var(--background);
         }
+
 
         .projects {
             display: grid;
 
-            gap: 25px;
+            gap: 24px;
         }
+
 
         .project {
-            position: relative;
-
-            overflow: hidden;
-
             padding: 30px;
 
-            background:
-                rgba(13, 20, 36, 0.96);
+            background: var(--surface);
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
+            border-radius: 11px;
 
-            border-radius: 14px;
-
-            box-shadow:
-                0 15px 45px rgba(0,0,0,0.16);
+            box-shadow: var(--shadow);
 
             transition:
-                transform 0.22s ease,
-                box-shadow 0.22s ease,
-                border-color 0.22s ease;
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
         }
+
 
         .project:hover {
-            transform: translateY(-4px);
+            transform: translateY(-2px);
 
-            border-color:
-                var(--border-bright);
+            border-color: #c7ceca;
 
             box-shadow:
-                0 22px 60px rgba(0,0,0,0.26);
+                0 18px 42px rgba(34, 46, 52, 0.08);
         }
+
 
         .project.featured {
             padding: 0;
+
+            overflow: hidden;
         }
 
+
         .featured-content {
-            padding: 36px 36px 29px;
+            padding: 34px 34px 30px;
         }
+
 
         .project-header {
             display: flex;
@@ -519,14 +471,15 @@
             margin-bottom: 14px;
         }
 
+
         .project-category {
             display: block;
 
-            margin-bottom: 7px;
+            margin-bottom: 6px;
 
-            color: var(--cyan);
+            color: var(--accent);
 
-            font-size: 0.7rem;
+            font-size: 0.69rem;
             font-weight: 700;
 
             letter-spacing: 0.1em;
@@ -534,53 +487,52 @@
             text-transform: uppercase;
         }
 
+
         .project h3 {
+            color: #202a31;
+
             font-size: 1.42rem;
 
             line-height: 1.25;
 
             letter-spacing: -0.025em;
-
-            color: #f1f6ff;
         }
 
+
         .project p {
-            max-width: 880px;
+            max-width: 860px;
 
             margin-bottom: 20px;
 
             color: var(--text-soft);
         }
 
+
         .status {
             flex-shrink: 0;
 
             padding: 5px 10px;
 
-            border-radius: 20px;
+            color: #64706f;
 
-            color: #a9b8cc;
+            background: #f0f1ed;
 
-            background:
-                rgba(150, 170, 204, 0.06);
+            border: 1px solid var(--border);
+            border-radius: 30px;
 
-            border:
-                1px solid rgba(150,170,204,0.14);
-
-            font-size: 0.73rem;
+            font-size: 0.72rem;
             font-weight: 600;
 
             white-space: nowrap;
         }
 
+
         .featured .status {
             color: var(--green);
 
-            background:
-                rgba(126, 230, 196, 0.06);
+            background: #ebf1ec;
 
-            border-color:
-                rgba(126, 230, 196, 0.16);
+            border-color: #d3dfd6;
         }
 
 
@@ -591,10 +543,11 @@
             display: flex;
             flex-wrap: wrap;
 
-            gap: 10px;
+            gap: 9px;
 
-            margin: 24px 0 26px;
+            margin: 23px 0 25px;
         }
+
 
         .project-highlights span {
             display: flex;
@@ -602,461 +555,127 @@
 
             gap: 5px;
 
-            padding: 8px 12px;
+            padding: 7px 11px;
 
             color: var(--text-soft);
 
-            background:
-                rgba(105,216,255,0.025);
+            background: #f1f2ef;
 
-            border:
-                1px solid rgba(105,216,255,0.10);
-
-            border-radius: 7px;
-
-            font-size: 0.79rem;
-        }
-
-        .project-highlights strong {
-            color: #f0f7ff;
-
-            font-size: 0.88rem;
-
-            font-weight: 700;
-        }
-
-
-
-        /* SCHEMATIC LINK */
-
-        .schematic-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 24px;
-
-            width: 100%;
-
-            margin-top: 4px;
-
-            padding: 18px 20px;
-
-            background: #0a1220;
-
-            border:
-                1px solid rgba(150, 175, 215, 0.16);
-
-            border-radius: 9px;
-
-            transition:
-                border-color 0.2s ease,
-                background 0.2s ease,
-                transform 0.2s ease;
-        }
-
-        .schematic-link:hover {
-            transform: translateY(-1px);
-
-            background: #0d1728;
-
-            border-color:
-                rgba(105, 216, 255, 0.38);
-        }
-
-        .schematic-left {
-            min-width: 0;
-        }
-
-        .schematic-label {
-            margin-bottom: 3px;
-
-            color: var(--cyan);
-
-            font-size: 0.66rem;
-            font-weight: 700;
-
-            letter-spacing: 0.11em;
-
-            text-transform: uppercase;
-        }
-
-        .schematic-title {
-            margin-bottom: 2px;
-
-            color: #edf4ff;
-
-            font-size: 0.98rem;
-            font-weight: 600;
-
-            letter-spacing: -0.01em;
-        }
-
-        .schematic-description {
-            color: var(--text-muted);
+            border: 1px solid var(--border);
+            border-radius: 6px;
 
             font-size: 0.78rem;
         }
 
-        .schematic-action {
+
+        .project-highlights strong {
+            color: var(--text);
+
+            font-size: 0.86rem;
+        }
+
+
+
+        /* HOMEPAGE PROJECT PREVIEW */
+
+        .project-preview {
+            display: grid;
+
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+
+            gap: 1px;
+
+            background: var(--border);
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .project-preview-image {
+            height: 250px;
+
+            overflow: hidden;
+
+            background: #eceeeb;
+        }
+
+
+        .project-preview-image img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            padding: 14px;
+
+            transition: transform 0.25s ease;
+        }
+
+
+        .project:hover .project-preview-image img {
+            transform: scale(1.015);
+        }
+
+
+
+        /* FEATURED BOTTOM */
+
+        .featured-bottom {
             display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 25px;
+
+            padding: 24px 34px 28px;
+        }
+
+
+        .featured-bottom .tags {
+            flex: 1;
+        }
+
+
+        .project-link {
+            display: inline-flex;
             align-items: center;
 
             gap: 9px;
 
             flex-shrink: 0;
 
-            color: #aab9cc;
-
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .schematic-pdf {
-            padding: 4px 7px;
-
-            border:
-                1px solid rgba(150, 175, 215, 0.16);
-
-            border-radius: 4px;
-
-            color: #8f9fb5;
-
-            font-size: 0.64rem;
-
-            letter-spacing: 0.07em;
-        }
-
-        .schematic-arrow {
-            color: var(--cyan);
-
-            font-size: 1rem;
-
-            transition: transform 0.2s ease;
-        }
-
-        .schematic-link:hover .schematic-arrow {
-            transform: translate(2px, -2px);
-        }
-
-
-
-        /* LIGHTING PROJECT IMAGE GALLERY */
-
-        .project-gallery {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 1px;
-
-            background:
-                rgba(135, 160, 200, 0.14);
-
-            border-top:
-                1px solid var(--border);
-
-            border-bottom:
-                1px solid var(--border);
-        }
-
-        .project-image {
-            display: flex;
-            flex-direction: column;
-
-            min-width: 0;
-
-            background: #0a1020;
-        }
-
-        .project-image-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            height: 280px;
-
-            padding: 15px;
-
-            overflow: hidden;
-
-            background: #0d1526;
-        }
-
-        .project-image img {
-            display: block;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-
-            transition:
-                transform 0.3s ease,
-                filter 0.3s ease;
-        }
-
-        .project-image:hover img {
-            transform: scale(1.02);
-
-            filter: brightness(1.05);
-        }
-
-        .project-image figcaption {
-            min-height: 44px;
-
-            padding: 11px 14px;
-
-            color: #aebbd0;
-
-            background: #0d1526;
-
-            border-top:
-                1px solid var(--border);
-
-            font-size: 0.75rem;
-            font-weight: 500;
-        }
-
-        .project-image.rover-integration img {
-            object-fit: cover;
-            object-position: center center;
-        }
-
-
-
-        /* HARDWARE VALIDATION SECTION */
-
-        .project-video {
-            padding: 40px 34px;
-
-            background: #09101d;
-
-            border-bottom:
-                1px solid var(--border);
-        }
-
-        .project-video-inner {
-            width: min(720px, 100%);
-
-            margin: 0 auto;
-        }
-
-        .project-video-heading {
-            margin-bottom: 13px;
-
-            color: #dce8fa;
-
-            font-size: 0.78rem;
-            font-weight: 700;
-
-            letter-spacing: 0.08em;
-
-            text-transform: uppercase;
-        }
-
-
-
-        /* VIDEO */
-
-        .video-frame {
-            position: relative;
-
-            width: 100%;
-
-            aspect-ratio: 16 / 9;
-
-            overflow: hidden;
-
-            background: #070b12;
-
-            border:
-                1px solid rgba(150,175,215,0.18);
-
-            border-radius: 10px;
-
-            box-shadow:
-                0 12px 35px rgba(0,0,0,0.28);
-        }
-
-        .video-frame video {
-            display: block;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-
-            background: #000;
-        }
-
-
-
-        /* SIMPLE VIDEO COVER */
-
-        .video-cover {
-            position: absolute;
-
-            inset: 0;
-
-            z-index: 2;
-
-            display: flex;
-            align-items: flex-end;
-
-            padding: 34px;
-
-            color: white;
-
-            background: #0b1322;
-
-            cursor: pointer;
-
-            transition:
-                opacity 0.2s ease,
-                visibility 0.2s ease;
-        }
-
-        .video-cover.hidden {
-            opacity: 0;
-
-            visibility: hidden;
-
-            pointer-events: none;
-        }
-
-        .video-cover-content {
-            width: 100%;
-            max-width: 520px;
-        }
-
-        .video-cover-label {
-            margin-bottom: 8px;
-
-            color: var(--cyan);
-
-            font-size: 0.69rem;
-            font-weight: 700;
-
-            letter-spacing: 0.11em;
-
-            text-transform: uppercase;
-        }
-
-        .video-cover h4 {
-            margin-bottom: 9px;
-
-            font-size:
-                clamp(1.2rem, 3vw, 1.55rem);
-
-            line-height: 1.2;
-
-            letter-spacing: -0.02em;
-
-            color: #f2f6fc;
-        }
-
-        .video-cover-description {
-            max-width: 470px;
-
-            margin-bottom: 20px;
-
-            color: #9caabd;
-
-            font-size: 0.84rem;
-
-            line-height: 1.55;
-        }
-
-        .video-meta {
-            display: flex;
-            align-items: center;
-
-            gap: 10px;
-
-            margin-bottom: 20px;
-
-            color: #7f8da2;
-
-            font-size: 0.72rem;
-        }
-
-        .video-meta span + span::before {
-            content: "•";
-
-            margin-right: 10px;
-
-            color: #526177;
-        }
-
-        .video-play-button {
-            display: inline-flex;
-            align-items: center;
-
-            gap: 9px;
+            min-height: 42px;
 
             padding: 9px 14px;
 
-            color: #dce8f5;
+            color: white;
 
-            background:
-                rgba(255,255,255,0.04);
+            background: var(--accent);
 
-            border:
-                1px solid rgba(160,180,210,0.20);
-
+            border: 1px solid var(--accent);
             border-radius: 6px;
 
-            font-family: inherit;
-
-            font-size: 0.79rem;
-            font-weight: 600;
-
-            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 700;
 
             transition:
-                background 0.2s ease,
-                border-color 0.2s ease;
+                transform 0.2s ease,
+                background 0.2s ease;
         }
 
-        .video-play-button:hover {
-            background:
-                rgba(105,216,255,0.07);
 
-            border-color:
-                rgba(105,216,255,0.35);
+        .project-link:hover {
+            transform: translateY(-1px);
+
+            background: var(--accent-dark);
         }
 
-        .play-icon {
-            width: 0;
-            height: 0;
 
-            border-top:
-                4px solid transparent;
-
-            border-bottom:
-                4px solid transparent;
-
-            border-left:
-                7px solid var(--cyan);
-        }
-
-        .project-video-caption {
-            margin-top: 11px;
-
-            color: var(--text-muted);
-
-            font-size: 0.77rem;
-
-            text-align: center;
-        }
-
-        .featured-bottom {
-            padding: 25px 34px 32px;
-
-            background:
-                rgba(8, 14, 26, 0.76);
+        .project-link-arrow {
+            font-size: 0.95rem;
         }
 
 
@@ -1070,20 +689,18 @@
             gap: 7px;
         }
 
+
         .tag {
-            padding: 5px 9px;
+            padding: 5px 8px;
 
-            color: #b7c7dc;
+            color: #5b676f;
 
-            background:
-                rgba(120, 151, 200, 0.035);
+            background: #f3f3ef;
 
-            border:
-                1px solid rgba(135, 162, 205, 0.14);
-
+            border: 1px solid var(--border);
             border-radius: 5px;
 
-            font-size: 0.75rem;
+            font-size: 0.74rem;
             font-weight: 500;
         }
 
@@ -1092,21 +709,21 @@
         /* EXPERIENCE */
 
         #experience {
-            background:
-                rgba(5, 9, 18, 0.42);
+            background: #f7f6f2;
         }
+
 
         .experience-item {
-            padding: 28px 0;
+            padding: 27px 0;
 
-            border-top:
-                1px solid var(--border);
+            border-top: 1px solid var(--border);
         }
+
 
         .experience-item:last-child {
-            border-bottom:
-                1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
+
 
         .experience-header {
             display: flex;
@@ -1116,13 +733,15 @@
             gap: 30px;
         }
 
+
         .experience-header h3 {
-            font-size: 1.12rem;
+            color: #273138;
+
+            font-size: 1.1rem;
 
             letter-spacing: -0.015em;
-
-            color: #edf4ff;
         }
+
 
         .experience-item p {
             max-width: 800px;
@@ -1132,10 +751,11 @@
             color: var(--text-soft);
         }
 
+
         .date {
             color: var(--text-muted);
 
-            font-size: 0.88rem;
+            font-size: 0.87rem;
 
             white-space: nowrap;
         }
@@ -1145,14 +765,16 @@
         /* CONTACT */
 
         #contact {
-            background: #050914;
+            background: #e9ebe7;
 
             border-bottom: none;
         }
 
+
         #contact .section-title {
             margin-bottom: 20px;
         }
+
 
         .contact-text {
             max-width: 650px;
@@ -1167,14 +789,13 @@
         /* FOOTER */
 
         footer {
-            padding: 26px 0;
+            padding: 25px 0;
 
-            color: #687991;
+            color: #818b90;
 
-            background: #03060d;
+            background: #e9ebe7;
 
-            border-top:
-                1px solid var(--border);
+            border-top: 1px solid var(--border);
 
             font-size: 0.8rem;
         }
@@ -1185,9 +806,12 @@
 
         @media (max-width: 900px) {
 
-            .project-gallery {
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
+            .project-preview {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .project-preview-image:last-child {
+                display: none;
             }
 
         }
@@ -1226,48 +850,41 @@
                 gap: 8px;
             }
 
-            .project {
-                padding: 24px;
+            .hero h1 {
+                font-size: 3.2rem;
             }
 
             .featured-content,
-            .featured-bottom,
-            .project-video {
+            .featured-bottom {
                 padding-left: 24px;
                 padding-right: 24px;
             }
 
-            .hero h1 {
-                font-size: 3.25rem;
-            }
-
-            .video-cover {
-                padding: 24px;
-            }
-
-            .schematic-link {
+            .featured-bottom {
+                flex-direction: column;
                 align-items: flex-start;
             }
 
         }
 
 
-        @media (max-width: 550px) {
+        @media (max-width: 520px) {
 
-            .project-gallery {
+            .project-preview {
                 grid-template-columns: 1fr;
             }
 
-            .project-image-image {
-                height: 300px;
+            .project-preview-image {
+                height: 280px;
             }
 
-            .video-meta {
+            .project-preview-image:nth-child(2),
+            .project-preview-image:nth-child(3) {
                 display: none;
             }
 
-            .schematic-action span:not(.schematic-arrow) {
-                display: none;
+            .project-link {
+                width: 100%;
             }
 
         }
@@ -1286,14 +903,32 @@
         <div class="container nav-inner">
 
             <div class="logo">
+
+                <span class="logo-dot"></span>
+
                 Yasaman Kheradmand
+
             </div>
 
+
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
             </div>
 
         </div>
@@ -1314,35 +949,46 @@
                     Electrical Engineering | UBC
                 </span>
 
+
                 <h1>
                     Yasaman<br>
                     Kheradmand
                 </h1>
 
+
                 <p class="headline">
                     I design and build electronic hardware.
                 </p>
 
+
                 <p class="description">
+
                     Electrical Engineering student at the University of British
                     Columbia working across PCB design, embedded systems,
                     digital hardware, and FPGA development.
+
                 </p>
+
 
                 <div class="buttons">
 
                     <a
                         class="button primary"
                         href="#projects">
+
                         View Projects
+
                     </a>
+
 
                     <a
                         class="button"
                         href="https://www.linkedin.com/in/yasamankh"
                         target="_blank"
                         rel="noopener noreferrer">
+
                         LinkedIn
+
                     </a>
 
                 </div>
@@ -1379,15 +1025,20 @@
                 <div class="about-text">
 
                     <p>
+
                         I am an Electrical Engineering student at UBC interested
                         in hardware design, embedded systems, digital systems,
                         and FPGA development.
+
                     </p>
 
+
                     <p>
+
                         My projects span multilayer PCB design, power electronics,
-                        STM32 based embedded systems, hardware bring-up,
-                        instrumentation, and SystemVerilog based digital design.
+                        STM32-based embedded systems, hardware bring-up,
+                        instrumentation, and SystemVerilog-based digital design.
+
                     </p>
 
                 </div>
@@ -1441,9 +1092,10 @@
 
 
 
-                <!-- ROVER LIGHTING CONTROL SYSTEM -->
+                <!-- ROVER LIGHTING -->
 
                 <article class="project featured">
+
 
                     <div class="featured-content">
 
@@ -1455,11 +1107,13 @@
                                     Embedded Hardware | PCB Design
                                 </span>
 
+
                                 <h3>
                                     Rover Lighting Control System
                                 </h3>
 
                             </div>
+
 
                             <span class="status">
                                 Completed
@@ -1469,26 +1123,26 @@
 
 
                         <p>
+
                             Designed and validated an embedded lighting controller
                             PCB for a rover electrical system, integrating DC-DC
                             power conversion, constant-current LED driving,
                             STM32 control, CAN communication, voltage regulation,
-                            and transient protection. The completed system was
-                            integrated onto the rover and used during competition
-                            tasks requiring PWM controlled lighting behavior.
+                            and transient protection.
+
                         </p>
 
 
                         <div class="project-highlights">
 
                             <span>
-                                <strong>71</strong>
-                                components
+                                <strong>4-layer</strong>
+                                PCB
                             </span>
 
                             <span>
-                                <strong>4-layer</strong>
-                                PCB
+                                <strong>21 to 29.4 V</strong>
+                                input
                             </span>
 
                             <span>
@@ -1497,288 +1151,43 @@
                             </span>
 
                             <span>
-                                <strong>21 to 29.4 V</strong>
-                                input
+                                <strong>STM32</strong>
+                                control
                             </span>
 
                         </div>
 
-
-
-                        <!-- FULL SCHEMATIC LINK -->
-
-                        <a
-                            class="schematic-link"
-                            href="assets/lighting-schematic.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer">
-
-                            <div class="schematic-left">
-
-                                <div class="schematic-label">
-                                    Schematic
-                                </div>
-
-                                <div class="schematic-title">
-                                    Full Lighting Controller Schematic
-                                </div>
-
-                                <div class="schematic-description">
-                                    View the complete schematic for circuit review.
-                                </div>
-
-                            </div>
-
-
-                            <div class="schematic-action">
-
-                                <span class="schematic-pdf">
-                                    PDF
-                                </span>
-
-                                <span>
-                                    Open schematic
-                                </span>
-
-                                <span class="schematic-arrow">
-                                    ↗
-                                </span>
-
-                            </div>
-
-                        </a>
-
-
                     </div>
 
 
 
-                    <!-- LIGHTING IMAGE GALLERY -->
+                    <!-- PROJECT PREVIEW IMAGES -->
 
-                    <div class="project-gallery">
+                    <div class="project-preview">
 
+                        <div class="project-preview-image">
 
-                        <figure class="project-image">
+                            <img
+                                src="assets/lighting1.png"
+                                alt="Component side 3D render of rover lighting controller">
 
-                            <div class="project-image-image">
+                        </div>
 
-                                <img
-                                    src="assets/lighting1.png"
-                                    alt="Component side 3D render of Rover lighting control PCB"
-                                    loading="lazy">
 
-                            </div>
+                        <div class="project-preview-image">
 
-                            <figcaption>
-                                Component Side | 3D Render
-                            </figcaption>
+                            <img
+                                src="assets/lighting5.png"
+                                alt="Five assembled rover lighting controller boards">
 
-                        </figure>
+                        </div>
 
 
+                        <div class="project-preview-image">
 
-                        <figure class="project-image">
-
-                            <div class="project-image-image">
-
-                                <img
-                                    src="assets/lighting2.png"
-                                    alt="LED side 3D render of Rover lighting control PCB"
-                                    loading="lazy">
-
-                            </div>
-
-                            <figcaption>
-                                LED Side | 3D Render
-                            </figcaption>
-
-                        </figure>
-
-
-
-                        <figure class="project-image">
-
-                            <div class="project-image-image">
-
-                                <img
-                                    src="assets/lighting3.png"
-                                    alt="Top side PCB layout and routing of Rover lighting controller"
-                                    loading="lazy">
-
-                            </div>
-
-                            <figcaption>
-                                Layout & Routing | Top Side
-                            </figcaption>
-
-                        </figure>
-
-
-
-                        <figure class="project-image">
-
-                            <div class="project-image-image">
-
-                                <img
-                                    src="assets/lighting4.png"
-                                    alt="PCB polygon pours of Rover lighting controller"
-                                    loading="lazy">
-
-                            </div>
-
-                            <figcaption>
-                                PCB Layout | Polygon Pours
-                            </figcaption>
-
-                        </figure>
-
-
-
-                        <figure class="project-image">
-
-                            <div class="project-image-image">
-
-                                <img
-                                    src="assets/lighting5.png"
-                                    alt="Five assembled and hand soldered Rover lighting control boards"
-                                    loading="lazy">
-
-                            </div>
-
-                            <figcaption>
-                                Assembled Hardware | Five Hand-Soldered Boards
-                            </figcaption>
-
-                        </figure>
-
-
-
-                        <figure class="project-image rover-integration">
-
-                            <div class="project-image-image">
-
-                                <img
-                                    src="assets/lighting6.jpg"
-                                    alt="Rover lighting system operating during integrated rover testing"
-                                    loading="lazy">
-
-                            </div>
-
-                            <figcaption>
-                                Rover Integration | PWM Lighting in Operation
-                            </figcaption>
-
-                        </figure>
-
-
-                    </div>
-
-
-
-                    <!-- HARDWARE VALIDATION VIDEO -->
-
-                    <div class="project-video">
-
-                        <div class="project-video-inner">
-
-
-                            <div class="project-video-heading">
-                                Hardware Validation
-                            </div>
-
-
-                            <div class="video-frame">
-
-
-                                <video
-                                    id="lighting-video"
-                                    controls
-                                    playsinline
-                                    preload="metadata">
-
-                                    <source
-                                        src="assets/lighting.mp4"
-                                        type="video/mp4">
-
-                                    <source
-                                        src="assets/lighting.mov"
-                                        type="video/quicktime">
-
-                                    Your browser does not support this video.
-
-                                </video>
-
-
-
-                                <!-- SIMPLE VIDEO COVER -->
-
-                                <div
-                                    class="video-cover"
-                                    id="lighting-video-cover">
-
-
-                                    <div class="video-cover-content">
-
-
-                                        <div class="video-cover-label">
-                                            Lab Validation
-                                        </div>
-
-
-                                        <h4>
-                                            CAN and PWM Bench Test
-                                        </h4>
-
-
-                                        <div class="video-cover-description">
-                                            Testing USB-CAN communication,
-                                            command feedback, and PWM controlled
-                                            lighting during board bring-up.
-                                        </div>
-
-
-                                        <div class="video-meta">
-
-                                            <span>
-                                                31 sec
-                                            </span>
-
-                                            <span>
-                                                USB-CAN
-                                            </span>
-
-                                            <span>
-                                                PWM
-                                            </span>
-
-                                        </div>
-
-
-                                        <button
-                                            class="video-play-button"
-                                            id="lighting-play-button"
-                                            type="button">
-
-                                            <span class="play-icon"></span>
-
-                                            Watch validation clip
-
-                                        </button>
-
-
-                                    </div>
-
-
-                                </div>
-
-
-                            </div>
-
-
-                            <div class="project-video-caption">
-                                Bench validation of CAN communication and PWM controlled lighting
-                            </div>
-
+                            <img
+                                src="assets/lighting6.jpg"
+                                alt="Lighting system integrated onto rover">
 
                         </div>
 
@@ -1792,23 +1201,34 @@
 
                             <span class="tag">Altium</span>
                             <span class="tag">STM32</span>
+                            <span class="tag">CAN</span>
                             <span class="tag">PCB Design</span>
                             <span class="tag">Power Electronics</span>
-                            <span class="tag">CAN</span>
-                            <span class="tag">PWM</span>
-                            <span class="tag">Python</span>
                             <span class="tag">Hardware Bring-Up</span>
-                            <span class="tag">System Integration</span>
 
                         </div>
 
+
+                        <a
+                            class="project-link"
+                            href="projects/rover-lighting.html">
+
+                            View Full Project
+
+                            <span class="project-link-arrow">
+                                →
+                            </span>
+
+                        </a>
+
                     </div>
+
 
                 </article>
 
 
 
-                <!-- FPGA SIMD PROCESSING CORE -->
+                <!-- FPGA SIMD -->
 
                 <article class="project">
 
@@ -1820,11 +1240,13 @@
                                 Digital Hardware | FPGA
                             </span>
 
+
                             <h3>
                                 FPGA SIMD Processing Core & Verification Platform
                             </h3>
 
                         </div>
+
 
                         <span class="status">
                             In Development
@@ -1834,11 +1256,13 @@
 
 
                     <p>
+
                         Designing a pipelined SystemVerilog processing core with
                         instruction fetch and decode, a scalar ALU and register
-                        file, BRAM backed memory, and a four-lane SIMD datapath.
+                        file, BRAM-backed memory, and a four-lane SIMD datapath.
                         Developing self-checking RTL verification and Python and C
                         reference models for architectural validation.
+
                     </p>
 
 
@@ -1859,7 +1283,7 @@
 
 
 
-                <!-- SIMPLE RISC MACHINE -->
+                <!-- SIMPLE RISC -->
 
                 <article class="project">
 
@@ -1871,11 +1295,13 @@
                                 Digital Logic | Processor Design
                             </span>
 
+
                             <h3>
                                 Simple RISC Machine
                             </h3>
 
                         </div>
+
 
                         <span class="status">
                             Completed
@@ -1885,12 +1311,14 @@
 
 
                     <p>
+
                         Designed and implemented a Simple RISC Machine in
                         SystemVerilog using a datapath and control architecture.
                         Developed the register file, ALU, instruction decoding
                         logic, and finite state machine controller used to
                         sequence arithmetic and logical instructions, and
                         verified processor behavior through RTL simulation.
+
                     </p>
 
 
@@ -1911,7 +1339,7 @@
 
 
 
-                <!-- SMART TEMPERATURE SYSTEM -->
+                <!-- TEMPERATURE SYSTEM -->
 
                 <article class="project">
 
@@ -1923,11 +1351,13 @@
                                 Analog | Embedded Systems
                             </span>
 
+
                             <h3>
                                 Smart Temperature Monitoring & Control System
                             </h3>
 
                         </div>
+
 
                         <span class="status">
                             Completed
@@ -1937,13 +1367,13 @@
 
 
                     <p>
-                        Designed a temperature monitoring and control system
-                        using an NTC thermistor, Wheatstone bridge,
-                        instrumentation amplifier, and Arduino based data
-                        acquisition. Developed a four-coefficient Steinhart-Hart
-                        model in Python to convert measured resistance into
-                        temperature and calibrated the system to approximately
-                        ±0.1°C accuracy.
+
+                        Designed a temperature monitoring and control system using
+                        an NTC thermistor, Wheatstone bridge, instrumentation
+                        amplifier, and Arduino-based data acquisition. Developed
+                        a four-coefficient Steinhart-Hart model in Python and
+                        calibrated the system to approximately ±0.1°C accuracy.
+
                     </p>
 
 
@@ -1952,11 +1382,6 @@
                         <span>
                             <strong>±0.1°C</strong>
                             calibrated accuracy
-                        </span>
-
-                        <span>
-                            <strong>4-coefficient</strong>
-                            Steinhart-Hart model
                         </span>
 
                         <span>
@@ -1972,27 +1397,14 @@
                     </div>
 
 
-                    <p>
-                        Comparator and logic circuitry implemented
-                        temperature dependent control behavior, while a
-                        555 timer operating in astable mode generated PWM
-                        for variable motor speed. Temperature measurements
-                        were displayed on an LCD and logged through the
-                        microcontroller for characterization and calibration.
-                    </p>
-
-
                     <div class="tags">
 
-                        <span class="tag">Analog Circuit Design</span>
-                        <span class="tag">NTC Thermistor</span>
-                        <span class="tag">Wheatstone Bridge</span>
+                        <span class="tag">Analog Design</span>
+                        <span class="tag">Thermistor</span>
                         <span class="tag">Instrumentation Amplifier</span>
                         <span class="tag">Arduino</span>
                         <span class="tag">555 Timer</span>
-                        <span class="tag">PWM</span>
                         <span class="tag">Python</span>
-                        <span class="tag">Multisim</span>
                         <span class="tag">Calibration</span>
 
                     </div>
@@ -2001,7 +1413,7 @@
 
 
 
-                <!-- PVDF RESEARCH -->
+                <!-- PVDF -->
 
                 <article class="project">
 
@@ -2013,11 +1425,13 @@
                                 Research | Instrumentation
                             </span>
 
+
                             <h3>
                                 PVDF Piezoelectric Film Characterization
                             </h3>
 
                         </div>
+
 
                         <span class="status">
                             Research
@@ -2027,11 +1441,13 @@
 
 
                     <p>
+
                         Developed an experimental characterization setup using
                         a VNA, oscilloscope, and function generator to study
                         PVDF piezoelectric films. Validated measured impedance
                         and resonance behavior against analytical predictions
                         and investigated an 18% resonance frequency shift.
+
                     </p>
 
 
@@ -2084,16 +1500,20 @@
                         Kardium | Hardware Electronics Co-op
                     </h3>
 
+
                     <span class="date">
                         Sep. 2026 to Apr. 2027
                     </span>
 
                 </div>
 
+
                 <p>
+
                     Incoming hardware electronics co-op supporting custom
                     board development, PCB development, hardware bring-up,
                     circuit debugging, characterization, and design verification.
+
                 </p>
 
             </div>
@@ -2108,16 +1528,20 @@
                         UBC AdaMist Lab | Research Assistant
                     </h3>
 
+
                     <span class="date">
                         Sep. 2025 to Dec. 2025
                     </span>
 
                 </div>
 
+
                 <p>
+
                     Characterized PVDF piezoelectric films using VNA,
                     oscilloscope, and function generator measurements and
                     developed repeatable experimental and data analysis workflows.
+
                 </p>
 
             </div>
@@ -2131,6 +1555,7 @@
                     <h3>
                         Aecon | Summer Internship
                     </h3>
+
 
                     <span class="date">
                         Summer 2026
@@ -2157,25 +1582,34 @@
                 Let's Connect
             </h2>
 
+
             <p class="contact-text">
+
                 Interested in hardware, digital systems, embedded systems,
                 and FPGA development. Feel free to reach out or connect with me.
+
             </p>
+
 
             <div class="buttons">
 
                 <a
                     class="button primary"
                     href="mailto:Nasayasi7@gmail.com">
+
                     Email Me
+
                 </a>
+
 
                 <a
                     class="button"
                     href="https://www.linkedin.com/in/yasamankh"
                     target="_blank"
                     rel="noopener noreferrer">
+
                     LinkedIn
+
                 </a>
 
             </div>
@@ -2195,66 +1629,6 @@
         </div>
 
     </footer>
-
-
-
-    <!-- VIDEO SCRIPT -->
-
-    <script>
-
-        const lightingVideo =
-            document.getElementById("lighting-video");
-
-        const lightingCover =
-            document.getElementById("lighting-video-cover");
-
-        const lightingPlayButton =
-            document.getElementById("lighting-play-button");
-
-
-        function playLightingVideo() {
-
-            lightingCover.classList.add("hidden");
-
-            lightingVideo.play();
-
-        }
-
-
-        lightingPlayButton.addEventListener(
-            "click",
-            function(event) {
-
-                event.stopPropagation();
-
-                playLightingVideo();
-
-            }
-        );
-
-
-        lightingCover.addEventListener(
-            "click",
-            function() {
-
-                playLightingVideo();
-
-            }
-        );
-
-
-        lightingVideo.addEventListener(
-            "ended",
-            function() {
-
-                lightingCover.classList.remove("hidden");
-
-                lightingVideo.currentTime = 0;
-
-            }
-        );
-
-    </script>
 
 
 </body>
