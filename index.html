@@ -9,7 +9,7 @@
 
     <meta
         name="description"
-        content="Electrical Engineering portfolio focused on hardware design, embedded systems, PCB design, FPGA development, and digital systems.">
+        content="Electrical Engineering portfolio focused on hardware design, embedded systems, PCB design, FPGA development, digital systems, and analog electronics.">
 
     <style>
 
@@ -444,7 +444,7 @@
 
 
 
-        /* PROJECT HIGHLIGHTS */
+        /* HIGHLIGHTS */
 
         .project-highlights {
             display: flex;
@@ -514,7 +514,7 @@
 
 
 
-        /* PROJECT ACTIONS */
+        /* ACTIONS */
 
         .project-actions {
             display: flex;
@@ -559,8 +559,6 @@
 
         .experience-list {
             display: grid;
-
-            gap: 0;
         }
 
 
@@ -724,7 +722,7 @@
 <body>
 
 
-    <!-- NAVIGATION -->
+    <!-- NAV -->
 
     <nav>
 
@@ -800,12 +798,8 @@
 
             <div class="hero-links">
 
-                <a
-                    class="button"
-                    href="#projects">
-
+                <a class="button" href="#projects">
                     View Projects
-
                 </a>
 
 
@@ -907,7 +901,7 @@
 
 
 
-                <!-- ROVER LIGHTING -->
+                <!-- ROVER -->
 
                 <article class="project">
 
@@ -1161,7 +1155,7 @@
 
 
 
-                <!-- TEMPERATURE SYSTEM -->
+                <!-- SMART TEMPERATURE -->
 
                 <article class="project">
 
@@ -1190,32 +1184,72 @@
                     <p>
 
                         I built a temperature monitoring and control system
-                        around an NTC thermistor, Wheatstone bridge,
-                        instrumentation amplifier, and Arduino. I fitted a
-                        four-coefficient Steinhart-Hart model in Python to
-                        convert the measured resistance into temperature and
-                        calibrated the final system to about ±0.1°C.
+                        around an NTC thermistor, Wheatstone bridge, analog
+                        amplification, and Arduino. I fitted a four-coefficient
+                        Steinhart-Hart model in Python and used the resulting
+                        coefficients in the embedded firmware to calculate
+                        temperature from the measured thermistor resistance.
 
                     </p>
 
 
                     <p style="margin-top: 12px;">
 
-                        I also used comparator and logic circuitry to control
-                        different temperature ranges, and I used a 555 timer
-                        to generate the PWM used for the half-speed fan mode.
+                        I also built comparator and logic circuitry for
+                        different motor-control ranges and used 555 timers
+                        for approximately 50% PWM and timed operation.
 
                     </p>
+
+
+                    <div class="project-highlights">
+
+                        <span>
+                            <strong>±0.1°C</strong>
+                            calibrated accuracy
+                        </span>
+
+                        <span>
+                            <strong>4-coefficient</strong>
+                            Steinhart-Hart
+                        </span>
+
+                        <span>
+                            <strong>~50%</strong>
+                            PWM
+                        </span>
+
+                        <span>
+                            <strong>10 Hz</strong>
+                            logging
+                        </span>
+
+                    </div>
 
 
                     <div class="tags">
 
                         <span class="tag">Analog Design</span>
-                        <span class="tag">Instrumentation Amplifier</span>
                         <span class="tag">Arduino</span>
                         <span class="tag">Python</span>
+                        <span class="tag">Steinhart-Hart</span>
+                        <span class="tag">NTC Thermistor</span>
                         <span class="tag">555 Timer</span>
-                        <span class="tag">Calibration</span>
+                        <span class="tag">Comparators</span>
+                        <span class="tag">Multisim</span>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            class="button"
+                            href="projects/smart-temperature.html">
+
+                            View Full Project →
+
+                        </a>
 
                     </div>
 
