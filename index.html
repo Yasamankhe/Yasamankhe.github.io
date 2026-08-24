@@ -75,8 +75,7 @@
         }
 
 
-        img,
-        video {
+        img {
             max-width: 100%;
         }
 
@@ -576,7 +575,7 @@
 
 
 
-        /* HOMEPAGE PROJECT PREVIEW */
+        /* PROJECT PREVIEW */
 
         .project-preview {
             display: grid;
@@ -612,6 +611,13 @@
             padding: 14px;
 
             transition: transform 0.25s ease;
+        }
+
+
+        .project-preview-image.rover img {
+            object-fit: cover;
+
+            padding: 0;
         }
 
 
@@ -671,11 +677,6 @@
             transform: translateY(-1px);
 
             background: var(--accent-dark);
-        }
-
-
-        .project-link-arrow {
-            font-size: 0.95rem;
         }
 
 
@@ -963,9 +964,11 @@
 
                 <p class="description">
 
-                    Electrical Engineering student at the University of British
-                    Columbia working across PCB design, embedded systems,
-                    digital hardware, and FPGA development.
+                    I am an Electrical Engineering student at the University
+                    of British Columbia. I like working on hardware projects
+                    where I can go from the circuit and PCB design all the way
+                    to programming, bring-up, testing, and seeing the system
+                    work in real hardware.
 
                 </p>
 
@@ -1013,6 +1016,7 @@
                     About
                 </h2>
 
+
                 <span class="section-label">
                     Hardware | Embedded | Digital
                 </span>
@@ -1026,18 +1030,21 @@
 
                     <p>
 
-                        I am an Electrical Engineering student at UBC interested
-                        in hardware design, embedded systems, digital systems,
-                        and FPGA development.
+                        I am most interested in hardware design, embedded
+                        systems, digital systems, and FPGA development.
+                        I enjoy understanding how the whole system works
+                        instead of only working on one small part of it.
 
                     </p>
 
 
                     <p>
 
-                        My projects span multilayer PCB design, power electronics,
-                        STM32-based embedded systems, hardware bring-up,
-                        instrumentation, and SystemVerilog-based digital design.
+                        So far I have worked on multilayer PCB design,
+                        power electronics, STM32-based embedded systems,
+                        CAN communication, hardware bring-up,
+                        instrumentation, and SystemVerilog-based
+                        digital design.
 
                     </p>
 
@@ -1080,6 +1087,7 @@
                 <h2 class="section-title">
                     Selected Projects
                 </h2>
+
 
                 <span class="section-label">
                     Hardware & Digital Systems
@@ -1124,11 +1132,13 @@
 
                         <p>
 
-                            Designed and validated an embedded lighting controller
-                            PCB for a rover electrical system, integrating DC-DC
-                            power conversion, constant-current LED driving,
-                            STM32 control, CAN communication, voltage regulation,
-                            and transient protection.
+                            I designed a 4-layer lighting controller for a rover
+                            electrical system. I integrated the DC-DC power
+                            stage, STM32, CAN communication, constant-current
+                            LED driving, voltage regulation, protection,
+                            programming interfaces, and firmware onto one board.
+                            I then assembled the boards, brought them up, tested
+                            them, and integrated the system onto the rover.
 
                         </p>
 
@@ -1161,8 +1171,6 @@
 
 
 
-                    <!-- PROJECT PREVIEW IMAGES -->
-
                     <div class="project-preview">
 
                         <div class="project-preview-image">
@@ -1183,11 +1191,11 @@
                         </div>
 
 
-                        <div class="project-preview-image">
+                        <div class="project-preview-image rover">
 
                             <img
                                 src="assets/lighting6.jpg"
-                                alt="Lighting system integrated onto rover">
+                                alt="Lighting system operating on the rover">
 
                         </div>
 
@@ -1213,11 +1221,7 @@
                             class="project-link"
                             href="projects/rover-lighting.html">
 
-                            View Full Project
-
-                            <span class="project-link-arrow">
-                                →
-                            </span>
+                            View Full Project →
 
                         </a>
 
@@ -1257,11 +1261,13 @@
 
                     <p>
 
-                        Designing a pipelined SystemVerilog processing core with
-                        instruction fetch and decode, a scalar ALU and register
-                        file, BRAM-backed memory, and a four-lane SIMD datapath.
-                        Developing self-checking RTL verification and Python and C
-                        reference models for architectural validation.
+                        I am building a pipelined processing core in
+                        SystemVerilog with instruction fetch and decode,
+                        a scalar ALU and register file, BRAM-backed memory,
+                        and a four-lane SIMD datapath. I am also building
+                        self-checking RTL tests and Python and C reference
+                        models so I can compare the RTL behavior against
+                        the expected architectural result.
 
                     </p>
 
@@ -1312,12 +1318,12 @@
 
                     <p>
 
-                        Designed and implemented a Simple RISC Machine in
-                        SystemVerilog using a datapath and control architecture.
-                        Developed the register file, ALU, instruction decoding
-                        logic, and finite state machine controller used to
-                        sequence arithmetic and logical instructions, and
-                        verified processor behavior through RTL simulation.
+                        I designed and implemented a Simple RISC Machine
+                        in SystemVerilog. I built the register file, ALU,
+                        instruction decoding logic, datapath, and finite
+                        state machine controller, then used RTL simulation
+                        to check that the processor executed the supported
+                        instructions correctly.
 
                     </p>
 
@@ -1368,11 +1374,12 @@
 
                     <p>
 
-                        Designed a temperature monitoring and control system using
-                        an NTC thermistor, Wheatstone bridge, instrumentation
-                        amplifier, and Arduino-based data acquisition. Developed
-                        a four-coefficient Steinhart-Hart model in Python and
-                        calibrated the system to approximately ±0.1°C accuracy.
+                        I built a temperature monitoring and control system
+                        around an NTC thermistor, Wheatstone bridge,
+                        instrumentation amplifier, and Arduino. I fitted
+                        a four-coefficient Steinhart-Hart model in Python
+                        to convert the measured resistance into temperature
+                        and calibrated the final system to about ±0.1°C.
 
                     </p>
 
@@ -1397,10 +1404,20 @@
                     </div>
 
 
+                    <p>
+
+                        I also used comparator and logic circuitry to control
+                        different temperature ranges, and I used a 555 timer
+                        to generate the PWM used for the half-speed fan mode.
+
+                    </p>
+
+
                     <div class="tags">
 
                         <span class="tag">Analog Design</span>
                         <span class="tag">Thermistor</span>
+                        <span class="tag">Wheatstone Bridge</span>
                         <span class="tag">Instrumentation Amplifier</span>
                         <span class="tag">Arduino</span>
                         <span class="tag">555 Timer</span>
@@ -1442,11 +1459,12 @@
 
                     <p>
 
-                        Developed an experimental characterization setup using
-                        a VNA, oscilloscope, and function generator to study
-                        PVDF piezoelectric films. Validated measured impedance
-                        and resonance behavior against analytical predictions
-                        and investigated an 18% resonance frequency shift.
+                        I developed an experimental setup using a VNA,
+                        oscilloscope, and function generator to characterize
+                        PVDF piezoelectric films. I compared the measured
+                        impedance and resonance behavior against analytical
+                        predictions and investigated an approximately 18%
+                        shift in resonance frequency.
 
                     </p>
 
@@ -1484,6 +1502,7 @@
                     Experience
                 </h2>
 
+
                 <span class="section-label">
                     Engineering & Research
                 </span>
@@ -1510,9 +1529,10 @@
 
                 <p>
 
-                    Incoming hardware electronics co-op supporting custom
-                    board development, PCB development, hardware bring-up,
-                    circuit debugging, characterization, and design verification.
+                    I will be joining Kardium for an eight-month Hardware
+                    Electronics co-op, where I will work on custom board
+                    development, PCB design, hardware bring-up, debugging,
+                    characterization, and design verification.
 
                 </p>
 
@@ -1538,9 +1558,10 @@
 
                 <p>
 
-                    Characterized PVDF piezoelectric films using VNA,
-                    oscilloscope, and function generator measurements and
-                    developed repeatable experimental and data analysis workflows.
+                    I characterized PVDF piezoelectric films using a VNA,
+                    oscilloscope, and function generator, and I worked on
+                    making the measurement and analysis process more
+                    repeatable.
 
                 </p>
 
@@ -1585,8 +1606,9 @@
 
             <p class="contact-text">
 
-                Interested in hardware, digital systems, embedded systems,
-                and FPGA development. Feel free to reach out or connect with me.
+                I am interested in hardware, embedded systems,
+                digital design, FPGA development, and aerospace
+                electronics. Feel free to reach out or connect with me.
 
             </p>
 
@@ -1619,8 +1641,6 @@
     </section>
 
 
-
-    <!-- FOOTER -->
 
     <footer>
 
