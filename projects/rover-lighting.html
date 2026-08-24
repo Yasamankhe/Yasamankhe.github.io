@@ -9,7 +9,7 @@
 
     <meta
         name="description"
-        content="Design, assembly, bring-up, validation, and rover integration of a 4-layer STM32 and CAN based embedded lighting controller.">
+        content="Design, assembly, firmware, bring-up, validation, and rover integration of an STM32 and CAN based lighting controller.">
 
     <style>
 
@@ -33,6 +33,9 @@
 
             --green: #507565;
             --green-soft: #e8efea;
+
+            --warm: #776646;
+            --warm-soft: #f1ede3;
 
             --shadow:
                 0 14px 35px rgba(34, 46, 52, 0.055);
@@ -402,6 +405,41 @@
 
 
 
+        /* AS BUILT NOTE */
+
+        .as-built-note {
+            margin-top: 14px;
+
+            padding: 17px 19px;
+
+            background: var(--warm-soft);
+
+            border: 1px solid #dfd6c4;
+            border-radius: 7px;
+        }
+
+
+        .as-built-note strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: var(--warm);
+
+            font-size: 0.78rem;
+        }
+
+
+        .as-built-note p {
+            max-width: 900px;
+
+            color: #756d60;
+
+            font-size: 0.79rem;
+        }
+
+
+
         /* PHOTO PROGRESSION */
 
         .progression-gallery {
@@ -739,7 +777,7 @@
 
 
         .section-content p {
-            max-width: 770px;
+            max-width: 780px;
 
             color: var(--text-soft);
         }
@@ -794,46 +832,6 @@
 
 
 
-        /* DECISIONS */
-
-        .decision-list {
-            display: grid;
-
-            margin-top: 28px;
-
-            border-top: 1px solid var(--border);
-        }
-
-
-        .decision {
-            display: grid;
-
-            grid-template-columns: 165px 1fr;
-
-            gap: 28px;
-
-            padding: 18px 0;
-
-            border-bottom: 1px solid var(--border);
-        }
-
-
-        .decision-question {
-            color: #37434a;
-
-            font-size: 0.82rem;
-            font-weight: 700;
-        }
-
-
-        .decision-answer {
-            color: var(--text-muted);
-
-            font-size: 0.83rem;
-        }
-
-
-
         /* DETAIL ROWS */
 
         .detail-list {
@@ -846,11 +844,11 @@
         .detail-row {
             display: grid;
 
-            grid-template-columns: 165px 1fr;
+            grid-template-columns: 175px 1fr;
 
             gap: 25px;
 
-            padding: 14px 0;
+            padding: 15px 0;
 
             border-top: 1px solid var(--border);
         }
@@ -871,6 +869,39 @@
 
         .detail-text {
             color: var(--text-muted);
+
+            font-size: 0.82rem;
+        }
+
+
+
+        /* CALLOUT */
+
+        .callout {
+            margin-top: 28px;
+
+            padding: 19px 20px;
+
+            background: var(--accent-soft);
+
+            border-left: 3px solid var(--accent);
+            border-radius: 0 7px 7px 0;
+        }
+
+
+        .callout strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #34464c;
+
+            font-size: 0.84rem;
+        }
+
+
+        .callout p {
+            color: #607078;
 
             font-size: 0.82rem;
         }
@@ -963,35 +994,140 @@
 
 
 
-        /* CALLOUT */
+        /* SOFTWARE FLOW */
 
-        .callout {
+        .software-flow {
+            display: grid;
+
+            grid-template-columns:
+                repeat(7, auto);
+
+            align-items: center;
+
+            gap: 8px;
+
             margin-top: 28px;
 
-            padding: 19px 20px;
+            overflow-x: auto;
 
-            background: var(--accent-soft);
-
-            border-left: 3px solid var(--accent);
-            border-radius: 0 7px 7px 0;
+            padding-bottom: 5px;
         }
 
 
-        .callout strong {
-            display: block;
+        .flow-block {
+            min-width: 105px;
 
-            margin-bottom: 5px;
+            padding: 12px 10px;
 
-            color: #34464c;
+            text-align: center;
 
-            font-size: 0.84rem;
+            color: #4f5b62;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 6px;
+
+            font-size: 0.73rem;
+            font-weight: 600;
         }
 
 
-        .callout p {
-            color: #607078;
+        .flow-arrow {
+            color: var(--accent);
 
-            font-size: 0.82rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+
+
+        /* CODE CARDS */
+
+        .code-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 12px;
+
+            margin-top: 28px;
+        }
+
+
+        .code-card {
+            display: flex;
+            flex-direction: column;
+
+            min-height: 190px;
+
+            padding: 18px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        a.code-card:hover {
+            transform: translateY(-2px);
+
+            border-color: #a7b4b6;
+        }
+
+
+        .code-card-label {
+            margin-bottom: 7px;
+
+            color: var(--accent);
+
+            font-size: 0.64rem;
+            font-weight: 700;
+
+            letter-spacing: 0.08em;
+
+            text-transform: uppercase;
+        }
+
+
+        .code-card h3 {
+            margin-bottom: 7px;
+
+            color: #2c373e;
+
+            font-size: 0.91rem;
+        }
+
+
+        .code-card p {
+            margin-bottom: 15px;
+
+            color: var(--text-muted);
+
+            font-size: 0.78rem;
+
+            line-height: 1.5;
+        }
+
+
+        .code-card-link {
+            margin-top: auto;
+
+            color: var(--accent);
+
+            font-size: 0.76rem;
+            font-weight: 700;
+        }
+
+
+        .code-card.local .code-card-link {
+            color: var(--text-muted);
         }
 
 
@@ -1070,6 +1206,13 @@
 
             font-size: 0.79rem;
             font-weight: 700;
+
+            transition: background 0.2s ease;
+        }
+
+
+        .back-button:hover {
+            background: var(--accent-dark);
         }
 
 
@@ -1081,6 +1224,11 @@
             .progression-gallery {
                 grid-template-columns:
                     repeat(2, minmax(0, 1fr));
+            }
+
+
+            .code-grid {
+                grid-template-columns: 1fr;
             }
 
         }
@@ -1109,6 +1257,8 @@
 
 
             .top-description {
+                max-width: 650px;
+
                 text-align: left;
             }
 
@@ -1144,7 +1294,6 @@
             }
 
 
-            .decision,
             .detail-row {
                 grid-template-columns: 1fr;
 
@@ -1220,11 +1369,11 @@
 
                 I designed this board as the lighting controller for our rover.
                 I wanted one board that could take power directly from the rover,
-                communicate over CAN, control the LEDs from an STM32, and give
-                me the programming and debugging interfaces I needed during
-                bring-up. I designed the schematic and PCB, assembled the boards,
-                wrote and tested the firmware, and then integrated the finished
-                system onto the rover.
+                communicate over CAN, control the LEDs from an STM32, and give me
+                enough access for programming and debugging during bring-up.
+                I designed the schematic and PCB, assembled the boards, worked on
+                the lighting firmware and CAN messages, tested the hardware, and
+                integrated the finished system onto the rover.
 
             </p>
 
@@ -1244,6 +1393,11 @@
                 <div class="hero-stat">
                     <strong>5</strong>
                     boards assembled
+                </div>
+
+                <div class="hero-stat">
+                    <strong>~0.75 A</strong>
+                    at 100% PWM
                 </div>
 
                 <div class="hero-stat">
@@ -1270,6 +1424,7 @@
 
         <div class="container">
 
+
             <div class="top-heading">
 
                 <div>
@@ -1288,7 +1443,7 @@
 
                 <p class="top-description">
 
-                    This is the complete schematic I used for the board.
+                    This is the schematic I used to design and lay out the board.
 
                 </p>
 
@@ -1316,10 +1471,11 @@
 
                     <p>
 
-                        I included the power stage, STM32 support circuitry,
-                        CAN and USB interfaces, LED driver, connectors,
-                        programming interfaces, and protection circuitry
-                        in the same design.
+                        The schematic includes the input protection,
+                        LMR51420 power stage, TPS7A2033 3.3 V regulation,
+                        STM32F103, TCAN334G CAN interface, KTD2505R LED driver,
+                        USB, UART, SWD, connectors, and external interface
+                        protection.
 
                     </p>
 
@@ -1338,17 +1494,42 @@
 
             </a>
 
+
+            <div class="as-built-note">
+
+                <strong>
+                    As-built note
+                </strong>
+
+
+                <p>
+
+                    The rover power requirement changed after I had already
+                    designed the first version around a lower input voltage.
+                    The final rover uses a 24 V nominal system with a
+                    21 to 29.4 V range, so I changed the input TVS to a
+                    higher-voltage-rated part that used the same PCB footprint.
+                    I did not update that exact TVS part number in the schematic.
+                    The fuse reference in the schematic was also used for its
+                    footprint. The assembled boards use a 1 A input fuse.
+
+                </p>
+
+            </div>
+
+
         </div>
 
     </section>
 
 
 
-    <!-- PHOTOS -->
+    <!-- PROJECT PHOTOS -->
 
     <section class="top-section">
 
         <div class="container">
+
 
             <div class="top-heading">
 
@@ -1517,7 +1698,7 @@
                             06
                         </span>
 
-                        Rover Integration | PWM Lighting in Operation
+                        Rover Integration | Lighting in Operation
 
                     </figcaption>
 
@@ -1538,6 +1719,7 @@
 
         <div class="container">
 
+
             <div class="top-heading">
 
                 <div>
@@ -1556,8 +1738,9 @@
 
                 <p class="top-description">
 
-                    I recorded this while I was testing CAN communication
-                    and PWM control before putting the boards on the rover.
+                    I recorded this while I was testing CAN communication,
+                    feedback, heartbeat messages, and PWM control before
+                    putting the boards on the rover.
 
                 </p>
 
@@ -1605,9 +1788,9 @@
 
                             <div class="video-description">
 
-                                I used a USB-CAN adapter to send commands
-                                to the board and change the lighting output
-                                through PWM.
+                                I used a USB-CAN adapter to send PWM commands
+                                to the board and read feedback and heartbeat
+                                messages from the STM32.
 
                             </div>
 
@@ -1616,6 +1799,7 @@
 
                                 <span>31 sec</span>
                                 <span>USB-CAN</span>
+                                <span>Feedback</span>
                                 <span>PWM</span>
 
                             </div>
@@ -1653,7 +1837,7 @@
 
 
 
-    <!-- OVERVIEW -->
+    <!-- SYSTEM OVERVIEW -->
 
     <section class="project-section">
 
@@ -1677,19 +1861,19 @@
 
                 <p>
 
-                    I designed the board to work as one node on the rover's
-                    electrical system. I take the rover battery input,
-                    convert it to the lower voltages I need, receive commands
-                    over CAN, and use the STM32 to control the LED driver.
+                    I designed the controller to work as one node on the rover's
+                    electrical system. The board takes the rover battery input,
+                    generates the lower voltage rails I need, receives commands
+                    over CAN, and uses the STM32 to control the lighting.
 
                 </p>
 
 
                 <p>
 
-                    I also wanted the board to be easy to bring up and debug,
-                    so I included SWD, UART, USB, and CAN access instead of
-                    depending on only one interface.
+                    I also wanted enough access during development that one
+                    broken interface would not leave me stuck, so I included
+                    SWD, UART, USB, and CAN on the board.
 
                 </p>
 
@@ -1705,9 +1889,9 @@
 
                         <p>
 
-                            I designed the input for the rover's
-                            21 to 29.4 V battery range and generated the
-                            lower voltage rails on the board.
+                            I designed the board for the final 21 to 29.4 V
+                            rover battery range and generated 5 V and 3.3 V
+                            rails locally.
 
                         </p>
 
@@ -1722,9 +1906,9 @@
 
                         <p>
 
-                            I used the STM32 to handle commands,
-                            PWM generation, communication, and the
-                            lighting behavior.
+                            I used the STM32F103 to handle CAN commands,
+                            PWM generation, feedback, heartbeat messages,
+                            and the lighting behavior.
 
                         </p>
 
@@ -1739,9 +1923,8 @@
 
                         <p>
 
-                            I connected the board to the rover's CAN network
-                            so it could receive commands from the rest
-                            of the system.
+                            I connected the board to the rover CAN network
+                            through a TCAN334G transceiver.
 
                         </p>
 
@@ -1756,8 +1939,9 @@
 
                         <p>
 
-                            I used a constant-current driver for the LEDs
-                            and controlled the output with PWM from the STM32.
+                            I used the KTD2505R to drive the LEDs with
+                            controlled current and used its control input
+                            for PWM dimming.
 
                         </p>
 
@@ -1772,9 +1956,9 @@
 
                         <p>
 
-                            I added protection around the external power
-                            and CAN connections because those are the parts
-                            of the board exposed to the rover wiring.
+                            I added input fuse protection, a TVS on the
+                            rover power input, and dedicated protection
+                            on CANH and CANL.
 
                         </p>
 
@@ -1784,14 +1968,14 @@
                     <div class="architecture-card">
 
                         <h3>
-                            Debugging
+                            Development
                         </h3>
 
                         <p>
 
-                            I included SWD, UART, USB, and CAN access so I
-                            could program the MCU and test different parts
-                            of the board during bring-up.
+                            I programmed the board through SWD with an
+                            ST-Link and also included UART, USB, and CAN
+                            for testing and debugging.
 
                         </p>
 
@@ -1808,7 +1992,7 @@
 
 
 
-    <!-- DESIGN DECISIONS -->
+    <!-- POWER AND PROTECTION -->
 
     <section class="project-section alt">
 
@@ -1822,7 +2006,7 @@
 
 
                 <h2 class="section-heading">
-                    Design Decisions
+                    Power & Protection
                 </h2>
 
             </div>
@@ -1832,121 +2016,806 @@
 
                 <p>
 
-                    A lot of the design came from the fact that this board
-                    had to work inside the rover, not just on my bench.
+                    I wanted the lighting board to connect directly to the
+                    rover power distribution rather than needing another
+                    external supply. I use an LMR51420 buck converter for
+                    the 5 V rail and a TPS7A2033 regulator for 3.3 V.
 
                 </p>
 
 
-                <div class="decision-list">
+                <p>
+
+                    At 100% PWM I measured about 0.75 A input current on
+                    one lighting board. I used a 1 A input fuse so normal
+                    full-output operation stays below the fuse rating while
+                    still giving the board protection against a larger
+                    fault current.
+
+                </p>
 
 
-                    <div class="decision">
+                <div class="detail-list">
 
-                        <div class="decision-question">
-                            Why 21 to 29.4 V?
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Input Fuse
                         </div>
 
-                        <div class="decision-answer">
+                        <div class="detail-text">
 
-                            I designed around that range because that is
-                            the battery voltage the board sees on the rover.
-                            I wanted the controller to connect directly to
-                            the rover power system instead of needing another
-                            external supply.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="decision">
-
-                        <div class="decision-question">
-                            Why CAN?
-                        </div>
-
-                        <div class="decision-answer">
-
-                            I used CAN because the rover already uses CAN
-                            between its electrical subsystems. That let me
-                            make the lighting controller another node on
-                            the same network instead of adding separate
-                            control wiring.
+                            I used a 1 A fuse at the board input. The part
+                            reference shown in the schematic was originally
+                            there because I already had the correct PCB
+                            footprint, but the assembled boards use the
+                            1 A fuse I selected for the final hardware.
 
                         </div>
 
                     </div>
 
 
-                    <div class="decision">
+                    <div class="detail-row">
 
-                        <div class="decision-question">
-                            Why 4 layers?
+                        <div class="detail-title">
+                            Input TVS
                         </div>
 
-                        <div class="decision-answer">
+                        <div class="detail-text">
 
-                            I chose four layers because I had switching
-                            power, the STM32, several voltage rails,
-                            CAN, USB, and the LED circuitry on a fairly
-                            compact board. I wanted a solid ground plane
-                            and a cleaner way to distribute power without
-                            breaking up my return paths.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="decision">
-
-                        <div class="decision-question">
-                            Why STM32?
-                        </div>
-
-                        <div class="decision-answer">
-
-                            I used an STM32 because I needed CAN,
-                            PWM, firmware control, and normal embedded
-                            debugging and programming support on the same MCU.
+                            The board was first being designed around a lower
+                            rover voltage. When the rover changed to the
+                            24 V nominal system, I replaced the original
+                            input TVS with a higher-voltage-rated part that
+                            fit the same footprint.
 
                         </div>
 
                     </div>
 
 
-                    <div class="decision">
+                    <div class="detail-row">
 
-                        <div class="decision-question">
-                            Why constant current?
+                        <div class="detail-title">
+                            Reverse Polarity
                         </div>
 
-                        <div class="decision-answer">
+                        <div class="detail-text">
 
-                            I wanted the LED current to be controlled directly
-                            instead of depending only on a voltage and resistor.
-                            I used a dedicated LED driver and then used PWM
-                            when I wanted to change the lighting level.
+                            I considered adding a P-channel MOSFET for
+                            reverse-polarity protection. I decided not to
+                            add that stage because the XT30 connector is
+                            mechanically keyed and cannot normally be
+                            connected backwards.
 
                         </div>
 
                     </div>
 
 
-                    <div class="decision">
+                    <div class="detail-row">
 
-                        <div class="decision-question">
-                            Why PWM?
+                        <div class="detail-title">
+                            5 V Rail
                         </div>
 
-                        <div class="decision-answer">
+                        <div class="detail-text">
 
-                            I wanted the software to be able to change the
-                            light output without changing the hardware.
-                            PWM also became useful for the rover tasks where
-                            I needed different lighting behavior for Morse
-                            code and obstacle approach.
+                            I use the LMR51420 switching regulator to step
+                            the rover input down to 5 V for the lighting
+                            and supporting circuitry.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            3.3 V Rail
+                        </div>
+
+                        <div class="detail-text">
+
+                            I use the TPS7A2033 to generate the 3.3 V rail
+                            for the STM32 and the low-voltage electronics.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="callout">
+
+                    <strong>
+                        Requirement change during the project
+                    </strong>
+
+
+                    <p>
+
+                        The change from the earlier lower-voltage assumption
+                        to the final 24 V rover system happened after the PCB
+                        was already designed. Because the replacement TVS used
+                        the same footprint, I could update the protection
+                        device without changing the PCB layout.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CAN -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    03
+                </span>
+
+
+                <h2 class="section-heading">
+                    CAN Interface
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    I used CAN because the rover already communicates between
+                    its electrical subsystems over CAN. That meant I could
+                    make each lighting board another node on the existing
+                    network instead of adding separate control wiring.
+
+                </p>
+
+
+                <p>
+
+                    I use a TCAN334G transceiver between the STM32 and the
+                    physical CAN bus. Since CANH and CANL leave the PCB and
+                    connect into the rover harness, I added an ESD2CAN24
+                    protection device directly on the bus lines.
+
+                </p>
+
+
+                <div class="detail-list">
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Transceiver
+                        </div>
+
+                        <div class="detail-text">
+
+                            I used the TCAN334G to translate between the
+                            STM32 logic signals and the differential CANH
+                            and CANL bus.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            CAN Protection
+                        </div>
+
+                        <div class="detail-text">
+
+                            I placed an ESD2CAN24 protection device on
+                            CANH and CANL so external ESD and transient
+                            events on the rover wiring are not passed
+                            directly into the transceiver.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Split Termination
+                        </div>
+
+                        <div class="detail-text">
+
+                            I included two 60 Ω resistors with a 4.7 nF
+                            capacitor at the midpoint. The two resistors
+                            form the 120 Ω CAN termination, and the split
+                            midpoint capacitor helps with high-frequency
+                            common-mode noise.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Five Boards
+                        </div>
+
+                        <div class="detail-text">
+
+                            I wanted one PCB design that I could use in all
+                            five lighting positions, so I included the
+                            termination network on every PCB. I only populated
+                            the termination on the boards at the two physical
+                            ends of the CAN bus. The interior boards do not
+                            have the termination populated.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LED DRIVER -->
+
+    <section class="project-section alt">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    04
+                </span>
+
+
+                <h2 class="section-heading">
+                    LED Control
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    I did not want the LED current to depend only on a
+                    supply voltage and resistor. I used a KTD2505R
+                    constant-current LED driver and controlled it from
+                    the STM32.
+
+                </p>
+
+
+                <p>
+
+                    The LED stage uses the driver together with its
+                    inductor, rectifier, local capacitors, and feedback
+                    resistor. I use the CTRL input for PWM so I can change
+                    the light output in software without changing the
+                    hardware current-setting network.
+
+                </p>
+
+
+                <div class="detail-list">
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Driver
+                        </div>
+
+                        <div class="detail-text">
+
+                            KTD2505R constant-current LED driver.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Inductor
+                        </div>
+
+                        <div class="detail-text">
+
+                            I used a 10 µH inductor in the LED driver
+                            switching stage.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            PWM
+                        </div>
+
+                        <div class="detail-text">
+
+                            The STM32 drives the CTRL input so I can change
+                            the brightness and lighting behavior from firmware.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FIRMWARE AND CAN SOFTWARE -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    05
+                </span>
+
+
+                <h2 class="section-heading">
+                    Firmware & CAN Software
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    I configured the STM32 peripherals in STM32CubeMX and
+                    developed and flashed the firmware from STM32CubeIDE.
+                    I programmed and debugged the physical boards through
+                    SWD using an ST-Link.
+
+                </p>
+
+
+                <p>
+
+                    The team already had a shared CAN communication library
+                    being ported from another project. That library handled
+                    the common packing and unpacking structure, used the CAN
+                    frame ID for message type information, and kept the normal
+                    CAN payload to eight bytes. I integrated that library into
+                    the lighting firmware and added the lighting-specific
+                    messages and behavior I needed.
+
+                </p>
+
+
+                <div class="detail-list">
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            PWM Commands
+                        </div>
+
+                        <div class="detail-text">
+
+                            I added the lighting-side handling for incoming
+                            PWM commands and applied the requested value
+                            to the physical LED output.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Feedback
+                        </div>
+
+                        <div class="detail-text">
+
+                            After applying a command, I added feedback so
+                            the board could report the resulting PWM value
+                            back over CAN instead of only receiving commands.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Heartbeat
+                        </div>
+
+                        <div class="detail-text">
+
+                            I added periodic heartbeat messages so I could
+                            tell from the CAN bus that each lighting board
+                            was still alive even when I was not sending
+                            it a new PWM command.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Simultaneous RX / TX
+                        </div>
+
+                        <div class="detail-text">
+
+                            I specifically tested receiving PWM commands
+                            while the STM32 was also transmitting heartbeat
+                            and feedback messages. I had some issues while
+                            getting this working, but I was able to get
+                            simultaneous receive and transmit working correctly.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Five Boards
+                        </div>
+
+                        <div class="detail-text">
+
+                            I flashed all five lighting boards with my
+                            STM32 firmware before the full rover integration.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="software-flow">
+
+                    <div class="flow-block">
+                        Python Test Script
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        USB-CAN Adapter
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        CAN Bus
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        TCAN334G
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        STM32
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        PWM Output
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        Feedback + Heartbeat
+                    </div>
+
+                </div>
+
+
+
+                <div class="code-grid">
+
+
+                    <a
+                        class="code-card"
+                        href="https://github.com/UBC-Snowbots/FirmFlake"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <div class="code-card-label">
+                            C / STM32
+                        </div>
+
+
+                        <h3>
+                            Rover Firmware Repository
+                        </h3>
+
+
+                        <p>
+
+                            Firmware repository containing the embedded
+                            rover code that the lighting subsystem was
+                            integrated into.
+
+                        </p>
+
+
+                        <div class="code-card-link">
+                            View Repository ↗
+                        </div>
+
+                    </a>
+
+
+
+                    <a
+                        class="code-card"
+                        href="https://github.com/UBC-Snowbots/FirmFlake/tree/main/common_libraries/comms"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <div class="code-card-label">
+                            CAN Communications
+                        </div>
+
+
+                        <h3>
+                            Shared Comms Library
+                        </h3>
+
+
+                        <p>
+
+                            The shared packing and unpacking library I used
+                            and extended with lighting-specific command,
+                            feedback, and heartbeat behavior.
+
+                        </p>
+
+
+                        <div class="code-card-link">
+                            View Comms Library ↗
+                        </div>
+
+                    </a>
+
+
+
+                    <div class="code-card local">
+
+                        <div class="code-card-label">
+                            Python
+                        </div>
+
+
+                        <h3>
+                            CAN Test Script
+                        </h3>
+
+
+                        <p>
+
+                            My bench script for sending PWM commands,
+                            watching board feedback, and displaying
+                            heartbeat messages over the USB-CAN adapter.
+
+                        </p>
+
+
+                        <div class="code-card-link">
+                            python-can | gs_usb | can.logger
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PYTHON BENCH TOOL -->
+
+    <section class="project-section alt">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    06
+                </span>
+
+
+                <h2 class="section-heading">
+                    Python CAN Testing
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    For the bench setup I wrote a Python test script using
+                    python-can. I connected the laptop to the CAN bus through
+                    a USB-CAN adapter and used the gs_usb interface.
+
+                </p>
+
+
+                <p>
+
+                    I had to configure the USB adapter with Zadig so Windows
+                    would expose it through the correct driver. Once that was
+                    working, I used the Python script and can.logger to send
+                    commands and watch the traffic coming back from the board.
+
+                </p>
+
+
+                <div class="detail-list">
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            python-can
+                        </div>
+
+                        <div class="detail-text">
+
+                            I used python-can as the interface between my
+                            test script and the CAN adapter.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            gs_usb
+                        </div>
+
+                        <div class="detail-text">
+
+                            I used the gs_usb backend for the USB-CAN
+                            adapter connection.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Zadig
+                        </div>
+
+                        <div class="detail-text">
+
+                            I configured the adapter's Windows USB driver
+                            with Zadig before python-can could communicate
+                            with it correctly.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            can.logger
+                        </div>
+
+                        <div class="detail-text">
+
+                            I used can.logger while testing so I could
+                            watch commands, feedback frames, and heartbeat
+                            messages on the bus.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            What I Checked
+                        </div>
+
+                        <div class="detail-text">
+
+                            From my laptop I could send a new PWM value,
+                            see the physical lighting change, receive the
+                            board's feedback, and continue seeing heartbeat
+                            messages showing that the STM32 was active.
 
                         </div>
 
@@ -1972,7 +2841,7 @@
             <div>
 
                 <span class="section-kicker">
-                    03
+                    07
                 </span>
 
 
@@ -1987,22 +2856,20 @@
 
                 <p>
 
-                    I separated the switching power area from the STM32
-                    and communication circuitry as much as the board size
-                    allowed. I kept the switching components close together
-                    because I wanted the high-current switching loop to stay
-                    small.
+                    When I laid out the board, I tried to think about where
+                    the current actually flows instead of only whether I could
+                    physically route every connection.
 
                 </p>
 
 
                 <p>
 
-                    I used one internal layer as a continuous ground plane
-                    and another internal layer for power distribution.
-                    That made the routing much cleaner and gave the signals
-                    a better ground reference than I would have had on a
-                    two-layer version.
+                    I used four layers because the board combines switching
+                    power, an STM32, CAN, USB, several voltage rails, and the
+                    LED driver in a fairly small area. I kept one internal
+                    layer as a solid ground plane and used the other internal
+                    layer for power distribution.
 
                 </p>
 
@@ -2013,14 +2880,32 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
+                            Decoupling
+                        </div>
+
+                        <div class="detail-text">
+
+                            I placed the small ceramic decoupling capacitors
+                            close to the IC supply pins. I also used larger
+                            local capacitors so the board had both
+                            high-frequency decoupling and local energy storage.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
                             Ground Plane
                         </div>
 
                         <div class="detail-text">
 
-                            I kept an internal ground layer as continuous
-                            as possible so I did not have to route ground
-                            around the board with long traces.
+                            I kept one internal layer as a solid ground
+                            reference so signals had a short return path
+                            instead of depending on long ground traces.
 
                         </div>
 
@@ -2030,14 +2915,15 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Power
+                            VIN / 5 V / 3.3 V
                         </div>
 
                         <div class="detail-text">
 
-                            I used the internal power layer and copper pours
-                            to distribute the rails and give the higher-current
-                            paths more copper.
+                            I used wider copper and polygon pours for
+                            important power nets including VIN, 5 V, and
+                            3.3 V instead of treating them like normal
+                            low-current signal traces.
 
                         </div>
 
@@ -2047,14 +2933,14 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Buck Converter
+                            LMR51420
                         </div>
 
                         <div class="detail-text">
 
-                            I kept the converter, inductor, and nearby
-                            capacitors close together and kept the switching
-                            node compact.
+                            I kept the buck converter, L2, and the nearby
+                            input and output capacitors close together so
+                            the high-current switching loop stayed compact.
 
                         </div>
 
@@ -2064,14 +2950,32 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            STM32 Area
+                            KTD2505R
                         </div>
 
                         <div class="detail-text">
 
-                            I kept the microcontroller and its low-voltage
-                            circuitry away from the main switching area where
-                            I could.
+                            I followed the same idea around the LED driver
+                            by keeping U11, the 10 µH inductor, rectifier,
+                            and local capacitors close to the switching stage.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Noise Separation
+                        </div>
+
+                        <div class="detail-text">
+
+                            I tried to keep the noisier switching areas away
+                            from the STM32, crystal, CAN, and low-voltage
+                            control circuitry where the board geometry
+                            allowed it.
 
                         </div>
 
@@ -2088,7 +2992,7 @@
 
 
 
-    <!-- BRING UP -->
+    <!-- ASSEMBLY -->
 
     <section class="project-section alt">
 
@@ -2097,7 +3001,7 @@
             <div>
 
                 <span class="section-kicker">
-                    04
+                    08
                 </span>
 
 
@@ -2112,19 +3016,19 @@
 
                 <p>
 
-                    I assembled and hand soldered five boards. Before I powered
-                    them, I checked the component orientation, connector
-                    placement, polarity, and solder joints.
+                    I assembled and hand soldered five boards. Before I
+                    applied power I checked component orientation, polarity,
+                    connector placement, and solder joints.
 
                 </p>
 
 
                 <p>
 
-                    This was my first PCB revision, and I did not need to
-                    respin the board. Once I assembled it, I was able to
-                    power it, program the STM32, communicate with it,
-                    control the LEDs, and eventually run the same hardware
+                    This was my first PCB revision and I did not need a board
+                    respin. After assembly I was able to bring up the power
+                    rails, program the STM32, get CAN communication working,
+                    control the lighting, and later use the same hardware
                     on the rover.
 
                 </p>
@@ -2141,9 +3045,9 @@
 
                         <div class="detail-text">
 
-                            I checked for solder bridges, wrong orientation,
-                            polarity mistakes, and assembly problems before
-                            applying power.
+                            I checked for solder bridges, wrong component
+                            orientation, polarity mistakes, and obvious
+                            assembly problems before powering the board.
 
                         </div>
 
@@ -2153,13 +3057,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            2. Power Rails
+                            2. Power
                         </div>
 
                         <div class="detail-text">
 
-                            I powered the board in stages and checked the
-                            regulated rails before moving on to the MCU.
+                            I powered the board and checked the regulated
+                            rails before moving on to the microcontroller.
 
                         </div>
 
@@ -2169,13 +3073,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            3. Programming
+                            3. SWD
                         </div>
 
                         <div class="detail-text">
 
-                            I programmed the STM32 through SWD and confirmed
-                            that my firmware was running.
+                            I connected an ST-Link through the SWD header
+                            and programmed the STM32 from STM32CubeIDE.
 
                         </div>
 
@@ -2190,8 +3094,9 @@
 
                         <div class="detail-text">
 
-                            I connected a USB-CAN adapter and sent commands
-                            to the board while checking the returned feedback.
+                            I connected the USB-CAN adapter and worked
+                            through the CAN communication until I could
+                            reliably send commands and receive feedback.
 
                         </div>
 
@@ -2206,8 +3111,8 @@
 
                         <div class="detail-text">
 
-                            I changed the PWM command and checked that the
-                            physical lighting output changed with it.
+                            I tested different PWM values and checked that
+                            the physical lighting changed as expected.
 
                         </div>
 
@@ -2217,14 +3122,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            6. Rover
+                            6. All Five Boards
                         </div>
 
                         <div class="detail-text">
 
-                            After the bench tests, I connected the board
-                            to the rover power and CAN system and tested
-                            it in the actual application.
+                            I flashed the firmware onto all five boards
+                            before the final rover integration.
 
                         </div>
 
@@ -2241,7 +3145,7 @@
 
 
 
-    <!-- VALIDATION -->
+    <!-- TESTING -->
 
     <section class="project-section">
 
@@ -2250,7 +3154,7 @@
             <div>
 
                 <span class="section-kicker">
-                    05
+                    09
                 </span>
 
 
@@ -2265,10 +3169,10 @@
 
                 <p>
 
-                    I did not want to treat “the LEDs turned on” as the
-                    whole validation. I brought the board up in pieces and
-                    checked the power, programming, communication, PWM
-                    control, and final rover integration separately.
+                    I did not want my only test to be whether the lights
+                    turned on. I brought the system up in pieces so I could
+                    separate power, firmware, communication, and lighting
+                    problems from each other.
 
                 </p>
 
@@ -2329,8 +3233,8 @@
                                 </td>
 
                                 <td>
-                                    I programmed the MCU through SWD
-                                    and ran my firmware.
+                                    I programmed the MCU through ST-Link
+                                    and SWD from STM32CubeIDE.
                                 </td>
 
                                 <td>
@@ -2345,12 +3249,55 @@
                             <tr>
 
                                 <td class="validation-test">
-                                    CAN communication
+                                    CAN receive
                                 </td>
 
                                 <td>
-                                    I used a USB-CAN adapter to send
-                                    commands and read feedback from the board.
+                                    I sent PWM commands from my Python
+                                    test setup and checked that the STM32
+                                    received and applied them.
+                                </td>
+
+                                <td>
+                                    <span class="pass">
+                                        PASS
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="validation-test">
+                                    CAN transmit
+                                </td>
+
+                                <td>
+                                    I had the board return feedback and
+                                    periodic heartbeat frames while it
+                                    was running.
+                                </td>
+
+                                <td>
+                                    <span class="pass">
+                                        PASS
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="validation-test">
+                                    Simultaneous RX / TX
+                                </td>
+
+                                <td>
+                                    I tested receiving new PWM commands
+                                    while the board continued transmitting
+                                    heartbeat and feedback messages.
                                 </td>
 
                                 <td>
@@ -2369,13 +3316,33 @@
                                 </td>
 
                                 <td>
-                                    I changed the PWM command and checked
-                                    that the lighting output changed.
+                                    I changed the requested PWM value and
+                                    checked the physical change in lighting.
                                 </td>
 
                                 <td>
                                     <span class="pass">
                                         PASS
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td class="validation-test">
+                                    Full output current
+                                </td>
+
+                                <td>
+                                    I measured about 0.75 A input current
+                                    on one lighting board at 100% PWM.
+                                </td>
+
+                                <td>
+                                    <span class="pass">
+                                        ~0.75 A
                                     </span>
                                 </td>
 
@@ -2389,7 +3356,7 @@
                                 </td>
 
                                 <td>
-                                    I connected the board to the rover
+                                    I connected the boards to the rover
                                     electrical system and ran the lighting
                                     in the final setup.
                                 </td>
@@ -2397,26 +3364,6 @@
                                 <td>
                                     <span class="pass">
                                         PASS
-                                    </span>
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td class="validation-test">
-                                    First PCB revision
-                                </td>
-
-                                <td>
-                                    I used the original fabricated revision
-                                    through bring-up and rover integration.
-                                </td>
-
-                                <td>
-                                    <span class="pass">
-                                        NO RESPIN
                                     </span>
                                 </td>
 
@@ -2446,7 +3393,7 @@
             <div>
 
                 <span class="section-kicker">
-                    06
+                    10
                 </span>
 
 
@@ -2461,21 +3408,21 @@
 
                 <p>
 
-                    Once I was happy with the bench tests, I installed
-                    the lighting system on the rover. At that point I was
-                    testing more than the PCB by itself. I was checking
-                    whether it worked with the rover battery, CAN network,
-                    wiring, firmware, and the actual lighting load together.
+                    Once I was happy with the bench tests, I installed the
+                    lighting system on the rover. At that point I was no
+                    longer testing only the PCB. I was checking whether the
+                    boards worked with the rover battery, CAN network,
+                    wiring, firmware, and actual lighting load together.
 
                 </p>
 
 
                 <p>
 
-                    I used PWM to change the lighting dynamically.
-                    We used that behavior for tasks involving Morse code
-                    and for changing the lighting as the rover moved closer
-                    to an obstacle during puzzle-solving tasks.
+                    I used PWM to change the lighting dynamically. We used
+                    that behavior for tasks involving Morse code and for
+                    adjusting the lighting as the rover moved closer to
+                    an obstacle during puzzle-solving tasks.
 
                 </p>
 
@@ -2483,15 +3430,17 @@
                 <div class="callout">
 
                     <strong>
-                        What the rover photo shows
+                        Why I included the rover photo
                     </strong>
+
 
                     <p>
 
-                        The photo is not my only proof that the electronics
-                        worked. I use it mainly to show that the same board
-                        I designed and tested on the bench was eventually
-                        installed and operating on the actual rover.
+                        The photo is not the only evidence that the board
+                        worked. I include it because it shows that the same
+                        hardware I designed, assembled, programmed, and tested
+                        on the bench was eventually installed and operating
+                        on the rover.
 
                     </p>
 
@@ -2514,7 +3463,7 @@
             <div>
 
                 <span class="section-kicker">
-                    07
+                    11
                 </span>
 
 
@@ -2529,9 +3478,9 @@
 
                 <p>
 
-                    I used a mix of PCB design, embedded firmware,
-                    communication, bench testing, and physical assembly
-                    tools throughout the project.
+                    I used a mix of circuit design, PCB layout, embedded
+                    firmware, CAN software, physical assembly, and bench
+                    testing tools throughout the project.
 
                 </p>
 
@@ -2539,17 +3488,25 @@
                 <div class="tags">
 
                     <span class="tag">Altium</span>
-                    <span class="tag">STM32</span>
+                    <span class="tag">STM32F103</span>
+                    <span class="tag">STM32CubeMX</span>
+                    <span class="tag">STM32CubeIDE</span>
+                    <span class="tag">ST-Link</span>
+                    <span class="tag">SWD</span>
                     <span class="tag">C</span>
                     <span class="tag">Python</span>
+                    <span class="tag">python-can</span>
+                    <span class="tag">gs_usb</span>
+                    <span class="tag">can.logger</span>
+                    <span class="tag">Zadig</span>
                     <span class="tag">CAN</span>
-                    <span class="tag">USB-CAN</span>
                     <span class="tag">UART</span>
-                    <span class="tag">SWD</span>
+                    <span class="tag">USB</span>
                     <span class="tag">PWM</span>
                     <span class="tag">PCB Layout</span>
                     <span class="tag">Power Electronics</span>
                     <span class="tag">Hardware Bring-Up</span>
+                    <span class="tag">System Integration</span>
 
                 </div>
 
@@ -2575,7 +3532,7 @@
 
 
                 <div class="footer-description">
-                    Embedded hardware | PCB design | STM32 | CAN
+                    PCB design | STM32 | CAN | Firmware | Hardware bring-up
                 </div>
 
             </div>
