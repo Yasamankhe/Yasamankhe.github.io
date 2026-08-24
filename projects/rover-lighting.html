@@ -242,64 +242,7 @@
 
 
 
-        /* FIRST REVISION RESULT */
-
-        .result-strip {
-            padding: 0 0 64px;
-        }
-
-
-        .result-card {
-            display: grid;
-
-            grid-template-columns: 175px 1fr;
-
-            gap: 28px;
-
-            padding: 24px 26px;
-
-            background: var(--green-soft);
-
-            border: 1px solid #cedbd2;
-            border-left: 4px solid var(--green);
-            border-radius: 8px;
-        }
-
-
-        .result-label {
-            color: var(--green);
-
-            font-size: 0.67rem;
-            font-weight: 800;
-
-            letter-spacing: 0.1em;
-
-            text-transform: uppercase;
-        }
-
-
-        .result-main h2 {
-            margin-bottom: 7px;
-
-            color: #26372f;
-
-            font-size: 1.2rem;
-
-            letter-spacing: -0.02em;
-        }
-
-
-        .result-main p {
-            max-width: 750px;
-
-            color: #5c6d64;
-
-            font-size: 0.88rem;
-        }
-
-
-
-        /* TOP LEVEL PROJECT SECTIONS */
+        /* TOP SECTIONS */
 
         .top-section {
             padding: 64px 0 70px;
@@ -459,7 +402,7 @@
 
 
 
-        /* SIX IMAGE PROGRESSION */
+        /* PHOTO PROGRESSION */
 
         .progression-gallery {
             display: grid;
@@ -808,7 +751,7 @@
 
 
 
-        /* ARCHITECTURE CARDS */
+        /* ARCHITECTURE */
 
         .architecture-grid {
             display: grid;
@@ -851,12 +794,10 @@
 
 
 
-        /* DESIGN DECISIONS */
+        /* DECISIONS */
 
         .decision-list {
             display: grid;
-
-            gap: 0;
 
             margin-top: 28px;
 
@@ -953,9 +894,9 @@
         .validation-table {
             width: 100%;
 
-            border-collapse: collapse;
-
             min-width: 680px;
+
+            border-collapse: collapse;
         }
 
 
@@ -1129,13 +1070,6 @@
 
             font-size: 0.79rem;
             font-weight: 700;
-
-            transition: background 0.2s ease;
-        }
-
-
-        .back-button:hover {
-            background: var(--accent-dark);
         }
 
 
@@ -1175,16 +1109,7 @@
 
 
             .top-description {
-                max-width: 650px;
-
                 text-align: left;
-            }
-
-
-            .result-card {
-                grid-template-columns: 1fr;
-
-                gap: 8px;
             }
 
         }
@@ -1193,12 +1118,7 @@
         @media (max-width: 600px) {
 
             .project-hero {
-                padding: 65px 0 45px;
-            }
-
-
-            .result-strip {
-                padding-bottom: 50px;
+                padding: 65px 0 50px;
             }
 
 
@@ -1245,7 +1165,6 @@
         }
 
     </style>
-
 </head>
 
 
@@ -1299,12 +1218,13 @@
 
             <p class="project-summary">
 
-                Designed, assembled, programmed, and validated a 4-layer
-                STM32 and CAN based embedded controller for a rover electrical
-                system. The board combines DC-DC power conversion,
-                constant-current LED driving, embedded control,
-                communication, protection, firmware, and system integration
-                in a single subsystem.
+                I designed this board as the lighting controller for our rover.
+                I wanted one board that could take power directly from the rover,
+                communicate over CAN, control the LEDs from an STM32, and give
+                me the programming and debugging interfaces I needed during
+                bring-up. I designed the schematic and PCB, assembled the boards,
+                wrote and tested the firmware, and then integrated the finished
+                system onto the rover.
 
             </p>
 
@@ -1333,7 +1253,7 @@
 
                 <div class="hero-stat">
                     <strong>CAN</strong>
-                    network
+                    communication
                 </div>
 
             </div>
@@ -1341,46 +1261,6 @@
         </div>
 
     </header>
-
-
-
-    <!-- FIRST REVISION RESULT -->
-
-    <div class="result-strip">
-
-        <div class="container">
-
-            <div class="result-card">
-
-                <div class="result-label">
-                    First Revision Result
-                </div>
-
-
-                <div class="result-main">
-
-                    <h2>
-                        Successful first-pass hardware integration
-                    </h2>
-
-
-                    <p>
-
-                        The first assembled PCB revision powered successfully,
-                        accepted firmware, communicated through the intended
-                        interfaces, controlled the lighting output, and reached
-                        successful integration on the rover without requiring
-                        a PCB respin.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
 
 
 
@@ -1398,6 +1278,7 @@
                         Design File
                     </span>
 
+
                     <h2 class="top-title">
                         Full Schematic
                     </h2>
@@ -1407,8 +1288,7 @@
 
                 <p class="top-description">
 
-                    Review the complete electrical design before moving
-                    through the physical implementation and validation.
+                    This is the complete schematic I used for the board.
 
                 </p>
 
@@ -1425,7 +1305,7 @@
                 <div>
 
                     <div class="schematic-label">
-                        Complete Circuit Design
+                        Complete Circuit
                     </div>
 
 
@@ -1436,10 +1316,10 @@
 
                     <p>
 
-                        Includes the power stage, STM32 support circuitry,
-                        CAN interface, USB interface, constant-current LED
-                        driving, connectors, programming interfaces,
-                        and electrical protection.
+                        I included the power stage, STM32 support circuitry,
+                        CAN and USB interfaces, LED driver, connectors,
+                        programming interfaces, and protection circuitry
+                        in the same design.
 
                     </p>
 
@@ -1464,20 +1344,20 @@
 
 
 
-    <!-- SIX PHOTOS -->
+    <!-- PHOTOS -->
 
     <section class="top-section">
 
         <div class="container">
-
 
             <div class="top-heading">
 
                 <div>
 
                     <span class="top-kicker">
-                        Design to Deployment
+                        Design to Rover
                     </span>
+
 
                     <h2 class="top-title">
                         Project Progression
@@ -1488,9 +1368,9 @@
 
                 <p class="top-description">
 
-                    The progression moves from the board design and copper
-                    implementation to physical hardware and final rover
-                    integration.
+                    These are the main stages of the project, from the PCB
+                    design to the boards I assembled and the final system
+                    running on the rover.
 
                 </p>
 
@@ -1500,8 +1380,6 @@
 
             <div class="progression-gallery">
 
-
-                <!-- IMAGE 1 -->
 
                 <figure class="progression-item">
 
@@ -1527,8 +1405,6 @@
 
 
 
-                <!-- IMAGE 2 -->
-
                 <figure class="progression-item">
 
                     <div class="progression-image">
@@ -1552,8 +1428,6 @@
                 </figure>
 
 
-
-                <!-- IMAGE 3 -->
 
                 <figure class="progression-item">
 
@@ -1579,8 +1453,6 @@
 
 
 
-                <!-- IMAGE 4 -->
-
                 <figure class="progression-item">
 
                     <div class="progression-image">
@@ -1605,8 +1477,6 @@
 
 
 
-                <!-- IMAGE 5 -->
-
                 <figure class="progression-item">
 
                     <div class="progression-image">
@@ -1630,8 +1500,6 @@
                 </figure>
 
 
-
-                <!-- IMAGE 6 -->
 
                 <figure class="progression-item rover">
 
@@ -1670,7 +1538,6 @@
 
         <div class="container">
 
-
             <div class="top-heading">
 
                 <div>
@@ -1678,6 +1545,7 @@
                     <span class="top-kicker">
                         Hardware Validation
                     </span>
+
 
                     <h2 class="top-title">
                         Bench Test
@@ -1688,9 +1556,8 @@
 
                 <p class="top-description">
 
-                    Functional validation of CAN communication,
-                    command feedback, and PWM-controlled lighting
-                    before installation on the rover.
+                    I recorded this while I was testing CAN communication
+                    and PWM control before putting the boards on the rover.
 
                 </p>
 
@@ -1699,7 +1566,6 @@
 
 
             <div class="video-wrap">
-
 
                 <div class="video-frame">
 
@@ -1727,9 +1593,8 @@
 
                         <div class="video-cover-content">
 
-
                             <div class="video-label">
-                                Lab Validation
+                                Lab Test
                             </div>
 
 
@@ -1740,9 +1605,9 @@
 
                             <div class="video-description">
 
-                                USB-CAN communication, command feedback,
-                                and PWM-controlled lighting during
-                                hardware bring-up.
+                                I used a USB-CAN adapter to send commands
+                                to the board and change the lighting output
+                                through PWM.
 
                             </div>
 
@@ -1763,23 +1628,20 @@
 
                                 <span class="play-icon"></span>
 
-                                Watch validation clip
+                                Watch Clip
 
                             </button>
 
-
                         </div>
 
-
                     </div>
-
 
                 </div>
 
 
                 <div class="video-caption">
 
-                    Bench validation of CAN communication and PWM-controlled lighting.
+                    CAN communication and PWM lighting test during bring-up.
 
                 </div>
 
@@ -1791,7 +1653,7 @@
 
 
 
-    <!-- SYSTEM OVERVIEW -->
+    <!-- OVERVIEW -->
 
     <section class="project-section">
 
@@ -1803,8 +1665,9 @@
                     01
                 </span>
 
+
                 <h2 class="section-heading">
-                    System Overview
+                    How I Designed It
                 </h2>
 
             </div>
@@ -1814,22 +1677,19 @@
 
                 <p>
 
-                    The controller was designed as one node within the larger
-                    rover electrical architecture. It receives power directly
-                    from the rover electrical system, generates the required
-                    lower-voltage rails, communicates over CAN, and controls
-                    the lighting output through an STM32 microcontroller.
+                    I designed the board to work as one node on the rover's
+                    electrical system. I take the rover battery input,
+                    convert it to the lower voltages I need, receive commands
+                    over CAN, and use the STM32 to control the LED driver.
 
                 </p>
 
 
                 <p>
 
-                    The project covered the full hardware lifecycle:
-                    requirements, circuit design, component selection,
-                    PCB layout, fabrication, hand assembly, firmware,
-                    staged bring-up, communication testing,
-                    PWM validation, and final system integration.
+                    I also wanted the board to be easy to bring up and debug,
+                    so I included SWD, UART, USB, and CAN access instead of
+                    depending on only one interface.
 
                 </p>
 
@@ -1845,8 +1705,9 @@
 
                         <p>
 
-                            21 to 29.4 V rover input with regulated
-                            internal rails for the embedded electronics.
+                            I designed the input for the rover's
+                            21 to 29.4 V battery range and generated the
+                            lower voltage rails on the board.
 
                         </p>
 
@@ -1856,13 +1717,14 @@
                     <div class="architecture-card">
 
                         <h3>
-                            Processing
+                            STM32
                         </h3>
 
                         <p>
 
-                            STM32 microcontroller handles network commands,
-                            firmware logic, PWM output, and board control.
+                            I used the STM32 to handle commands,
+                            PWM generation, communication, and the
+                            lighting behavior.
 
                         </p>
 
@@ -1872,13 +1734,14 @@
                     <div class="architecture-card">
 
                         <h3>
-                            Communication
+                            CAN
                         </h3>
 
                         <p>
 
-                            CAN provides communication between the lighting
-                            controller and the rest of the rover network.
+                            I connected the board to the rover's CAN network
+                            so it could receive commands from the rest
+                            of the system.
 
                         </p>
 
@@ -1888,13 +1751,13 @@
                     <div class="architecture-card">
 
                         <h3>
-                            Lighting
+                            LED Driver
                         </h3>
 
                         <p>
 
-                            Dedicated constant-current LED circuitry provides
-                            controlled drive while PWM changes output behavior.
+                            I used a constant-current driver for the LEDs
+                            and controlled the output with PWM from the STM32.
 
                         </p>
 
@@ -1909,8 +1772,9 @@
 
                         <p>
 
-                            External power and communication interfaces include
-                            protection against electrical transients.
+                            I added protection around the external power
+                            and CAN connections because those are the parts
+                            of the board exposed to the rover wiring.
 
                         </p>
 
@@ -1920,14 +1784,14 @@
                     <div class="architecture-card">
 
                         <h3>
-                            Development Interfaces
+                            Debugging
                         </h3>
 
                         <p>
 
-                            SWD, UART, USB, and CAN interfaces support
-                            programming, communication, debugging,
-                            and hardware validation.
+                            I included SWD, UART, USB, and CAN access so I
+                            could program the MCU and test different parts
+                            of the board during bring-up.
 
                         </p>
 
@@ -1944,7 +1808,7 @@
 
 
 
-    <!-- ENGINEERING DECISIONS -->
+    <!-- DESIGN DECISIONS -->
 
     <section class="project-section alt">
 
@@ -1956,8 +1820,9 @@
                     02
                 </span>
 
+
                 <h2 class="section-heading">
-                    Engineering Decisions
+                    Design Decisions
                 </h2>
 
             </div>
@@ -1967,9 +1832,8 @@
 
                 <p>
 
-                    The board architecture was driven by the requirements
-                    of operating as part of a mobile rover rather than as
-                    a standalone laboratory circuit.
+                    A lot of the design came from the fact that this board
+                    had to work inside the rover, not just on my bench.
 
                 </p>
 
@@ -1980,16 +1844,16 @@
                     <div class="decision">
 
                         <div class="decision-question">
-                            Why 21 to 29.4 V input?
+                            Why 21 to 29.4 V?
                         </div>
 
                         <div class="decision-answer">
 
-                            The lighting controller had to operate directly from
-                            the rover's existing battery and power-distribution
-                            architecture. Designing for the complete battery
-                            voltage range avoided requiring a separate external
-                            supply for the subsystem.
+                            I designed around that range because that is
+                            the battery voltage the board sees on the rover.
+                            I wanted the controller to connect directly to
+                            the rover power system instead of needing another
+                            external supply.
 
                         </div>
 
@@ -2004,11 +1868,11 @@
 
                         <div class="decision-answer">
 
-                            CAN was the communication interface used by the rover
-                            electrical network. Using CAN allowed the lighting
-                            board to operate as a distributed controller and
-                            receive commands from the larger rover system rather
-                            than requiring dedicated point-to-point control wiring.
+                            I used CAN because the rover already uses CAN
+                            between its electrical subsystems. That let me
+                            make the lighting controller another node on
+                            the same network instead of adding separate
+                            control wiring.
 
                         </div>
 
@@ -2023,13 +1887,12 @@
 
                         <div class="decision-answer">
 
-                            The board combines switching power conversion,
-                            microcontroller circuitry, communication interfaces,
-                            and multiple power rails in a compact layout.
-                            A four-layer stack provided a continuous internal
-                            ground reference, dedicated internal power
-                            distribution, and more controlled routing than
-                            a two-layer implementation.
+                            I chose four layers because I had switching
+                            power, the STM32, several voltage rails,
+                            CAN, USB, and the LED circuitry on a fairly
+                            compact board. I wanted a solid ground plane
+                            and a cleaner way to distribute power without
+                            breaking up my return paths.
 
                         </div>
 
@@ -2044,11 +1907,9 @@
 
                         <div class="decision-answer">
 
-                            The microcontroller provides the digital peripherals
-                            needed for CAN communication, PWM generation,
-                            firmware control, programming, and debugging while
-                            fitting naturally into the rover's embedded
-                            electronics architecture.
+                            I used an STM32 because I needed CAN,
+                            PWM, firmware control, and normal embedded
+                            debugging and programming support on the same MCU.
 
                         </div>
 
@@ -2058,16 +1919,15 @@
                     <div class="decision">
 
                         <div class="decision-question">
-                            Why constant-current LEDs?
+                            Why constant current?
                         </div>
 
                         <div class="decision-answer">
 
-                            The LED load is better controlled by regulating
-                            current rather than relying only on a fixed voltage.
-                            The dedicated driver provides predictable LED current
-                            while allowing the microcontroller to adjust output
-                            through PWM.
+                            I wanted the LED current to be controlled directly
+                            instead of depending only on a voltage and resistor.
+                            I used a dedicated LED driver and then used PWM
+                            when I wanted to change the lighting level.
 
                         </div>
 
@@ -2082,12 +1942,11 @@
 
                         <div class="decision-answer">
 
-                            PWM provided software-controlled adjustment of
-                            illumination without changing the underlying
-                            constant-current drive. This allowed lighting
-                            behavior to be changed dynamically for rover tasks,
-                            including obstacle approach and Morse-code-related
-                            operation.
+                            I wanted the software to be able to change the
+                            light output without changing the hardware.
+                            PWM also became useful for the rover tasks where
+                            I needed different lighting behavior for Morse
+                            code and obstacle approach.
 
                         </div>
 
@@ -2104,7 +1963,7 @@
 
 
 
-    <!-- CIRCUIT DESIGN -->
+    <!-- PCB LAYOUT -->
 
     <section class="project-section">
 
@@ -2116,136 +1975,6 @@
                     03
                 </span>
 
-                <h2 class="section-heading">
-                    Circuit Design
-                </h2>
-
-            </div>
-
-
-            <div class="section-content">
-
-                <p>
-
-                    The schematic combines the functions required for a
-                    complete embedded subsystem rather than only the LED load.
-                    The design includes the input power stage, voltage
-                    conversion, embedded controller, CAN physical layer,
-                    lighting driver, programming interfaces, connectors,
-                    and protection.
-
-                </p>
-
-
-                <div class="detail-list">
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            Power Conversion
-                        </div>
-
-                        <div class="detail-text">
-
-                            A buck converter generates the 5 V rail from the
-                            rover battery input, with additional regulation
-                            providing the 3.3 V electronics rail.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            STM32
-                        </div>
-
-                        <div class="detail-text">
-
-                            The microcontroller section includes decoupling,
-                            clocking, reset, programming, communication,
-                            and PWM connections required for embedded operation.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            CAN Interface
-                        </div>
-
-                        <div class="detail-text">
-
-                            A dedicated CAN transceiver converts the STM32
-                            logic-level signals to the differential physical
-                            layer used by the rover CAN bus.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            Lighting Driver
-                        </div>
-
-                        <div class="detail-text">
-
-                            Constant-current LED driving controls the physical
-                            lighting load while PWM from the microcontroller
-                            adjusts operating behavior.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            Protection
-                        </div>
-
-                        <div class="detail-text">
-
-                            Power and CAN interfaces include transient and
-                            ESD protection so external electrical events are
-                            not passed directly into sensitive circuitry.
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- PCB DESIGN -->
-
-    <section class="project-section alt">
-
-        <div class="container section-grid">
-
-            <div>
-
-                <span class="section-kicker">
-                    04
-                </span>
 
                 <h2 class="section-heading">
                     PCB Layout
@@ -2258,12 +1987,22 @@
 
                 <p>
 
-                    Images 01 through 04 show the transition from the
-                    mechanical PCB representation to the actual copper
-                    implementation. The layout was organized around the
-                    very different electrical requirements of the switching
-                    power stage, microcontroller, CAN interface,
-                    and LED circuitry.
+                    I separated the switching power area from the STM32
+                    and communication circuitry as much as the board size
+                    allowed. I kept the switching components close together
+                    because I wanted the high-current switching loop to stay
+                    small.
+
+                </p>
+
+
+                <p>
+
+                    I used one internal layer as a continuous ground plane
+                    and another internal layer for power distribution.
+                    That made the routing much cleaner and gave the signals
+                    a better ground reference than I would have had on a
+                    two-layer version.
 
                 </p>
 
@@ -2274,14 +2013,14 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Ground Reference
+                            Ground Plane
                         </div>
 
                         <div class="detail-text">
 
-                            An internal layer provides a continuous ground
-                            reference beneath the signal layers, reducing
-                            dependence on fragmented ground routing.
+                            I kept an internal ground layer as continuous
+                            as possible so I did not have to route ground
+                            around the board with long traces.
 
                         </div>
 
@@ -2291,14 +2030,14 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Power Distribution
+                            Power
                         </div>
 
                         <div class="detail-text">
 
-                            An internal power layer and copper pours distribute
-                            the regulated supply across the board while keeping
-                            higher-current paths appropriately sized.
+                            I used the internal power layer and copper pours
+                            to distribute the rails and give the higher-current
+                            paths more copper.
 
                         </div>
 
@@ -2308,15 +2047,14 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Switching Region
+                            Buck Converter
                         </div>
 
                         <div class="detail-text">
 
-                            The buck converter, inductor, input/output
-                            capacitors, and switching-node routing were kept
-                            compact to reduce the physical area of the
-                            high-current switching loop.
+                            I kept the converter, inductor, and nearby
+                            capacitors close together and kept the switching
+                            node compact.
 
                         </div>
 
@@ -2326,14 +2064,14 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Digital Region
+                            STM32 Area
                         </div>
 
                         <div class="detail-text">
 
-                            STM32 control, communication, programming,
-                            and low-voltage circuitry were kept away from
-                            the highest-noise switching region where possible.
+                            I kept the microcontroller and its low-voltage
+                            circuitry away from the main switching area where
+                            I could.
 
                         </div>
 
@@ -2352,15 +2090,16 @@
 
     <!-- BRING UP -->
 
-    <section class="project-section">
+    <section class="project-section alt">
 
         <div class="container section-grid">
 
             <div>
 
                 <span class="section-kicker">
-                    05
+                    04
                 </span>
+
 
                 <h2 class="section-heading">
                     Assembly & Bring-Up
@@ -2373,10 +2112,20 @@
 
                 <p>
 
-                    Five copies of the board were assembled and hand soldered.
-                    Bring-up was performed in stages so that power integrity,
-                    programming, communication, and load control could be
-                    verified independently before full-system operation.
+                    I assembled and hand soldered five boards. Before I powered
+                    them, I checked the component orientation, connector
+                    placement, polarity, and solder joints.
+
+                </p>
+
+
+                <p>
+
+                    This was my first PCB revision, and I did not need to
+                    respin the board. Once I assembled it, I was able to
+                    power it, program the STM32, communicate with it,
+                    control the LEDs, and eventually run the same hardware
+                    on the rover.
 
                 </p>
 
@@ -2392,9 +2141,9 @@
 
                         <div class="detail-text">
 
-                            Checked component orientation, connector placement,
-                            polarity, solder joints, and possible bridges
-                            before applying power.
+                            I checked for solder bridges, wrong orientation,
+                            polarity mistakes, and assembly problems before
+                            applying power.
 
                         </div>
 
@@ -2409,9 +2158,8 @@
 
                         <div class="detail-text">
 
-                            Verified the expected regulated rails before
-                            programming the microcontroller or attaching
-                            the board to the complete rover system.
+                            I powered the board in stages and checked the
+                            regulated rails before moving on to the MCU.
 
                         </div>
 
@@ -2421,13 +2169,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            3. MCU Programming
+                            3. Programming
                         </div>
 
                         <div class="detail-text">
 
-                            Programmed the STM32 through the debug interface
-                            and confirmed basic firmware execution.
+                            I programmed the STM32 through SWD and confirmed
+                            that my firmware was running.
 
                         </div>
 
@@ -2437,13 +2185,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            4. Communication
+                            4. CAN
                         </div>
 
                         <div class="detail-text">
 
-                            Used a USB-CAN adapter to send commands and verify
-                            communication between the host and the controller.
+                            I connected a USB-CAN adapter and sent commands
+                            to the board while checking the returned feedback.
 
                         </div>
 
@@ -2453,13 +2201,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            5. Lighting Output
+                            5. PWM
                         </div>
 
                         <div class="detail-text">
 
-                            Exercised the LED driver and varied the lighting
-                            output through PWM commands.
+                            I changed the PWM command and checked that the
+                            physical lighting output changed with it.
 
                         </div>
 
@@ -2469,14 +2217,14 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            6. Rover Integration
+                            6. Rover
                         </div>
 
                         <div class="detail-text">
 
-                            Connected the validated controller to the rover
-                            electrical system and confirmed operation in
-                            the final application.
+                            After the bench tests, I connected the board
+                            to the rover power and CAN system and tested
+                            it in the actual application.
 
                         </div>
 
@@ -2493,20 +2241,21 @@
 
 
 
-    <!-- VALIDATION RESULTS -->
+    <!-- VALIDATION -->
 
-    <section class="project-section alt">
+    <section class="project-section">
 
         <div class="container section-grid">
 
             <div>
 
                 <span class="section-kicker">
-                    06
+                    05
                 </span>
 
+
                 <h2 class="section-heading">
-                    Validation Results
+                    What I Tested
                 </h2>
 
             </div>
@@ -2516,10 +2265,10 @@
 
                 <p>
 
-                    Functional validation was performed progressively from
-                    initial power-up through complete rover integration.
-                    The video above documents part of the CAN and PWM
-                    validation process.
+                    I did not want to treat “the LEDs turned on” as the
+                    whole validation. I brought the board up in pieces and
+                    checked the power, programming, communication, PWM
+                    control, and final rover integration separately.
 
                 </p>
 
@@ -2537,7 +2286,7 @@
                                 </th>
 
                                 <th>
-                                    Method
+                                    What I Did
                                 </th>
 
                                 <th>
@@ -2555,12 +2304,13 @@
                             <tr>
 
                                 <td class="validation-test">
-                                    Regulated power rails
+                                    Power rails
                                 </td>
 
                                 <td>
-                                    Staged board power-up and rail verification
-                                    before MCU programming.
+                                    I powered the board and checked the
+                                    regulated rails before programming
+                                    the STM32.
                                 </td>
 
                                 <td>
@@ -2579,8 +2329,8 @@
                                 </td>
 
                                 <td>
-                                    Firmware programmed through the
-                                    hardware debug interface.
+                                    I programmed the MCU through SWD
+                                    and ran my firmware.
                                 </td>
 
                                 <td>
@@ -2599,8 +2349,8 @@
                                 </td>
 
                                 <td>
-                                    USB-CAN adapter used to transmit
-                                    commands and verify controller feedback.
+                                    I used a USB-CAN adapter to send
+                                    commands and read feedback from the board.
                                 </td>
 
                                 <td>
@@ -2615,32 +2365,12 @@
                             <tr>
 
                                 <td class="validation-test">
-                                    PWM lighting control
+                                    PWM control
                                 </td>
 
                                 <td>
-                                    Commands used to vary lighting output
-                                    and verify end-to-end control.
-                                </td>
-
-                                <td>
-                                    <span class="pass">
-                                        PASS
-                                    </span>
-                                </td>
-
-                            </tr>
-
-
-                            <tr>
-
-                                <td class="validation-test">
-                                    Physical assembly
-                                </td>
-
-                                <td>
-                                    Five hand-assembled controller boards
-                                    completed for system use.
+                                    I changed the PWM command and checked
+                                    that the lighting output changed.
                                 </td>
 
                                 <td>
@@ -2659,9 +2389,9 @@
                                 </td>
 
                                 <td>
-                                    Controller powered, communicated,
-                                    and operated lighting in the complete
-                                    rover electrical system.
+                                    I connected the board to the rover
+                                    electrical system and ran the lighting
+                                    in the final setup.
                                 </td>
 
                                 <td>
@@ -2680,8 +2410,8 @@
                                 </td>
 
                                 <td>
-                                    Initial fabricated revision progressed
-                                    through bring-up and final rover operation.
+                                    I used the original fabricated revision
+                                    through bring-up and rover integration.
                                 </td>
 
                                 <td>
@@ -2699,24 +2429,6 @@
 
                 </div>
 
-
-                <div class="callout">
-
-                    <strong>
-                        Validation evidence
-                    </strong>
-
-                    <p>
-
-                        The PCB renders document the design, the assembled-board
-                        image documents physical implementation, the bench video
-                        documents communication and PWM operation, and the rover
-                        image documents successful system integration.
-
-                    </p>
-
-                </div>
-
             </div>
 
         </div>
@@ -2727,15 +2439,16 @@
 
     <!-- ROVER INTEGRATION -->
 
-    <section class="project-section">
+    <section class="project-section alt">
 
         <div class="container section-grid">
 
             <div>
 
                 <span class="section-kicker">
-                    07
+                    06
                 </span>
+
 
                 <h2 class="section-heading">
                     Rover Integration
@@ -2748,23 +2461,21 @@
 
                 <p>
 
-                    The final image in the progression shows the subsystem
-                    operating after installation on the rover. This step
-                    tested more than whether the board could simply power on.
-                    The controller had to operate from the rover electrical
-                    supply, communicate within the system, and control the
-                    physical lighting load in the intended environment.
+                    Once I was happy with the bench tests, I installed
+                    the lighting system on the rover. At that point I was
+                    testing more than the PCB by itself. I was checking
+                    whether it worked with the rover battery, CAN network,
+                    wiring, firmware, and the actual lighting load together.
 
                 </p>
 
 
                 <p>
 
-                    PWM control allowed the lighting output to be changed
-                    dynamically. This was useful during rover tasks involving
-                    Morse-code-related operation and adjustment of illumination
-                    as the rover approached obstacles used during
-                    puzzle-solving activities.
+                    I used PWM to change the lighting dynamically.
+                    We used that behavior for tasks involving Morse code
+                    and for changing the lighting as the rover moved closer
+                    to an obstacle during puzzle-solving tasks.
 
                 </p>
 
@@ -2772,15 +2483,15 @@
                 <div class="callout">
 
                     <strong>
-                        Board-level validation to system-level validation
+                        What the rover photo shows
                     </strong>
 
                     <p>
 
-                        Successful rover operation closed the loop between
-                        schematic design, PCB implementation, firmware,
-                        communication, power delivery, lighting control,
-                        and the final mechanical and electrical integration.
+                        The photo is not my only proof that the electronics
+                        worked. I use it mainly to show that the same board
+                        I designed and tested on the bench was eventually
+                        installed and operating on the actual rover.
 
                     </p>
 
@@ -2796,18 +2507,19 @@
 
     <!-- TOOLS -->
 
-    <section class="project-section alt">
+    <section class="project-section">
 
         <div class="container section-grid">
 
             <div>
 
                 <span class="section-kicker">
-                    08
+                    07
                 </span>
 
+
                 <h2 class="section-heading">
-                    Tools & Technologies
+                    Tools
                 </h2>
 
             </div>
@@ -2817,10 +2529,9 @@
 
                 <p>
 
-                    The project required work across PCB design,
-                    embedded firmware, communication interfaces,
-                    power electronics, physical assembly, debugging,
-                    and system integration.
+                    I used a mix of PCB design, embedded firmware,
+                    communication, bench testing, and physical assembly
+                    tools throughout the project.
 
                 </p>
 
@@ -2839,7 +2550,6 @@
                     <span class="tag">PCB Layout</span>
                     <span class="tag">Power Electronics</span>
                     <span class="tag">Hardware Bring-Up</span>
-                    <span class="tag">System Integration</span>
 
                 </div>
 
@@ -2857,12 +2567,12 @@
 
         <div class="container footer-inner">
 
-
             <div>
 
                 <div class="footer-title">
                     Rover Lighting Control System
                 </div>
+
 
                 <div class="footer-description">
                     Embedded hardware | PCB design | STM32 | CAN
@@ -2878,7 +2588,6 @@
                 ← Back to Projects
 
             </a>
-
 
         </div>
 
