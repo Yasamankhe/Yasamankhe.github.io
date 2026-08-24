@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yasaman Kheradmand | Electrical Engineering</title>
+    <title>Yasaman Kheradmand | Electrical Engineering Portfolio</title>
 
-    <meta name="description"
-          content="Electrical Engineering portfolio focused on hardware, embedded systems, PCB design, FPGA, and digital systems.">
+    <meta
+        name="description"
+        content="Electrical Engineering portfolio focused on hardware design, embedded systems, PCB design, FPGA development, and digital systems.">
 
     <style>
 
         :root {
             --background: #f3f2ee;
             --surface: #fbfaf7;
-            --surface-soft: #eeefec;
+            --surface-alt: #f7f6f2;
+            --surface-muted: #eceeea;
 
             --text: #1d2730;
+            --text-strong: #182229;
             --text-soft: #66717b;
             --text-muted: #899199;
 
@@ -29,6 +32,7 @@
             --accent-soft: #e5eef0;
 
             --green: #537766;
+            --green-soft: #e8efea;
 
             --shadow:
                 0 14px 35px rgba(34, 46, 52, 0.06);
@@ -48,10 +52,6 @@
 
 
         body {
-            min-height: 100vh;
-
-            overflow-x: hidden;
-
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
@@ -61,11 +61,11 @@
                 Arial,
                 sans-serif;
 
-            line-height: 1.65;
-
             color: var(--text);
 
             background: var(--background);
+
+            line-height: 1.65;
         }
 
 
@@ -76,61 +76,62 @@
 
 
         img {
-            max-width: 100%;
+            display: block;
+
+            width: 100%;
         }
 
 
         .container {
-            width: min(1120px, 90%);
+            width: min(1080px, 90%);
+
             margin: 0 auto;
         }
 
 
 
-        /* NAVIGATION */
+        /* NAV */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
 
-            background: rgba(243, 242, 238, 0.92);
+            background: rgba(243, 242, 238, 0.94);
 
-            border-bottom: 1px solid rgba(201, 206, 202, 0.8);
+            border-bottom: 1px solid var(--border);
 
             backdrop-filter: blur(14px);
         }
 
 
         .nav-inner {
-            min-height: 70px;
+            min-height: 68px;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            gap: 30px;
+            gap: 24px;
         }
 
 
-        .logo {
+        .brand {
             display: flex;
             align-items: center;
 
-            gap: 10px;
+            gap: 9px;
 
-            font-size: 0.98rem;
+            color: #273139;
+
+            font-size: 0.94rem;
             font-weight: 700;
-
-            letter-spacing: -0.01em;
         }
 
 
-        .logo-dot {
+        .brand-dot {
             width: 7px;
             height: 7px;
-
-            flex-shrink: 0;
 
             border-radius: 50%;
 
@@ -142,11 +143,12 @@
             display: flex;
             align-items: center;
 
-            gap: 28px;
+            gap: 24px;
 
             color: var(--text-soft);
 
-            font-size: 0.88rem;
+            font-size: 0.82rem;
+            font-weight: 600;
         }
 
 
@@ -164,498 +166,86 @@
         /* HERO */
 
         .hero {
-            padding: 110px 0 100px;
+            padding: 105px 0 92px;
 
             border-bottom: 1px solid var(--border);
         }
 
 
-        .hero-content {
-            max-width: 850px;
-        }
-
-
         .eyebrow {
-            display: inline-block;
+            display: block;
 
-            margin-bottom: 21px;
+            margin-bottom: 14px;
 
             color: var(--accent);
 
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
 
-            letter-spacing: 0.11em;
+            letter-spacing: 0.12em;
 
             text-transform: uppercase;
         }
 
 
         .hero h1 {
-            margin-bottom: 26px;
+            margin-bottom: 23px;
+
+            color: var(--text-strong);
 
             font-size:
-                clamp(3.4rem, 7vw, 5.4rem);
+                clamp(3.2rem, 8vw, 6.5rem);
 
-            line-height: 0.96;
+            line-height: 0.9;
 
-            letter-spacing: -0.06em;
-
-            color: #182229;
+            letter-spacing: -0.065em;
         }
 
 
-        .hero .headline {
-            max-width: 740px;
+        .hero h2 {
+            max-width: 760px;
 
-            margin-bottom: 15px;
+            margin-bottom: 20px;
 
-            color: #37434b;
+            color: #29343b;
 
             font-size:
-                clamp(1.5rem, 3vw, 2.05rem);
+                clamp(1.65rem, 3.5vw, 2.6rem);
 
-            font-weight: 500;
+            line-height: 1.12;
 
-            letter-spacing: -0.025em;
+            letter-spacing: -0.045em;
         }
 
 
-        .hero .description {
-            max-width: 700px;
-
-            margin-bottom: 32px;
+        .hero-description {
+            max-width: 720px;
 
             color: var(--text-soft);
 
-            font-size: 1.02rem;
+            font-size: 1.03rem;
+        }
+
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 31px;
         }
 
 
 
         /* BUTTONS */
 
-        .buttons {
-            display: flex;
-            align-items: center;
-
-            gap: 12px;
-
-            flex-wrap: wrap;
-        }
-
-
         .button {
             display: inline-flex;
+            align-items: center;
             justify-content: center;
-            align-items: center;
 
-            min-height: 44px;
-
-            padding: 10px 18px;
-
-            border: 1px solid var(--border-dark);
-            border-radius: 7px;
-
-            background: transparent;
-
-            color: #37434b;
-
-            font-size: 0.88rem;
-            font-weight: 600;
-
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease,
-                border-color 0.2s ease;
-        }
-
-
-        .button:hover {
-            transform: translateY(-1px);
-
-            border-color: #aeb8b4;
-
-            background: rgba(255,255,255,0.4);
-        }
-
-
-        .button.primary {
-            color: white;
-
-            border-color: var(--accent);
-
-            background: var(--accent);
-        }
-
-
-        .button.primary:hover {
-            background: var(--accent-dark);
-
-            border-color: var(--accent-dark);
-        }
-
-
-
-        /* SECTIONS */
-
-        section {
-            padding: 90px 0;
-
-            border-bottom: 1px solid var(--border);
-        }
-
-
-        .section-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-
-            gap: 30px;
-
-            margin-bottom: 42px;
-        }
-
-
-        .section-title {
-            color: #202a31;
-
-            font-size:
-                clamp(1.8rem, 3vw, 2.2rem);
-
-            line-height: 1.1;
-
-            letter-spacing: -0.035em;
-        }
-
-
-        .section-title::after {
-            content: "";
-
-            display: block;
-
-            width: 38px;
-            height: 2px;
-
-            margin-top: 12px;
-
-            background: var(--accent);
-        }
-
-
-        .section-label {
-            color: var(--text-muted);
-
-            font-size: 0.82rem;
-        }
-
-
-
-        /* ABOUT */
-
-        #about {
-            background: #f7f6f2;
-        }
-
-
-        .about-grid {
-            display: grid;
-
-            grid-template-columns: 1.1fr 1fr;
-
-            gap: 80px;
-        }
-
-
-        .about-text {
-            max-width: 620px;
-
-            color: var(--text-soft);
-
-            font-size: 1.02rem;
-        }
-
-
-        .about-text p + p {
-            margin-top: 18px;
-        }
-
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-
-            align-content: flex-start;
-
-            gap: 8px;
-        }
-
-
-        .skill {
-            padding: 7px 11px;
-
-            color: #536068;
-
-            background: #f1f1ed;
-
-            border: 1px solid var(--border);
-            border-radius: 5px;
-
-            font-size: 0.81rem;
-            font-weight: 500;
-        }
-
-
-
-        /* PROJECTS */
-
-        #projects {
-            background: var(--background);
-        }
-
-
-        .projects {
-            display: grid;
-
-            gap: 24px;
-        }
-
-
-        .project {
-            padding: 30px;
-
-            background: var(--surface);
-
-            border: 1px solid var(--border);
-            border-radius: 11px;
-
-            box-shadow: var(--shadow);
-
-            transition:
-                transform 0.2s ease,
-                border-color 0.2s ease,
-                box-shadow 0.2s ease;
-        }
-
-
-        .project:hover {
-            transform: translateY(-2px);
-
-            border-color: #c7ceca;
-
-            box-shadow:
-                0 18px 42px rgba(34, 46, 52, 0.08);
-        }
-
-
-        .project.featured {
-            padding: 0;
-
-            overflow: hidden;
-        }
-
-
-        .featured-content {
-            padding: 34px 34px 30px;
-        }
-
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-
-            gap: 24px;
-
-            margin-bottom: 14px;
-        }
-
-
-        .project-category {
-            display: block;
-
-            margin-bottom: 6px;
-
-            color: var(--accent);
-
-            font-size: 0.69rem;
-            font-weight: 700;
-
-            letter-spacing: 0.1em;
-
-            text-transform: uppercase;
-        }
-
-
-        .project h3 {
-            color: #202a31;
-
-            font-size: 1.42rem;
-
-            line-height: 1.25;
-
-            letter-spacing: -0.025em;
-        }
-
-
-        .project p {
-            max-width: 860px;
-
-            margin-bottom: 20px;
-
-            color: var(--text-soft);
-        }
-
-
-        .status {
-            flex-shrink: 0;
-
-            padding: 5px 10px;
-
-            color: #64706f;
-
-            background: #f0f1ed;
-
-            border: 1px solid var(--border);
-            border-radius: 30px;
-
-            font-size: 0.72rem;
-            font-weight: 600;
-
-            white-space: nowrap;
-        }
-
-
-        .featured .status {
-            color: var(--green);
-
-            background: #ebf1ec;
-
-            border-color: #d3dfd6;
-        }
-
-
-
-        /* PROJECT HIGHLIGHTS */
-
-        .project-highlights {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 9px;
-
-            margin: 23px 0 25px;
-        }
-
-
-        .project-highlights span {
-            display: flex;
-            align-items: baseline;
-
-            gap: 5px;
-
-            padding: 7px 11px;
-
-            color: var(--text-soft);
-
-            background: #f1f2ef;
-
-            border: 1px solid var(--border);
-            border-radius: 6px;
-
-            font-size: 0.78rem;
-        }
-
-
-        .project-highlights strong {
-            color: var(--text);
-
-            font-size: 0.86rem;
-        }
-
-
-
-        /* PROJECT PREVIEW */
-
-        .project-preview {
-            display: grid;
-
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-
-            gap: 1px;
-
-            background: var(--border);
-
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-
-        .project-preview-image {
-            height: 250px;
-
-            overflow: hidden;
-
-            background: #eceeeb;
-        }
-
-
-        .project-preview-image img {
-            display: block;
-
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-
-            padding: 14px;
-
-            transition: transform 0.25s ease;
-        }
-
-
-        .project-preview-image.rover img {
-            object-fit: cover;
-
-            padding: 0;
-        }
-
-
-        .project:hover .project-preview-image img {
-            transform: scale(1.015);
-        }
-
-
-
-        /* FEATURED BOTTOM */
-
-        .featured-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 25px;
-
-            padding: 24px 34px 28px;
-        }
-
-
-        .featured-bottom .tags {
-            flex: 1;
-        }
-
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-
-            gap: 9px;
-
-            flex-shrink: 0;
-
-            min-height: 42px;
-
-            padding: 9px 14px;
+            padding: 10px 15px;
 
             color: white;
 
@@ -668,15 +258,271 @@
             font-weight: 700;
 
             transition:
+                background 0.2s ease,
                 transform 0.2s ease,
-                background 0.2s ease;
+                border-color 0.2s ease;
         }
 
 
-        .project-link:hover {
+        .button:hover {
             transform: translateY(-1px);
 
             background: var(--accent-dark);
+
+            border-color: var(--accent-dark);
+        }
+
+
+        .button.secondary {
+            color: var(--text);
+
+            background: var(--surface);
+
+            border-color: var(--border-dark);
+        }
+
+
+        .button.secondary:hover {
+            color: var(--accent);
+
+            background: white;
+        }
+
+
+
+        /* GENERAL SECTIONS */
+
+        .section {
+            padding: 82px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .section.alt {
+            background: var(--surface-alt);
+        }
+
+
+        .section-grid {
+            display: grid;
+
+            grid-template-columns: 200px 1fr;
+
+            gap: 65px;
+        }
+
+
+        .section-label {
+            color: var(--accent);
+
+            font-size: 0.68rem;
+            font-weight: 700;
+
+            letter-spacing: 0.11em;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-title {
+            margin-top: 6px;
+
+            color: #273139;
+
+            font-size: 1.32rem;
+
+            letter-spacing: -0.025em;
+        }
+
+
+        .section-content p {
+            max-width: 760px;
+
+            color: var(--text-soft);
+        }
+
+
+        .section-content p + p {
+            margin-top: 17px;
+        }
+
+
+
+        /* PROJECTS */
+
+        .projects-list {
+            display: grid;
+
+            gap: 18px;
+        }
+
+
+        .project {
+            padding: 28px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 10px;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            gap: 24px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .project-category {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: var(--accent);
+
+            font-size: 0.65rem;
+            font-weight: 700;
+
+            letter-spacing: 0.09em;
+
+            text-transform: uppercase;
+        }
+
+
+        .project h3 {
+            color: #263139;
+
+            font-size: 1.23rem;
+
+            letter-spacing: -0.025em;
+        }
+
+
+        .status {
+            flex-shrink: 0;
+
+            padding: 4px 8px;
+
+            color: var(--green);
+
+            background: var(--green-soft);
+
+            border: 1px solid #d3ded7;
+            border-radius: 20px;
+
+            font-size: 0.64rem;
+            font-weight: 700;
+
+            text-transform: uppercase;
+        }
+
+
+        .status.in-progress {
+            color: var(--accent);
+
+            background: var(--accent-soft);
+
+            border-color: #cfdee1;
+        }
+
+
+        .project > p {
+            max-width: 820px;
+
+            color: var(--text-soft);
+
+            font-size: 0.9rem;
+        }
+
+
+
+        /* PROJECT HIGHLIGHTS */
+
+        .project-highlights {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 18px;
+        }
+
+
+        .project-highlights span {
+            padding: 7px 10px;
+
+            color: var(--text-soft);
+
+            background: var(--surface-muted);
+
+            border: 1px solid var(--border);
+            border-radius: 5px;
+
+            font-size: 0.72rem;
+        }
+
+
+        .project-highlights strong {
+            margin-right: 3px;
+
+            color: var(--text);
+        }
+
+
+
+        /* PROJECT IMAGE GRID */
+
+        .project-images {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 8px;
+
+            margin-top: 22px;
+        }
+
+
+        .project-images img {
+            height: 190px;
+
+            object-fit: contain;
+
+            padding: 8px;
+
+            background: #eceeeb;
+
+            border: 1px solid var(--border);
+            border-radius: 7px;
+        }
+
+
+        .project-images img.rover-photo {
+            object-fit: cover;
+
+            padding: 0;
+        }
+
+
+
+        /* PROJECT ACTIONS */
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 23px;
         }
 
 
@@ -688,20 +534,22 @@
             flex-wrap: wrap;
 
             gap: 7px;
+
+            margin-top: 19px;
         }
 
 
         .tag {
             padding: 5px 8px;
 
-            color: #5b676f;
+            color: #5b666d;
 
-            background: #f3f3ef;
+            background: #eeeeea;
 
             border: 1px solid var(--border);
             border-radius: 5px;
 
-            font-size: 0.74rem;
+            font-size: 0.7rem;
             font-weight: 500;
         }
 
@@ -709,13 +557,21 @@
 
         /* EXPERIENCE */
 
-        #experience {
-            background: #f7f6f2;
+        .experience-list {
+            display: grid;
+
+            gap: 0;
         }
 
 
         .experience-item {
-            padding: 27px 0;
+            display: grid;
+
+            grid-template-columns: 215px 1fr;
+
+            gap: 28px;
+
+            padding: 23px 0;
 
             border-top: 1px solid var(--border);
         }
@@ -726,63 +582,50 @@
         }
 
 
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-
-            gap: 30px;
-        }
-
-
-        .experience-header h3 {
-            color: #273138;
-
-            font-size: 1.1rem;
-
-            letter-spacing: -0.015em;
-        }
-
-
-        .experience-item p {
-            max-width: 800px;
-
-            margin-top: 9px;
-
-            color: var(--text-soft);
-        }
-
-
-        .date {
+        .experience-date {
             color: var(--text-muted);
 
-            font-size: 0.87rem;
+            font-size: 0.76rem;
+            font-weight: 600;
+        }
 
-            white-space: nowrap;
+
+        .experience-main h3 {
+            margin-bottom: 3px;
+
+            color: #2d373d;
+
+            font-size: 0.93rem;
+        }
+
+
+        .experience-role {
+            margin-bottom: 7px;
+
+            color: var(--accent);
+
+            font-size: 0.78rem;
+            font-weight: 650;
+        }
+
+
+        .experience-main p {
+            color: var(--text-muted);
+
+            font-size: 0.82rem;
         }
 
 
 
         /* CONTACT */
 
-        #contact {
-            background: #e9ebe7;
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
 
-            border-bottom: none;
-        }
+            gap: 10px;
 
-
-        #contact .section-title {
-            margin-bottom: 20px;
-        }
-
-
-        .contact-text {
-            max-width: 650px;
-
-            margin-bottom: 27px;
-
-            color: var(--text-soft);
+            margin-top: 22px;
         }
 
 
@@ -790,102 +633,86 @@
         /* FOOTER */
 
         footer {
-            padding: 25px 0;
+            padding: 42px 0;
 
-            color: #818b90;
+            color: var(--text-muted);
 
-            background: #e9ebe7;
+            font-size: 0.76rem;
+        }
 
-            border-top: 1px solid var(--border);
 
-            font-size: 0.8rem;
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 20px;
         }
 
 
 
         /* RESPONSIVE */
 
-        @media (max-width: 900px) {
+        @media (max-width: 820px) {
 
-            .project-preview {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+            .section-grid {
+                grid-template-columns: 1fr;
+
+                gap: 24px;
             }
 
-            .project-preview-image:last-child {
-                display: none;
+
+            .experience-item {
+                grid-template-columns: 1fr;
+
+                gap: 6px;
+            }
+
+
+            .project-images {
+                grid-template-columns: 1fr 1fr;
             }
 
         }
 
 
-        @media (max-width: 800px) {
-
-            .about-grid {
-                grid-template-columns: 1fr;
-
-                gap: 40px;
-            }
+        @media (max-width: 620px) {
 
             .hero {
-                padding: 85px 0 80px;
+                padding: 80px 0 65px;
             }
 
-            section {
-                padding: 70px 0;
-            }
-
-        }
-
-
-        @media (max-width: 650px) {
 
             .nav-links {
-                display: none;
+                gap: 13px;
+
+                font-size: 0.74rem;
             }
 
-            .project-header,
-            .experience-header,
-            .section-heading {
+
+            .project {
+                padding: 22px;
+            }
+
+
+            .project-header {
                 flex-direction: column;
 
-                gap: 8px;
+                gap: 10px;
             }
 
-            .hero h1 {
-                font-size: 3.2rem;
-            }
 
-            .featured-content,
-            .featured-bottom {
-                padding-left: 24px;
-                padding-right: 24px;
-            }
-
-            .featured-bottom {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-        }
-
-
-        @media (max-width: 520px) {
-
-            .project-preview {
+            .project-images {
                 grid-template-columns: 1fr;
             }
 
-            .project-preview-image {
-                height: 280px;
+
+            .project-images img {
+                height: 240px;
             }
 
-            .project-preview-image:nth-child(2),
-            .project-preview-image:nth-child(3) {
-                display: none;
-            }
 
-            .project-link {
-                width: 100%;
+            .footer-inner {
+                flex-direction: column;
             }
 
         }
@@ -903,13 +730,13 @@
 
         <div class="container nav-inner">
 
-            <div class="logo">
+            <a class="brand" href="#top">
 
-                <span class="logo-dot"></span>
+                <span class="brand-dot"></span>
 
                 Yasaman Kheradmand
 
-            </div>
+            </a>
 
 
             <div class="nav-links">
@@ -940,61 +767,66 @@
 
     <!-- HERO -->
 
-    <header class="hero">
+    <header class="hero" id="top">
 
         <div class="container">
 
-            <div class="hero-content">
-
-                <span class="eyebrow">
-                    Electrical Engineering | UBC
-                </span>
+            <span class="eyebrow">
+                Electrical Engineering | UBC
+            </span>
 
 
-                <h1>
-                    Yasaman<br>
-                    Kheradmand
-                </h1>
+            <h1>
+                Yasaman<br>
+                Kheradmand
+            </h1>
 
 
-                <p class="headline">
-                    I design and build electronic hardware.
-                </p>
+            <h2>
+                I design and build electronic hardware.
+            </h2>
 
 
-                <p class="description">
+            <p class="hero-description">
 
-                    I am an Electrical Engineering student at the University
-                    of British Columbia. I like working on hardware projects
-                    where I can go from the circuit and PCB design all the way
-                    to programming, bring-up, testing, and seeing the system
-                    work in real hardware.
+                I am an Electrical Engineering student at the University of
+                British Columbia. I like working on hardware projects where
+                I can go from the circuit and PCB design all the way to
+                programming, bring-up, testing, and seeing the system work
+                in real hardware.
 
-                </p>
-
-
-                <div class="buttons">
-
-                    <a
-                        class="button primary"
-                        href="#projects">
-
-                        View Projects
-
-                    </a>
+            </p>
 
 
-                    <a
-                        class="button"
-                        href="https://www.linkedin.com/in/yasamankh"
-                        target="_blank"
-                        rel="noopener noreferrer">
+            <div class="hero-links">
 
-                        LinkedIn
+                <a
+                    class="button"
+                    href="#projects">
 
-                    </a>
+                    View Projects
 
-                </div>
+                </a>
+
+
+                <a
+                    class="button secondary"
+                    href="mailto:Nasayasi7@gmail.com">
+
+                    Email
+
+                </a>
+
+
+                <a
+                    class="button secondary"
+                    href="https://www.linkedin.com/in/yasamankh"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    LinkedIn ↗
+
+                </a>
 
             </div>
 
@@ -1006,67 +838,43 @@
 
     <!-- ABOUT -->
 
-    <section id="about">
+    <section class="section alt" id="about">
 
-        <div class="container">
+        <div class="container section-grid">
 
-            <div class="section-heading">
-
-                <h2 class="section-title">
-                    About
-                </h2>
-
+            <div>
 
                 <span class="section-label">
-                    Hardware | Embedded | Digital
+                    About
                 </span>
+
+                <h2 class="section-title">
+                    What I like working on
+                </h2>
 
             </div>
 
 
-            <div class="about-grid">
+            <div class="section-content">
 
-                <div class="about-text">
+                <p>
 
-                    <p>
+                    I am most interested in hardware design, embedded systems,
+                    digital systems, and FPGA development. I enjoy understanding
+                    how the whole system works instead of only working on one
+                    small part of it.
 
-                        I am most interested in hardware design, embedded
-                        systems, digital systems, and FPGA development.
-                        I enjoy understanding how the whole system works
-                        instead of only working on one small part of it.
-
-                    </p>
+                </p>
 
 
-                    <p>
+                <p>
 
-                        So far I have worked on multilayer PCB design,
-                        power electronics, STM32-based embedded systems,
-                        CAN communication, hardware bring-up,
-                        instrumentation, and SystemVerilog-based
-                        digital design.
+                    So far I have worked on multilayer PCB design, power
+                    electronics, STM32-based embedded systems, CAN
+                    communication, hardware bring-up, instrumentation,
+                    and SystemVerilog-based digital design.
 
-                    </p>
-
-                </div>
-
-
-                <div class="skills">
-
-                    <span class="skill">PCB Design</span>
-                    <span class="skill">Altium</span>
-                    <span class="skill">STM32</span>
-                    <span class="skill">Embedded Systems</span>
-                    <span class="skill">SystemVerilog</span>
-                    <span class="skill">FPGA</span>
-                    <span class="skill">RTL Design</span>
-                    <span class="skill">Power Electronics</span>
-                    <span class="skill">CAN</span>
-                    <span class="skill">Python</span>
-                    <span class="skill">C / C++</span>
-                    <span class="skill">VNA</span>
-
-                </div>
+                </p>
 
             </div>
 
@@ -1078,147 +886,123 @@
 
     <!-- PROJECTS -->
 
-    <section id="projects">
+    <section class="section" id="projects">
 
-        <div class="container">
+        <div class="container section-grid">
 
-            <div class="section-heading">
-
-                <h2 class="section-title">
-                    Selected Projects
-                </h2>
-
+            <div>
 
                 <span class="section-label">
-                    Hardware & Digital Systems
+                    Projects
                 </span>
+
+                <h2 class="section-title">
+                    Selected work
+                </h2>
 
             </div>
 
 
-            <div class="projects">
+            <div class="projects-list">
 
 
 
                 <!-- ROVER LIGHTING -->
 
-                <article class="project featured">
+                <article class="project">
 
+                    <div class="project-header">
 
-                    <div class="featured-content">
+                        <div>
 
-                        <div class="project-header">
-
-                            <div>
-
-                                <span class="project-category">
-                                    Embedded Hardware | PCB Design
-                                </span>
-
-
-                                <h3>
-                                    Rover Lighting Control System
-                                </h3>
-
-                            </div>
-
-
-                            <span class="status">
-                                Completed
+                            <span class="project-category">
+                                Embedded Hardware | PCB Design
                             </span>
+
+                            <h3>
+                                Rover Lighting Control System
+                            </h3>
 
                         </div>
 
 
-                        <p>
-
-                            I designed a 4-layer lighting controller for a rover
-                            electrical system. I integrated the DC-DC power
-                            stage, STM32, CAN communication, constant-current
-                            LED driving, voltage regulation, protection,
-                            programming interfaces, and firmware onto one board.
-                            I then assembled the boards, brought them up, tested
-                            them, and integrated the system onto the rover.
-
-                        </p>
-
-
-                        <div class="project-highlights">
-
-                            <span>
-                                <strong>4-layer</strong>
-                                PCB
-                            </span>
-
-                            <span>
-                                <strong>21 to 29.4 V</strong>
-                                input
-                            </span>
-
-                            <span>
-                                <strong>5</strong>
-                                boards assembled
-                            </span>
-
-                            <span>
-                                <strong>STM32</strong>
-                                control
-                            </span>
-
-                        </div>
+                        <span class="status">
+                            Completed
+                        </span>
 
                     </div>
 
 
+                    <p>
 
-                    <div class="project-preview">
+                        I designed a 4-layer lighting controller for a rover
+                        electrical system. I integrated the power stage,
+                        STM32, CAN interface, LED driver and protection,
+                        then wrote the firmware, assembled five boards,
+                        and tested CAN/PWM operation before rover integration.
 
-                        <div class="project-preview-image">
-
-                            <img
-                                src="assets/lighting1.png"
-                                alt="Component side 3D render of rover lighting controller">
-
-                        </div>
-
-
-                        <div class="project-preview-image">
-
-                            <img
-                                src="assets/lighting5.png"
-                                alt="Five assembled rover lighting controller boards">
-
-                        </div>
+                    </p>
 
 
-                        <div class="project-preview-image rover">
+                    <div class="project-highlights">
 
-                            <img
-                                src="assets/lighting6.jpg"
-                                alt="Lighting system operating on the rover">
+                        <span>
+                            <strong>4-layer</strong>
+                            PCB
+                        </span>
 
-                        </div>
+                        <span>
+                            <strong>21 to 29.4 V</strong>
+                            input
+                        </span>
+
+                        <span>
+                            <strong>5</strong>
+                            boards assembled
+                        </span>
+
+                        <span>
+                            <strong>STM32</strong>
+                            control
+                        </span>
 
                     </div>
 
 
+                    <div class="project-images">
 
-                    <div class="featured-bottom">
+                        <img
+                            src="assets/lighting1.png"
+                            alt="3D render of rover lighting controller PCB">
 
-                        <div class="tags">
+                        <img
+                            src="assets/lighting5.png"
+                            alt="Five assembled rover lighting controller boards">
 
-                            <span class="tag">Altium</span>
-                            <span class="tag">STM32</span>
-                            <span class="tag">CAN</span>
-                            <span class="tag">PCB Design</span>
-                            <span class="tag">Power Electronics</span>
-                            <span class="tag">Hardware Bring-Up</span>
+                        <img
+                            class="rover-photo"
+                            src="assets/lighting6.jpg"
+                            alt="Lighting system installed on rover">
 
-                        </div>
+                    </div>
 
+
+                    <div class="tags">
+
+                        <span class="tag">Altium</span>
+                        <span class="tag">STM32</span>
+                        <span class="tag">CAN</span>
+                        <span class="tag">PCB Design</span>
+                        <span class="tag">Power Electronics</span>
+                        <span class="tag">Hardware Bring-Up</span>
+
+                    </div>
+
+
+                    <div class="project-actions">
 
                         <a
-                            class="project-link"
+                            class="button"
                             href="projects/rover-lighting.html">
 
                             View Full Project →
@@ -1226,7 +1010,6 @@
                         </a>
 
                     </div>
-
 
                 </article>
 
@@ -1244,7 +1027,6 @@
                                 Digital Hardware | FPGA
                             </span>
 
-
                             <h3>
                                 FPGA SIMD Processing Core & Verification Platform
                             </h3>
@@ -1252,7 +1034,7 @@
                         </div>
 
 
-                        <span class="status">
+                        <span class="status in-progress">
                             In Development
                         </span>
 
@@ -1261,13 +1043,12 @@
 
                     <p>
 
-                        I am building a pipelined processing core in
-                        SystemVerilog with instruction fetch and decode,
-                        a scalar ALU and register file, BRAM-backed memory,
-                        and a four-lane SIMD datapath. I am also building
-                        self-checking RTL tests and Python and C reference
-                        models so I can compare the RTL behavior against
-                        the expected architectural result.
+                        I am building a pipelined processing core in SystemVerilog
+                        with instruction fetch and decode, a scalar ALU and
+                        register file, BRAM-backed memory, and a four-lane SIMD
+                        datapath. I am also building self-checking RTL tests and
+                        Python and C reference models so I can compare the RTL
+                        behavior against the expected architectural result.
 
                     </p>
 
@@ -1275,13 +1056,11 @@
                     <div class="tags">
 
                         <span class="tag">SystemVerilog</span>
-                        <span class="tag">RTL</span>
                         <span class="tag">FPGA</span>
                         <span class="tag">SIMD</span>
-                        <span class="tag">BRAM</span>
+                        <span class="tag">RTL Verification</span>
                         <span class="tag">Python</span>
-                        <span class="tag">C</span>
-                        <span class="tag">Verification</span>
+                        <span class="tag">Computer Architecture</span>
 
                     </div>
 
@@ -1301,7 +1080,6 @@
                                 Digital Logic | Processor Design
                             </span>
 
-
                             <h3>
                                 Simple RISC Machine
                             </h3>
@@ -1318,36 +1096,66 @@
 
                     <p>
 
-                        I designed and implemented a Simple RISC Machine
+                        I designed a 16-bit multi-cycle Simple RISC Machine
                         in SystemVerilog. I built the register file, ALU,
-                        instruction decoding logic, datapath, and finite
-                        state machine controller, then used RTL simulation
-                        to check that the processor executed the supported
-                        instructions correctly.
+                        operand shifter, instruction decoding logic, datapath,
+                        and finite state machine controller, then wrote RTL
+                        testbenches to exercise arithmetic, logic, shifting,
+                        status flags, and end-to-end instruction execution.
 
                     </p>
+
+
+                    <div class="project-highlights">
+
+                        <span>
+                            <strong>16-bit</strong>
+                            datapath
+                        </span>
+
+                        <span>
+                            <strong>8</strong>
+                            registers
+                        </span>
+
+                        <span>
+                            <strong>4</strong>
+                            ALU operations
+                        </span>
+
+                        <span>
+                            <strong>N / V / Z</strong>
+                            flags
+                        </span>
+
+                    </div>
 
 
                     <div class="tags">
 
                         <span class="tag">SystemVerilog</span>
                         <span class="tag">RTL Design</span>
-                        <span class="tag">FPGA</span>
+                        <span class="tag">CPU Architecture</span>
                         <span class="tag">FSM</span>
                         <span class="tag">Register File</span>
                         <span class="tag">ALU</span>
                         <span class="tag">ModelSim</span>
-                        <span class="tag">Quartus</span>
+                        <span class="tag">FPGA</span>
 
                     </div>
 
-                    <a
-    class="button"
-    href="projects/simple-risc.html">
 
-    View Full Project →
+                    <div class="project-actions">
 
-</a>
+                        <a
+                            class="button"
+                            href="projects/simple-risc.html">
+
+                            View Full Project →
+
+                        </a>
+
+                    </div>
 
                 </article>
 
@@ -1364,7 +1172,6 @@
                             <span class="project-category">
                                 Analog | Embedded Systems
                             </span>
-
 
                             <h3>
                                 Smart Temperature Monitoring & Control System
@@ -1384,35 +1191,15 @@
 
                         I built a temperature monitoring and control system
                         around an NTC thermistor, Wheatstone bridge,
-                        instrumentation amplifier, and Arduino. I fitted
-                        a four-coefficient Steinhart-Hart model in Python
-                        to convert the measured resistance into temperature
-                        and calibrated the final system to about ±0.1°C.
+                        instrumentation amplifier, and Arduino. I fitted a
+                        four-coefficient Steinhart-Hart model in Python to
+                        convert the measured resistance into temperature and
+                        calibrated the final system to about ±0.1°C.
 
                     </p>
 
 
-                    <div class="project-highlights">
-
-                        <span>
-                            <strong>±0.1°C</strong>
-                            calibrated accuracy
-                        </span>
-
-                        <span>
-                            <strong>10-bit</strong>
-                            ADC
-                        </span>
-
-                        <span>
-                            <strong>PWM</strong>
-                            fan control
-                        </span>
-
-                    </div>
-
-
-                    <p>
+                    <p style="margin-top: 12px;">
 
                         I also used comparator and logic circuitry to control
                         different temperature ranges, and I used a 555 timer
@@ -1424,12 +1211,10 @@
                     <div class="tags">
 
                         <span class="tag">Analog Design</span>
-                        <span class="tag">Thermistor</span>
-                        <span class="tag">Wheatstone Bridge</span>
                         <span class="tag">Instrumentation Amplifier</span>
                         <span class="tag">Arduino</span>
-                        <span class="tag">555 Timer</span>
                         <span class="tag">Python</span>
+                        <span class="tag">555 Timer</span>
                         <span class="tag">Calibration</span>
 
                     </div>
@@ -1449,7 +1234,6 @@
                             <span class="project-category">
                                 Research | Instrumentation
                             </span>
-
 
                             <h3>
                                 PVDF Piezoelectric Film Characterization
@@ -1481,9 +1265,10 @@
 
                         <span class="tag">VNA</span>
                         <span class="tag">Oscilloscope</span>
+                        <span class="tag">Instrumentation</span>
                         <span class="tag">Signal Analysis</span>
-                        <span class="tag">Experimental Design</span>
-                        <span class="tag">Python</span>
+                        <span class="tag">PVDF</span>
+                        <span class="tag">Research</span>
 
                     </div>
 
@@ -1500,100 +1285,113 @@
 
     <!-- EXPERIENCE -->
 
-    <section id="experience">
+    <section class="section alt" id="experience">
 
-        <div class="container">
+        <div class="container section-grid">
 
-            <div class="section-heading">
-
-                <h2 class="section-title">
-                    Experience
-                </h2>
-
+            <div>
 
                 <span class="section-label">
-                    Engineering & Research
+                    Experience
                 </span>
 
+                <h2 class="section-title">
+                    Engineering experience
+                </h2>
+
             </div>
 
 
-
-            <div class="experience-item">
-
-                <div class="experience-header">
-
-                    <h3>
-                        Kardium | Hardware Electronics Co-op
-                    </h3>
+            <div class="experience-list">
 
 
-                    <span class="date">
+                <div class="experience-item">
+
+                    <div class="experience-date">
                         Sep. 2026 to Apr. 2027
-                    </span>
+                    </div>
+
+
+                    <div class="experience-main">
+
+                        <h3>
+                            Kardium
+                        </h3>
+
+                        <div class="experience-role">
+                            Hardware Electronics Co-op
+                        </div>
+
+                        <p>
+
+                            I will be joining Kardium for an eight-month
+                            Hardware Electronics co-op, where I will work on
+                            custom board development, PCB design, hardware
+                            bring-up, debugging, characterization, and design
+                            verification.
+
+                        </p>
+
+                    </div>
 
                 </div>
 
 
-                <p>
 
-                    I will be joining Kardium for an eight-month Hardware
-                    Electronics co-op, where I will work on custom board
-                    development, PCB design, hardware bring-up, debugging,
-                    characterization, and design verification.
+                <div class="experience-item">
 
-                </p>
-
-            </div>
-
-
-
-            <div class="experience-item">
-
-                <div class="experience-header">
-
-                    <h3>
-                        UBC AdaMist Lab | Research Assistant
-                    </h3>
-
-
-                    <span class="date">
-                        Sep. 2025 to Dec. 2025
-                    </span>
-
-                </div>
-
-
-                <p>
-
-                    I characterized PVDF piezoelectric films using a VNA,
-                    oscilloscope, and function generator, and I worked on
-                    making the measurement and analysis process more
-                    repeatable.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="experience-item">
-
-                <div class="experience-header">
-
-                    <h3>
-                        Aecon | Summer Internship
-                    </h3>
-
-
-                    <span class="date">
+                    <div class="experience-date">
                         Summer 2026
-                    </span>
+                    </div>
+
+
+                    <div class="experience-main">
+
+                        <h3>
+                            Aecon
+                        </h3>
+
+                        <div class="experience-role">
+                            Summer Internship
+                        </div>
+
+                    </div>
 
                 </div>
 
-            </div>
 
+
+                <div class="experience-item">
+
+                    <div class="experience-date">
+                        Sep. 2025 to Dec. 2025
+                    </div>
+
+
+                    <div class="experience-main">
+
+                        <h3>
+                            UBC AdaMist Lab
+                        </h3>
+
+                        <div class="experience-role">
+                            Research Assistant
+                        </div>
+
+                        <p>
+
+                            I characterized PVDF films using a VNA,
+                            oscilloscope, and function generator and developed
+                            repeatable measurement and analysis workflows.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
 
         </div>
 
@@ -1603,44 +1401,55 @@
 
     <!-- CONTACT -->
 
-    <section id="contact">
+    <section class="section" id="contact">
 
-        <div class="container">
+        <div class="container section-grid">
 
-            <h2 class="section-title">
-                Let's Connect
-            </h2>
+            <div>
 
+                <span class="section-label">
+                    Contact
+                </span>
 
-            <p class="contact-text">
+                <h2 class="section-title">
+                    Get in touch
+                </h2>
 
-                I am interested in hardware, embedded systems,
-                digital design, FPGA development, and aerospace
-                electronics. Feel free to reach out or connect with me.
-
-            </p>
-
-
-            <div class="buttons">
-
-                <a
-                    class="button primary"
-                    href="mailto:Nasayasi7@gmail.com">
-
-                    Email Me
-
-                </a>
+            </div>
 
 
-                <a
-                    class="button"
-                    href="https://www.linkedin.com/in/yasamankh"
-                    target="_blank"
-                    rel="noopener noreferrer">
+            <div class="section-content">
 
-                    LinkedIn
+                <p>
 
-                </a>
+                    I am interested in hardware, embedded systems, FPGA,
+                    digital design, and electronics opportunities.
+
+                </p>
+
+
+                <div class="contact-grid">
+
+                    <a
+                        class="button"
+                        href="mailto:Nasayasi7@gmail.com">
+
+                        Nasayasi7@gmail.com
+
+                    </a>
+
+
+                    <a
+                        class="button secondary"
+                        href="https://www.linkedin.com/in/yasamankh"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        LinkedIn ↗
+
+                    </a>
+
+                </div>
 
             </div>
 
@@ -1650,10 +1459,20 @@
 
 
 
+    <!-- FOOTER -->
+
     <footer>
 
-        <div class="container">
-            © 2026 Yasaman Kheradmand
+        <div class="container footer-inner">
+
+            <span>
+                © 2026 Yasaman Kheradmand
+            </span>
+
+            <span>
+                Electrical Engineering | UBC
+            </span>
+
         </div>
 
     </footer>
