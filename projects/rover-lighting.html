@@ -1000,7 +1000,7 @@
             display: grid;
 
             grid-template-columns:
-                repeat(7, auto);
+                repeat(13, auto);
 
             align-items: center;
 
@@ -1010,12 +1010,12 @@
 
             overflow-x: auto;
 
-            padding-bottom: 5px;
+            padding-bottom: 8px;
         }
 
 
         .flow-block {
-            min-width: 105px;
+            min-width: 108px;
 
             padding: 12px 10px;
 
@@ -1371,9 +1371,9 @@
                 I wanted one board that could take power directly from the rover,
                 communicate over CAN, control the LEDs from an STM32, and give me
                 enough access for programming and debugging during bring-up.
-                I designed the schematic and PCB, assembled the boards, worked on
-                the lighting firmware and CAN messages, tested the hardware, and
-                integrated the finished system onto the rover.
+                I designed the schematic and PCB, assembled the boards, wrote the
+                lighting firmware and CAN message handling, tested the hardware,
+                and integrated the finished system onto the rover.
 
             </p>
 
@@ -2287,7 +2287,7 @@
 
 
 
-    <!-- LED DRIVER -->
+    <!-- LED CONTROL -->
 
     <section class="project-section alt">
 
@@ -2341,7 +2341,8 @@
 
                         <div class="detail-text">
 
-                            KTD2505R constant-current LED driver.
+                            I used the KTD2505R constant-current LED driver
+                            for the lighting output.
 
                         </div>
 
@@ -2424,13 +2425,24 @@
 
                 <p>
 
-                    The team already had a shared CAN communication library
-                    being ported from another project. That library handled
-                    the common packing and unpacking structure, used the CAN
-                    frame ID for message type information, and kept the normal
-                    CAN payload to eight bytes. I integrated that library into
-                    the lighting firmware and added the lighting-specific
-                    messages and behavior I needed.
+                    I added the CAN packing and parsing for the lighting
+                    command and feedback messages. Each message contains
+                    a device ID, message type, and payload. When I send the
+                    message over CAN, the device and message information are
+                    encoded into the CAN frame ID while the message data is
+                    carried in the CAN payload.
+
+                </p>
+
+
+                <p>
+
+                    On transmit, I fill the message structure with the message
+                    type and lighting data, encode it, convert it into a CAN
+                    frame, and send it onto the bus. On receive, I do the
+                    reverse: I convert the CAN frame back into the encoded
+                    message, decode it, check the message type, and then
+                    handle the command in the lighting firmware.
 
                 </p>
 
@@ -2441,14 +2453,52 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            PWM Commands
+                            CAN Packing & Parsing
                         </div>
 
                         <div class="detail-text">
 
-                            I added the lighting-side handling for incoming
-                            PWM commands and applied the requested value
-                            to the physical LED output.
+                            I added the lighting command and feedback message
+                            types and their expected payload lengths, then
+                            added their packing and parsing logic to the
+                            encode and decode paths.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Message Format
+                        </div>
+
+                        <div class="detail-text">
+
+                            The communication format contains the device ID,
+                            message type, and up to eight bytes of payload.
+                            For CAN, the device ID and message type information
+                            are carried in the CAN frame ID, leaving the CAN
+                            data field for the payload.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Lighting Commands
+                        </div>
+
+                        <div class="detail-text">
+
+                            I used the command message to send the requested
+                            PWM value to a lighting board. After decoding the
+                            frame, the STM32 applies that value to the LED
+                            control output.
 
                         </div>
 
@@ -2463,9 +2513,10 @@
 
                         <div class="detail-text">
 
-                            After applying a command, I added feedback so
-                            the board could report the resulting PWM value
-                            back over CAN instead of only receiving commands.
+                            I added a feedback message so the board sends the
+                            applied PWM value back over CAN after receiving
+                            a command. This let me confirm that the command
+                            was received, decoded, and applied.
 
                         </div>
 
@@ -2481,9 +2532,9 @@
                         <div class="detail-text">
 
                             I added periodic heartbeat messages so I could
-                            tell from the CAN bus that each lighting board
-                            was still alive even when I was not sending
-                            it a new PWM command.
+                            tell from the CAN traffic that each board was
+                            powered, running, and still communicating even
+                            when I was not sending it a new lighting command.
 
                         </div>
 
@@ -2498,11 +2549,11 @@
 
                         <div class="detail-text">
 
-                            I specifically tested receiving PWM commands
-                            while the STM32 was also transmitting heartbeat
-                            and feedback messages. I had some issues while
-                            getting this working, but I was able to get
-                            simultaneous receive and transmit working correctly.
+                            I tested the board receiving and applying new PWM
+                            commands while it was also transmitting feedback
+                            and heartbeat messages. This let me verify that
+                            CAN receive and transmit were working together
+                            during normal operation.
 
                         </div>
 
@@ -2517,8 +2568,9 @@
 
                         <div class="detail-text">
 
-                            I flashed all five lighting boards with my
-                            STM32 firmware before the full rover integration.
+                            I flashed all five lighting boards with the STM32
+                            firmware and tested the communication behavior
+                            before the full rover integration.
 
                         </div>
 
@@ -2532,7 +2584,7 @@
                 <div class="software-flow">
 
                     <div class="flow-block">
-                        Python Test Script
+                        Python Script
                     </div>
 
                     <div class="flow-arrow">
@@ -2540,7 +2592,7 @@
                     </div>
 
                     <div class="flow-block">
-                        USB-CAN Adapter
+                        USB-CAN
                     </div>
 
                     <div class="flow-arrow">
@@ -2548,7 +2600,7 @@
                     </div>
 
                     <div class="flow-block">
-                        CAN Bus
+                        CAN Frame
                     </div>
 
                     <div class="flow-arrow">
@@ -2556,7 +2608,7 @@
                     </div>
 
                     <div class="flow-block">
-                        TCAN334G
+                        Decode
                     </div>
 
                     <div class="flow-arrow">
@@ -2580,7 +2632,7 @@
                     </div>
 
                     <div class="flow-block">
-                        Feedback + Heartbeat
+                        Feedback
                     </div>
 
                 </div>
@@ -2602,21 +2654,21 @@
 
 
                         <h3>
-                            Rover Firmware Repository
+                            STM32 Firmware
                         </h3>
 
 
                         <p>
 
-                            Firmware repository containing the embedded
-                            rover code that the lighting subsystem was
-                            integrated into.
+                            Firmware used for CAN receive and transmit,
+                            PWM control, feedback, heartbeat messages,
+                            and board-level control.
 
                         </p>
 
 
                         <div class="code-card-link">
-                            View Repository ↗
+                            View Firmware ↗
                         </div>
 
                     </a>
@@ -2630,26 +2682,26 @@
                         rel="noopener noreferrer">
 
                         <div class="code-card-label">
-                            CAN Communications
+                            CAN Messages
                         </div>
 
 
                         <h3>
-                            Shared Comms Library
+                            Packing & Parsing
                         </h3>
 
 
                         <p>
 
-                            The shared packing and unpacking library I used
-                            and extended with lighting-specific command,
-                            feedback, and heartbeat behavior.
+                            Message definitions and encode/decode logic used
+                            for CAN commands, lighting feedback, and the
+                            communication between the controller and rover.
 
                         </p>
 
 
                         <div class="code-card-link">
-                            View Comms Library ↗
+                            View CAN Code ↗
                         </div>
 
                     </a>
@@ -2670,9 +2722,9 @@
 
                         <p>
 
-                            My bench script for sending PWM commands,
-                            watching board feedback, and displaying
-                            heartbeat messages over the USB-CAN adapter.
+                            I wrote this bench tool to send PWM commands,
+                            monitor feedback, and display heartbeat messages
+                            from the lighting boards.
 
                         </p>
 
@@ -2694,7 +2746,7 @@
 
 
 
-    <!-- PYTHON BENCH TOOL -->
+    <!-- PYTHON CAN TESTING -->
 
     <section class="project-section alt">
 
@@ -2719,7 +2771,7 @@
                 <p>
 
                     For the bench setup I wrote a Python test script using
-                    python-can. I connected the laptop to the CAN bus through
+                    python-can. I connected my laptop to the CAN bus through
                     a USB-CAN adapter and used the gs_usb interface.
 
                 </p>
@@ -2727,10 +2779,10 @@
 
                 <p>
 
-                    I had to configure the USB adapter with Zadig so Windows
-                    would expose it through the correct driver. Once that was
-                    working, I used the Python script and can.logger to send
-                    commands and watch the traffic coming back from the board.
+                    I configured the adapter with Zadig so Windows could use
+                    the correct USB driver. After that I could use my Python
+                    script and can.logger to send commands and watch the
+                    traffic coming back from the board.
 
                 </p>
 
@@ -2746,8 +2798,8 @@
 
                         <div class="detail-text">
 
-                            I used python-can as the interface between my
-                            test script and the CAN adapter.
+                            I used python-can to send and receive CAN frames
+                            from my test script.
 
                         </div>
 
@@ -2762,8 +2814,8 @@
 
                         <div class="detail-text">
 
-                            I used the gs_usb backend for the USB-CAN
-                            adapter connection.
+                            I used the gs_usb backend to communicate with
+                            the USB-CAN adapter.
 
                         </div>
 
@@ -2778,9 +2830,9 @@
 
                         <div class="detail-text">
 
-                            I configured the adapter's Windows USB driver
-                            with Zadig before python-can could communicate
-                            with it correctly.
+                            I set up the adapter's USB driver with Zadig
+                            before python-can could communicate with it
+                            correctly.
 
                         </div>
 
@@ -2807,15 +2859,15 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            What I Checked
+                            End-to-End Test
                         </div>
 
                         <div class="detail-text">
 
-                            From my laptop I could send a new PWM value,
+                            From my laptop I could send a PWM value,
                             see the physical lighting change, receive the
-                            board's feedback, and continue seeing heartbeat
-                            messages showing that the STM32 was active.
+                            applied value back as feedback, and continue
+                            seeing heartbeat messages from the board.
 
                         </div>
 
@@ -2992,7 +3044,7 @@
 
 
 
-    <!-- ASSEMBLY -->
+    <!-- ASSEMBLY AND BRING UP -->
 
     <section class="project-section alt">
 
@@ -3425,26 +3477,6 @@
                     an obstacle during puzzle-solving tasks.
 
                 </p>
-
-
-                <div class="callout">
-
-                    <strong>
-                        Why I included the rover photo
-                    </strong>
-
-
-                    <p>
-
-                        The photo is not the only evidence that the board
-                        worked. I include it because it shows that the same
-                        hardware I designed, assembled, programmed, and tested
-                        on the bench was eventually installed and operating
-                        on the rover.
-
-                    </p>
-
-                </div>
 
             </div>
 
