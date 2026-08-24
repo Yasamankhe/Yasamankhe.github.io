@@ -233,29 +233,37 @@
 
 
 
-        /* PROJECT PROGRESSION */
+        /* TOP CONTENT SECTIONS */
 
-        .progression-section {
-            padding: 62px 0 72px;
-
-            background: #f7f6f2;
+        .top-section {
+            padding: 62px 0 68px;
 
             border-bottom: 1px solid var(--border);
         }
 
 
-        .progression-header {
+        .top-section.alt {
+            background: #f7f6f2;
+        }
+
+
+        .top-heading {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
 
             gap: 30px;
 
-            margin-bottom: 28px;
+            margin-bottom: 27px;
         }
 
 
-        .progression-kicker {
+        .top-heading-left {
+            min-width: 0;
+        }
+
+
+        .top-kicker {
             display: block;
 
             margin-bottom: 7px;
@@ -271,7 +279,7 @@
         }
 
 
-        .progression-title {
+        .top-title {
             color: #253039;
 
             font-size: 1.55rem;
@@ -280,8 +288,8 @@
         }
 
 
-        .progression-description {
-            max-width: 510px;
+        .top-description {
+            max-width: 520px;
 
             color: var(--text-muted);
 
@@ -292,7 +300,105 @@
 
 
 
-        /* SIX IMAGE GRID */
+        /* SCHEMATIC */
+
+        .schematic-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding: 24px 25px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border-dark);
+            border-radius: 9px;
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        .schematic-card:hover {
+            transform: translateY(-2px);
+
+            background: #ffffff;
+
+            border-color: #99aeb2;
+        }
+
+
+        .schematic-label {
+            margin-bottom: 5px;
+
+            color: var(--accent);
+
+            font-size: 0.66rem;
+            font-weight: 700;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .schematic-card h3 {
+            margin-bottom: 5px;
+
+            color: #263139;
+
+            font-size: 1.05rem;
+        }
+
+
+        .schematic-card p {
+            max-width: 650px;
+
+            color: var(--text-muted);
+
+            font-size: 0.81rem;
+        }
+
+
+        .schematic-action {
+            flex-shrink: 0;
+
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            color: var(--accent);
+
+            font-size: 0.79rem;
+            font-weight: 700;
+        }
+
+
+        .pdf-badge {
+            padding: 4px 7px;
+
+            color: #6d777e;
+
+            background: #f1f1ed;
+
+            border: 1px solid var(--border);
+            border-radius: 4px;
+
+            font-size: 0.63rem;
+
+            letter-spacing: 0.06em;
+        }
+
+
+
+        /* SIX PHOTO PROGRESSION */
 
         .progression-gallery {
             display: grid;
@@ -401,296 +507,10 @@
 
 
 
-        /* GENERAL PROJECT SECTIONS */
-
-        .project-section {
-            padding: 76px 0;
-
-            border-bottom: 1px solid var(--border);
-        }
-
-
-        .project-section:nth-of-type(even) {
-            background: #f7f6f2;
-        }
-
-
-        .section-grid {
-            display: grid;
-
-            grid-template-columns: 220px 1fr;
-
-            gap: 62px;
-        }
-
-
-        .section-heading {
-            color: #253039;
-
-            font-size: 1.3rem;
-
-            letter-spacing: -0.025em;
-
-            line-height: 1.25;
-        }
-
-
-        .section-kicker {
-            display: block;
-
-            margin-bottom: 8px;
-
-            color: var(--accent);
-
-            font-size: 0.68rem;
-            font-weight: 700;
-
-            letter-spacing: 0.1em;
-
-            text-transform: uppercase;
-        }
-
-
-        .section-content {
-            min-width: 0;
-        }
-
-
-        .section-content p {
-            max-width: 760px;
-
-            color: var(--text-soft);
-        }
-
-
-        .section-content p + p {
-            margin-top: 17px;
-        }
-
-
-
-        /* SYSTEM ARCHITECTURE */
-
-        .architecture-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 12px;
-
-            margin-top: 28px;
-        }
-
-
-        .architecture-card {
-            padding: 18px;
-
-            background: var(--surface);
-
-            border: 1px solid var(--border);
-            border-radius: 8px;
-        }
-
-
-        .architecture-card h3 {
-            margin-bottom: 5px;
-
-            color: #28333a;
-
-            font-size: 0.9rem;
-        }
-
-
-        .architecture-card p {
-            color: var(--text-muted);
-
-            font-size: 0.8rem;
-
-            line-height: 1.55;
-        }
-
-
-
-        /* SCHEMATIC */
-
-        .schematic-card {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            gap: 30px;
-
-            margin-top: 28px;
-
-            padding: 23px 24px;
-
-            background: var(--surface);
-
-            border: 1px solid var(--border-dark);
-            border-radius: 9px;
-
-            box-shadow: var(--shadow);
-
-            transition:
-                transform 0.2s ease,
-                border-color 0.2s ease;
-        }
-
-
-        .schematic-card:hover {
-            transform: translateY(-2px);
-
-            border-color: #9eb1b4;
-        }
-
-
-        .schematic-label {
-            margin-bottom: 5px;
-
-            color: var(--accent);
-
-            font-size: 0.66rem;
-            font-weight: 700;
-
-            letter-spacing: 0.1em;
-
-            text-transform: uppercase;
-        }
-
-
-        .schematic-card h3 {
-            margin-bottom: 4px;
-
-            color: #263139;
-
-            font-size: 1rem;
-        }
-
-
-        .schematic-card p {
-            color: var(--text-muted);
-
-            font-size: 0.8rem;
-        }
-
-
-        .schematic-action {
-            flex-shrink: 0;
-
-            display: inline-flex;
-            align-items: center;
-
-            gap: 8px;
-
-            color: var(--accent);
-
-            font-size: 0.79rem;
-            font-weight: 700;
-        }
-
-
-        .pdf-badge {
-            padding: 4px 7px;
-
-            color: #6d777e;
-
-            background: #f1f1ed;
-
-            border: 1px solid var(--border);
-            border-radius: 4px;
-
-            font-size: 0.63rem;
-
-            letter-spacing: 0.06em;
-        }
-
-
-
-        /* DETAIL LISTS */
-
-        .detail-list {
-            display: grid;
-
-            gap: 13px;
-
-            margin-top: 27px;
-        }
-
-
-        .detail-row {
-            display: grid;
-
-            grid-template-columns: 165px 1fr;
-
-            gap: 25px;
-
-            padding: 14px 0;
-
-            border-top: 1px solid var(--border);
-        }
-
-
-        .detail-row:last-child {
-            border-bottom: 1px solid var(--border);
-        }
-
-
-        .detail-title {
-            color: #39454c;
-
-            font-size: 0.82rem;
-            font-weight: 700;
-        }
-
-
-        .detail-text {
-            color: var(--text-muted);
-
-            font-size: 0.82rem;
-        }
-
-
-
-        /* INTEGRATION CALLOUT */
-
-        .integration-callout {
-            margin-top: 28px;
-
-            padding: 19px 20px;
-
-            background: var(--accent-soft);
-
-            border-left: 3px solid var(--accent);
-            border-radius: 0 7px 7px 0;
-        }
-
-
-        .integration-callout strong {
-            display: block;
-
-            margin-bottom: 5px;
-
-            color: #34464c;
-
-            font-size: 0.84rem;
-        }
-
-
-        .integration-callout p {
-            color: #607078;
-
-            font-size: 0.82rem;
-        }
-
-
-
         /* VIDEO */
 
         .video-wrap {
             width: min(760px, 100%);
-
-            margin-top: 28px;
         }
 
 
@@ -861,6 +681,193 @@
 
 
 
+        /* DETAILED SECTIONS */
+
+        .project-section {
+            padding: 76px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .project-section.alt {
+            background: #f7f6f2;
+        }
+
+
+        .section-grid {
+            display: grid;
+
+            grid-template-columns: 220px 1fr;
+
+            gap: 62px;
+        }
+
+
+        .section-heading {
+            color: #253039;
+
+            font-size: 1.3rem;
+
+            letter-spacing: -0.025em;
+
+            line-height: 1.25;
+        }
+
+
+        .section-kicker {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: var(--accent);
+
+            font-size: 0.68rem;
+            font-weight: 700;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-content {
+            min-width: 0;
+        }
+
+
+        .section-content p {
+            max-width: 760px;
+
+            color: var(--text-soft);
+        }
+
+
+        .section-content p + p {
+            margin-top: 17px;
+        }
+
+
+
+        /* ARCHITECTURE */
+
+        .architecture-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 12px;
+
+            margin-top: 28px;
+        }
+
+
+        .architecture-card {
+            padding: 18px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+
+        .architecture-card h3 {
+            margin-bottom: 5px;
+
+            color: #28333a;
+
+            font-size: 0.9rem;
+        }
+
+
+        .architecture-card p {
+            color: var(--text-muted);
+
+            font-size: 0.8rem;
+
+            line-height: 1.55;
+        }
+
+
+
+        /* DETAIL ROWS */
+
+        .detail-list {
+            display: grid;
+
+            margin-top: 27px;
+        }
+
+
+        .detail-row {
+            display: grid;
+
+            grid-template-columns: 165px 1fr;
+
+            gap: 25px;
+
+            padding: 14px 0;
+
+            border-top: 1px solid var(--border);
+        }
+
+
+        .detail-row:last-child {
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .detail-title {
+            color: #39454c;
+
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+
+        .detail-text {
+            color: var(--text-muted);
+
+            font-size: 0.82rem;
+        }
+
+
+
+        /* CALLOUT */
+
+        .integration-callout {
+            margin-top: 28px;
+
+            padding: 19px 20px;
+
+            background: var(--accent-soft);
+
+            border-left: 3px solid var(--accent);
+            border-radius: 0 7px 7px 0;
+        }
+
+
+        .integration-callout strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: #34464c;
+
+            font-size: 0.84rem;
+        }
+
+
+        .integration-callout p {
+            color: #607078;
+
+            font-size: 0.82rem;
+        }
+
+
+
         /* TAGS */
 
         .tags {
@@ -955,14 +962,6 @@
                     repeat(2, minmax(0, 1fr));
             }
 
-            .progression-header {
-                align-items: flex-start;
-            }
-
-            .progression-description {
-                max-width: 400px;
-            }
-
         }
 
 
@@ -978,14 +977,15 @@
                 grid-template-columns: 1fr;
             }
 
-            .progression-header {
+            .top-heading {
                 flex-direction: column;
+                align-items: flex-start;
 
                 gap: 10px;
             }
 
-            .progression-description {
-                max-width: 600px;
+            .top-description {
+                max-width: 650px;
 
                 text-align: left;
             }
@@ -999,12 +999,9 @@
                 padding: 65px 0 55px;
             }
 
+            .top-section,
             .project-section {
-                padding: 58px 0;
-            }
-
-            .progression-section {
-                padding: 50px 0 58px;
+                padding: 55px 0;
             }
 
             .progression-gallery {
@@ -1080,7 +1077,6 @@
 
         <div class="container">
 
-
             <span class="project-eyebrow">
                 Embedded Hardware | PCB Design
             </span>
@@ -1095,9 +1091,9 @@
 
                 Designed, assembled, programmed, and validated a 4-layer
                 STM32 and CAN based embedded controller for a rover electrical
-                system. The board integrates power conversion, constant-current
-                LED control, protection, communication, and embedded firmware
-                in a single subsystem.
+                system. The board combines power conversion, constant-current
+                LED control, communication, protection, embedded firmware,
+                and system-level hardware integration.
 
             </p>
 
@@ -1131,39 +1127,120 @@
 
             </div>
 
-
         </div>
 
     </header>
 
 
 
-    <!-- PROJECT PROGRESSION -->
+    <!-- 1. SCHEMATIC FIRST -->
 
-    <section class="progression-section">
+    <section class="top-section alt">
+
+        <div class="container">
+
+            <div class="top-heading">
+
+                <div class="top-heading-left">
+
+                    <span class="top-kicker">
+                        Design File
+                    </span>
+
+                    <h2 class="top-title">
+                        Full Schematic
+                    </h2>
+
+                </div>
+
+
+                <p class="top-description">
+
+                    Review the complete electrical design before moving
+                    through the physical implementation and validation.
+
+                </p>
+
+            </div>
+
+
+            <a
+                class="schematic-card"
+                href="../assets/lighting.pdf"
+                target="_blank"
+                rel="noopener noreferrer">
+
+
+                <div>
+
+                    <div class="schematic-label">
+                        Full Circuit Design
+                    </div>
+
+
+                    <h3>
+                        Rover Lighting Controller Schematic
+                    </h3>
+
+
+                    <p>
+
+                        Complete schematic covering power conversion,
+                        STM32 support circuitry, CAN communication,
+                        constant-current LED driving, connectors,
+                        programming interfaces, and protection.
+
+                    </p>
+
+                </div>
+
+
+                <div class="schematic-action">
+
+                    <span class="pdf-badge">
+                        PDF
+                    </span>
+
+                    View Schematic ↗
+
+                </div>
+
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- 2. ALL SIX PHOTOS -->
+
+    <section class="top-section">
 
         <div class="container">
 
 
-            <div class="progression-header">
+            <div class="top-heading">
 
-                <div>
+                <div class="top-heading-left">
 
-                    <span class="progression-kicker">
+                    <span class="top-kicker">
                         Design to Deployment
                     </span>
 
-                    <h2 class="progression-title">
+                    <h2 class="top-title">
                         Project Progression
                     </h2>
 
                 </div>
 
 
-                <p class="progression-description">
+                <p class="top-description">
 
-                    From PCB design and layout through assembly,
-                    hardware bring-up, and final integration onto the rover.
+                    The six images show the controller progressing from
+                    PCB design and layout through assembly and final
+                    integration onto the rover.
 
                 </p>
 
@@ -1173,8 +1250,6 @@
 
             <div class="progression-gallery">
 
-
-                <!-- 1 -->
 
                 <figure class="progression-item">
 
@@ -1200,8 +1275,6 @@
 
 
 
-                <!-- 2 -->
-
                 <figure class="progression-item">
 
                     <div class="progression-image">
@@ -1225,8 +1298,6 @@
                 </figure>
 
 
-
-                <!-- 3 -->
 
                 <figure class="progression-item">
 
@@ -1252,8 +1323,6 @@
 
 
 
-                <!-- 4 -->
-
                 <figure class="progression-item">
 
                     <div class="progression-image">
@@ -1278,8 +1347,6 @@
 
 
 
-                <!-- 5 -->
-
                 <figure class="progression-item">
 
                     <div class="progression-image">
@@ -1303,8 +1370,6 @@
                 </figure>
 
 
-
-                <!-- 6 -->
 
                 <figure class="progression-item rover">
 
@@ -1331,6 +1396,133 @@
 
             </div>
 
+        </div>
+
+    </section>
+
+
+
+    <!-- 3. VIDEO IMMEDIATELY UNDER PHOTOS -->
+
+    <section class="top-section alt">
+
+        <div class="container">
+
+
+            <div class="top-heading">
+
+                <div class="top-heading-left">
+
+                    <span class="top-kicker">
+                        Hardware Validation
+                    </span>
+
+                    <h2 class="top-title">
+                        Bench Test
+                    </h2>
+
+                </div>
+
+
+                <p class="top-description">
+
+                    Functional testing of CAN communication, command
+                    feedback, and PWM-controlled lighting before final
+                    rover integration.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="video-wrap">
+
+
+                <div class="video-frame">
+
+
+                    <video
+                        id="lighting-video"
+                        controls
+                        playsinline
+                        preload="metadata">
+
+                        <source
+                            src="../assets/lighting.mp4"
+                            type="video/mp4">
+
+                        Your browser does not support this video.
+
+                    </video>
+
+
+
+                    <div
+                        class="video-cover"
+                        id="lighting-video-cover">
+
+
+                        <div class="video-cover-content">
+
+
+                            <div class="video-label">
+                                Lab Validation
+                            </div>
+
+
+                            <h3>
+                                CAN and PWM Bench Test
+                            </h3>
+
+
+                            <div class="video-description">
+
+                                USB-CAN communication, command feedback,
+                                and PWM controlled lighting during
+                                hardware bring-up.
+
+                            </div>
+
+
+                            <div class="video-meta">
+
+                                <span>31 sec</span>
+                                <span>USB-CAN</span>
+                                <span>PWM</span>
+
+                            </div>
+
+
+                            <button
+                                class="video-button"
+                                id="lighting-play-button"
+                                type="button">
+
+                                <span class="play-icon"></span>
+
+                                Watch validation clip
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="video-caption">
+
+                    Bench validation of CAN communication and PWM controlled lighting
+
+                </div>
+
+
+            </div>
 
         </div>
 
@@ -1338,7 +1530,7 @@
 
 
 
-    <!-- 01 SYSTEM OVERVIEW -->
+    <!-- DETAILED EXPLANATION -->
 
     <section class="project-section">
 
@@ -1362,20 +1554,21 @@
                 <p>
 
                     The lighting controller was developed as an embedded
-                    subsystem for a rover electrical architecture. The board
-                    receives power from the rover battery system, generates
-                    regulated voltage rails, communicates over CAN, and controls
-                    the lighting output through an STM32 microcontroller.
+                    subsystem for the rover electrical architecture. It receives
+                    power from the rover battery, generates the required regulated
+                    voltage rails, communicates with the rest of the rover over
+                    CAN, and controls the lighting output through an STM32
+                    microcontroller.
 
                 </p>
 
 
                 <p>
 
-                    The project covered the complete hardware lifecycle from
-                    circuit design and PCB layout through fabrication, hand
-                    assembly, firmware development, bench testing, and
-                    rover integration.
+                    The project covered the full development cycle, beginning
+                    with circuit design and PCB layout and continuing through
+                    fabrication, hand assembly, firmware development, bench
+                    testing, communication validation, and final rover integration.
 
                 </p>
 
@@ -1392,7 +1585,8 @@
                         <p>
 
                             Designed around the rover's 21 to 29.4 V
-                            battery range with regulated internal power rails.
+                            battery range and converted to the internal
+                            voltage rails required by the electronics.
 
                         </p>
 
@@ -1407,8 +1601,8 @@
 
                         <p>
 
-                            Embedded control handles commands, PWM behavior,
-                            communication, and lighting operation.
+                            The microcontroller receives commands and manages
+                            communication, PWM behavior, and lighting control.
 
                         </p>
 
@@ -1423,8 +1617,8 @@
 
                         <p>
 
-                            CAN communication connects the controller to
-                            the wider rover electrical network.
+                            CAN communication allows the board to operate
+                            as a node within the wider rover electrical network.
 
                         </p>
 
@@ -1434,13 +1628,13 @@
                     <div class="architecture-card">
 
                         <h3>
-                            Constant-Current LED Drive
+                            LED Driver
                         </h3>
 
                         <p>
 
-                            Dedicated LED driving circuitry provides controlled
-                            current and PWM adjustable illumination.
+                            Constant-current driving provides controlled LED
+                            current while PWM allows adjustable lighting behavior.
 
                         </p>
 
@@ -1456,7 +1650,8 @@
                         <p>
 
                             Power and communication interfaces include
-                            protection against electrical transients.
+                            transient protection appropriate for the rover
+                            electrical environment.
 
                         </p>
 
@@ -1466,13 +1661,14 @@
                     <div class="architecture-card">
 
                         <h3>
-                            Debug & Programming
+                            Programming & Debug
                         </h3>
 
                         <p>
 
-                            SWD and communication interfaces support programming,
-                            hardware bring-up, and system debugging.
+                            SWD and communication interfaces support
+                            firmware programming, hardware bring-up,
+                            testing, and debugging.
 
                         </p>
 
@@ -1489,9 +1685,9 @@
 
 
 
-    <!-- 02 SCHEMATIC -->
+    <!-- CIRCUIT DESIGN EXPLANATION -->
 
-    <section class="project-section">
+    <section class="project-section alt">
 
         <div class="container section-grid">
 
@@ -1512,52 +1708,103 @@
 
                 <p>
 
-                    The schematic integrates the power conversion,
-                    microcontroller, CAN communication, constant-current
-                    LED driving, programming interfaces, connectors, and
-                    protection circuitry required by the subsystem.
+                    The schematic linked above represents the complete
+                    electrical implementation of the controller. Rather than
+                    treating the lighting as an isolated load, the board combines
+                    the supporting power, processing, communication, and
+                    protection circuitry needed for operation as a rover subsystem.
 
                 </p>
 
 
-                <a
-                    class="schematic-card"
-                    href="../assets/lighting-schematic.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer">
+                <div class="detail-list">
 
 
-                    <div>
+                    <div class="detail-row">
 
-                        <div class="schematic-label">
-                            Design File
+                        <div class="detail-title">
+                            Power Conversion
                         </div>
 
+                        <div class="detail-text">
 
-                        <h3>
-                            Full Lighting Controller Schematic
-                        </h3>
+                            The rover battery input is converted to lower regulated
+                            rails used by the microcontroller, communication
+                            circuitry, and supporting electronics.
 
-
-                        <p>
-                            Open the complete circuit schematic for technical review.
-                        </p>
+                        </div>
 
                     </div>
 
 
-                    <div class="schematic-action">
+                    <div class="detail-row">
 
-                        <span class="pdf-badge">
-                            PDF
-                        </span>
+                        <div class="detail-title">
+                            Microcontroller
+                        </div>
 
-                        View Schematic ↗
+                        <div class="detail-text">
+
+                            STM32 circuitry includes its required power,
+                            clocking, reset, programming, and interface connections.
+
+                        </div>
 
                     </div>
 
 
-                </a>
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            CAN
+                        </div>
+
+                        <div class="detail-text">
+
+                            A CAN transceiver interfaces the microcontroller with
+                            the rover communication bus and provides the physical
+                            layer required for network communication.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Lighting
+                        </div>
+
+                        <div class="detail-text">
+
+                            Dedicated constant-current LED circuitry controls the
+                            lighting load while the STM32 supplies PWM commands
+                            for dynamic brightness and signaling behavior.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Protection
+                        </div>
+
+                        <div class="detail-text">
+
+                            Protection components were included around the
+                            external power and communication interfaces to improve
+                            robustness against electrical transients.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
 
             </div>
 
@@ -1567,7 +1814,7 @@
 
 
 
-    <!-- 03 PCB DESIGN -->
+    <!-- PCB EXPLANATION -->
 
     <section class="project-section">
 
@@ -1590,11 +1837,24 @@
 
                 <p>
 
-                    The controller was implemented as a four-layer PCB.
-                    Layout decisions focused on power distribution, grounding,
-                    switching regulator placement, communication routing,
-                    microcontroller support circuitry, and compact integration
-                    of the LED driving hardware.
+                    Images 01 through 04 show the transition from the mechanical
+                    board representation to the completed physical layout.
+                    The controller was implemented as a four-layer PCB with
+                    the component side carrying the power, control, CAN,
+                    programming, and interface circuitry while the opposite
+                    side carries the lighting hardware.
+
+                </p>
+
+
+                <p>
+
+                    The routing and polygon images show the actual copper
+                    implementation beneath the 3D render. Layout decisions
+                    focused on separating the switching power region from the
+                    microcontroller circuitry, keeping important current paths
+                    compact, providing a continuous ground reference, and
+                    routing communication and control signals through the board.
 
                 </p>
 
@@ -1605,13 +1865,14 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Layer Stack
+                            Image 01
                         </div>
 
                         <div class="detail-text">
 
-                            Four-layer construction with a dedicated ground
-                            reference and internal power distribution.
+                            Component-side 3D view showing the major power,
+                            STM32, CAN, connector, programming, and interface
+                            components.
 
                         </div>
 
@@ -1621,14 +1882,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Power Layout
+                            Image 02
                         </div>
 
                         <div class="detail-text">
 
-                            Switching regulator components were grouped around
-                            the converter to keep the high-current switching
-                            loop compact.
+                            Opposite-side 3D view showing the LED side of
+                            the completed PCB design.
 
                         </div>
 
@@ -1638,14 +1898,14 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Control
+                            Image 03
                         </div>
 
                         <div class="detail-text">
 
-                            STM32 control, programming, and communication
-                            circuitry were organized separately from the
-                            switching power section.
+                            Routed PCB view exposing the trace geometry,
+                            component placement, vias, and interconnections
+                            underneath the 3D model.
 
                         </div>
 
@@ -1655,13 +1915,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Interfaces
+                            Image 04
                         </div>
 
                         <div class="detail-text">
 
-                            CAN, USB, UART, and SWD connections support
-                            communication, debugging, and firmware development.
+                            Polygon-pour view showing the copper distribution
+                            used for power and ground throughout the layout.
 
                         </div>
 
@@ -1678,9 +1938,9 @@
 
 
 
-    <!-- 04 ASSEMBLY -->
+    <!-- ASSEMBLY EXPLANATION -->
 
-    <section class="project-section">
+    <section class="project-section alt">
 
         <div class="container section-grid">
 
@@ -1701,10 +1961,21 @@
 
                 <p>
 
-                    Five copies of the controller were assembled and
-                    hand soldered. Bring-up began with staged power verification
-                    before programming the STM32 and testing the communication
-                    and lighting interfaces.
+                    Image 05 shows the fabricated design after physical
+                    assembly. Five boards were assembled and hand soldered,
+                    moving the project from a PCB layout into functional
+                    hardware.
+
+                </p>
+
+
+                <p>
+
+                    Bring-up was performed progressively rather than immediately
+                    exercising the full system. The boards were inspected,
+                    power rails were checked, the STM32 was programmed, and
+                    communication and lighting functions were tested before
+                    integration onto the rover.
 
                 </p>
 
@@ -1715,13 +1986,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Initial Inspection
+                            Inspection
                         </div>
 
                         <div class="detail-text">
 
-                            Boards were visually inspected for assembly faults,
-                            solder bridges, polarity, and connector orientation.
+                            Checked assembly quality, component orientation,
+                            connectors, polarity, and potential solder faults.
 
                         </div>
 
@@ -1736,8 +2007,8 @@
 
                         <div class="detail-text">
 
-                            Voltage rails were verified before progressing to
-                            microcontroller programming and functional testing.
+                            Verified the expected voltage rails before moving
+                            to digital programming and functional testing.
 
                         </div>
 
@@ -1752,8 +2023,8 @@
 
                         <div class="detail-text">
 
-                            STM32 firmware was loaded through the programming
-                            interface and used to exercise the lighting outputs.
+                            Programmed the STM32 and exercised the controller
+                            through its embedded firmware.
 
                         </div>
 
@@ -1768,8 +2039,8 @@
 
                         <div class="detail-text">
 
-                            USB-CAN testing was used to send commands,
-                            observe feedback, and verify system behavior.
+                            Used USB-CAN communication to send commands and
+                            verify feedback from the board.
 
                         </div>
 
@@ -1786,7 +2057,7 @@
 
 
 
-    <!-- 05 ROVER INTEGRATION -->
+    <!-- INTEGRATION EXPLANATION -->
 
     <section class="project-section">
 
@@ -1809,19 +2080,20 @@
 
                 <p>
 
-                    After bench validation, the lighting subsystem was
-                    installed on the rover and tested as part of the complete
-                    electrical system.
+                    Image 06 shows the lighting system operating after
+                    installation on the rover. This was the final step in the
+                    progression shown above, moving from an isolated controller
+                    on the bench to a subsystem working as part of the complete
+                    rover.
 
                 </p>
 
 
                 <p>
 
-                    PWM control allowed the illumination level and behavior
-                    to be adjusted dynamically. The lighting system supported
-                    rover tasks involving Morse code signaling and changes in
-                    illumination as the rover approached obstacles during
+                    PWM control allowed the lighting output to change dynamically.
+                    This supported rover tasks involving Morse code signaling
+                    and changes in illumination during obstacle approach and
                     puzzle-solving activities.
 
                 </p>
@@ -1830,14 +2102,15 @@
                 <div class="integration-callout">
 
                     <strong>
-                        From standalone board to rover subsystem
+                        System-level validation
                     </strong>
 
                     <p>
 
-                        This stage verified that the controller could operate
-                        as part of the complete rover rather than only as an
-                        isolated bench prototype.
+                        The rover test demonstrates that the controller was not
+                        only fabricated and powered independently, but also
+                        integrated with the communication, power, and task
+                        requirements of the larger system.
 
                     </p>
 
@@ -1851,9 +2124,9 @@
 
 
 
-    <!-- 06 VALIDATION -->
+    <!-- VIDEO EXPLANATION -->
 
-    <section class="project-section">
+    <section class="project-section alt">
 
         <div class="container section-grid">
 
@@ -1864,7 +2137,7 @@
                 </span>
 
                 <h2 class="section-heading">
-                    Hardware Validation
+                    Validation Process
                 </h2>
 
             </div>
@@ -1874,95 +2147,72 @@
 
                 <p>
 
-                    Bench validation included USB-CAN communication,
-                    command feedback, PWM control, and functional testing
-                    of the assembled controller before rover integration.
+                    The validation video shown directly beneath the progression
+                    gallery captures part of the bench-testing process.
+                    A USB-CAN adapter was used to communicate with the controller,
+                    issue commands, and observe feedback from the hardware.
 
                 </p>
 
 
-                <div class="video-wrap">
+                <p>
+
+                    PWM commands were then used to change the lighting output,
+                    confirming that communication, embedded firmware,
+                    microcontroller control, and the lighting hardware were
+                    operating together before installation on the rover.
+
+                </p>
 
 
-                    <div class="video-frame">
+                <div class="detail-list">
 
 
-                        <video
-                            id="lighting-video"
-                            controls
-                            playsinline
-                            preload="metadata">
+                    <div class="detail-row">
 
-                            <source
-                                src="../assets/lighting.mp4"
-                                type="video/mp4">
-
-                            Your browser does not support this video.
-
-                        </video>
-
-
-
-                        <div
-                            class="video-cover"
-                            id="lighting-video-cover">
-
-
-                            <div class="video-cover-content">
-
-
-                                <div class="video-label">
-                                    Lab Validation
-                                </div>
-
-
-                                <h3>
-                                    CAN and PWM Bench Test
-                                </h3>
-
-
-                                <div class="video-description">
-
-                                    USB-CAN communication, command feedback,
-                                    and PWM controlled lighting during
-                                    hardware bring-up.
-
-                                </div>
-
-
-                                <div class="video-meta">
-
-                                    <span>31 sec</span>
-                                    <span>USB-CAN</span>
-                                    <span>PWM</span>
-
-                                </div>
-
-
-                                <button
-                                    class="video-button"
-                                    id="lighting-play-button"
-                                    type="button">
-
-                                    <span class="play-icon"></span>
-
-                                    Watch validation clip
-
-                                </button>
-
-
-                            </div>
-
-
+                        <div class="detail-title">
+                            CAN Test
                         </div>
 
+                        <div class="detail-text">
+
+                            Commands were transmitted to the controller over
+                            the CAN interface using the USB-CAN bench setup.
+
+                        </div>
 
                     </div>
 
 
-                    <div class="video-caption">
+                    <div class="detail-row">
 
-                        Bench validation of CAN communication and PWM controlled lighting
+                        <div class="detail-title">
+                            Feedback
+                        </div>
+
+                        <div class="detail-text">
+
+                            Returned status and command feedback provided
+                            confirmation that communication with the board
+                            was functioning.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            PWM Test
+                        </div>
+
+                        <div class="detail-text">
+
+                            Lighting intensity was varied through PWM commands
+                            to confirm end-to-end control of the physical output.
+
+                        </div>
 
                     </div>
 
@@ -1977,7 +2227,7 @@
 
 
 
-    <!-- 07 TECHNOLOGIES -->
+    <!-- TOOLS -->
 
     <section class="project-section">
 
@@ -2000,9 +2250,10 @@
 
                 <p>
 
-                    The project combined PCB design, embedded firmware,
-                    communication interfaces, power electronics, physical
-                    assembly, and system-level validation.
+                    The project combined circuit design, PCB layout,
+                    embedded firmware, communication interfaces, power
+                    electronics, physical assembly, hardware bring-up,
+                    and final system integration.
 
                 </p>
 
