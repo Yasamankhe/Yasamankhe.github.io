@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -196,6 +195,48 @@
             color: var(--text-soft);
 
             font-size: 1.05rem;
+        }
+
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 27px;
+        }
+
+
+        .repo-button {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 10px 15px;
+
+            color: white;
+
+            background: var(--accent);
+
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+
+            font-size: 0.8rem;
+            font-weight: 700;
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .repo-button:hover {
+            transform: translateY(-1px);
+
+            background: var(--accent-dark);
+
+            border-color: var(--accent-dark);
         }
 
 
@@ -605,7 +646,7 @@
 
 
         .fsm-label {
-            width: 90px;
+            width: 105px;
 
             flex-shrink: 0;
 
@@ -949,6 +990,21 @@
                 individual blocks and end-to-end instruction execution.
 
             </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    class="repo-button"
+                    href="https://github.com/Yasamankhe/RISC-MACHINE"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    View Source Code on GitHub ↗
+
+                </a>
+
+            </div>
 
 
             <div class="hero-stats">
@@ -1759,7 +1815,7 @@
 
 
 
-    <!-- INSTRUCTIONS -->
+    <!-- INSTRUCTION EXECUTION -->
 
     <section class="project-section">
 
@@ -1958,6 +2014,7 @@
                     <span class="code">loada</span>,
                     <span class="code">loadb</span>,
                     <span class="code">loadc</span>,
+                    <span class="code">loads</span>,
                     <span class="code">write</span>,
                     <span class="code">nsel</span>, and
                     <span class="code">vsel</span> as the instruction moves
