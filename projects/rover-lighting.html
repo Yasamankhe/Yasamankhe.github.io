@@ -1,1 +1,1684 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rover Lighting Control System | Yasaman Kheradmand</title>
+
+    <meta
+        name="description"
+        content="Detailed engineering project covering the design, assembly, integration, and validation of an STM32 and CAN-based rover lighting controller.">
+
+    <style>
+
+        :root {
+            --background: #f3f2ee;
+            --surface: #fbfaf7;
+            --surface-soft: #eeefec;
+
+            --text: #1d2730;
+            --text-soft: #66717b;
+            --text-muted: #899199;
+
+            --border: #d9ddd9;
+            --border-dark: #c8ceca;
+
+            --accent: #356c7d;
+            --accent-dark: #285766;
+            --accent-soft: #e5eef0;
+
+            --green: #537766;
+
+            --shadow:
+                0 14px 35px rgba(34, 46, 52, 0.06);
+        }
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            line-height: 1.65;
+
+            color: var(--text);
+
+            background: var(--background);
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        img,
+        video {
+            max-width: 100%;
+        }
+
+
+        .container {
+            width: min(1080px, 90%);
+            margin: 0 auto;
+        }
+
+
+
+        /* NAV */
+
+        nav {
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            background: rgba(243, 242, 238, 0.93);
+
+            border-bottom: 1px solid var(--border);
+
+            backdrop-filter: blur(14px);
+        }
+
+
+        .nav-inner {
+            min-height: 68px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+
+        .brand {
+            display: flex;
+            align-items: center;
+
+            gap: 9px;
+
+            font-size: 0.94rem;
+            font-weight: 700;
+        }
+
+
+        .brand-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--accent);
+        }
+
+
+        .back-link {
+            color: var(--text-soft);
+
+            font-size: 0.85rem;
+            font-weight: 600;
+
+            transition: color 0.2s ease;
+        }
+
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+
+
+        /* HERO */
+
+        .project-hero {
+            padding: 82px 0 72px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .project-eyebrow {
+            display: block;
+
+            margin-bottom: 13px;
+
+            color: var(--accent);
+
+            font-size: 0.7rem;
+            font-weight: 700;
+
+            letter-spacing: 0.11em;
+
+            text-transform: uppercase;
+        }
+
+
+        .project-hero h1 {
+            max-width: 850px;
+
+            margin-bottom: 22px;
+
+            color: #182229;
+
+            font-size:
+                clamp(2.8rem, 6vw, 4.6rem);
+
+            line-height: 1;
+
+            letter-spacing: -0.055em;
+        }
+
+
+        .project-summary {
+            max-width: 790px;
+
+            color: var(--text-soft);
+
+            font-size: 1.05rem;
+        }
+
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 30px;
+        }
+
+
+        .hero-stat {
+            padding: 9px 13px;
+
+            background: #eceeeb;
+
+            border: 1px solid var(--border);
+            border-radius: 6px;
+
+            color: var(--text-soft);
+
+            font-size: 0.79rem;
+        }
+
+
+        .hero-stat strong {
+            color: var(--text);
+
+            margin-right: 4px;
+        }
+
+
+
+        /* CONTENT */
+
+        .project-section {
+            padding: 76px 0;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+
+        .project-section:nth-of-type(even) {
+            background: #f7f6f2;
+        }
+
+
+        .section-grid {
+            display: grid;
+
+            grid-template-columns: 230px 1fr;
+
+            gap: 60px;
+        }
+
+
+        .section-heading {
+            color: #253039;
+
+            font-size: 1.3rem;
+
+            letter-spacing: -0.025em;
+
+            line-height: 1.25;
+        }
+
+
+        .section-kicker {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: var(--accent);
+
+            font-size: 0.68rem;
+            font-weight: 700;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .section-content {
+            min-width: 0;
+        }
+
+
+        .section-content p {
+            max-width: 760px;
+
+            color: var(--text-soft);
+        }
+
+
+        .section-content p + p {
+            margin-top: 17px;
+        }
+
+
+
+        /* SYSTEM CARDS */
+
+        .architecture-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 12px;
+
+            margin-top: 28px;
+        }
+
+
+        .architecture-card {
+            padding: 18px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+
+        .architecture-card h3 {
+            margin-bottom: 5px;
+
+            color: #28333a;
+
+            font-size: 0.9rem;
+        }
+
+
+        .architecture-card p {
+            color: var(--text-muted);
+
+            font-size: 0.8rem;
+
+            line-height: 1.55;
+        }
+
+
+
+        /* SCHEMATIC */
+
+        .schematic-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-top: 28px;
+
+            padding: 23px 24px;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border-dark);
+            border-radius: 9px;
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+
+        .schematic-card:hover {
+            transform: translateY(-2px);
+
+            border-color: #9eb1b4;
+        }
+
+
+        .schematic-label {
+            margin-bottom: 5px;
+
+            color: var(--accent);
+
+            font-size: 0.66rem;
+            font-weight: 700;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .schematic-card h3 {
+            margin-bottom: 4px;
+
+            color: #263139;
+
+            font-size: 1rem;
+        }
+
+
+        .schematic-card p {
+            color: var(--text-muted);
+
+            font-size: 0.8rem;
+        }
+
+
+        .schematic-action {
+            flex-shrink: 0;
+
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            color: var(--accent);
+
+            font-size: 0.79rem;
+            font-weight: 700;
+        }
+
+
+        .pdf-badge {
+            padding: 4px 7px;
+
+            color: #6d777e;
+
+            background: #f1f1ed;
+
+            border: 1px solid var(--border);
+            border-radius: 4px;
+
+            font-size: 0.63rem;
+
+            letter-spacing: 0.06em;
+        }
+
+
+
+        /* IMAGE GALLERY */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 14px;
+
+            margin-top: 30px;
+        }
+
+
+        .gallery-item {
+            overflow: hidden;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+
+        .gallery-image {
+            height: 320px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 16px;
+
+            background: #eceeeb;
+        }
+
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            transition: transform 0.25s ease;
+        }
+
+
+        .gallery-item:hover img {
+            transform: scale(1.015);
+        }
+
+
+        .gallery-item figcaption {
+            padding: 11px 13px;
+
+            color: var(--text-muted);
+
+            background: var(--surface);
+
+            border-top: 1px solid var(--border);
+
+            font-size: 0.75rem;
+        }
+
+
+
+        /* INTEGRATION IMAGE */
+
+        .integration-photo {
+            margin-top: 28px;
+
+            overflow: hidden;
+
+            background: var(--surface);
+
+            border: 1px solid var(--border);
+            border-radius: 9px;
+        }
+
+
+        .integration-photo img {
+            display: block;
+
+            width: 100%;
+            max-height: 590px;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        .integration-photo-caption {
+            padding: 12px 15px;
+
+            color: var(--text-muted);
+
+            border-top: 1px solid var(--border);
+
+            font-size: 0.76rem;
+        }
+
+
+
+        /* VIDEO */
+
+        .video-wrap {
+            width: min(760px, 100%);
+
+            margin-top: 28px;
+        }
+
+
+        .video-frame {
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
+
+            overflow: hidden;
+
+            background: #14191d;
+
+            border: 1px solid var(--border-dark);
+            border-radius: 9px;
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .video-frame video {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            background: #000;
+        }
+
+
+        .video-cover {
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 2;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 30px;
+
+            background: #253139;
+
+            color: white;
+
+            cursor: pointer;
+
+            transition:
+                opacity 0.2s ease,
+                visibility 0.2s ease;
+        }
+
+
+        .video-cover.hidden {
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+        }
+
+
+        .video-cover-content {
+            max-width: 520px;
+        }
+
+
+        .video-label {
+            margin-bottom: 8px;
+
+            color: #9ecbd5;
+
+            font-size: 0.67rem;
+            font-weight: 700;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .video-cover h3 {
+            margin-bottom: 8px;
+
+            font-size: 1.35rem;
+
+            letter-spacing: -0.02em;
+        }
+
+
+        .video-description {
+            max-width: 470px;
+
+            margin-bottom: 18px;
+
+            color: #c4cdd1;
+
+            font-size: 0.82rem;
+        }
+
+
+        .video-meta {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            margin-bottom: 18px;
+
+            color: #9da9ae;
+
+            font-size: 0.7rem;
+        }
+
+
+        .video-meta span + span::before {
+            content: "•";
+
+            margin-right: 9px;
+        }
+
+
+        .video-button {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 8px 13px;
+
+            color: #263138;
+
+            background: #f1f1ed;
+
+            border: 0;
+            border-radius: 5px;
+
+            font-family: inherit;
+
+            font-size: 0.78rem;
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        .play-icon {
+            width: 0;
+            height: 0;
+
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-left: 7px solid var(--accent);
+        }
+
+
+        .video-caption {
+            margin-top: 10px;
+
+            color: var(--text-muted);
+
+            font-size: 0.75rem;
+        }
+
+
+
+        /* TAGS */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 24px;
+        }
+
+
+        .tag {
+            padding: 6px 9px;
+
+            color: #57636b;
+
+            background: #eeeeea;
+
+            border: 1px solid var(--border);
+            border-radius: 5px;
+
+            font-size: 0.76rem;
+            font-weight: 500;
+        }
+
+
+
+        /* PROJECT FOOTER */
+
+        .project-footer {
+            padding: 55px 0;
+        }
+
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 25px;
+        }
+
+
+        .footer-title {
+            color: #263139;
+
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+
+        .footer-description {
+            margin-top: 3px;
+
+            color: var(--text-muted);
+
+            font-size: 0.82rem;
+        }
+
+
+        .back-button {
+            flex-shrink: 0;
+
+            padding: 9px 14px;
+
+            color: white;
+
+            background: var(--accent);
+
+            border-radius: 6px;
+
+            font-size: 0.79rem;
+            font-weight: 700;
+
+            transition: background 0.2s ease;
+        }
+
+
+        .back-button:hover {
+            background: var(--accent-dark);
+        }
+
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            .section-grid {
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .architecture-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .project-hero {
+                padding: 65px 0 60px;
+            }
+
+            .project-section {
+                padding: 58px 0;
+            }
+
+            .gallery-image {
+                height: 280px;
+            }
+
+            .schematic-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .video-cover {
+                padding: 22px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="container nav-inner">
+
+            <div class="brand">
+
+                <span class="brand-dot"></span>
+
+                Yasaman Kheradmand
+
+            </div>
+
+
+            <a
+                class="back-link"
+                href="../index.html#projects">
+
+                ← Back to Projects
+
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- PROJECT HERO -->
+
+    <header class="project-hero">
+
+        <div class="container">
+
+
+            <span class="project-eyebrow">
+                Embedded Hardware | PCB Design
+            </span>
+
+
+            <h1>
+                Rover Lighting Control System
+            </h1>
+
+
+            <p class="project-summary">
+
+                Designed, assembled, programmed, and validated a 4-layer
+                STM32 and CAN-based embedded controller for a rover electrical
+                system. The board integrates power conversion, constant-current
+                LED control, protection, communication, and embedded firmware
+                in a single subsystem.
+
+            </p>
+
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+                    <strong>4-layer</strong>
+                    PCB
+                </div>
+
+                <div class="hero-stat">
+                    <strong>21 to 29.4 V</strong>
+                    input
+                </div>
+
+                <div class="hero-stat">
+                    <strong>5</strong>
+                    boards assembled
+                </div>
+
+                <div class="hero-stat">
+                    <strong>STM32</strong>
+                    control
+                </div>
+
+                <div class="hero-stat">
+                    <strong>CAN</strong>
+                    communication
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- OVERVIEW -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    01
+                </span>
+
+                <h2 class="section-heading">
+                    System Overview
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The lighting controller was developed as an embedded
+                    subsystem for a rover electrical architecture. The board
+                    receives power from the rover battery system, generates
+                    regulated voltage rails, communicates over CAN, and controls
+                    the lighting output through an STM32 microcontroller.
+
+                </p>
+
+
+                <p>
+
+                    The completed design was fabricated, hand assembled, brought
+                    up on the bench, programmed, validated through USB-CAN
+                    communication, and integrated onto the rover.
+
+                </p>
+
+
+                <div class="architecture-grid">
+
+
+                    <div class="architecture-card">
+
+                        <h3>
+                            Power Input
+                        </h3>
+
+                        <p>
+
+                            Designed for a 21 to 29.4 V rover supply with
+                            conversion to the required internal voltage rails.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="architecture-card">
+
+                        <h3>
+                            STM32 Control
+                        </h3>
+
+                        <p>
+
+                            Embedded microcontroller handles commands,
+                            lighting control, PWM behavior, and communication.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="architecture-card">
+
+                        <h3>
+                            CAN Interface
+                        </h3>
+
+                        <p>
+
+                            CAN connectivity allows the lighting controller
+                            to operate as part of the rover electrical network.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="architecture-card">
+
+                        <h3>
+                            LED Driver
+                        </h3>
+
+                        <p>
+
+                            Constant-current LED driving and PWM control provide
+                            controlled illumination and task-specific behavior.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="architecture-card">
+
+                        <h3>
+                            Protection
+                        </h3>
+
+                        <p>
+
+                            Input and communication interfaces include protection
+                            against electrical transients and interface faults.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="architecture-card">
+
+                        <h3>
+                            Debug & Programming
+                        </h3>
+
+                        <p>
+
+                            SWD and communication interfaces support firmware
+                            programming, hardware bring-up, and debugging.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SCHEMATIC -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    02
+                </span>
+
+                <h2 class="section-heading">
+                    Schematic
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The complete schematic is available for technical review,
+                    including the power stage, STM32 control circuitry, CAN
+                    interface, LED driver, connectors, programming interface,
+                    and protection components.
+
+                </p>
+
+
+                <a
+                    class="schematic-card"
+                    href="../assets/lighting-schematic.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+
+                    <div>
+
+                        <div class="schematic-label">
+                            Design File
+                        </div>
+
+
+                        <h3>
+                            Full Lighting Controller Schematic
+                        </h3>
+
+
+                        <p>
+                            Complete circuit schematic | PDF
+                        </p>
+
+                    </div>
+
+
+                    <div class="schematic-action">
+
+                        <span class="pdf-badge">
+                            PDF
+                        </span>
+
+                        View Schematic ↗
+
+                    </div>
+
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PCB DESIGN -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    03
+                </span>
+
+                <h2 class="section-heading">
+                    PCB Design
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The controller was implemented as a four-layer PCB with
+                    dedicated power distribution, a continuous ground reference,
+                    and routing organized around the switching regulator,
+                    microcontroller, CAN interface, and LED driver sections.
+
+                </p>
+
+
+                <div class="gallery">
+
+
+                    <figure class="gallery-item">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="../assets/lighting1.png"
+                                alt="Component side 3D render of the rover lighting controller">
+
+                        </div>
+
+                        <figcaption>
+                            Component Side | 3D Render
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="gallery-item">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="../assets/lighting2.png"
+                                alt="LED side 3D render of the rover lighting controller">
+
+                        </div>
+
+                        <figcaption>
+                            LED Side | 3D Render
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="gallery-item">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="../assets/lighting3.png"
+                                alt="Top side PCB routing of the rover lighting controller">
+
+                        </div>
+
+                        <figcaption>
+                            Layout & Routing | Top Side
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="gallery-item">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="../assets/lighting4.png"
+                                alt="Polygon pours of the rover lighting controller PCB">
+
+                        </div>
+
+                        <figcaption>
+                            PCB Layout | Polygon Pours
+                        </figcaption>
+
+                    </figure>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ASSEMBLY -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    04
+                </span>
+
+                <h2 class="section-heading">
+                    Assembly & Bring-Up
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    Five boards were assembled and hand soldered. Bring-up
+                    included power rail verification, microcontroller
+                    programming, communication testing, and functional testing
+                    of the lighting output.
+
+                </p>
+
+
+                <div class="gallery">
+
+                    <figure class="gallery-item">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="../assets/lighting5.png"
+                                alt="Five assembled and hand soldered rover lighting controller boards">
+
+                        </div>
+
+                        <figcaption>
+                            Assembled Hardware | Five Hand-Soldered Boards
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- INTEGRATION -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    05
+                </span>
+
+                <h2 class="section-heading">
+                    Rover Integration
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The completed lighting subsystem was installed and tested on
+                    the rover. PWM control allowed the lighting behavior to be
+                    adjusted dynamically and supported tasks involving Morse code
+                    signaling and lighting changes as the rover approached
+                    obstacles during puzzle-solving activities.
+
+                </p>
+
+
+                <div class="integration-photo">
+
+                    <img
+                        src="../assets/lighting6.jpg"
+                        alt="Rover lighting system operating after integration onto the rover">
+
+
+                    <div class="integration-photo-caption">
+                        Rover Integration | PWM Lighting in Operation
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- VALIDATION -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    06
+                </span>
+
+                <h2 class="section-heading">
+                    Hardware Validation
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    Bench validation included USB-CAN communication, command
+                    feedback, PWM control, and functional testing of the
+                    assembled hardware before integration onto the rover.
+
+                </p>
+
+
+                <div class="video-wrap">
+
+
+                    <div class="video-frame">
+
+
+                        <video
+                            id="lighting-video"
+                            controls
+                            playsinline
+                            preload="metadata">
+
+                            <source
+                                src="../assets/lighting.mp4"
+                                type="video/mp4">
+
+                            Your browser does not support this video.
+
+                        </video>
+
+
+
+                        <div
+                            class="video-cover"
+                            id="lighting-video-cover">
+
+
+                            <div class="video-cover-content">
+
+
+                                <div class="video-label">
+                                    Lab Validation
+                                </div>
+
+
+                                <h3>
+                                    CAN and PWM Bench Test
+                                </h3>
+
+
+                                <div class="video-description">
+
+                                    Testing USB-CAN communication, command
+                                    feedback, and PWM-controlled lighting during
+                                    board bring-up.
+
+                                </div>
+
+
+                                <div class="video-meta">
+
+                                    <span>31 sec</span>
+                                    <span>USB-CAN</span>
+                                    <span>PWM</span>
+
+                                </div>
+
+
+                                <button
+                                    class="video-button"
+                                    id="lighting-play-button"
+                                    type="button">
+
+                                    <span class="play-icon"></span>
+
+                                    Watch validation clip
+
+                                </button>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="video-caption">
+
+                        Bench validation of CAN communication and PWM-controlled lighting
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- TECHNOLOGIES -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    07
+                </span>
+
+                <h2 class="section-heading">
+                    Tools & Technologies
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The project combined PCB design, embedded firmware,
+                    communication interfaces, power electronics, and physical
+                    hardware validation.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">Altium</span>
+                    <span class="tag">STM32</span>
+                    <span class="tag">C</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">CAN</span>
+                    <span class="tag">PWM</span>
+                    <span class="tag">PCB Layout</span>
+                    <span class="tag">Power Electronics</span>
+                    <span class="tag">Hardware Bring-Up</span>
+                    <span class="tag">System Integration</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="project-footer">
+
+        <div class="container footer-inner">
+
+
+            <div>
+
+                <div class="footer-title">
+                    Rover Lighting Control System
+                </div>
+
+                <div class="footer-description">
+                    Embedded hardware | PCB design | STM32 | CAN
+                </div>
+
+            </div>
+
+
+            <a
+                class="back-button"
+                href="../index.html#projects">
+
+                ← Back to Projects
+
+            </a>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- VIDEO SCRIPT -->
+
+    <script>
+
+        const lightingVideo =
+            document.getElementById("lighting-video");
+
+        const lightingCover =
+            document.getElementById("lighting-video-cover");
+
+        const lightingPlayButton =
+            document.getElementById("lighting-play-button");
+
+
+        function playLightingVideo() {
+
+            lightingCover.classList.add("hidden");
+
+            lightingVideo.play();
+
+        }
+
+
+        lightingPlayButton.addEventListener(
+            "click",
+            function(event) {
+
+                event.stopPropagation();
+
+                playLightingVideo();
+
+            }
+        );
+
+
+        lightingCover.addEventListener(
+            "click",
+            function() {
+
+                playLightingVideo();
+
+            }
+        );
+
+
+        lightingVideo.addEventListener(
+            "ended",
+            function() {
+
+                lightingCover.classList.remove("hidden");
+
+                lightingVideo.currentTime = 0;
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
