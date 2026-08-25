@@ -10,12 +10,12 @@
         content="width=device-width, initial-scale=1.0">
 
     <title>
-        Yasaman Kheradmand | Electrical Engineering Portfolio
+        Simple RISC Machine | Yasaman Kheradmand
     </title>
 
     <meta
         name="description"
-        content="Electrical Engineering portfolio focused on hardware design, embedded systems, PCB design, FPGA development, robotics, analog electronics, and system integration.">
+        content="16-bit multi-cycle Simple RISC Machine designed in SystemVerilog with an ALU, register file, shifter, datapath, FSM controller, status flags, and RTL verification.">
 
     <style>
 
@@ -91,7 +91,7 @@
 
         .container {
 
-            width: min(1120px, 91%);
+            width: min(1080px, 90%);
 
             margin: 0 auto;
         }
@@ -99,15 +99,13 @@
 
 
         /* =========================================================
-           NAVIGATION
+           NAV
         ========================================================= */
 
         nav {
 
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
 
             background:
@@ -126,28 +124,23 @@
             min-height: 68px;
 
             display: flex;
-
-            justify-content:
-                space-between;
-
+            justify-content: space-between;
             align-items: center;
 
-            gap: 24px;
+            gap: 20px;
         }
 
 
         .brand {
 
             display: flex;
-
             align-items: center;
 
             gap: 9px;
 
-            color: #273139;
+            color: #28323a;
 
             font-size: 0.94rem;
-
             font-weight: 700;
         }
 
@@ -155,7 +148,6 @@
         .brand-dot {
 
             width: 7px;
-
             height: 7px;
 
             border-radius: 50%;
@@ -165,31 +157,17 @@
         }
 
 
-        .nav-links {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 24px;
+        .back-link {
 
             color:
                 var(--text-soft);
 
-            font-size: 0.82rem;
-
+            font-size: 0.84rem;
             font-weight: 600;
         }
 
 
-        .nav-links a {
-
-            transition:
-                color 0.2s ease;
-        }
-
-
-        .nav-links a:hover {
+        .back-link:hover {
 
             color:
                 var(--accent);
@@ -201,105 +179,79 @@
            HERO
         ========================================================= */
 
-        .hero {
+        .project-hero {
 
             padding:
-                105px 0 92px;
+                86px 0 67px;
 
             border-bottom:
                 1px solid var(--border);
         }
 
 
-        .eyebrow {
+        .project-eyebrow {
 
             display: block;
 
-            margin-bottom: 14px;
+            margin-bottom: 13px;
 
             color:
                 var(--accent);
 
-            font-size: 0.7rem;
-
+            font-size: 0.69rem;
             font-weight: 700;
 
-            letter-spacing: 0.12em;
+            letter-spacing: 0.11em;
 
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
         }
 
 
-        .hero h1 {
+        .project-hero h1 {
 
-            margin-bottom: 23px;
+            max-width: 900px;
+
+            margin-bottom: 22px;
 
             color:
                 var(--text-strong);
 
             font-size:
-                clamp(3.2rem, 8vw, 6.5rem);
+                clamp(2.8rem, 6vw, 4.7rem);
 
-            line-height: 0.9;
+            line-height: 0.98;
 
             letter-spacing:
-                -0.065em;
+                -0.055em;
         }
 
 
-        .hero h2 {
+        .project-summary {
 
-            max-width: 760px;
-
-            margin-bottom: 20px;
-
-            color: #29343b;
-
-            font-size:
-                clamp(1.65rem, 3.5vw, 2.6rem);
-
-            line-height: 1.12;
-
-            letter-spacing:
-                -0.045em;
-        }
-
-
-        .hero-description {
-
-            max-width: 720px;
+            max-width: 850px;
 
             color:
                 var(--text-soft);
 
-            font-size: 1.03rem;
+            font-size: 1.05rem;
         }
 
 
-        .hero-links {
+        .hero-actions {
 
             display: flex;
-
             flex-wrap: wrap;
 
             gap: 10px;
 
-            margin-top: 31px;
+            margin-top: 27px;
         }
 
-
-
-        /* =========================================================
-           BUTTONS
-        ========================================================= */
 
         .button {
 
             display: inline-flex;
-
             align-items: center;
-
             justify-content: center;
 
             padding:
@@ -316,67 +268,159 @@
             border-radius: 6px;
 
             font-size: 0.8rem;
-
             font-weight: 700;
-
-            transition:
-                background 0.2s ease,
-                transform 0.2s ease,
-                border-color 0.2s ease;
         }
 
 
         .button:hover {
 
-            transform:
-                translateY(-1px);
-
             background:
-                var(--accent-dark);
-
-            border-color:
                 var(--accent-dark);
         }
 
 
-        .button.secondary {
+        .hero-stats {
 
-            color:
-                var(--text);
+            display: flex;
+            flex-wrap: wrap;
 
-            background:
-                var(--surface);
+            gap: 9px;
 
-            border-color:
-                var(--border-dark);
+            margin-top: 30px;
         }
 
 
-        .button.secondary:hover {
+        .hero-stat {
+
+            padding:
+                8px 12px;
 
             color:
-                var(--accent);
+                var(--text-soft);
 
-            background: white;
+            background:
+                var(--surface-muted);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 6px;
+
+            font-size: 0.78rem;
+        }
+
+
+        .hero-stat strong {
+
+            margin-right: 4px;
+
+            color: var(--text);
         }
 
 
 
         /* =========================================================
-           GENERAL SECTIONS
+           RISC IMAGE
         ========================================================= */
 
-        .section {
+        .feature-image-section {
 
             padding:
-                82px 0;
+                58px 0 64px;
+
+            background:
+                var(--surface-alt);
 
             border-bottom:
                 1px solid var(--border);
         }
 
 
-        .section.alt {
+        .feature-image-heading {
+
+            margin-bottom: 20px;
+        }
+
+
+        .feature-image-heading span {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            color:
+                var(--accent);
+
+            font-size: 0.67rem;
+            font-weight: 700;
+
+            letter-spacing:
+                0.1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .feature-image-heading h2 {
+
+            color: #253039;
+
+            font-size: 1.45rem;
+
+            letter-spacing:
+                -0.03em;
+        }
+
+
+        .feature-image-card {
+
+            width: 100%;
+
+            padding: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border-dark);
+
+            border-radius: 10px;
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .feature-image-card img {
+
+            width: 100%;
+
+            max-height: 540px;
+
+            object-fit: contain;
+        }
+
+
+
+        /* =========================================================
+           SECTIONS
+        ========================================================= */
+
+        .project-section {
+
+            padding:
+                76px 0;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .project-section.alt {
 
             background:
                 var(--surface-alt);
@@ -388,38 +432,47 @@
             display: grid;
 
             grid-template-columns:
-                200px 1fr;
+                220px 1fr;
 
-            gap: 65px;
+            gap: 62px;
         }
 
 
-        .section-label {
+        .section-kicker {
+
+            display: block;
+
+            margin-bottom: 8px;
 
             color:
                 var(--accent);
 
-            font-size: 0.68rem;
-
+            font-size: 0.67rem;
             font-weight: 700;
 
-            letter-spacing: 0.11em;
+            letter-spacing:
+                0.1em;
 
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
         }
 
 
-        .section-title {
+        .section-heading {
 
-            margin-top: 6px;
+            color: #253039;
 
-            color: #273139;
+            font-size: 1.3rem;
 
-            font-size: 1.32rem;
+            line-height: 1.25;
 
             letter-spacing:
                 -0.025em;
+        }
+
+
+        .section-content {
+
+            min-width: 0;
         }
 
 
@@ -434,70 +487,37 @@
 
         .section-content p + p {
 
-            margin-top: 19px;
+            margin-top: 17px;
         }
 
 
 
         /* =========================================================
-           FULL-WIDTH PROJECT SECTION
+           ARCHITECTURE FLOW
         ========================================================= */
 
-        .projects-section {
-
-            padding:
-                76px 0 88px;
-
-            border-bottom:
-                1px solid var(--border);
-        }
-
-
-        .projects-heading {
-
-            margin-bottom: 28px;
-        }
-
-
-        .projects-heading .section-title {
-
-            font-size: 1.7rem;
-
-            margin-top: 5px;
-        }
-
-
-        .projects-heading p {
-
-            max-width: 650px;
-
-            margin-top: 8px;
-
-            color:
-                var(--text-muted);
-
-            font-size: 0.88rem;
-        }
-
-
-        .projects-list {
+        .architecture {
 
             display: grid;
 
-            gap: 20px;
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 10px;
+
+            margin-top: 30px;
         }
 
 
+        .arch-block {
 
-        /* =========================================================
-           PROJECT CARD
-        ========================================================= */
+            min-height: 94px;
 
-        .project {
+            padding: 15px;
 
-            width: 100%;
-
-            padding: 26px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
             background:
                 var(--surface);
@@ -505,357 +525,159 @@
             border:
                 1px solid var(--border);
 
-            border-radius: 10px;
+            border-radius: 7px;
 
-            box-shadow:
-                var(--shadow);
+            text-align: center;
         }
 
 
-        .project-header {
-
-            display: flex;
-
-            justify-content:
-                space-between;
-
-            align-items:
-                flex-start;
-
-            gap: 24px;
-
-            margin-bottom: 14px;
-        }
-
-
-        .project-category {
-
-            display: block;
-
-            margin-bottom: 5px;
-
-            color:
-                var(--accent);
-
-            font-size: 0.65rem;
-
-            font-weight: 700;
-
-            letter-spacing: 0.09em;
-
-            text-transform:
-                uppercase;
-        }
-
-
-        .project h3 {
-
-            color: #263139;
-
-            font-size: 1.28rem;
-
-            letter-spacing:
-                -0.025em;
-        }
-
-
-        .status {
-
-            flex-shrink: 0;
-
-            padding:
-                4px 8px;
-
-            color:
-                var(--green);
-
-            background:
-                var(--green-soft);
-
-            border:
-                1px solid #d3ded7;
-
-            border-radius: 20px;
-
-            font-size: 0.64rem;
-
-            font-weight: 700;
-
-            text-transform:
-                uppercase;
-        }
-
-
-        .status.in-progress {
-
-            color:
-                var(--accent);
+        .arch-block.strong {
 
             background:
                 var(--accent-soft);
 
             border-color:
-                #cfdee1;
+                #cbdcdf;
         }
 
 
-        .project > p {
+        .arch-title {
 
-            max-width: 900px;
+            color: #35434a;
+
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+
+        .arch-description {
+
+            margin-top: 4px;
 
             color:
-                var(--text-soft);
+                var(--text-muted);
 
-            font-size: 0.9rem;
-        }
-
-
-        .project > p + p {
-
-            margin-top: 10px;
+            font-size: 0.67rem;
         }
 
 
 
         /* =========================================================
-           SMALLER PROJECT IMAGE GRIDS
+           CARDS
         ========================================================= */
 
-        .project-images {
+        .card-grid {
 
             display: grid;
-
-            grid-template-columns:
-                repeat(3, minmax(0, 1fr));
-
-            gap: 8px;
-
-            margin-top: 20px;
-        }
-
-
-        .project-images.two {
 
             grid-template-columns:
                 repeat(2, minmax(0, 1fr));
+
+            gap: 12px;
+
+            margin-top: 28px;
         }
 
 
-        .project-images.one {
+        .card {
 
-            grid-template-columns:
-                minmax(0, 520px);
-        }
-
-
-        .project-image {
-
-            overflow: hidden;
-
-            height: 150px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
+            padding: 19px;
 
             background:
-                #eceeeb;
+                var(--surface);
 
             border:
                 1px solid var(--border);
 
-            border-radius: 7px;
+            border-radius: 8px;
         }
 
 
-        .project-image img {
+        .card-label {
 
-            width: 100%;
+            margin-bottom: 6px;
 
-            height: 100%;
+            color:
+                var(--accent);
 
-            object-fit: cover;
+            font-size: 0.64rem;
+            font-weight: 700;
+
+            letter-spacing:
+                0.08em;
+
+            text-transform: uppercase;
         }
 
 
-        .project-image.contain img {
+        .card h3 {
 
-            object-fit: contain;
+            margin-bottom: 6px;
 
-            padding: 7px;
+            color: #2d383f;
+
+            font-size: 0.93rem;
+        }
+
+
+        .card p {
+
+            color:
+                var(--text-muted);
+
+            font-size: 0.79rem;
+
+            line-height: 1.55;
         }
 
 
 
         /* =========================================================
-           PROJECT HIGHLIGHTS
+           DETAIL LIST
         ========================================================= */
 
-        .project-highlights {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 8px;
-
-            margin-top: 18px;
-        }
-
-
-        .project-highlights span {
-
-            padding:
-                7px 10px;
-
-            color:
-                var(--text-soft);
-
-            background:
-                var(--surface-muted);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 5px;
-
-            font-size: 0.72rem;
-        }
-
-
-        .project-highlights strong {
-
-            margin-right: 3px;
-
-            color:
-                var(--text);
-        }
-
-
-
-        /* =========================================================
-           TAGS / ACTIONS
-        ========================================================= */
-
-        .tags {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 7px;
-
-            margin-top: 18px;
-        }
-
-
-        .tag {
-
-            padding:
-                5px 8px;
-
-            color:
-                #5b666d;
-
-            background:
-                #eeeeea;
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 5px;
-
-            font-size: 0.7rem;
-
-            font-weight: 500;
-        }
-
-
-        .project-actions {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-            margin-top: 22px;
-        }
-
-
-
-        /* =========================================================
-           EXPERIENCE
-        ========================================================= */
-
-        .experience-list {
+        .detail-list {
 
             display: grid;
+
+            margin-top: 27px;
         }
 
 
-        .experience-item {
+        .detail-row {
 
             display: grid;
 
             grid-template-columns:
-                215px 1fr;
+                190px 1fr;
 
-            gap: 28px;
+            gap: 25px;
 
             padding:
-                23px 0;
+                15px 0;
 
             border-top:
                 1px solid var(--border);
         }
 
 
-        .experience-item:last-child {
+        .detail-row:last-child {
 
             border-bottom:
                 1px solid var(--border);
         }
 
 
-        .experience-date {
+        .detail-title {
 
-            color:
-                var(--text-muted);
+            color: #39454c;
 
-            font-size: 0.76rem;
-
-            font-weight: 600;
+            font-size: 0.82rem;
+            font-weight: 700;
         }
 
 
-        .experience-main h3 {
-
-            margin-bottom: 3px;
-
-            color:
-                #2d373d;
-
-            font-size: 0.93rem;
-        }
-
-
-        .experience-role {
-
-            margin-bottom: 7px;
-
-            color:
-                var(--accent);
-
-            font-size: 0.78rem;
-
-            font-weight: 650;
-        }
-
-
-        .experience-main p {
+        .detail-text {
 
             color:
                 var(--text-muted);
@@ -866,18 +688,146 @@
 
 
         /* =========================================================
-           CONTACT
+           TABLE
         ========================================================= */
 
-        .contact-grid {
+        .table-wrap {
+
+            margin-top: 28px;
+
+            overflow-x: auto;
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 8px;
+        }
+
+
+        table {
+
+            width: 100%;
+
+            min-width: 650px;
+
+            border-collapse: collapse;
+        }
+
+
+        th {
+
+            padding:
+                11px 13px;
+
+            text-align: left;
+
+            color: #59656c;
+
+            background:
+                #edeeea;
+
+            border-bottom:
+                1px solid var(--border);
+
+            font-size: 0.69rem;
+            font-weight: 700;
+
+            letter-spacing:
+                0.05em;
+
+            text-transform: uppercase;
+        }
+
+
+        td {
+
+            padding: 13px;
+
+            color:
+                var(--text-soft);
+
+            border-bottom:
+                1px solid var(--border);
+
+            font-size: 0.8rem;
+        }
+
+
+        tr:last-child td {
+
+            border-bottom: 0;
+        }
+
+
+
+        /* =========================================================
+           FSM PATHS
+        ========================================================= */
+
+        .path {
+
+            margin-top: 14px;
+
+            padding:
+                15px 17px;
+
+            color: #4f5c63;
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 7px;
+
+            font-family:
+                "SFMono-Regular",
+                Consolas,
+                "Liberation Mono",
+                Menlo,
+                monospace;
+
+            font-size: 0.77rem;
+        }
+
+
+
+        /* =========================================================
+           TAGS
+        ========================================================= */
+
+        .tags {
 
             display: flex;
-
             flex-wrap: wrap;
 
-            gap: 10px;
+            gap: 8px;
 
-            margin-top: 22px;
+            margin-top: 25px;
+        }
+
+
+        .tag {
+
+            padding:
+                6px 9px;
+
+            color: #57636b;
+
+            background:
+                #eeeeea;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 5px;
+
+            font-size: 0.76rem;
+            font-weight: 500;
         }
 
 
@@ -886,26 +836,40 @@
            FOOTER
         ========================================================= */
 
-        footer {
+        .project-footer {
 
             padding:
-                42px 0;
-
-            color:
-                var(--text-muted);
-
-            font-size: 0.76rem;
+                55px 0;
         }
 
 
         .footer-inner {
 
             display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-            justify-content:
-                space-between;
+            gap: 25px;
+        }
 
-            gap: 20px;
+
+        .footer-title {
+
+            color: #263139;
+
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+
+        .footer-description {
+
+            margin-top: 3px;
+
+            color:
+                var(--text-muted);
+
+            font-size: 0.82rem;
         }
 
 
@@ -914,104 +878,67 @@
            RESPONSIVE
         ========================================================= */
 
-        @media (max-width: 820px) {
+        @media (max-width: 850px) {
 
             .section-grid {
 
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
 
-                gap: 24px;
+                gap: 25px;
             }
 
 
-            .experience-item {
-
-                grid-template-columns:
-                    1fr;
-
-                gap: 6px;
-            }
-
-
-            .project-images {
+            .architecture {
 
                 grid-template-columns:
                     repeat(2, minmax(0, 1fr));
             }
 
 
-            .project-images.two {
+            .card-grid {
 
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
-
-
-            .project-image {
-
-                height: 145px;
+                grid-template-columns: 1fr;
             }
 
         }
 
 
-        @media (max-width: 620px) {
+        @media (max-width: 600px) {
 
-            .hero {
+            .project-hero {
 
                 padding:
-                    80px 0 65px;
+                    65px 0 50px;
             }
 
 
-            .nav-links {
+            .project-section {
 
-                gap: 13px;
-
-                font-size: 0.74rem;
+                padding:
+                    55px 0;
             }
 
 
-            .project {
-
-                padding: 20px;
-            }
-
-
-            .project-header {
-
-                flex-direction:
-                    column;
-
-                gap: 10px;
-            }
-
-
-            .project-images,
-            .project-images.two {
-
-                grid-template-columns:
-                    repeat(2, minmax(0, 1fr));
-            }
-
-
-            .project-images.one {
+            .architecture {
 
                 grid-template-columns: 1fr;
             }
 
 
-            .project-image {
+            .detail-row {
 
-                height: 120px;
+                grid-template-columns: 1fr;
+
+                gap: 6px;
             }
 
 
             .footer-inner {
 
-                flex-direction:
-                    column;
+                flex-direction: column;
+
+                align-items:
+                    flex-start;
             }
 
         }
@@ -1024,6 +951,7 @@
 <body>
 
 
+
     <!-- =========================================================
          NAV
     ========================================================== -->
@@ -1032,36 +960,22 @@
 
         <div class="container nav-inner">
 
-            <a
-                class="brand"
-                href="#top">
+            <div class="brand">
 
                 <span class="brand-dot"></span>
 
                 Yasaman Kheradmand
 
-            </a>
-
-
-            <div class="nav-links">
-
-                <a href="#about">
-                    About
-                </a>
-
-                <a href="#projects">
-                    Projects
-                </a>
-
-                <a href="#experience">
-                    Experience
-                </a>
-
-                <a href="#contact">
-                    Contact
-                </a>
-
             </div>
+
+
+            <a
+                class="back-link"
+                href="../index.html#projects">
+
+                ← Back to Projects
+
+            </a>
 
         </div>
 
@@ -1073,68 +987,77 @@
          HERO
     ========================================================== -->
 
-    <header
-        class="hero"
-        id="top">
+    <header class="project-hero">
 
         <div class="container">
 
-            <span class="eyebrow">
-                Electrical Engineering | UBC
+            <span class="project-eyebrow">
+                Digital Logic | Processor Design
             </span>
 
 
             <h1>
-                Yasaman<br>
-                Kheradmand
+                Simple RISC Machine
             </h1>
 
 
-            <h2>
-                I design and build electronic hardware.
-            </h2>
+            <p class="project-summary">
 
-
-            <p class="hero-description">
-
-                I am an Electrical Engineering student at the University of
-                British Columbia. I like working on hardware projects where
-                I can go from the circuit and PCB design all the way to
-                programming, bring-up, testing, and seeing the system work
-                in real hardware.
+                I designed a 16-bit multi-cycle processor in SystemVerilog.
+                I built the register file, ALU, operand shifter, datapath,
+                instruction decoding logic, finite state machine controller,
+                and status-flag logic, then wrote RTL testbenches to exercise
+                the individual blocks and end-to-end instruction execution.
 
             </p>
 
 
-            <div class="hero-links">
+            <div class="hero-actions">
 
                 <a
                     class="button"
-                    href="#projects">
-
-                    View Projects
-
-                </a>
-
-
-                <a
-                    class="button secondary"
-                    href="mailto:Nasayasi7@gmail.com">
-
-                    Email
-
-                </a>
-
-
-                <a
-                    class="button secondary"
-                    href="https://www.linkedin.com/in/yasamankh"
+                    href="https://github.com/Yasamankhe/RISC-MACHINE"
                     target="_blank"
                     rel="noopener noreferrer">
 
-                    LinkedIn ↗
+                    View Repository ↗
 
                 </a>
+
+            </div>
+
+
+            <div class="hero-stats">
+
+                <div class="hero-stat">
+                    <strong>16-bit</strong>
+                    datapath
+                </div>
+
+                <div class="hero-stat">
+                    <strong>8 × 16-bit</strong>
+                    registers
+                </div>
+
+                <div class="hero-stat">
+                    <strong>4</strong>
+                    ALU operations
+                </div>
+
+                <div class="hero-stat">
+                    <strong>4</strong>
+                    shift modes
+                </div>
+
+                <div class="hero-stat">
+                    <strong>N / V / Z</strong>
+                    status flags
+                </div>
+
+                <div class="hero-stat">
+                    <strong>Multi-cycle</strong>
+                    FSM control
+                </div>
 
             </div>
 
@@ -1145,834 +1068,31 @@
 
 
     <!-- =========================================================
-         ABOUT
+         RISC IMAGE
     ========================================================== -->
 
-    <section
-        class="section alt"
-        id="about">
-
-        <div class="container section-grid">
-
-            <div>
-
-                <span class="section-label">
-                    About
-                </span>
-
-                <h2 class="section-title">
-                    A little about me
-                </h2>
-
-            </div>
-
-
-            <div class="section-content">
-
-                <p>
-
-                    I am an Electrical Engineering student at the University
-                    of British Columbia. I really enjoy hardware and electronics,
-                    especially projects where I can understand how the different
-                    parts of a system interact instead of working on each block
-                    in isolation.
-
-                </p>
-
-
-                <p>
-
-                    Recently, I have also become interested in hardware for
-                    machine learning applications. I am currently working on a
-                    hardware-focused ML project using PyTorch, where I am learning
-                    more about how models are implemented and evaluated while
-                    exploring the compute, memory, and hardware constraints that
-                    matter when moving ML from software toward real systems.
-
-                </p>
-
-
-                <p>
-
-                    Outside of engineering, I play piano and I am currently
-                    working on several Tchaikovsky pieces, with the goal of
-                    bringing my playing to a performance level over the next year.
-                    I also enjoy reading biographies and books about history.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         PROJECTS
-    ========================================================== -->
-
-    <section
-        class="projects-section"
-        id="projects">
+    <section class="feature-image-section">
 
         <div class="container">
 
+            <div class="feature-image-heading">
 
-            <div class="projects-heading">
-
-                <span class="section-label">
-                    Projects
+                <span>
+                    RTL Project
                 </span>
 
-                <h2 class="section-title">
-                    Selected Work
+                <h2>
+                    Simple RISC Machine
                 </h2>
-
-                <p>
-                    Hardware, embedded, digital, analog, robotics, and
-                    system-integration projects I have worked on.
-                </p>
 
             </div>
 
 
-
-            <div class="projects-list">
-
-
-
-                <!-- =================================================
-                     ROVER
-                ================================================== -->
-
-                <article class="project">
-
-                    <div class="project-header">
-
-                        <div>
-
-                            <span class="project-category">
-                                Embedded Hardware | PCB Design
-                            </span>
-
-                            <h3>
-                                Rover Lighting Control System
-                            </h3>
-
-                        </div>
-
-
-                        <span class="status">
-                            Completed
-                        </span>
-
-                    </div>
-
-
-                    <p>
-
-                        I designed a 4-layer lighting controller for a rover
-                        electrical system, integrating power conversion,
-                        STM32 control, CAN communication, LED drive,
-                        protection, firmware, and hardware validation.
-
-                    </p>
-
-
-                    <!-- ALL SIX ROVER IMAGES -->
-
-                    <div class="project-images">
-
-
-                        <div class="project-image contain">
-
-                            <img
-                                src="assets/lighting1.png"
-                                alt="Rover lighting PCB component-side render"
-                                loading="lazy">
-
-                        </div>
-
-
-                        <div class="project-image contain">
-
-                            <img
-                                src="assets/lighting2.png"
-                                alt="Rover lighting PCB LED-side render"
-                                loading="lazy">
-
-                        </div>
-
-
-                        <div class="project-image contain">
-
-                            <img
-                                src="assets/lighting3.png"
-                                alt="Rover lighting PCB routing"
-                                loading="lazy">
-
-                        </div>
-
-
-                        <div class="project-image contain">
-
-                            <img
-                                src="assets/lighting4.png"
-                                alt="Rover lighting PCB copper and power planes"
-                                loading="lazy">
-
-                        </div>
-
-
-                        <div class="project-image">
-
-                            <img
-                                src="assets/lighting5.png"
-                                alt="Five assembled rover lighting boards"
-                                loading="lazy">
-
-                        </div>
-
-
-                        <div class="project-image">
-
-                            <img
-                                src="assets/lighting6.jpg"
-                                alt="Rover lighting system integrated on rover"
-                                loading="lazy">
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="project-highlights">
-
-                        <span>
-                            <strong>4-layer</strong>
-                            PCB
-                        </span>
-
-                        <span>
-                            <strong>21–29.4 V</strong>
-                            input
-                        </span>
-
-                        <span>
-                            <strong>5</strong>
-                            boards assembled
-                        </span>
-
-                        <span>
-                            <strong>STM32 + CAN</strong>
-                            control
-                        </span>
-
-                    </div>
-
-
-                    <div class="tags">
-
-                        <span class="tag">Altium</span>
-                        <span class="tag">STM32</span>
-                        <span class="tag">CAN</span>
-                        <span class="tag">PCB Design</span>
-                        <span class="tag">Power Electronics</span>
-                        <span class="tag">Hardware Bring-Up</span>
-
-                    </div>
-
-
-                    <div class="project-actions">
-
-                        <a
-                            class="button"
-                            href="projects/rover-lighting.html">
-
-                            View Full Project →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     FPGA SIMD
-                ================================================== -->
-
-                <article class="project">
-
-                    <div class="project-header">
-
-                        <div>
-
-                            <span class="project-category">
-                                Digital Hardware | FPGA
-                            </span>
-
-                            <h3>
-                                FPGA SIMD Processing Core & Verification Platform
-                            </h3>
-
-                        </div>
-
-
-                        <span class="status in-progress">
-                            In Development
-                        </span>
-
-                    </div>
-
-
-                    <p>
-
-                        I am building a pipelined SystemVerilog processing core
-                        with instruction fetch and decode, a scalar ALU and
-                        register file, BRAM-backed memory, and a four-lane SIMD
-                        datapath. I am also developing self-checking RTL tests
-                        and C/Python reference models.
-
-                    </p>
-
-
-                    <div class="tags">
-
-                        <span class="tag">SystemVerilog</span>
-                        <span class="tag">FPGA</span>
-                        <span class="tag">SIMD</span>
-                        <span class="tag">RTL Verification</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Computer Architecture</span>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     SIMPLE RISC
-                ================================================== -->
-
-                <article class="project">
-
-                    <div class="project-header">
-
-                        <div>
-
-                            <span class="project-category">
-                                Digital Logic | Processor Design
-                            </span>
-
-                            <h3>
-                                Simple RISC Machine
-                            </h3>
-
-                        </div>
-
-
-                        <span class="status">
-                            Completed
-                        </span>
-
-                    </div>
-
-
-                    <p>
-
-                        I designed a 16-bit multi-cycle processor in
-                        SystemVerilog with a register file, ALU, shifter,
-                        datapath, instruction decoder, finite state machine
-                        controller, status flags, and RTL verification.
-
-                    </p>
-
-
-                    <div class="project-highlights">
-
-                        <span>
-                            <strong>16-bit</strong>
-                            datapath
-                        </span>
-
-                        <span>
-                            <strong>8</strong>
-                            registers
-                        </span>
-
-                        <span>
-                            <strong>4</strong>
-                            ALU operations
-                        </span>
-
-                        <span>
-                            <strong>N / V / Z</strong>
-                            flags
-                        </span>
-
-                    </div>
-
-
-                    <div class="tags">
-
-                        <span class="tag">SystemVerilog</span>
-                        <span class="tag">RTL Design</span>
-                        <span class="tag">CPU Architecture</span>
-                        <span class="tag">FSM</span>
-                        <span class="tag">ALU</span>
-                        <span class="tag">ModelSim</span>
-                        <span class="tag">FPGA</span>
-
-                    </div>
-
-
-                    <div class="project-actions">
-
-                        <a
-                            class="button"
-                            href="projects/simple-risc.html">
-
-                            View Full Project →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     TEMPERATURE
-                ================================================== -->
-
-                <article class="project">
-
-                    <div class="project-header">
-
-                        <div>
-
-                            <span class="project-category">
-                                Analog | Embedded Systems
-                            </span>
-
-                            <h3>
-                                Smart Temperature Monitoring & Control System
-                            </h3>
-
-                        </div>
-
-
-                        <span class="status">
-                            Completed
-                        </span>
-
-                    </div>
-
-
-                    <p>
-
-                        I built a temperature monitoring and control system
-                        around an NTC thermistor, Wheatstone bridge, analog
-                        amplification, Arduino, Python calibration,
-                        comparators, and 555 timer control.
-
-                    </p>
-
-
-                    <div class="project-images two">
-
-
-                        <div class="project-image">
-
-                            <img
-                                src="assets/temp1.png"
-                                alt="Temperature monitoring breadboard prototype"
-                                loading="lazy">
-
-                        </div>
-
-
-                        <div class="project-image contain">
-
-                            <img
-                                src="assets/temp2.png"
-                                alt="Temperature system Multisim simulation"
-                                loading="lazy">
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="project-highlights">
-
-                        <span>
-                            <strong>±0.1°C</strong>
-                            calibrated accuracy
-                        </span>
-
-                        <span>
-                            <strong>4-coefficient</strong>
-                            Steinhart-Hart
-                        </span>
-
-                        <span>
-                            <strong>~50%</strong>
-                            PWM
-                        </span>
-
-                        <span>
-                            <strong>10 Hz</strong>
-                            logging
-                        </span>
-
-                    </div>
-
-
-                    <div class="tags">
-
-                        <span class="tag">Analog Design</span>
-                        <span class="tag">Arduino</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Steinhart-Hart</span>
-                        <span class="tag">555 Timer</span>
-                        <span class="tag">Multisim</span>
-
-                    </div>
-
-
-                    <div class="project-actions">
-
-                        <a
-                            class="button"
-                            href="projects/smart-temperature.html">
-
-                            View Full Project →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     ROBOTIC PIANO
-                ================================================== -->
-
-                <article class="project">
-
-                    <div class="project-header">
-
-                        <div>
-
-                            <span class="project-category">
-                                Robotics | Mechanical Design | System Integration
-                            </span>
-
-                            <h3>
-                                Robotic Piano Actuation System
-                            </h3>
-
-                        </div>
-
-
-                        <span class="status">
-                            Completed
-                        </span>
-
-                    </div>
-
-
-                    <p>
-
-                        I worked on the actuation hardware for a robotic
-                        piano system using custom-built solenoids. I iterated
-                        the mechanical geometry in SolidWorks to improve
-                        actuator force transfer and wrote a Python model to
-                        calculate motor positions for all 54 piano keys.
-
-                    </p>
-
-
-                    <div class="project-images">
-
-
-                        <div class="project-image">
-
-                            <img
-                                src="assets/Piano1.jpg"
-                                alt="Integrated robotic piano mechanism"
-                                loading="lazy">
-
-                        </div>
-
-
-                        <div class="project-image contain">
-
-                            <img
-                                src="assets/piano2.png"
-                                alt="Robotic piano SolidWorks assembly"
-                                loading="lazy">
-
-                        </div>
-
-
-                        <div class="project-image">
-
-                            <img
-                                src="assets/piano3.png"
-                                alt="Custom piano actuator solenoid"
-                                loading="lazy">
-
-                        </div>
-
-
-                        <div class="project-image contain">
-
-                            <img
-                                src="assets/piano4.png"
-                                alt="Robotic piano mechanical design"
-                                loading="lazy">
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="project-highlights">
-
-                        <span>
-                            <strong>54</strong>
-                            piano keys
-                        </span>
-
-                        <span>
-                            <strong>5+</strong>
-                            prototype iterations
-                        </span>
-
-                        <span>
-                            <strong>12 V</strong>
-                            solenoids
-                        </span>
-
-                        <span>
-                            <strong>600 mA</strong>
-                            actuator current
-                        </span>
-
-                    </div>
-
-
-                    <div class="tags">
-
-                        <span class="tag">SolidWorks</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">FDM Printing</span>
-                        <span class="tag">Robotics</span>
-                        <span class="tag">Electromechanical Design</span>
-                        <span class="tag">System Integration</span>
-
-                    </div>
-
-
-                    <div class="project-actions">
-
-                        <a
-                            class="button"
-                            href="projects/robotic-piano.html">
-
-                            View Full Project →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     SMART SHOE
-                ================================================== -->
-
-                <article class="project">
-
-                    <div class="project-header">
-
-                        <div>
-
-                            <span class="project-category">
-                                Assistive Technology | Embedded Systems
-                            </span>
-
-                            <h3>
-                                Smart Shoe for Obstacle Awareness
-                            </h3>
-
-                        </div>
-
-
-                        <span class="status">
-                            Completed
-                        </span>
-
-                    </div>
-
-
-                    <p>
-
-                        I built a wearable obstacle-awareness prototype using
-                        an Arduino, ultrasonic sensing, and vibration feedback.
-                        I improved sensor stability with rolling averaging and
-                        outlier rejection, then mapped obstacle distance to
-                        PWM-controlled haptic feedback.
-
-                    </p>
-
-
-                    <div class="project-images one">
-
-
-                        <div class="project-image">
-
-                            <img
-                                src="assets/shoe.jpg"
-                                alt="Smart shoe obstacle awareness prototype"
-                                loading="lazy">
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="project-highlights">
-
-                        <span>
-                            <strong>50-sample</strong>
-                            rolling average
-                        </span>
-
-                        <span>
-                            <strong>15–130 cm</strong>
-                            sensing range
-                        </span>
-
-                        <span>
-                            <strong>PWM</strong>
-                            haptic feedback
-                        </span>
-
-                    </div>
-
-
-                    <div class="tags">
-
-                        <span class="tag">Arduino</span>
-                        <span class="tag">Embedded C</span>
-                        <span class="tag">Ultrasonic Sensing</span>
-                        <span class="tag">PWM</span>
-                        <span class="tag">Signal Filtering</span>
-                        <span class="tag">Assistive Technology</span>
-
-                    </div>
-
-
-                    <div class="project-actions">
-
-                        <a
-                            class="button"
-                            href="projects/smart-shoe.html">
-
-                            View Full Project →
-
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     PVDF
-                ================================================== -->
-
-                <article class="project">
-
-                    <div class="project-header">
-
-                        <div>
-
-                            <span class="project-category">
-                                Research | Instrumentation
-                            </span>
-
-                            <h3>
-                                PVDF Piezoelectric Film Characterization
-                            </h3>
-
-                        </div>
-
-
-                        <span class="status">
-                            Research
-                        </span>
-
-                    </div>
-
-
-                    <p>
-
-                        I developed an experimental setup using a VNA,
-                        oscilloscope, and function generator to characterize
-                        PVDF piezoelectric films. I compared measured impedance
-                        and resonance behavior against analytical predictions
-                        and investigated an approximately 18% resonance shift.
-
-                    </p>
-
-
-                    <div class="project-highlights">
-
-                        <span>
-                            <strong>18%</strong>
-                            resonance shift investigated
-                        </span>
-
-                        <span>
-                            <strong>&lt;5%</strong>
-                            model agreement
-                        </span>
-
-                    </div>
-
-
-                    <div class="tags">
-
-                        <span class="tag">VNA</span>
-                        <span class="tag">Oscilloscope</span>
-                        <span class="tag">Instrumentation</span>
-                        <span class="tag">Signal Analysis</span>
-                        <span class="tag">PVDF</span>
-                        <span class="tag">Research</span>
-
-                    </div>
-
-                </article>
-
+            <div class="feature-image-card">
+
+                <img
+                    src="../assets/RISC.jpg"
+                    alt="Simple RISC Machine project">
 
             </div>
 
@@ -1983,143 +1103,21 @@
 
 
     <!-- =========================================================
-         EXPERIENCE
+         ARCHITECTURE
     ========================================================== -->
 
-    <section
-        class="section alt"
-        id="experience">
+    <section class="project-section">
 
         <div class="container section-grid">
 
             <div>
 
-                <span class="section-label">
-                    Experience
+                <span class="section-kicker">
+                    01
                 </span>
 
-                <h2 class="section-title">
-                    Engineering experience
-                </h2>
-
-            </div>
-
-
-            <div class="experience-list">
-
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-                        Sep. 2026 to Apr. 2027
-                    </div>
-
-
-                    <div class="experience-main">
-
-                        <h3>
-                            Kardium
-                        </h3>
-
-                        <div class="experience-role">
-                            Hardware Electronics Co-op
-                        </div>
-
-                        <p>
-
-                            I will support schematic design and multi-layer
-                            PCB development in Altium for the Kardium Globe
-                            AF Ablation System, with exposure to high-speed
-                            and mixed-signal design, HV/LV isolation,
-                            signal integrity, board bring-up, and validation.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-                        Summer 2026
-                    </div>
-
-
-                    <div class="experience-main">
-
-                        <h3>
-                            Aecon
-                        </h3>
-
-                        <div class="experience-role">
-                            Summer Internship
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-                        Sep. 2025 to Dec. 2025
-                    </div>
-
-
-                    <div class="experience-main">
-
-                        <h3>
-                            UBC AdaMist Lab
-                        </h3>
-
-                        <div class="experience-role">
-                            Research Assistant
-                        </div>
-
-                        <p>
-
-                            I characterized PVDF films using a VNA,
-                            oscilloscope, and function generator and developed
-                            repeatable measurement and analysis workflows.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         CONTACT
-    ========================================================== -->
-
-    <section
-        class="section"
-        id="contact">
-
-        <div class="container section-grid">
-
-            <div>
-
-                <span class="section-label">
-                    Contact
-                </span>
-
-                <h2 class="section-title">
-                    Get in touch
+                <h2 class="section-heading">
+                    Architecture
                 </h2>
 
             </div>
@@ -2129,32 +1127,1127 @@
 
                 <p>
 
-                    I am interested in hardware, embedded systems, FPGA,
-                    digital design, robotics, and electronics opportunities.
+                    I separated the processor into a datapath and a
+                    multi-cycle controller. The controller decodes the
+                    instruction fields and generates the control signals
+                    required to move operands through the datapath over
+                    multiple clock cycles.
 
                 </p>
 
 
-                <div class="contact-grid">
+                <p>
 
-                    <a
-                        class="button"
-                        href="mailto:Nasayasi7@gmail.com">
+                    The datapath contains the register file, operand
+                    registers, shifter, ALU, result register, status logic,
+                    and the multiplexers that select register addresses,
+                    immediates, and write-back data.
 
-                        Nasayasi7@gmail.com
-
-                    </a>
+                </p>
 
 
-                    <a
-                        class="button secondary"
-                        href="https://www.linkedin.com/in/yasamankh"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                <div class="architecture">
 
-                        LinkedIn ↗
+                    <div class="arch-block strong">
 
-                    </a>
+                        <div class="arch-title">
+                            Instruction
+                        </div>
+
+                        <div class="arch-description">
+                            opcode, op, Rn, Rd, shift, Rm, immediates
+                        </div>
+
+                    </div>
+
+
+                    <div class="arch-block">
+
+                        <div class="arch-title">
+                            Decoder + FSM
+                        </div>
+
+                        <div class="arch-description">
+                            Generates datapath control signals
+                        </div>
+
+                    </div>
+
+
+                    <div class="arch-block">
+
+                        <div class="arch-title">
+                            Register File
+                        </div>
+
+                        <div class="arch-description">
+                            Eight 16-bit general registers
+                        </div>
+
+                    </div>
+
+
+                    <div class="arch-block strong">
+
+                        <div class="arch-title">
+                            ALU + Writeback
+                        </div>
+
+                        <div class="arch-description">
+                            Arithmetic, logic, flags and result storage
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-grid">
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Control
+                        </div>
+
+                        <h3>
+                            Multi-Cycle FSM
+                        </h3>
+
+                        <p>
+
+                            Instructions progress through a sequence of
+                            states rather than performing every operation
+                            in one clock cycle.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Datapath
+                        </div>
+
+                        <h3>
+                            16-Bit Data Path
+                        </h3>
+
+                        <p>
+
+                            Operands, ALU results, immediates, and register
+                            values are represented as 16-bit values.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Storage
+                        </div>
+
+                        <h3>
+                            Eight General Registers
+                        </h3>
+
+                        <p>
+
+                            The register file provides eight 16-bit
+                            registers with combinational read and
+                            synchronous write behavior.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Status
+                        </div>
+
+                        <h3>
+                            N / V / Z Flags
+                        </h3>
+
+                        <p>
+
+                            The processor tracks negative, overflow, and
+                            zero conditions for comparison and arithmetic
+                            operations.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         INSTRUCTION FORMAT
+    ========================================================== -->
+
+    <section class="project-section alt">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    02
+                </span>
+
+                <h2 class="section-heading">
+                    Instruction Decoding
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The controller extracts the instruction fields directly
+                    from the 16-bit instruction register and uses them to
+                    select operands, ALU behavior, shift behavior, and
+                    register addresses.
+
+                </p>
+
+
+                <div class="detail-list">
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Opcode
+                        </div>
+
+                        <div class="detail-text">
+                            Bits [15:13]
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Operation
+                        </div>
+
+                        <div class="detail-text">
+                            Bits [12:11]
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Rn
+                        </div>
+
+                        <div class="detail-text">
+                            Bits [10:8]
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Rd
+                        </div>
+
+                        <div class="detail-text">
+                            Bits [7:5]
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Shift
+                        </div>
+
+                        <div class="detail-text">
+                            Bits [4:3]
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Rm
+                        </div>
+
+                        <div class="detail-text">
+                            Bits [2:0]
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Immediate
+                        </div>
+
+                        <div class="detail-text">
+
+                            The datapath supports sign extension of
+                            immediate values before they are used as
+                            operands.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         REGISTER FILE
+    ========================================================== -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    03
+                </span>
+
+                <h2 class="section-heading">
+                    Register File
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    I implemented an eight-entry, 16-bit register file.
+                    Register values can be read combinationally while
+                    writes occur synchronously on the active clock edge.
+
+                </p>
+
+
+                <p>
+
+                    The controller uses the register-select logic to choose
+                    between the Rm, Rd, and Rn instruction fields depending
+                    on which operand is needed at that point in the
+                    instruction sequence.
+
+                </p>
+
+
+                <div class="card-grid">
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Capacity
+                        </div>
+
+                        <h3>
+                            8 × 16 Bits
+                        </h3>
+
+                        <p>
+
+                            Eight general-purpose storage locations,
+                            each holding one 16-bit value.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Write
+                        </div>
+
+                        <h3>
+                            Synchronous Update
+                        </h3>
+
+                        <p>
+
+                            Register writes occur on a clock edge when
+                            the controller asserts the write enable.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         ALU / SHIFTER
+    ========================================================== -->
+
+    <section class="project-section alt">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    04
+                </span>
+
+                <h2 class="section-heading">
+                    ALU & Shifter
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The datapath includes a 16-bit ALU and a separate
+                    operand shifter. This lets an operand be shifted before
+                    it reaches the ALU, so shift behavior can be combined
+                    with arithmetic or logic instructions.
+
+                </p>
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>ALU Select</th>
+                                <th>Operation</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+                                <td>00</td>
+                                <td>A + B</td>
+                            </tr>
+
+                            <tr>
+                                <td>01</td>
+                                <td>A - B</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>A AND B</td>
+                            </tr>
+
+                            <tr>
+                                <td>11</td>
+                                <td>NOT B</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="detail-list">
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            No Shift
+                        </div>
+
+                        <div class="detail-text">
+                            Operand passes through unchanged.
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            LSL #1
+                        </div>
+
+                        <div class="detail-text">
+                            Logical left shift by one bit.
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            LSR #1
+                        </div>
+
+                        <div class="detail-text">
+                            Logical right shift by one bit.
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            ASR #1
+                        </div>
+
+                        <div class="detail-text">
+                            Arithmetic right shift by one bit.
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FLAGS
+    ========================================================== -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    05
+                </span>
+
+                <h2 class="section-heading">
+                    Status Flags
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The ALU datapath generates three status conditions used
+                    during arithmetic and comparison behavior.
+
+                </p>
+
+
+                <div class="card-grid">
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Z
+                        </div>
+
+                        <h3>
+                            Zero
+                        </h3>
+
+                        <p>
+
+                            Asserted when the ALU result is zero.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            N
+                        </div>
+
+                        <h3>
+                            Negative
+                        </h3>
+
+                        <p>
+
+                            Derived from the most significant bit of the
+                            signed result.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            V
+                        </div>
+
+                        <h3>
+                            Overflow
+                        </h3>
+
+                        <p>
+
+                            Detects signed overflow during addition and
+                            subtraction.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         TESTED INSTRUCTIONS
+    ========================================================== -->
+
+    <section class="project-section alt">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    06
+                </span>
+
+                <h2 class="section-heading">
+                    Tested Instructions
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    I used the CPU-level testbench to exercise the instruction
+                    paths that were implemented and verified in the processor.
+
+                </p>
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Instruction</th>
+                                <th>Verified Behavior</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    MOV Rn, #imm8
+                                </td>
+
+                                <td>
+                                    Sign-extended immediate written into a register.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    ADD
+                                </td>
+
+                                <td>
+                                    Register arithmetic, including shifted source operands.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    AND
+                                </td>
+
+                                <td>
+                                    Bitwise logic operation between register operands.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    MVN
+                                </td>
+
+                                <td>
+                                    Bitwise inversion, including shifted operand behavior.
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    CMP
+                                </td>
+
+                                <td>
+                                    Subtraction-based comparison and N/V/Z flag updates.
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FSM
+    ========================================================== -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    07
+                </span>
+
+                <h2 class="section-heading">
+                    Multi-Cycle Control
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The controller sequences instructions through several
+                    states so register reads, operand loading, ALU execution,
+                    write-back, and flag updates occur at the correct time.
+
+                </p>
+
+
+                <div class="path">
+                    ADD / AND / MVN:
+                    Wait → Decode → GetB → ALUOp → WriteReg → Wait
+                </div>
+
+
+                <div class="path">
+                    CMP:
+                    Wait → Decode → GetB → ALUOp → UpdateFlags → Wait
+                </div>
+
+
+                <div class="path">
+                    MOV immediate:
+                    Wait → WriteImm → Wait
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         VERIFICATION
+    ========================================================== -->
+
+    <section class="project-section alt">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    08
+                </span>
+
+                <h2 class="section-heading">
+                    RTL Verification
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    I verified the design at both the module and processor
+                    levels. The individual ALU, register file, and shifter
+                    blocks were exercised separately before checking
+                    instruction execution through the full CPU.
+
+                </p>
+
+
+                <div class="card-grid">
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Module
+                        </div>
+
+                        <h3>
+                            ALU Tests
+                        </h3>
+
+                        <p>
+
+                            Checked arithmetic, subtraction, logic,
+                            inversion, and status behavior.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Module
+                        </div>
+
+                        <h3>
+                            Register File Tests
+                        </h3>
+
+                        <p>
+
+                            Checked register addressing, reads, writes,
+                            and stored values.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Module
+                        </div>
+
+                        <h3>
+                            Shifter Tests
+                        </h3>
+
+                        <p>
+
+                            Checked pass-through, left shift, logical
+                            right shift, and arithmetic right shift.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            System
+                        </div>
+
+                        <h3>
+                            CPU Instruction Tests
+                        </h3>
+
+                        <p>
+
+                            Exercised immediate moves, shifted arithmetic,
+                            logic operations, MVN, and comparison flags
+                            through the complete processor.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         IMPLEMENTATION
+    ========================================================== -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    09
+                </span>
+
+                <h2 class="section-heading">
+                    RTL Structure
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <div class="detail-list">
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            cpu.sv
+                        </div>
+
+                        <div class="detail-text">
+
+                            Instruction register, instruction decoding,
+                            multi-cycle FSM, controller logic, and datapath
+                            integration.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            datapath.sv
+                        </div>
+
+                        <div class="detail-text">
+
+                            Operand registers, multiplexers, register file,
+                            shifter, ALU, result register, and status logic.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            ALU.sv
+                        </div>
+
+                        <div class="detail-text">
+
+                            Arithmetic and bitwise operations with status
+                            calculations.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            regfile.sv
+                        </div>
+
+                        <div class="detail-text">
+
+                            Eight-entry 16-bit register file.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            shifter.sv
+                        </div>
+
+                        <div class="detail-text">
+
+                            Four operand-shift modes.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Testbenches
+                        </div>
+
+                        <div class="detail-text">
+
+                            RTL testbenches used to verify individual modules
+                            and end-to-end CPU instruction behavior.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        SystemVerilog
+                    </span>
+
+                    <span class="tag">
+                        RTL Design
+                    </span>
+
+                    <span class="tag">
+                        CPU Architecture
+                    </span>
+
+                    <span class="tag">
+                        FSM
+                    </span>
+
+                    <span class="tag">
+                        Register File
+                    </span>
+
+                    <span class="tag">
+                        ALU
+                    </span>
+
+                    <span class="tag">
+                        Shifter
+                    </span>
+
+                    <span class="tag">
+                        ModelSim
+                    </span>
+
+                    <span class="tag">
+                        FPGA
+                    </span>
 
                 </div>
 
@@ -2170,17 +2263,30 @@
          FOOTER
     ========================================================== -->
 
-    <footer>
+    <footer class="project-footer">
 
         <div class="container footer-inner">
 
-            <span>
-                © 2026 Yasaman Kheradmand
-            </span>
+            <div>
 
-            <span>
-                Electrical Engineering | UBC
-            </span>
+                <div class="footer-title">
+                    Simple RISC Machine
+                </div>
+
+                <div class="footer-description">
+                    SystemVerilog | RTL Design | CPU Architecture | Verification
+                </div>
+
+            </div>
+
+
+            <a
+                class="button"
+                href="../index.html#projects">
+
+                ← Back to Projects
+
+            </a>
 
         </div>
 
