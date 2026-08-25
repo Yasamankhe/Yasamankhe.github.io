@@ -9,7 +9,7 @@
 
     <meta
         name="description"
-        content="Electrical Engineering portfolio focused on hardware design, embedded systems, PCB design, FPGA development, digital systems, and analog electronics.">
+        content="Electrical Engineering portfolio focused on hardware design, embedded systems, PCB design, FPGA development, robotics, analog electronics, and system integration.">
 
     <style>
 
@@ -62,7 +62,6 @@
                 sans-serif;
 
             color: var(--text);
-
             background: var(--background);
 
             line-height: 1.65;
@@ -77,20 +76,18 @@
 
         img {
             display: block;
-
             width: 100%;
         }
 
 
         .container {
             width: min(1080px, 90%);
-
             margin: 0 auto;
         }
 
 
 
-        /* NAV */
+        /* NAVIGATION */
 
         nav {
             position: sticky;
@@ -1275,6 +1272,208 @@
 
 
 
+                <!-- ROBOTIC PIANO -->
+
+                <article class="project">
+
+                    <div class="project-header">
+
+                        <div>
+
+                            <span class="project-category">
+                                Robotics | Mechanical Design | System Integration
+                            </span>
+
+                            <h3>
+                                Robotic Piano Actuation System
+                            </h3>
+
+                        </div>
+
+
+                        <span class="status">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        I worked on the actuation hardware for a robotic
+                        piano system using custom-built solenoids. I designed
+                        and iterated the hand and joint geometry in SolidWorks
+                        to reduce the actuator air gap and improve force
+                        transfer, then integrated the mechanical subsystem
+                        with the rest of the electromechanical system.
+
+                    </p>
+
+
+                    <p style="margin-top: 12px;">
+
+                        I also wrote a Python positioning model that maps
+                        keyboard geometry, gear pitch, tooth count, and a
+                        calibratable hardware offset into motor tick positions
+                        for all 54 keys.
+
+                    </p>
+
+
+                    <div class="project-highlights">
+
+                        <span>
+                            <strong>54</strong>
+                            piano keys
+                        </span>
+
+                        <span>
+                            <strong>5+</strong>
+                            CAD/FDM iterations
+                        </span>
+
+                        <span>
+                            <strong>12 V</strong>
+                            solenoid actuation
+                        </span>
+
+                        <span>
+                            <strong>600 mA</strong>
+                            actuator current
+                        </span>
+
+                    </div>
+
+
+                    <div class="tags">
+
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">FDM Printing</span>
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Electromechanical Design</span>
+                        <span class="tag">System Integration</span>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            class="button"
+                            href="projects/robotic-piano.html">
+
+                            View Full Project →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SMART SHOE -->
+
+                <article class="project">
+
+                    <div class="project-header">
+
+                        <div>
+
+                            <span class="project-category">
+                                Assistive Technology | Embedded Systems
+                            </span>
+
+                            <h3>
+                                Smart Shoe for Obstacle Awareness
+                            </h3>
+
+                        </div>
+
+
+                        <span class="status">
+                            Completed
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        I built a wearable obstacle-awareness prototype using
+                        an Arduino, HC-SR04 ultrasonic sensor, and vibration
+                        motor. The system measures the distance to nearby
+                        obstacles and translates that information into tactile
+                        feedback through PWM-controlled vibration.
+
+                    </p>
+
+
+                    <p style="margin-top: 12px;">
+
+                        During testing I improved the stability of the sensor
+                        data using a 50-sample rolling average and outlier
+                        rejection, then changed the feedback from constant
+                        vibration to short pulses so obstacle distance was
+                        easier to interpret.
+
+                    </p>
+
+
+                    <div class="project-highlights">
+
+                        <span>
+                            <strong>50-sample</strong>
+                            rolling average
+                        </span>
+
+                        <span>
+                            <strong>20 cm</strong>
+                            outlier threshold
+                        </span>
+
+                        <span>
+                            <strong>15 to 130 cm</strong>
+                            sensing range
+                        </span>
+
+                        <span>
+                            <strong>PWM</strong>
+                            haptic feedback
+                        </span>
+
+                    </div>
+
+
+                    <div class="tags">
+
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Embedded C</span>
+                        <span class="tag">Ultrasonic Sensing</span>
+                        <span class="tag">PWM</span>
+                        <span class="tag">Signal Filtering</span>
+                        <span class="tag">Assistive Technology</span>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            class="button"
+                            href="projects/smart-shoe.html">
+
+                            View Full Project →
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
                 <!-- PVDF -->
 
                 <article class="project">
@@ -1357,6 +1556,8 @@
             <div class="experience-list">
 
 
+                <!-- KARDIUM -->
+
                 <div class="experience-item">
 
                     <div class="experience-date">
@@ -1376,11 +1577,11 @@
 
                         <p>
 
-                            I will be joining Kardium for an eight-month
-                            Hardware Electronics co-op, where I will work on
-                            custom board development, PCB design, hardware
-                            bring-up, debugging, characterization, and design
-                            verification.
+                            I will support schematic design and multi-layer
+                            PCB development in Altium for the Kardium Globe
+                            AF Ablation System, with exposure to high-speed
+                            and mixed-signal design, HV/LV isolation,
+                            signal integrity, board bring-up, and validation.
 
                         </p>
 
@@ -1389,6 +1590,8 @@
                 </div>
 
 
+
+                <!-- AECON -->
 
                 <div class="experience-item">
 
@@ -1404,7 +1607,7 @@
                         </h3>
 
                         <div class="experience-role">
-                            Summer design
+                            Summer Internship
                         </div>
 
                     </div>
@@ -1412,6 +1615,8 @@
                 </div>
 
 
+
+                <!-- ADAMIST -->
 
                 <div class="experience-item">
 
@@ -1475,7 +1680,7 @@
                 <p>
 
                     I am interested in hardware, embedded systems, FPGA,
-                    digital design, and electronics opportunities.
+                    digital design, robotics, and electronics opportunities.
 
                 </p>
 
