@@ -1,1 +1,382 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotic Piano Actuation System | Yasaman Kheradmand</title>
+  <meta
+    name="description"
+    content="Electromechanical piano actuation project with custom solenoids, CAD iteration, and Python-based key positioning."
+  />
+  <style>
+    :root {
+      --background: #f6f2eb;
+      --surface: #fffdf9;
+      --surface-alt: #f1ebe3;
+      --border: #d8cec2;
+      --text: #2f2a24;
+      --muted: #6f655a;
+      --accent: #8d6e63;
+      --accent-dark: #6d5147;
+      --shadow: 0 10px 30px rgba(0,0,0,0.07);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 24px 0 8px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .topbar a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 28px 0 18px;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 820px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .section {
+      margin: 26px 0;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.55rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .gallery figure,
+    .single-image figure {
+      margin: 0;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .gallery img,
+    .single-image img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      background: #eee;
+    }
+
+    figcaption {
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .callout {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .code-box {
+      background: #1f1a17;
+      color: #f5efe8;
+      border-radius: 16px;
+      padding: 22px;
+      overflow-x: auto;
+      border: 1px solid #3e342d;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "Courier New", monospace;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent-dark);
+      border: 1px solid var(--border);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 820px) {
+      .grid-2,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .section-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <a href="../index.html">← Back to Portfolio</a>
+    </div>
+
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Project</div>
+        <h1>Robotic Piano Actuation System</h1>
+        <p>
+          I worked on the actuation hardware for a robotic piano system that could physically press keys using
+          custom-built solenoids. My work focused on the solenoid and hand geometry, CAD iteration, and a Python
+          positioning script that mapped all 54 keys to motor tick positions for reliable movement on the real system.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">SolidWorks</span>
+          <span class="tag">Python</span>
+          <span class="tag">Electromechanical Design</span>
+          <span class="tag">System Integration</span>
+          <span class="tag">FDM Printing</span>
+          <span class="tag">Robotics</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <h2>Project Overview</h2>
+        <p>
+          The goal of this project was to build a mechanism that could press piano keys using custom actuators instead
+          of hand-played motion. I worked on the hand-side actuation concept, including the solenoid hardware,
+          structural layout, and positioning logic needed to move to the correct key.
+        </p>
+        <p>
+          The custom solenoid was manufactured to match the dimensions required by the hand base. After the housing and
+          plunger were built, the coil was wound to fit inside the enclosure while still producing enough actuation
+          force. In testing, the solenoid operated at 12 V with a current draw of about 600 mA, corresponding to a
+          resistance of roughly 20 ohms. That aligned well with the electronics used by the circuit team and made
+          integration easier.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <h2>Images</h2>
+        <div class="gallery">
+          <figure>
+            <img src="../assets/piano1.jpg" alt="Custom solenoid prototype" />
+            <figcaption>Custom solenoid prototype used for piano key actuation.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="../assets/piano2.png" alt="Early SolidWorks carrier assembly" />
+            <figcaption>Early SolidWorks carrier assembly used to develop the hand structure and motion path.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="../assets/piano3.png" alt="Integrated piano hand assembly" />
+            <figcaption>Integrated piano hand assembly mounted on the rail system.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="../assets/piano4.png" alt="Additional piano hand image or motion view" />
+            <figcaption>Additional design or motion view showing the mechanism layout.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <h2>The Approach and Process</h2>
+        <div class="grid-2">
+          <div>
+            <p>
+              I designed the finger and joint structure so the mechanism could press both natural and sharp keys. That
+              let the hand move flexibly instead of being restricted to a single octave position. I also used fixed
+              mounting holes and repeatable geometry to keep the mechanism aligned as the assembly evolved.
+            </p>
+            <p>
+              One of the main design challenges was reducing the air gap so the force from the solenoid would transfer
+              more effectively into the finger. To improve that, I iterated the joint structure and printed multiple
+              versions in 1 mm increments so I could test different lengths and adjust quickly.
+            </p>
+          </div>
+
+          <div class="callout">
+            <strong>Material choices mattered here too.</strong>
+            <p style="margin-top:10px; margin-bottom:0;">
+              The solenoid housing used mild steel because it provided a good magnetic path and did not permanently
+              magnetize easily. The plunger was also made from mild steel, while the guide rod used stainless steel
+              because magnetic permeability was not important there.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <h2>Key Positioning Mapping Script</h2>
+        <p>
+          A key part of this project was making sure the actuator moved to the exact position of each key. I wrote a
+          Python script that calculated the motor tick positions for all 54 keys based on keyboard geometry, key width,
+          octave spacing, rack pitch, and gear tooth count.
+        </p>
+        <p>
+          I also included an adjustable offset so the model could be calibrated against the actual assembled hardware.
+          That made the script useful not just in theory, but during real system integration.
+        </p>
+
+        <div class="code-box">
+<pre><code>import math
+
+PITCH = 2.0
+TEETH = 39
+MM_REV = TEETH * PITCH
+MILLIRAD_REV = 2.0 * math.pi * 1000.0
+TICKS_PER_MM = MILLIRAD_REV / MM_REV
+
+OFFSET_TICKS = 0   # Measured after final hardware assembly
+NATURAL = 22.25    # Width of one natural key (mm)
+OCTAVE = 7 * NATURAL
+
+CENTER = {
+    'C':  0.50, 'C#': 0.95, 'D':  1.50, 'D#': 2.05, 'E':  2.50,
+    'F':  3.50, 'F#': 3.93, 'G':  4.50, 'G#': 5.00, 'A':  5.50,
+    'A#': 6.07, 'B':  6.50,
+}
+
+NOTES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+NUM_KEYS = 54
+
+keys = []
+
+for i in range(NUM_KEYS):
+    oct_idx = i // 12
+    note = NOTES[i % 12]
+    mm = oct_idx * OCTAVE + CENTER[note] * NATURAL
+    keys.append(mm)
+
+for i, mm in enumerate(keys):
+    ticks = round(mm * TICKS_PER_MM + OFFSET_TICKS)
+    comma = "," if i < NUM_KEYS - 1 else ""
+    print(f"    {ticks:<8}{comma} [{i}]")</code></pre>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
