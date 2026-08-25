@@ -15,7 +15,7 @@
 
     <meta
         name="description"
-        content="Robotic piano actuation system using custom solenoids, SolidWorks mechanical design, iterative prototyping, and Python key-position mapping.">
+        content="Robotic piano electromechanical actuation system with custom machined solenoids, electromagnetic design, mechanical prototyping, wire harness integration, soldering, and Python key-position mapping.">
 
     <style>
 
@@ -84,7 +84,8 @@
         }
 
 
-        img {
+        img,
+        video {
             display: block;
             width: 100%;
         }
@@ -247,7 +248,7 @@
 
         .project-summary {
 
-            max-width: 850px;
+            max-width: 880px;
 
             color:
                 var(--text-soft);
@@ -255,6 +256,69 @@
             font-size: 1.05rem;
         }
 
+
+
+        /* =========================================================
+           BADGES
+        ========================================================= */
+
+        .hero-badges {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-top: 25px;
+        }
+
+
+        .badge {
+
+            padding:
+                5px 9px;
+
+            border-radius: 20px;
+
+            font-size: 0.65rem;
+
+            font-weight: 700;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .badge.course {
+
+            color: #5f6870;
+
+            background:
+                #efefeb;
+
+            border:
+                1px solid var(--border-dark);
+        }
+
+
+        .badge.complete {
+
+            color:
+                var(--green);
+
+            background:
+                var(--green-soft);
+
+            border:
+                1px solid #d3ded7;
+        }
+
+
+
+        /* =========================================================
+           HERO STATS
+        ========================================================= */
 
         .hero-stats {
 
@@ -264,7 +328,7 @@
 
             gap: 9px;
 
-            margin-top: 30px;
+            margin-top: 24px;
         }
 
 
@@ -299,7 +363,7 @@
 
 
         /* =========================================================
-           IMAGE GALLERY
+           PHOTO SECTION
         ========================================================= */
 
         .photo-section {
@@ -353,6 +417,19 @@
         }
 
 
+        .photo-heading p {
+
+            max-width: 780px;
+
+            margin-top: 8px;
+
+            color:
+                var(--text-soft);
+
+            font-size: 0.88rem;
+        }
+
+
         .photo-grid {
 
             display: grid;
@@ -383,7 +460,7 @@
 
         .photo-wrap {
 
-            height: 320px;
+            height: 300px;
 
             display: flex;
 
@@ -410,7 +487,7 @@
 
         .photo-wrap.contain {
 
-            padding: 15px;
+            padding: 12px;
         }
 
 
@@ -432,6 +509,126 @@
                 1px solid var(--border);
 
             font-size: 0.75rem;
+
+            line-height: 1.5;
+        }
+
+
+
+        /* =========================================================
+           VIDEO SECTION
+        ========================================================= */
+
+        .video-section {
+
+            padding:
+                62px 0 70px;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .video-heading {
+
+            margin-bottom: 22px;
+        }
+
+
+        .video-heading span {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            color:
+                var(--accent);
+
+            font-size: 0.67rem;
+
+            font-weight: 700;
+
+            letter-spacing:
+                0.1em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .video-heading h2 {
+
+            color: #253039;
+
+            font-size: 1.55rem;
+
+            letter-spacing:
+                -0.03em;
+        }
+
+
+        .video-heading p {
+
+            max-width: 760px;
+
+            margin-top: 8px;
+
+            color:
+                var(--text-soft);
+
+            font-size: 0.9rem;
+        }
+
+
+        .video-card {
+
+            overflow: hidden;
+
+            max-width: 900px;
+
+            background:
+                #1f2529;
+
+            border:
+                1px solid var(--border-dark);
+
+            border-radius: 10px;
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .video-card video {
+
+            width: 100%;
+
+            max-height: 580px;
+
+            background: #111;
+
+            object-fit: contain;
+        }
+
+
+        .video-meta {
+
+            padding:
+                12px 15px;
+
+            color:
+                #d9dedf;
+
+            background:
+                #283136;
+
+            font-size: 0.74rem;
+        }
+
+
+        .video-meta strong {
+
+            color: white;
         }
 
 
@@ -510,7 +707,7 @@
 
         .section-content p {
 
-            max-width: 790px;
+            max-width: 800px;
 
             color:
                 var(--text-soft);
@@ -597,7 +794,7 @@
 
 
         /* =========================================================
-           DETAIL ROWS
+           DETAILS
         ========================================================= */
 
         .detail-list {
@@ -691,6 +888,77 @@
             color: #607078;
 
             font-size: 0.82rem;
+        }
+
+
+
+        /* =========================================================
+           FLOW
+        ========================================================= */
+
+        .flow {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-top: 28px;
+
+            overflow-x: auto;
+
+            padding-bottom: 8px;
+        }
+
+
+        .flow-block {
+
+            min-width: 140px;
+
+            flex-shrink: 0;
+
+            padding:
+                13px 12px;
+
+            text-align: center;
+
+            color: #4e5b62;
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 6px;
+
+            font-size: 0.74rem;
+
+            font-weight: 650;
+        }
+
+
+        .flow-block.strong {
+
+            color: #31464d;
+
+            background:
+                var(--accent-soft);
+
+            border-color:
+                #cbdcdf;
+        }
+
+
+        .flow-arrow {
+
+            color:
+                var(--accent);
+
+            font-weight: 800;
+
+            flex-shrink: 0;
         }
 
 
@@ -829,77 +1097,6 @@
             line-height: 1.65;
 
             tab-size: 4;
-        }
-
-
-
-        /* =========================================================
-           FLOW
-        ========================================================= */
-
-        .flow {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-            margin-top: 28px;
-
-            overflow-x: auto;
-
-            padding-bottom: 8px;
-        }
-
-
-        .flow-block {
-
-            min-width: 145px;
-
-            flex-shrink: 0;
-
-            padding:
-                13px 12px;
-
-            text-align: center;
-
-            color: #4e5b62;
-
-            background:
-                var(--surface);
-
-            border:
-                1px solid var(--border);
-
-            border-radius: 6px;
-
-            font-size: 0.74rem;
-
-            font-weight: 650;
-        }
-
-
-        .flow-block.strong {
-
-            color: #31464d;
-
-            background:
-                var(--accent-soft);
-
-            border-color:
-                #cbdcdf;
-        }
-
-
-        .flow-arrow {
-
-            color:
-                var(--accent);
-
-            font-weight: 800;
-
-            flex-shrink: 0;
         }
 
 
@@ -1066,7 +1263,8 @@
 
 
             .project-section,
-            .photo-section {
+            .photo-section,
+            .video-section {
 
                 padding:
                     55px 0;
@@ -1142,7 +1340,7 @@
         <div class="container">
 
             <span class="project-eyebrow">
-                Robotics | Mechanical Design | System Integration
+                Robotics | Electromechanical Design | System Integration
             </span>
 
 
@@ -1153,14 +1351,28 @@
 
             <p class="project-summary">
 
-                I worked on the actuation hardware for a robotic piano system
-                designed to physically press piano keys using custom solenoids.
-                My work focused on the mechanical hand and actuator geometry,
-                iterative CAD prototyping, solenoid integration, and a Python
-                positioning model that calculated the motor positions required
-                to reach all 54 keys.
+                This was a course group project. My contribution centered on
+                the electromechanical actuation and physical integration of the
+                robotic hand. I machined solenoid components, wound and tested
+                the electromagnetic coils, iterated the finger linkage geometry,
+                soldered and managed actuator wiring, integrated the moving hand
+                assembly, and developed the Python positioning model used to
+                calculate carriage positions across all 54 piano keys.
 
             </p>
+
+
+            <div class="hero-badges">
+
+                <span class="badge course">
+                    Course Group Project
+                </span>
+
+                <span class="badge complete">
+                    Completed
+                </span>
+
+            </div>
 
 
             <div class="hero-stats">
@@ -1172,27 +1384,27 @@
 
                 <div class="hero-stat">
                     <strong>5+</strong>
-                    prototype iterations
+                    mechanical iterations
                 </div>
 
                 <div class="hero-stat">
                     <strong>12 V</strong>
-                    solenoid
+                    actuator drive
                 </div>
 
                 <div class="hero-stat">
-                    <strong>600 mA</strong>
-                    actuator current
+                    <strong>30 AWG</strong>
+                    magnet wire
                 </div>
 
                 <div class="hero-stat">
-                    <strong>20 Ω</strong>
-                    measured resistance
+                    <strong>15-20 Ω</strong>
+                    coil design range
                 </div>
 
                 <div class="hero-stat">
-                    <strong>Python</strong>
-                    positioning model
+                    <strong>0.6-0.8 A</strong>
+                    electrical range
                 </div>
 
             </div>
@@ -1204,7 +1416,7 @@
 
 
     <!-- =========================================================
-         IMAGES
+         BUILD PHOTOS
     ========================================================== -->
 
     <section class="photo-section">
@@ -1214,12 +1426,22 @@
             <div class="photo-heading">
 
                 <span>
-                    Built System & CAD
+                    Design, Fabrication & Integration
                 </span>
 
                 <h2>
-                    Mechanical Design and Integration
+                    From Individual Parts to the Working System
                 </h2>
+
+                <p>
+
+                    The project required repeated cycles of CAD, machining,
+                    coil winding, resistance measurements, 3D printing,
+                    mechanical assembly, soldering, wire routing, and physical
+                    testing before the complete hand could operate reliably
+                    on the piano.
+
+                </p>
 
             </div>
 
@@ -1227,7 +1449,8 @@
             <div class="photo-grid">
 
 
-                <!-- CORRECT CASE: Piano1.jpg -->
+
+                <!-- PIANO 1 -->
 
                 <figure class="photo-card">
 
@@ -1241,13 +1464,17 @@
 
                     <figcaption class="photo-caption">
 
-                        Integrated robotic piano hand mounted on the rail system
+                        Integrated robotic hand mounted on the linear rail
+                        system, with actuator wiring, electronics, and the
+                        finger mechanism assembled into the moving carriage.
 
                     </figcaption>
 
                 </figure>
 
 
+
+                <!-- PIANO 2 -->
 
                 <figure class="photo-card">
 
@@ -1255,39 +1482,45 @@
 
                         <img
                             src="../assets/piano2.png"
-                            alt="Early SolidWorks carrier assembly for the robotic piano system">
+                            alt="SolidWorks development of the robotic piano carriage">
 
                     </div>
 
                     <figcaption class="photo-caption">
 
-                        Early SolidWorks carrier assembly used to develop the mechanism
+                        SolidWorks development of the carriage and mechanical
+                        structure before physical fabrication.
 
                     </figcaption>
 
                 </figure>
 
 
+
+                <!-- PIANO 3 -->
 
                 <figure class="photo-card">
 
-                    <div class="photo-wrap">
+                    <div class="photo-wrap contain">
 
                         <img
                             src="../assets/piano3.png"
-                            alt="Custom solenoid actuator for the robotic piano hand">
+                            alt="Early robotic piano actuator prototype">
 
                     </div>
 
                     <figcaption class="photo-caption">
 
-                        Custom solenoid actuator used to drive the finger mechanism
+                        Early actuator and mechanical prototype used while
+                        developing the hand geometry and integration approach.
 
                     </figcaption>
 
                 </figure>
 
 
+
+                <!-- PIANO 4 -->
 
                 <figure class="photo-card">
 
@@ -1295,17 +1528,143 @@
 
                         <img
                             src="../assets/piano4.png"
-                            alt="Robotic piano mechanical component or CAD design">
+                            alt="Robotic piano mechanical design">
 
                     </div>
 
                     <figcaption class="photo-caption">
 
-                        Additional mechanical design and actuator development
+                        Mechanical design work used to refine the relationship
+                        between the solenoid, finger linkage, and piano key.
 
                     </figcaption>
 
                 </figure>
+
+
+
+                <!-- PIANO 5 -->
+
+                <figure class="photo-card">
+
+                    <div class="photo-wrap contain">
+
+                        <img
+                            src="../assets/piano5.png"
+                            alt="Machined solenoid housings, plungers and actuator components">
+
+                    </div>
+
+                    <figcaption class="photo-caption">
+
+                        Solenoid fabrication in progress. I machined the
+                        metallic housings and plunger components using the
+                        lathe and milling machine as one of two team members
+                        certified and authorized to machine metallic parts.
+
+                    </figcaption>
+
+                </figure>
+
+
+
+                <!-- PIANO 6 -->
+
+                <figure class="photo-card">
+
+                    <div class="photo-wrap contain">
+
+                        <img
+                            src="../assets/piano6.png"
+                            alt="Multiple 3D printed finger joint iterations">
+
+                    </div>
+
+                    <figcaption class="photo-caption">
+
+                        FDM finger-joint iterations. I changed linkage length,
+                        mounting position, and geometry in small increments to
+                        improve alignment, reduce the actuator gap, and obtain
+                        stronger and more repeatable key actuation.
+
+                    </figcaption>
+
+                </figure>
+
+
+
+                <!-- PIANO 7 -->
+
+                <figure class="photo-card">
+
+                    <div class="photo-wrap contain">
+
+                        <img
+                            src="../assets/piano7.png"
+                            alt="Solenoid coil wound using 30 AWG magnet wire">
+
+                    </div>
+
+                    <figcaption class="photo-caption">
+
+                        Solenoid coil wound with 30 AWG magnet wire. I checked
+                        resistance throughout the winding process because coil
+                        resistance directly determined current draw from the
+                        12 V actuator supply.
+
+                    </figcaption>
+
+                </figure>
+
+
+
+                <!-- PIANO 8 -->
+
+                <figure class="photo-card">
+
+                    <div class="photo-wrap contain">
+
+                        <img
+                            src="../assets/piano8.png"
+                            alt="Solenoid plunger connected to the robotic piano finger linkage">
+
+                    </div>
+
+                    <figcaption class="photo-caption">
+
+                        Solenoid plunger and finger linkage fitted and
+                        mechanically fastened together before installation
+                        onto the hand base.
+
+                    </figcaption>
+
+                </figure>
+
+
+
+                <!--
+                PIANO 9
+
+                When piano9.png is ready, add:
+
+                <figure class="photo-card">
+
+                    <div class="photo-wrap contain">
+
+                        <img
+                            src="../assets/piano9.png"
+                            alt="Additional robotic piano integration work">
+
+                    </div>
+
+                    <figcaption class="photo-caption">
+
+                        Add description here.
+
+                    </figcaption>
+
+                </figure>
+                -->
 
 
             </div>
@@ -1317,7 +1676,73 @@
 
 
     <!-- =========================================================
-         PROJECT OVERVIEW
+         SYSTEM VIDEO
+    ========================================================== -->
+
+    <section class="video-section">
+
+        <div class="container">
+
+            <div class="video-heading">
+
+                <span>
+                    System Demonstration
+                </span>
+
+                <h2>
+                    Complete Robotic Piano System
+                </h2>
+
+
+                <p>
+
+                    The final integration brought together the machined
+                    solenoids, printed finger linkages, carriage mechanics,
+                    actuator wiring, drive electronics, and positioning system
+                    into one moving electromechanical assembly.
+
+                </p>
+
+            </div>
+
+
+            <div class="video-card">
+
+                <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="../assets/Piano1.jpg">
+
+                    <source
+                        src="../assets/piano_robot.mp4"
+                        type="video/mp4">
+
+                    Your browser does not support the video element.
+
+                </video>
+
+
+                <div class="video-meta">
+
+                    <strong>
+                        Integrated System Demo
+                    </strong>
+
+                    | Carriage movement, positioning and physical key actuation
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         MY CONTRIBUTION
     ========================================================== -->
 
     <section class="project-section">
@@ -1331,7 +1756,7 @@
                 </span>
 
                 <h2 class="section-heading">
-                    Project Overview
+                    My Contribution
                 </h2>
 
             </div>
@@ -1341,66 +1766,70 @@
 
                 <p>
 
-                    The goal of the project was to build a system that could
-                    physically press piano keys using custom-built solenoids
-                    while moving the hand along the keyboard.
+                    My part of the project extended well beyond designing
+                    mechanical geometry. I worked across the complete
+                    electromechanical actuation path, from the magnetic
+                    actuator itself to the joint, wiring, moving carriage,
+                    and final system integration.
 
                 </p>
 
 
                 <p>
 
-                    My work concentrated on the mechanical actuation subsystem.
-                    I developed the hand and joint geometry, worked with the
-                    custom solenoid design, iterated physical parts through
-                    CAD and FDM prototypes, and created the positioning model
-                    used to map piano keys to motor movement.
+                    Much of the work happened through repeated lab sessions.
+                    A mechanical or electrical change often affected several
+                    other parts of the system, so I repeatedly moved between
+                    machining, coil winding, resistance measurements,
+                    3D printing, soldering, assembly, wiring, and physical
+                    actuation tests.
 
                 </p>
 
 
-                <div class="flow">
-
-                    <div class="flow-block strong">
-                        Key Position
-                    </div>
-
-                    <div class="flow-arrow">
-                        →
-                    </div>
-
-                    <div class="flow-block">
-                        Python Mapping
-                    </div>
-
-                    <div class="flow-arrow">
-                        →
-                    </div>
-
-                    <div class="flow-block">
-                        Motor Position
-                    </div>
-
-                    <div class="flow-arrow">
-                        →
-                    </div>
-
-                    <div class="flow-block">
-                        Solenoid
-                    </div>
-
-                    <div class="flow-arrow">
-                        →
-                    </div>
-
-                    <div class="flow-block strong">
-                        Piano Key Press
-                    </div>
-
-                </div>
-
-
                 <div class="card-grid">
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Electromagnetic
+                        </div>
+
+                        <h3>
+                            Solenoid Development
+                        </h3>
+
+                        <p>
+
+                            I worked on the magnetic path, plunger, housing,
+                            coil winding, resistance target, current draw,
+                            and actuator air gap.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Fabrication
+                        </div>
+
+                        <h3>
+                            Machine-Shop Work
+                        </h3>
+
+                        <p>
+
+                            I was one of two team members certified to machine
+                            metallic components and used the lathe and milling
+                            machine to fabricate solenoid parts.
+
+                        </p>
+
+                    </div>
 
 
                     <div class="card">
@@ -1410,14 +1839,14 @@
                         </div>
 
                         <h3>
-                            Hand Geometry
+                            Finger & Linkage Iteration
                         </h3>
 
                         <p>
 
-                            I designed the finger and joint structure so the
-                            hand could reach both natural and sharp keys while
-                            maintaining repeatable alignment.
+                            I produced multiple FDM joint revisions to tune
+                            actuator position, leverage, alignment, and the
+                            distance between the solenoid and linkage.
 
                         </p>
 
@@ -1427,60 +1856,19 @@
                     <div class="card">
 
                         <div class="card-label">
-                            Actuation
+                            Integration
                         </div>
 
                         <h3>
-                            Custom Solenoid
+                            Wiring & Assembly
                         </h3>
 
                         <p>
 
-                            The actuator was built around a custom steel
-                            housing, plunger, guide rod, and wound coil
-                            sized to fit within the mechanical assembly.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <div class="card-label">
-                            Iteration
-                        </div>
-
-                        <h3>
-                            Rapid Prototyping
-                        </h3>
-
-                        <p>
-
-                            I tested multiple joint geometries and printed
-                            parts in small dimensional increments to reduce
-                            the actuator air gap and improve force transfer.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <div class="card-label">
-                            Software
-                        </div>
-
-                        <h3>
-                            Position Mapping
-                        </h3>
-
-                        <p>
-
-                            I wrote a Python model that converted keyboard
-                            geometry and drivetrain parameters into motor tick
-                            positions for all 54 keys.
+                            I handled actuator wiring, soldering, mechanical
+                            assembly, and wire management around a moving
+                            carriage where electrical and mechanical
+                            clearances had to work together.
 
                         </p>
 
@@ -1498,7 +1886,7 @@
 
 
     <!-- =========================================================
-         SOLENOID
+         ELECTROMAGNETIC DESIGN
     ========================================================== -->
 
     <section class="project-section alt">
@@ -1512,7 +1900,7 @@
                 </span>
 
                 <h2 class="section-heading">
-                    Solenoid Design
+                    Electromagnetic Solenoid Design
                 </h2>
 
             </div>
@@ -1522,19 +1910,24 @@
 
                 <p>
 
-                    The solenoid had to fit within the dimensions of the hand
-                    base while still generating enough force to move the
-                    mechanical finger and press a piano key.
+                    The solenoid was not treated as a simple off-the-shelf
+                    actuator. The geometry, magnetic materials, coil winding,
+                    available 12 V supply, current draw, plunger travel, and
+                    mechanical linkage all influenced whether the finger could
+                    produce enough force to press a key.
 
                 </p>
 
 
                 <p>
 
-                    The housing and plunger were manufactured in the machine
-                    shop, and the coil was wound to fit inside the housing.
-                    During testing, the actuator operated at approximately
-                    12 V and 600 mA, corresponding to roughly 20 Ω.
+                    One of the most important constraints was the air gap in
+                    the magnetic path. Air has much lower permeability than
+                    the steel components, so even a relatively small air gap
+                    contributes strongly to magnetic reluctance. Reducing that
+                    gap through mechanical iteration was therefore an important
+                    way to improve actuator force without relying only on
+                    additional current.
 
                 </p>
 
@@ -1545,14 +1938,14 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Housing
+                            Magnetic Housing
                         </div>
 
                         <div class="detail-text">
 
-                            The housing used a 1.25-inch mild-steel square
-                            section with approximately 0.065-inch wall
-                            thickness to provide a low-reluctance magnetic path.
+                            I used mild steel for the housing so it could form
+                            part of the low-reluctance magnetic path around
+                            the coil and plunger.
 
                         </div>
 
@@ -1567,8 +1960,8 @@
 
                         <div class="detail-text">
 
-                            The plunger used a 5/16-inch mild-steel rod so
-                            the magnetic path could extend through the moving
+                            The moving plunger also used mild steel so the
+                            magnetic flux path extended through the moving
                             actuator.
 
                         </div>
@@ -1584,8 +1977,9 @@
 
                         <div class="detail-text">
 
-                            The guide rod used 1/8-inch 304 stainless steel
-                            because it did not need to carry the magnetic flux.
+                            The guide rod used 304 stainless steel because it
+                            served a mechanical guidance function rather than
+                            acting as a major part of the magnetic flux path.
 
                         </div>
 
@@ -1595,15 +1989,50 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Electrical Result
+                            Coil Wire
                         </div>
 
                         <div class="detail-text">
 
-                            The completed actuator operated around 12 V,
-                            drew approximately 600 mA, and measured about
-                            20 Ω, which aligned with the circuit team's
-                            electrical interface.
+                            I wound the actuator using 30 AWG insulated magnet
+                            wire and measured resistance during winding rather
+                            than waiting until the coil was finished.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Electrical Target
+                        </div>
+
+                        <div class="detail-text">
+
+                            The actuator was designed around a 12 V supply.
+                            A 20 Ω coil draws about 0.6 A, while a 15 Ω coil
+                            draws about 0.8 A, so coil resistance directly
+                            constrained the operating current.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Force Optimization
+                        </div>
+
+                        <div class="detail-text">
+
+                            I coupled the electromagnetic and mechanical
+                            design by adjusting the linkage and actuator
+                            position to reduce unnecessary air gap and improve
+                            the transfer of plunger motion into the finger.
 
                         </div>
 
@@ -1616,15 +2045,17 @@
                 <div class="callout">
 
                     <strong>
-                        Why mild steel?
+                        Coil resistance was a design parameter, not just a measurement
                     </strong>
 
                     <p>
 
-                        The magnetic housing was part of the flux path, so
-                        material permeability mattered. Mild steel provided
-                        a useful magnetic path while also behaving as a
-                        relatively magnetically soft material.
+                        With a fixed 12 V drive, coil resistance determines
+                        current through Ohm's law. More current can increase
+                        magnetic field strength, but it also increases winding
+                        heating. I therefore checked resistance during winding
+                        while developing the actuator instead of treating the
+                        coil as a purely mechanical component.
 
                     </p>
 
@@ -1639,7 +2070,7 @@
 
 
     <!-- =========================================================
-         CAD & ITERATION
+         MACHINE SHOP
     ========================================================== -->
 
     <section class="project-section">
@@ -1653,7 +2084,7 @@
                 </span>
 
                 <h2 class="section-heading">
-                    CAD & Mechanical Iteration
+                    Machining & Fabrication
                 </h2>
 
             </div>
@@ -1663,20 +2094,63 @@
 
                 <p>
 
-                    One of the main mechanical challenges was transferring
-                    enough solenoid motion and force to the piano key while
-                    keeping the assembly compact and aligned.
+                    I was one of two members of the course team who were
+                    certified and authorized to machine metallic components
+                    in the machine shop. This made the actuator fabrication
+                    one of my main responsibilities during the build.
 
                 </p>
 
 
                 <p>
 
-                    I designed the fingers and joints to reach both natural
-                    and sharp keys, which allowed the hand to move along the
-                    keyboard instead of being constrained to a single octave.
+                    I used the lathe and milling machine to fabricate and
+                    finish the metallic solenoid components, including the
+                    housings and plungers. The parts then had to mate with the
+                    printed bobbin, linkage, mounting hardware, and hand base.
 
                 </p>
+
+
+                <div class="flow">
+
+                    <div class="flow-block strong">
+                        Material
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        Lathe / Mill
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        Fit Check
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        Coil Assembly
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block strong">
+                        Hand Integration
+                    </div>
+
+                </div>
 
 
                 <div class="detail-list">
@@ -1685,14 +2159,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Air Gap
+                            Housing Material
                         </div>
 
                         <div class="detail-text">
 
-                            I iterated the geometry to reduce the solenoid
-                            air gap, improving the mechanical transfer from
-                            the moving plunger into the finger mechanism.
+                            1.25-inch mild-steel square section with
+                            approximately 0.065-inch wall thickness.
 
                         </div>
 
@@ -1702,14 +2175,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Joint Length
+                            Plunger
                         </div>
 
                         <div class="detail-text">
 
-                            Multiple joints were printed in approximately
-                            1 mm increments so the physical system could be
-                            adjusted quickly during integration.
+                            5/16-inch mild-steel rod machined to fit the
+                            solenoid and mechanical linkage.
 
                         </div>
 
@@ -1719,15 +2191,13 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Key Coverage
+                            Guide Rod
                         </div>
 
                         <div class="detail-text">
 
-                            The finger geometry was designed around the
-                            different positions of natural and sharp piano
-                            keys rather than assuming a single uniform
-                            contact point.
+                            1/8-inch 304 stainless-steel rod used for
+                            mechanical guidance.
 
                         </div>
 
@@ -1737,14 +2207,15 @@
                     <div class="detail-row">
 
                         <div class="detail-title">
-                            Alignment
+                            Fabrication Loop
                         </div>
 
                         <div class="detail-text">
 
-                            Fixed mounting points were incorporated into
-                            the parts to keep the actuator geometry aligned
-                            as the design was assembled and revised.
+                            Machining was followed by physical fit checks,
+                            assembly, actuator tests, and additional mechanical
+                            revisions when tolerances or alignment needed to
+                            change.
 
                         </div>
 
@@ -1762,7 +2233,7 @@
 
 
     <!-- =========================================================
-         POSITIONING
+         MECHANICAL ITERATION
     ========================================================== -->
 
     <section class="project-section alt">
@@ -1776,6 +2247,301 @@
                 </span>
 
                 <h2 class="section-heading">
+                    Finger & Linkage Iteration
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    The actuator could generate force, but that force still
+                    had to reach the piano key through the printed finger
+                    mechanism. Linkage geometry therefore became part of the
+                    actuator design rather than a separate mechanical detail.
+
+                </p>
+
+
+                <p>
+
+                    I printed multiple revisions with different lengths,
+                    mounting locations, and joint geometry. Some dimensions
+                    were changed in approximately 1 mm increments so I could
+                    compare physical behavior without redesigning the entire
+                    mechanism between tests.
+
+                </p>
+
+
+                <div class="card-grid">
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Air Gap
+                        </div>
+
+                        <h3>
+                            Reduce Magnetic Separation
+                        </h3>
+
+                        <p>
+
+                            I adjusted the geometry to let the solenoid operate
+                            with a smaller effective gap where possible,
+                            improving magnetic actuation.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Leverage
+                        </div>
+
+                        <h3>
+                            Mechanical Advantage
+                        </h3>
+
+                        <p>
+
+                            Link length and pivot location affected the
+                            relationship between actuator travel and force
+                            delivered at the piano key.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Alignment
+                        </div>
+
+                        <h3>
+                            Repeatable Contact
+                        </h3>
+
+                        <p>
+
+                            The linkage had to contact natural and sharp keys
+                            consistently while the complete hand moved along
+                            the keyboard.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Assembly
+                        </div>
+
+                        <h3>
+                            Fastened Interface
+                        </h3>
+
+                        <p>
+
+                            The solenoid interface and finger linkage were
+                            designed to fit and screw together before being
+                            mounted onto the hand base.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         WIRING & INTEGRATION
+    ========================================================== -->
+
+    <section class="project-section">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    05
+                </span>
+
+                <h2 class="section-heading">
+                    Wiring, Soldering & System Integration
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    Once the individual actuators worked, the harder problem
+                    became integrating them into a moving system. The carriage
+                    contained mechanical joints, solenoids, wiring, drive
+                    electronics, structural parts, and rail interfaces in a
+                    limited amount of space.
+
+                </p>
+
+
+                <p>
+
+                    I worked on actuator wire routing, harness organization,
+                    soldering, and mechanical integration. Wiring had to remain
+                    clear of the finger joints and moving hardware while still
+                    allowing the carriage to travel along the keyboard.
+
+                </p>
+
+
+                <p>
+
+                    Integration was iterative. Whenever the geometry or
+                    actuator position changed, I often had to re-check wire
+                    routing, soldered connections, clearances, and mechanical
+                    movement before testing the system again.
+
+                </p>
+
+
+                <div class="detail-list">
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Harness Routing
+                        </div>
+
+                        <div class="detail-text">
+
+                            Actuator wires were organized around the moving
+                            assembly so they did not interfere with finger
+                            motion, rails, or carriage movement.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Soldering
+                        </div>
+
+                        <div class="detail-text">
+
+                            I soldered actuator wiring and reworked connections
+                            as components and mechanical layouts changed
+                            during integration.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Mechanical Clearance
+                        </div>
+
+                        <div class="detail-text">
+
+                            The harness and electrical connections had to fit
+                            around the linkage while preserving the motion
+                            needed for physical key actuation.
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <div class="detail-title">
+                            Final Integration
+                        </div>
+
+                        <div class="detail-text">
+
+                            Solenoids, finger mechanisms, wiring, carriage
+                            hardware, electronics, and positioning all had to
+                            operate together as one system.
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="callout">
+
+                    <strong>
+                        Integration was one of the largest parts of the project
+                    </strong>
+
+                    <p>
+
+                        A working solenoid or a working finger by itself was
+                        not enough. The system only worked when the actuator,
+                        linkage, wiring, electronics, carriage, and positioning
+                        were compatible with each other. A large portion of my
+                        lab work was spent finding and fixing those interfaces.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         POSITIONING SOFTWARE
+    ========================================================== -->
+
+    <section class="project-section alt">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    06
+                </span>
+
+                <h2 class="section-heading">
                     Key Positioning Model
                 </h2>
 
@@ -1786,27 +2552,18 @@
 
                 <p>
 
-                    Moving the hand approximately to a key was not enough.
-                    The actuator had to stop at a repeatable location so the
-                    finger could press the intended natural or sharp key.
+                    The moving hand had to stop at repeatable locations across
+                    the keyboard so the correct finger could physically align
+                    with the intended key.
 
                 </p>
 
 
                 <p>
 
-                    I wrote a Python script that used the physical width of
-                    the keyboard, octave spacing, rack pitch, and gear tooth
-                    count to calculate a position for each of the 54 keys.
-
-                </p>
-
-
-                <p>
-
-                    I also included an adjustable tick offset so the theoretical
-                    geometry could be calibrated against the assembled hardware
-                    once the rail and carriage positions were fixed.
+                    I wrote a Python script that used the keyboard geometry,
+                    rack pitch, gear tooth count, and a calibratable hardware
+                    offset to generate motor positions for all 54 keys.
 
                 </p>
 
@@ -1850,18 +2607,14 @@ MILLIRAD_REV = 2.0 * math.pi * 1000.0
 TICKS_PER_MM = MILLIRAD_REV / MM_REV
 
 
-# Measured once the dovetails and rails are fixed
+# Calibrated against the assembled carriage
 OFFSET_TICKS = 0
 
 
-# Natural key width in mm
 NATURAL = 22.25
 
 OCTAVE = 7 * NATURAL
 
-
-# Approximate center position of each note
-# in units of natural-key width
 
 CENTER = {
     'C':  0.5,
@@ -1923,7 +2676,7 @@ for i, mm in enumerate(keys):
         + OFFSET_TICKS
     )
 
-    comma = "," if i < NUM_KEYS - 1 else ""
+    comma = "," if i &lt; NUM_KEYS - 1 else ""
 
     print(
         f"    {ticks:&lt;8}{comma} [{i}]"
@@ -1937,16 +2690,15 @@ for i, mm in enumerate(keys):
                 <div class="callout">
 
                     <strong>
-                        Why include an offset?
+                        Geometry plus calibration
                     </strong>
 
                     <p>
 
-                        The calculated positions describe the ideal geometry,
-                        but the real carriage and rail assembly introduces
-                        mounting tolerances. The offset lets the software be
-                        calibrated to the physical machine without changing
-                        the geometry model for every key.
+                        The mathematical model provided the relative key
+                        positions, while the adjustable offset allowed the
+                        calculated positions to be aligned with the physical
+                        rail and carriage after assembly.
 
                     </p>
 
@@ -1961,7 +2713,7 @@ for i, mm in enumerate(keys):
 
 
     <!-- =========================================================
-         SYSTEM INTEGRATION
+         COMPLETE SYSTEM
     ========================================================== -->
 
     <section class="project-section">
@@ -1971,11 +2723,11 @@ for i, mm in enumerate(keys):
             <div>
 
                 <span class="section-kicker">
-                    05
+                    07
                 </span>
 
                 <h2 class="section-heading">
-                    System Integration
+                    Complete System Integration
                 </h2>
 
             </div>
@@ -1985,27 +2737,85 @@ for i, mm in enumerate(keys):
 
                 <p>
 
-                    The hand was only one part of the complete robotic piano
-                    system, so the mechanical geometry, solenoid electrical
-                    requirements, motor positioning, and control electronics
-                    all had to agree with each other.
+                    The final system combined electromagnetic actuation,
+                    mechanical linkages, linear motion, electronics, wiring,
+                    and positioning software into one electromechanical
+                    platform.
 
                 </p>
 
 
-                <p>
+                <div class="flow">
 
-                    I designed my part of the system around those interfaces
-                    rather than treating the mechanical structure in isolation.
-                    The measured solenoid electrical behavior matched the
-                    requirements of the team's circuit hardware, while the
-                    Python model provided the movement positions needed by
-                    the motor-control side.
+                    <div class="flow-block strong">
+                        Key Command
+                    </div>
 
-                </p>
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        Position Model
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        Carriage Motion
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        Solenoid
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block">
+                        Finger Linkage
+                    </div>
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+                    <div class="flow-block strong">
+                        Key Press
+                    </div>
+
+                </div>
 
 
                 <div class="card-grid">
+
+
+                    <div class="card">
+
+                        <div class="card-label">
+                            Magnetic
+                        </div>
+
+                        <h3>
+                            Custom Actuator
+                        </h3>
+
+                        <p>
+
+                            Machined steel components and a hand-wound
+                            electromagnetic coil generated the physical
+                            actuation force.
+
+                        </p>
+
+                    </div>
 
 
                     <div class="card">
@@ -2015,14 +2825,13 @@ for i, mm in enumerate(keys):
                         </div>
 
                         <h3>
-                            Physical Fit
+                            Finger Mechanism
                         </h3>
 
                         <p>
 
-                            The actuator, finger, joints, rail carriage, and
-                            piano geometry had to fit within the same constrained
-                            mechanical system.
+                            Iterated printed linkages transferred solenoid
+                            travel into motion at the piano key.
 
                         </p>
 
@@ -2036,14 +2845,14 @@ for i, mm in enumerate(keys):
                         </div>
 
                         <h3>
-                            Solenoid Interface
+                            Wiring & Interfaces
                         </h3>
 
                         <p>
 
-                            The actuator's measured voltage, current, and
-                            resistance were compatible with the drive
-                            electronics developed by the circuit team.
+                            Soldered actuator wiring and organized harnesses
+                            connected the moving mechanical subsystem to the
+                            team's control electronics.
 
                         </p>
 
@@ -2057,35 +2866,13 @@ for i, mm in enumerate(keys):
                         </div>
 
                         <h3>
-                            Motor Position
+                            Position Mapping
                         </h3>
 
                         <p>
 
-                            The Python model converted the mechanical geometry
-                            into motor positions that could be consumed by
-                            the motion-control implementation.
-
-                        </p>
-
-                    </div>
-
-
-                    <div class="card">
-
-                        <div class="card-label">
-                            Result
-                        </div>
-
-                        <h3>
-                            54-Key Coverage
-                        </h3>
-
-                        <p>
-
-                            The completed system was designed to move across
-                            and actuate all 54 keys rather than remaining fixed
-                            over one small section of the keyboard.
+                            The Python model converted keyboard geometry into
+                            motor positions across the complete 54-key range.
 
                         </p>
 
@@ -2113,7 +2900,7 @@ for i, mm in enumerate(keys):
             <div>
 
                 <span class="section-kicker">
-                    06
+                    08
                 </span>
 
                 <h2 class="section-heading">
@@ -2127,9 +2914,10 @@ for i, mm in enumerate(keys):
 
                 <p>
 
-                    This project gave me experience working across mechanical
-                    design, fabrication, software, and electromechanical
-                    integration instead of treating each subsystem separately.
+                    This project gave me hands-on experience across
+                    electromagnetic design, machine-shop fabrication,
+                    mechanical prototyping, electrical assembly, and
+                    full-system integration.
 
                 </p>
 
@@ -2145,11 +2933,39 @@ for i, mm in enumerate(keys):
                     </span>
 
                     <span class="tag">
+                        Electromagnetic Actuation
+                    </span>
+
+                    <span class="tag">
+                        Solenoid Design
+                    </span>
+
+                    <span class="tag">
+                        30 AWG Magnet Wire
+                    </span>
+
+                    <span class="tag">
+                        Magnetic Circuits
+                    </span>
+
+                    <span class="tag">
+                        Machine Shop
+                    </span>
+
+                    <span class="tag">
+                        Lathe
+                    </span>
+
+                    <span class="tag">
+                        Milling Machine
+                    </span>
+
+                    <span class="tag">
                         FDM 3D Printing
                     </span>
 
                     <span class="tag">
-                        Robotics
+                        Rapid Prototyping
                     </span>
 
                     <span class="tag">
@@ -2157,23 +2973,27 @@ for i, mm in enumerate(keys):
                     </span>
 
                     <span class="tag">
-                        Electromechanical Systems
+                        Wire Harnessing
                     </span>
 
                     <span class="tag">
-                        Solenoid Actuation
+                        Wire Management
+                    </span>
+
+                    <span class="tag">
+                        Soldering
+                    </span>
+
+                    <span class="tag">
+                        Electromechanical Integration
+                    </span>
+
+                    <span class="tag">
+                        Robotics
                     </span>
 
                     <span class="tag">
                         System Integration
-                    </span>
-
-                    <span class="tag">
-                        Prototyping
-                    </span>
-
-                    <span class="tag">
-                        Machine Shop
                     </span>
 
                 </div>
@@ -2202,7 +3022,10 @@ for i, mm in enumerate(keys):
 
 
                 <div class="footer-description">
-                    Robotics | Mechanical Design | Python | System Integration
+
+                    Electromagnetic Actuation | Machining | Mechanical Design |
+                    Wiring | Python | System Integration
+
                 </div>
 
             </div>
