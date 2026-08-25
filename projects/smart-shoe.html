@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Shoe for Obstacle Awareness | Yasaman Kheradmand</title>
+  <meta
+    name="description"
+    content="Assistive smart shoe prototype using Arduino, ultrasonic sensing, filtering, and vibration feedback."
+  />
+  <style>
+    :root {
+      --background: #f6f2eb;
+      --surface: #fffdf9;
+      --surface-alt: #f1ebe3;
+      --border: #d8cec2;
+      --text: #2f2a24;
+      --muted: #6f655a;
+      --accent: #8d6e63;
+      --accent-dark: #6d5147;
+      --shadow: 0 10px 30px rgba(0,0,0,0.07);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      padding: 24px 0 8px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .topbar a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .hero {
+      padding: 28px 0 18px;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 820px;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .section {
+      margin: 26px 0;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.55rem;
+    }
+
+    .single-image figure {
+      margin: 0;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .single-image img {
+      width: 100%;
+      display: block;
+      background: #eee;
+    }
+
+    figcaption {
+      padding: 12px 14px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .callout {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .code-box {
+      background: #1f1a17;
+      color: #f5efe8;
+      border-radius: 16px;
+      padding: 22px;
+      overflow-x: auto;
+      border: 1px solid #3e342d;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "Courier New", monospace;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 820px) {
+      .hero-card,
+      .section-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <a href="../index.html">← Back to Portfolio</a>
+    </div>
+
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Project</div>
+        <h1>Smart Shoe for Obstacle Awareness</h1>
+        <p>
+          I built this project after seeing how difficult it could be for a visually impaired friend to navigate busy
+          spaces with bikes, scooters, and heavy foot traffic. The goal was to create a wearable system that could give
+          an extra layer of awareness by detecting nearby obstacles and turning that information into vibration feedback.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">Arduino</span>
+          <span class="tag">Embedded C</span>
+          <span class="tag">Ultrasonic Sensor</span>
+          <span class="tag">PWM</span>
+          <span class="tag">Signal Filtering</span>
+          <span class="tag">Assistive Technology</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <h2>Motivation</h2>
+        <p>
+          I was inspired to work on this project by a close friend of mine who is visually impaired. Walking with him
+          around campus, I saw that while a walking stick was useful, it was not always enough in busy areas with
+          bicycles, scooters, and a lot of foot traffic. That made me want to build something simple that could provide
+          another layer of awareness and safety.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <h2>System Overview</h2>
+        <p>
+          The smart shoe prototype used an Arduino connected to an HC-SR04 ultrasonic sensor and a vibration module.
+          The sensor measured the distance to obstacles in front of the user, and the vibration motor translated that
+          distance into tactile feedback.
+        </p>
+        <p>
+          As the user got closer to an obstacle, the system increased the vibration intensity so the feedback felt more
+          intuitive. The final goal was not just to detect objects, but to make the warning easier to interpret while
+          walking in a real environment.
+        </p>
+
+        <div class="single-image" style="margin-top:18px;">
+          <figure>
+            <img src="../assets/shoe.jpg" alt="Smart shoe final design" />
+            <figcaption>Final smart shoe prototype with distance sensing and vibration feedback.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <h2>Signal Processing and Stability</h2>
+        <p>
+          During testing, I noticed that the distance readings were not always stable. There were occasional spikes and
+          sudden jumps, and that made the vibration feedback unreliable. To improve the behavior, I smoothed the sensor
+          data using a rolling average over 50 samples and rejected readings that were too far away from the average.
+        </p>
+        <p>
+          Once the distance signal became more stable, I used the filtered value instead of the raw reading to drive
+          the vibration motor. I also found that constant vibration was not easy to interpret, so I switched to short
+          vibration bursts. That made the feedback much clearer and easier to follow.
+        </p>
+
+        <div class="callout" style="margin-top:18px;">
+          <strong>What I changed in the final version:</strong>
+          <ul>
+            <li>I averaged the distance readings to reduce noise.</li>
+            <li>I rejected outlier measurements that were likely false readings.</li>
+            <li>I mapped distance to PWM so closer objects produced stronger vibration.</li>
+            <li>I used short vibration bursts instead of constant buzzing for more readable feedback.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <h2>Code</h2>
+        <div class="code-box">
+<pre><code>#define TRIG_PIN 9
+#define ECHO_PIN 8
+#define BUZ_PIN 11
+
+const int numReadings = 50;
+float readings[numReadings];
+int readIndex = 0;
+bool bufferFilled = false;
+
+float distMin = 15;
+float distMax = 130;
+float outlierThresh = 20;
+
+int pwmMin = 50;
+int pwmMax = 255;
+
+float rollingAvg(float newVal) {
+  readings[readIndex] = newVal;
+  readIndex = (readIndex + 1) % numReadings;
+  if (readIndex == 0) bufferFilled = true;
+
+  float sum = 0;
+  int n = bufferFilled ? numReadings : readIndex;
+  if (n == 0) return newVal;
+
+  for (int i = 0; i < n; i++) {
+    sum += readings[i];
+  }
+
+  return sum / n;
+}
+
+void setup() {
+  pinMode(BUZ_PIN, OUTPUT);
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+
+  unsigned long duration = pulseIn(ECHO_PIN, HIGH, 30000);
+  float distance = (duration > 0) ? duration / 58.2 : distMax + 1;
+
+  float avg = rollingAvg(distance);
+  Serial.println(distance);
+
+  if (abs(distance - avg) > outlierThresh) {
+    analogWrite(BUZ_PIN, 0);
+    delay(20);
+    return;
+  }
+
+  if (avg >= distMin && avg <= distMax) {
+    int pwm = map((int)avg, (int)distMin, (int)distMax, pwmMax, pwmMin);
+    pwm = constrain(pwm, pwmMin, pwmMax);
+
+    for (int i = 0; i < 5; i++) {
+      analogWrite(BUZ_PIN, pwm);
+      delay(80);
+      analogWrite(BUZ_PIN, 0);
+      delay(120);
+    }
+  } else {
+    analogWrite(BUZ_PIN, 0);
+  }
+
+  delay(20);
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
