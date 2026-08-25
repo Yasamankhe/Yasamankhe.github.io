@@ -2,18 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Simple RISC Machine | Yasaman Kheradmand</title>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Simple RISC Machine | Yasaman Kheradmand
+    </title>
 
     <meta
         name="description"
-        content="A 16-bit multi-cycle Simple RISC Machine designed in SystemVerilog with a register file, ALU, shifter, datapath, instruction decoder, FSM controller, and RTL verification.">
+        content="16-bit multi-cycle Simple RISC Machine designed in SystemVerilog with an ALU, register file, shifter, datapath, FSM controller, status flags, and RTL verification.">
 
     <style>
 
         :root {
+
             --background: #f3f2ee;
             --surface: #fbfaf7;
             --surface-alt: #f7f6f2;
@@ -25,13 +32,13 @@
             --text-muted: #899199;
 
             --border: #d9ddd9;
-            --border-dark: #c6ccc8;
+            --border-dark: #c8ceca;
 
             --accent: #356c7d;
             --accent-dark: #285766;
-            --accent-soft: #e4edef;
+            --accent-soft: #e5eef0;
 
-            --green: #507565;
+            --green: #537766;
             --green-soft: #e8efea;
 
             --shadow:
@@ -52,6 +59,7 @@
 
 
         body {
+
             font-family:
                 -apple-system,
                 BlinkMacSystemFont,
@@ -61,10 +69,12 @@
                 Arial,
                 sans-serif;
 
-            line-height: 1.65;
-
             color: var(--text);
-            background: var(--background);
+
+            background:
+                var(--background);
+
+            line-height: 1.65;
         }
 
 
@@ -74,40 +84,56 @@
         }
 
 
+        img {
+            display: block;
+            width: 100%;
+        }
+
+
         .container {
+
             width: min(1080px, 90%);
+
             margin: 0 auto;
         }
 
 
 
-        /* NAVIGATION */
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
 
         nav {
+
             position: sticky;
             top: 0;
             z-index: 1000;
 
-            background: rgba(243, 242, 238, 0.94);
+            background:
+                rgba(243, 242, 238, 0.95);
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
-            backdrop-filter: blur(14px);
+            backdrop-filter:
+                blur(14px);
         }
 
 
         .nav-inner {
+
             min-height: 68px;
 
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
 
             gap: 20px;
         }
 
 
         .brand {
+
             display: flex;
             align-items: center;
 
@@ -121,6 +147,7 @@
 
 
         .brand-dot {
+
             width: 7px;
             height: 7px;
 
@@ -128,77 +155,98 @@
 
             border-radius: 50%;
 
-            background: var(--accent);
+            background:
+                var(--accent);
         }
 
 
         .back-link {
-            color: var(--text-soft);
+
+            color:
+                var(--text-soft);
 
             font-size: 0.84rem;
             font-weight: 600;
 
-            transition: color 0.2s ease;
+            transition:
+                color 0.2s ease;
         }
 
 
         .back-link:hover {
-            color: var(--accent);
+
+            color:
+                var(--accent);
         }
 
 
 
-        /* HERO */
+        /* =========================================================
+           HERO
+        ========================================================= */
 
         .project-hero {
-            padding: 86px 0 67px;
 
-            border-bottom: 1px solid var(--border);
+            padding:
+                86px 0 67px;
+
+            border-bottom:
+                1px solid var(--border);
         }
 
 
         .project-eyebrow {
+
             display: block;
 
             margin-bottom: 13px;
 
-            color: var(--accent);
+            color:
+                var(--accent);
 
             font-size: 0.69rem;
             font-weight: 700;
 
-            letter-spacing: 0.11em;
+            letter-spacing:
+                0.11em;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
         }
 
 
         .project-hero h1 {
-            max-width: 880px;
+
+            max-width: 900px;
 
             margin-bottom: 22px;
 
-            color: var(--text-strong);
+            color:
+                var(--text-strong);
 
             font-size:
                 clamp(2.8rem, 6vw, 4.7rem);
 
             line-height: 0.98;
 
-            letter-spacing: -0.055em;
+            letter-spacing:
+                -0.055em;
         }
 
 
         .project-summary {
-            max-width: 830px;
 
-            color: var(--text-soft);
+            max-width: 850px;
+
+            color:
+                var(--text-soft);
 
             font-size: 1.05rem;
         }
 
 
         .hero-actions {
+
             display: flex;
             flex-wrap: wrap;
 
@@ -208,17 +256,23 @@
         }
 
 
-        .repo-button {
+        .button {
+
             display: inline-flex;
             align-items: center;
+            justify-content: center;
 
-            padding: 10px 15px;
+            padding:
+                10px 15px;
 
             color: white;
 
-            background: var(--accent);
+            background:
+                var(--accent);
 
-            border: 1px solid var(--accent);
+            border:
+                1px solid var(--accent);
+
             border-radius: 6px;
 
             font-size: 0.8rem;
@@ -226,21 +280,26 @@
 
             transition:
                 background 0.2s ease,
-                border-color 0.2s ease,
-                transform 0.2s ease;
+                transform 0.2s ease,
+                border-color 0.2s ease;
         }
 
 
-        .repo-button:hover {
-            transform: translateY(-1px);
+        .button:hover {
 
-            background: var(--accent-dark);
+            transform:
+                translateY(-1px);
 
-            border-color: var(--accent-dark);
+            background:
+                var(--accent-dark);
+
+            border-color:
+                var(--accent-dark);
         }
 
 
         .hero-stats {
+
             display: flex;
             flex-wrap: wrap;
 
@@ -251,13 +310,19 @@
 
 
         .hero-stat {
-            padding: 8px 12px;
 
-            color: var(--text-soft);
+            padding:
+                8px 12px;
 
-            background: var(--surface-muted);
+            color:
+                var(--text-soft);
 
-            border: 1px solid var(--border);
+            background:
+                var(--surface-muted);
+
+            border:
+                1px solid var(--border);
+
             border-radius: 6px;
 
             font-size: 0.78rem;
@@ -265,6 +330,7 @@
 
 
         .hero-stat strong {
+
             margin-right: 4px;
 
             color: var(--text);
@@ -272,159 +338,257 @@
 
 
 
-        /* GENERAL SECTIONS */
+        /* =========================================================
+           FEATURE IMAGE
+        ========================================================= */
+
+        .feature-image-section {
+
+            padding:
+                58px 0 64px;
+
+            background:
+                var(--surface-alt);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .feature-image-heading {
+
+            margin-bottom: 20px;
+        }
+
+
+        .feature-image-heading span {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+            color:
+                var(--accent);
+
+            font-size: 0.67rem;
+            font-weight: 700;
+
+            letter-spacing:
+                0.1em;
+
+            text-transform:
+                uppercase;
+        }
+
+
+        .feature-image-heading h2 {
+
+            color: #253039;
+
+            font-size: 1.45rem;
+
+            letter-spacing:
+                -0.03em;
+        }
+
+
+        .feature-image-card {
+
+            width: 100%;
+
+            padding: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border-dark);
+
+            border-radius: 10px;
+
+            box-shadow:
+                var(--shadow);
+        }
+
+
+        .feature-image-card img {
+
+            width: 100%;
+
+            max-height: 520px;
+
+            object-fit: contain;
+        }
+
+
+
+        /* =========================================================
+           GENERAL SECTIONS
+        ========================================================= */
 
         .project-section {
-            padding: 76px 0;
 
-            border-bottom: 1px solid var(--border);
+            padding:
+                76px 0;
+
+            border-bottom:
+                1px solid var(--border);
         }
 
 
         .project-section.alt {
-            background: var(--surface-alt);
+
+            background:
+                var(--surface-alt);
         }
 
 
         .section-grid {
+
             display: grid;
 
-            grid-template-columns: 220px 1fr;
+            grid-template-columns:
+                220px 1fr;
 
             gap: 62px;
         }
 
 
         .section-kicker {
+
             display: block;
 
             margin-bottom: 8px;
 
-            color: var(--accent);
+            color:
+                var(--accent);
 
             font-size: 0.67rem;
             font-weight: 700;
 
-            letter-spacing: 0.1em;
+            letter-spacing:
+                0.1em;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
         }
 
 
         .section-heading {
+
             color: #253039;
 
             font-size: 1.3rem;
 
             line-height: 1.25;
 
-            letter-spacing: -0.025em;
+            letter-spacing:
+                -0.025em;
         }
 
 
         .section-content {
+
             min-width: 0;
         }
 
 
         .section-content p {
+
             max-width: 790px;
 
-            color: var(--text-soft);
+            color:
+                var(--text-soft);
         }
 
 
         .section-content p + p {
+
             margin-top: 17px;
         }
 
 
 
-        /* ARCHITECTURE */
+        /* =========================================================
+           ARCHITECTURE
+        ========================================================= */
 
         .architecture {
-            margin-top: 32px;
 
-            padding: 28px;
+            display: grid;
 
-            background: var(--surface);
-
-            border: 1px solid var(--border-dark);
-            border-radius: 10px;
-
-            box-shadow: var(--shadow);
-        }
-
-
-        .architecture-title {
-            margin-bottom: 23px;
-
-            color: var(--text-muted);
-
-            font-size: 0.69rem;
-            font-weight: 700;
-
-            letter-spacing: 0.08em;
-
-            text-transform: uppercase;
-        }
-
-
-        .architecture-row {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
 
             gap: 10px;
 
-            flex-wrap: wrap;
+            margin-top: 30px;
         }
 
 
         .arch-block {
-            min-width: 130px;
 
-            padding: 14px 15px;
+            min-height: 100px;
 
-            text-align: center;
+            padding: 15px;
 
-            color: #435058;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-            background: var(--surface-alt);
+            background:
+                var(--surface);
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             border-radius: 7px;
 
-            font-size: 0.78rem;
-            font-weight: 650;
+            text-align: center;
         }
 
 
         .arch-block.strong {
-            color: #31464d;
 
-            background: var(--accent-soft);
+            background:
+                var(--accent-soft);
 
-            border-color: #cbdcdf;
+            border-color:
+                #cbdcdf;
         }
 
 
-        .arch-arrow {
-            color: var(--accent);
+        .arch-title {
 
-            font-weight: 800;
+            color: #35434a;
+
+            font-size: 0.78rem;
+            font-weight: 700;
         }
 
 
-        .architecture-second {
-            margin-top: 14px;
+        .arch-description {
+
+            margin-top: 4px;
+
+            color:
+                var(--text-muted);
+
+            font-size: 0.67rem;
         }
 
 
 
-        /* CARDS */
+        /* =========================================================
+           CARDS
+        ========================================================= */
 
         .card-grid {
+
             display: grid;
 
             grid-template-columns:
@@ -437,30 +601,39 @@
 
 
         .card {
+
             padding: 19px;
 
-            background: var(--surface);
+            background:
+                var(--surface);
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             border-radius: 8px;
         }
 
 
         .card-label {
+
             margin-bottom: 6px;
 
-            color: var(--accent);
+            color:
+                var(--accent);
 
             font-size: 0.64rem;
             font-weight: 700;
 
-            letter-spacing: 0.08em;
+            letter-spacing:
+                0.08em;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
         }
 
 
         .card h3 {
+
             margin-bottom: 6px;
 
             color: #2d383f;
@@ -470,7 +643,9 @@
 
 
         .card p {
-            color: var(--text-muted);
+
+            color:
+                var(--text-muted);
 
             font-size: 0.79rem;
 
@@ -479,9 +654,12 @@
 
 
 
-        /* DETAIL ROWS */
+        /* =========================================================
+           DETAIL LIST
+        ========================================================= */
 
         .detail-list {
+
             display: grid;
 
             margin-top: 27px;
@@ -489,24 +667,31 @@
 
 
         .detail-row {
+
             display: grid;
 
-            grid-template-columns: 190px 1fr;
+            grid-template-columns:
+                190px 1fr;
 
             gap: 25px;
 
-            padding: 15px 0;
+            padding:
+                15px 0;
 
-            border-top: 1px solid var(--border);
+            border-top:
+                1px solid var(--border);
         }
 
 
         .detail-row:last-child {
-            border-bottom: 1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
         }
 
 
         .detail-title {
+
             color: #39454c;
 
             font-size: 0.82rem;
@@ -515,100 +700,112 @@
 
 
         .detail-text {
-            color: var(--text-muted);
+
+            color:
+                var(--text-muted);
 
             font-size: 0.82rem;
         }
 
 
 
-        /* CODE STYLE */
-
-        .code {
-            font-family:
-                "SFMono-Regular",
-                Consolas,
-                "Liberation Mono",
-                Menlo,
-                monospace;
-
-            color: #425057;
-
-            background: #eceeea;
-
-            border: 1px solid var(--border);
-            border-radius: 4px;
-
-            padding: 2px 5px;
-
-            font-size: 0.88em;
-        }
-
-
-
-        /* INSTRUCTION TABLE */
+        /* =========================================================
+           TABLE
+        ========================================================= */
 
         .table-wrap {
+
             margin-top: 28px;
 
             overflow-x: auto;
 
-            background: var(--surface);
+            background:
+                var(--surface);
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             border-radius: 8px;
         }
 
 
         table {
+
             width: 100%;
 
-            min-width: 700px;
+            min-width: 650px;
 
             border-collapse: collapse;
         }
 
 
         th {
-            padding: 11px 13px;
+
+            padding:
+                11px 13px;
 
             text-align: left;
 
             color: #59656c;
 
-            background: #edeeea;
+            background:
+                #edeeea;
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
             font-size: 0.69rem;
             font-weight: 700;
 
-            letter-spacing: 0.05em;
+            letter-spacing:
+                0.05em;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
         }
 
 
         td {
+
             padding: 13px;
 
-            vertical-align: top;
+            color:
+                var(--text-soft);
 
-            color: var(--text-soft);
-
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
             font-size: 0.8rem;
         }
 
 
         tr:last-child td {
+
             border-bottom: 0;
         }
 
 
-        .instruction {
-            color: #344149;
+
+        /* =========================================================
+           STATE PATHS
+        ========================================================= */
+
+        .path {
+
+            margin-top: 14px;
+
+            padding:
+                15px 17px;
+
+            color: #4f5c63;
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 7px;
 
             font-family:
                 "SFMono-Regular",
@@ -617,181 +814,17 @@
                 Menlo,
                 monospace;
 
-            font-weight: 700;
+            font-size: 0.77rem;
         }
 
 
 
-        /* FSM */
-
-        .fsm {
-            margin-top: 30px;
-
-            display: grid;
-
-            gap: 14px;
-        }
-
-
-        .fsm-path {
-            display: flex;
-            align-items: center;
-
-            gap: 8px;
-
-            overflow-x: auto;
-
-            padding-bottom: 4px;
-        }
-
-
-        .fsm-label {
-            width: 105px;
-
-            flex-shrink: 0;
-
-            color: var(--text-muted);
-
-            font-size: 0.74rem;
-            font-weight: 700;
-        }
-
-
-        .state {
-            flex-shrink: 0;
-
-            padding: 9px 12px;
-
-            color: #435058;
-
-            background: var(--surface);
-
-            border: 1px solid var(--border);
-            border-radius: 6px;
-
-            font-size: 0.73rem;
-            font-weight: 650;
-        }
-
-
-        .state.execute {
-            color: #31464d;
-
-            background: var(--accent-soft);
-
-            border-color: #cbdcdf;
-        }
-
-
-        .state-arrow {
-            flex-shrink: 0;
-
-            color: var(--accent);
-
-            font-size: 0.85rem;
-            font-weight: 800;
-        }
-
-
-
-        /* VERIFICATION */
-
-        .verification-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap: 12px;
-
-            margin-top: 28px;
-        }
-
-
-        .verification-card {
-            padding: 20px;
-
-            background: var(--surface);
-
-            border: 1px solid var(--border);
-            border-radius: 8px;
-        }
-
-
-        .verification-card h3 {
-            margin-bottom: 8px;
-
-            color: #2c373e;
-
-            font-size: 0.91rem;
-        }
-
-
-        .verification-card p {
-            color: var(--text-muted);
-
-            font-size: 0.79rem;
-
-            line-height: 1.55;
-        }
-
-
-        .verified {
-            display: inline-block;
-
-            margin-bottom: 10px;
-
-            padding: 4px 7px;
-
-            color: var(--green);
-
-            background: var(--green-soft);
-
-            border: 1px solid #d1ded5;
-            border-radius: 20px;
-
-            font-size: 0.63rem;
-            font-weight: 700;
-        }
-
-
-
-        /* CALLOUT */
-
-        .callout {
-            margin-top: 28px;
-
-            padding: 19px 20px;
-
-            background: var(--accent-soft);
-
-            border-left: 3px solid var(--accent);
-            border-radius: 0 7px 7px 0;
-        }
-
-
-        .callout strong {
-            display: block;
-
-            margin-bottom: 5px;
-
-            color: #34464c;
-
-            font-size: 0.84rem;
-        }
-
-
-        .callout p {
-            color: #607078;
-
-            font-size: 0.82rem;
-        }
-
-
-
-        /* TAGS */
+        /* =========================================================
+           TAGS
+        ========================================================= */
 
         .tags {
+
             display: flex;
             flex-wrap: wrap;
 
@@ -802,13 +835,18 @@
 
 
         .tag {
-            padding: 6px 9px;
+
+            padding:
+                6px 9px;
 
             color: #57636b;
 
-            background: #eeeeea;
+            background:
+                #eeeeea;
 
-            border: 1px solid var(--border);
+            border:
+                1px solid var(--border);
+
             border-radius: 5px;
 
             font-size: 0.76rem;
@@ -817,14 +855,19 @@
 
 
 
-        /* FOOTER */
+        /* =========================================================
+           FOOTER
+        ========================================================= */
 
         .project-footer {
-            padding: 55px 0;
+
+            padding:
+                55px 0;
         }
 
 
         .footer-inner {
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -834,6 +877,7 @@
 
 
         .footer-title {
+
             color: #263139;
 
             font-size: 1.15rem;
@@ -842,52 +886,43 @@
 
 
         .footer-description {
+
             margin-top: 3px;
 
-            color: var(--text-muted);
+            color:
+                var(--text-muted);
 
             font-size: 0.82rem;
         }
 
 
-        .back-button {
-            flex-shrink: 0;
 
-            padding: 9px 14px;
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
 
-            color: white;
-
-            background: var(--accent);
-
-            border-radius: 6px;
-
-            font-size: 0.79rem;
-            font-weight: 700;
-
-            transition: background 0.2s ease;
-        }
-
-
-        .back-button:hover {
-            background: var(--accent-dark);
-        }
-
-
-
-        /* RESPONSIVE */
-
-        @media (max-width: 820px) {
+        @media (max-width: 850px) {
 
             .section-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
 
                 gap: 25px;
             }
 
 
-            .card-grid,
-            .verification-grid {
-                grid-template-columns: 1fr;
+            .architecture {
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+
+            .card-grid {
+
+                grid-template-columns:
+                    1fr;
             }
 
         }
@@ -896,47 +931,65 @@
         @media (max-width: 600px) {
 
             .project-hero {
-                padding: 65px 0 50px;
+
+                padding:
+                    65px 0 50px;
             }
 
 
             .project-section {
-                padding: 55px 0;
+
+                padding:
+                    55px 0;
+            }
+
+
+            .feature-image-section {
+
+                padding:
+                    45px 0;
+            }
+
+
+            .architecture {
+
+                grid-template-columns:
+                    1fr;
             }
 
 
             .detail-row {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
 
                 gap: 6px;
             }
 
 
-            .architecture {
-                padding: 20px;
-            }
-
-
-            .arch-block {
-                min-width: 115px;
-            }
-
-
             .footer-inner {
-                flex-direction: column;
-                align-items: flex-start;
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
             }
 
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- NAVIGATION -->
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
 
     <nav>
 
@@ -965,7 +1018,9 @@
 
 
 
-    <!-- HERO -->
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
 
     <header class="project-hero">
 
@@ -984,10 +1039,10 @@
             <p class="project-summary">
 
                 I designed a 16-bit multi-cycle processor in SystemVerilog.
-                I built the register file, ALU, shifter, datapath,
-                instruction decoding logic, and finite state machine
-                controller, then wrote RTL testbenches to exercise the
-                individual blocks and end-to-end instruction execution.
+                I built the register file, ALU, operand shifter, datapath,
+                instruction decoding logic, finite state machine controller,
+                and status-flag logic, then wrote RTL testbenches to verify
+                individual modules and end-to-end instruction execution.
 
             </p>
 
@@ -995,12 +1050,12 @@
             <div class="hero-actions">
 
                 <a
-                    class="repo-button"
+                    class="button"
                     href="https://github.com/Yasamankhe/RISC-MACHINE"
                     target="_blank"
                     rel="noopener noreferrer">
 
-                    View Source Code on GitHub ↗
+                    View Repository ↗
 
                 </a>
 
@@ -1010,33 +1065,50 @@
             <div class="hero-stats">
 
                 <div class="hero-stat">
+
                     <strong>16-bit</strong>
                     datapath
+
                 </div>
 
+
                 <div class="hero-stat">
+
                     <strong>8 × 16-bit</strong>
                     registers
+
                 </div>
 
+
                 <div class="hero-stat">
+
                     <strong>4</strong>
                     ALU operations
+
                 </div>
 
+
                 <div class="hero-stat">
+
                     <strong>4</strong>
                     shift modes
+
                 </div>
 
+
                 <div class="hero-stat">
+
                     <strong>N / V / Z</strong>
-                    status flags
+                    flags
+
                 </div>
 
+
                 <div class="hero-stat">
+
                     <strong>Multi-cycle</strong>
-                    FSM control
+                    control
+
                 </div>
 
             </div>
@@ -1047,9 +1119,47 @@
 
 
 
-    <!-- ARCHITECTURE -->
+    <!-- =========================================================
+         PROJECT IMAGE
+    ========================================================== -->
 
-    <section class="project-section alt">
+    <section class="feature-image-section">
+
+        <div class="container">
+
+            <div class="feature-image-heading">
+
+                <span>
+                    RTL Project
+                </span>
+
+
+                <h2>
+                    Processor Design & Verification
+                </h2>
+
+            </div>
+
+
+            <div class="feature-image-card">
+
+                <img
+                    src="../assets/RISC.jpg"
+                    alt="Simple RISC Machine SystemVerilog processor project">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         ARCHITECTURE
+    ========================================================== -->
+
+    <section class="project-section">
 
         <div class="container section-grid">
 
@@ -1071,12 +1181,11 @@
 
                 <p>
 
-                    I separated the processor into a controller and a
-                    datapath. The controller decodes the current instruction
-                    and generates the control signals that determine which
-                    registers are read, when intermediate values are loaded,
-                    which ALU operation is performed, and when a result is
-                    written back.
+                    I separated the processor into a datapath and a
+                    multi-cycle controller. The controller decodes the
+                    instruction fields and generates the control signals
+                    required to move operands through the datapath over
+                    several clock cycles.
 
                 </p>
 
@@ -1085,82 +1194,66 @@
 
                     The datapath contains the register file, operand registers,
                     shifter, ALU, result register, status logic, and the
-                    multiplexers used to select operands and writeback data.
+                    multiplexers used to select register addresses,
+                    immediate values, and write-back data.
 
                 </p>
 
 
                 <div class="architecture">
 
-                    <div class="architecture-title">
-                        Processor Data Flow
-                    </div>
 
+                    <div class="arch-block strong">
 
-                    <div class="architecture-row">
-
-                        <div class="arch-block strong">
+                        <div class="arch-title">
                             Instruction
                         </div>
 
-                        <div class="arch-arrow">
-                            →
-                        </div>
-
-                        <div class="arch-block">
-                            Decoder
-                        </div>
-
-                        <div class="arch-arrow">
-                            →
-                        </div>
-
-                        <div class="arch-block strong">
-                            FSM Controller
+                        <div class="arch-description">
+                            opcode, op, Rn, Rd, shift, Rm, immediate
                         </div>
 
                     </div>
 
 
-                    <div class="architecture-row architecture-second">
+                    <div class="arch-block">
 
-                        <div class="arch-block">
-                            8 × 16 Register File
+                        <div class="arch-title">
+                            Decoder + FSM
                         </div>
 
-                        <div class="arch-arrow">
-                            →
-                        </div>
-
-                        <div class="arch-block">
-                            Operand Registers
-                        </div>
-
-                        <div class="arch-arrow">
-                            →
-                        </div>
-
-                        <div class="arch-block">
-                            Shifter
-                        </div>
-
-                        <div class="arch-arrow">
-                            →
-                        </div>
-
-                        <div class="arch-block strong">
-                            ALU
-                        </div>
-
-                        <div class="arch-arrow">
-                            →
-                        </div>
-
-                        <div class="arch-block">
-                            Result / Writeback
+                        <div class="arch-description">
+                            control sequencing
                         </div>
 
                     </div>
+
+
+                    <div class="arch-block">
+
+                        <div class="arch-title">
+                            Register File + Operands
+                        </div>
+
+                        <div class="arch-description">
+                            data storage and operand selection
+                        </div>
+
+                    </div>
+
+
+                    <div class="arch-block strong">
+
+                        <div class="arch-title">
+                            Shifter + ALU
+                        </div>
+
+                        <div class="arch-description">
+                            execution, flags and write-back
+                        </div>
+
+                    </div>
+
 
                 </div>
 
@@ -1180,10 +1273,9 @@
 
                         <p>
 
-                            I use multiple clock cycles to load operands,
-                            perform the ALU operation, and write the result
-                            back instead of trying to execute the entire
-                            instruction in one combinational path.
+                            Instructions move through a sequence of states
+                            so operand loading, execution, write-back, and
+                            flag updates occur on separate cycles.
 
                         </p>
 
@@ -1197,14 +1289,13 @@
                         </div>
 
                         <h3>
-                            16-bit Data Path
+                            16-Bit Data Path
                         </h3>
 
                         <p>
 
-                            The register file, shifter, ALU, intermediate
-                            registers, and writeback logic all operate on
-                            16-bit values.
+                            Register values, operands, immediates, and ALU
+                            results are represented as 16-bit values.
 
                         </p>
 
@@ -1223,8 +1314,9 @@
 
                         <p>
 
-                            I implemented eight 16-bit registers, R0 through
-                            R7, with combinational reads and clocked writes.
+                            The register file contains eight 16-bit registers
+                            with combinational read and synchronous write
+                            behavior.
 
                         </p>
 
@@ -1238,14 +1330,14 @@
                         </div>
 
                         <h3>
-                            N, V and Z Flags
+                            N / V / Z Flags
                         </h3>
 
                         <p>
 
-                            The ALU generates negative, overflow, and zero
-                            information so arithmetic results can be evaluated
-                            by the processor.
+                            The datapath tracks negative, signed overflow,
+                            and zero conditions for arithmetic and comparison
+                            operations.
 
                         </p>
 
@@ -1262,9 +1354,11 @@
 
 
 
-    <!-- INSTRUCTION DECODING -->
+    <!-- =========================================================
+         INSTRUCTION FORMAT
+    ========================================================== -->
 
-    <section class="project-section">
+    <section class="project-section alt">
 
         <div class="container section-grid">
 
@@ -1286,10 +1380,10 @@
 
                 <p>
 
-                    The CPU stores the incoming 16-bit instruction in an
-                    instruction register. I then split the instruction into
-                    the opcode, ALU operation, register fields, and shift
-                    control field.
+                    The controller extracts fields directly from the
+                    16-bit instruction register and uses them to select
+                    register addresses, ALU operations, shift behavior,
+                    and immediate values.
 
                 </p>
 
@@ -1304,10 +1398,7 @@
                         </div>
 
                         <div class="detail-text">
-
-                            Bits <span class="code">[15:13]</span> select
-                            the main instruction class.
-
+                            Bits [15:13]
                         </div>
 
                     </div>
@@ -1320,11 +1411,7 @@
                         </div>
 
                         <div class="detail-text">
-
-                            Bits <span class="code">[12:11]</span> select
-                            the operation inside that instruction class and
-                            are also used as the ALU operation control.
-
+                            Bits [12:11]
                         </div>
 
                     </div>
@@ -1337,11 +1424,7 @@
                         </div>
 
                         <div class="detail-text">
-
-                            Bits <span class="code">[10:8]</span> select
-                            the first source register or the destination
-                            register for an immediate move.
-
+                            Bits [10:8]
                         </div>
 
                     </div>
@@ -1354,10 +1437,7 @@
                         </div>
 
                         <div class="detail-text">
-
-                            Bits <span class="code">[7:5]</span> select
-                            the destination register for ALU results.
-
+                            Bits [7:5]
                         </div>
 
                     </div>
@@ -1370,10 +1450,7 @@
                         </div>
 
                         <div class="detail-text">
-
-                            Bits <span class="code">[4:3]</span> control
-                            the shifter applied to the Rm operand.
-
+                            Bits [4:3]
                         </div>
 
                     </div>
@@ -1386,10 +1463,7 @@
                         </div>
 
                         <div class="detail-text">
-
-                            Bits <span class="code">[2:0]</span> select
-                            the second source register.
-
+                            Bits [2:0]
                         </div>
 
                     </div>
@@ -1403,9 +1477,8 @@
 
                         <div class="detail-text">
 
-                            For immediate moves, I sign-extend the lower
-                            eight instruction bits to the full 16-bit
-                            datapath width.
+                            Immediate fields are sign-extended to the
+                            16-bit datapath before they are used.
 
                         </div>
 
@@ -1422,9 +1495,11 @@
 
 
 
-    <!-- REGISTER FILE -->
+    <!-- =========================================================
+         REGISTER FILE
+    ========================================================== -->
 
-    <section class="project-section alt">
+    <section class="project-section">
 
         <div class="container section-grid">
 
@@ -1446,90 +1521,62 @@
 
                 <p>
 
-                    I built an eight-entry register file with sixteen bits
-                    per register. The register file has one read port and
-                    one write port.
+                    I implemented an eight-entry, 16-bit register file.
+                    Register values can be read combinationally while
+                    writes occur synchronously when the controller asserts
+                    the register write enable.
 
                 </p>
 
 
                 <p>
 
-                    Reads are combinational, so changing the
-                    <span class="code">readnum</span> input selects a new
-                    register value without waiting for a clock edge. Writes
-                    are synchronous and only occur on a rising clock edge
-                    when the <span class="code">write</span> control signal
-                    is asserted.
+                    The register-selection logic chooses between Rm, Rd,
+                    and Rn depending on which register field is needed at
+                    that stage of instruction execution.
 
                 </p>
 
 
-                <div class="detail-list">
+                <div class="card-grid">
 
 
-                    <div class="detail-row">
+                    <div class="card">
 
-                        <div class="detail-title">
-                            Registers
+                        <div class="card-label">
+                            Capacity
                         </div>
 
-                        <div class="detail-text">
-                            R0 through R7, each 16 bits wide.
-                        </div>
+                        <h3>
+                            8 × 16 Bits
+                        </h3>
+
+                        <p>
+
+                            Eight general-purpose storage locations,
+                            each containing one 16-bit value.
+
+                        </p>
 
                     </div>
 
 
-                    <div class="detail-row">
+                    <div class="card">
 
-                        <div class="detail-title">
-                            Read
+                        <div class="card-label">
+                            Timing
                         </div>
 
-                        <div class="detail-text">
+                        <h3>
+                            Synchronous Write
+                        </h3>
 
-                            A combinational multiplexer selects one of the
-                            eight registers using the 3-bit
-                            <span class="code">readnum</span> input.
+                        <p>
 
-                        </div>
+                            New data is written into the selected register
+                            on the active clock edge when write is enabled.
 
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            Write
-                        </div>
-
-                        <div class="detail-text">
-
-                            On the rising clock edge, the value on
-                            <span class="code">data_in</span> is written to
-                            the register selected by
-                            <span class="code">writenum</span> when write is
-                            enabled.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            Register Selection
-                        </div>
-
-                        <div class="detail-text">
-
-                            Inside the CPU I use the
-                            <span class="code">nsel</span> control to choose
-                            whether the datapath accesses Rm, Rd, or Rn.
-
-                        </div>
+                        </p>
 
                     </div>
 
@@ -1544,9 +1591,11 @@
 
 
 
-    <!-- ALU AND SHIFTER -->
+    <!-- =========================================================
+         ALU / SHIFTER
+    ========================================================== -->
 
-    <section class="project-section">
+    <section class="project-section alt">
 
         <div class="container section-grid">
 
@@ -1568,84 +1617,90 @@
 
                 <p>
 
-                    I built the arithmetic and logic unit as a combinational
-                    block with four operations. The second datapath operand
-                    passes through a separate shifter before it reaches the
-                    ALU.
+                    The processor uses a separate operand shifter before
+                    the ALU. This allows a source operand to be shifted
+                    before being used by an arithmetic or logic operation.
 
                 </p>
 
 
-                <div class="card-grid">
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ALU Select
+                                </th>
+
+                                <th>
+                                    Operation
+                                </th>
+
+                            </tr>
+
+                        </thead>
 
 
-                    <div class="card">
+                        <tbody>
 
-                        <div class="card-label">
-                            ALU 00
-                        </div>
+                            <tr>
 
-                        <h3>
-                            Addition
-                        </h3>
+                                <td>
+                                    00
+                                </td>
 
-                        <p>
-                            <span class="code">A + B</span>
-                        </p>
+                                <td>
+                                    A + B
+                                </td>
 
-                    </div>
+                            </tr>
 
 
-                    <div class="card">
+                            <tr>
 
-                        <div class="card-label">
-                            ALU 01
-                        </div>
+                                <td>
+                                    01
+                                </td>
 
-                        <h3>
-                            Subtraction
-                        </h3>
+                                <td>
+                                    A - B
+                                </td>
 
-                        <p>
-                            <span class="code">A - B</span>
-                        </p>
-
-                    </div>
+                            </tr>
 
 
-                    <div class="card">
+                            <tr>
 
-                        <div class="card-label">
-                            ALU 10
-                        </div>
+                                <td>
+                                    10
+                                </td>
 
-                        <h3>
-                            Bitwise AND
-                        </h3>
+                                <td>
+                                    A AND B
+                                </td>
 
-                        <p>
-                            <span class="code">A & B</span>
-                        </p>
-
-                    </div>
+                            </tr>
 
 
-                    <div class="card">
+                            <tr>
 
-                        <div class="card-label">
-                            ALU 11
-                        </div>
+                                <td>
+                                    11
+                                </td>
 
-                        <h3>
-                            Bitwise NOT
-                        </h3>
+                                <td>
+                                    NOT B
+                                </td>
 
-                        <p>
-                            <span class="code">~B</span>
-                        </p>
+                            </tr>
 
-                    </div>
+                        </tbody>
 
+                    </table>
 
                 </div>
 
@@ -1660,7 +1715,7 @@
                         </div>
 
                         <div class="detail-text">
-                            The Rm operand passes through unchanged.
+                            Operand passes through unchanged.
                         </div>
 
                     </div>
@@ -1673,10 +1728,7 @@
                         </div>
 
                         <div class="detail-text">
-
-                            Logical shift left by one bit, filling the
-                            least-significant bit with zero.
-
+                            Logical left shift by one bit.
                         </div>
 
                     </div>
@@ -1689,10 +1741,7 @@
                         </div>
 
                         <div class="detail-text">
-
-                            Logical shift right by one bit, filling the
-                            most-significant bit with zero.
-
+                            Logical right shift by one bit.
                         </div>
 
                     </div>
@@ -1705,10 +1754,7 @@
                         </div>
 
                         <div class="detail-text">
-
-                            Arithmetic shift right by one bit while
-                            preserving the original sign bit.
-
+                            Arithmetic right shift by one bit.
                         </div>
 
                     </div>
@@ -1724,9 +1770,11 @@
 
 
 
-    <!-- FLAGS -->
+    <!-- =========================================================
+         FLAGS
+    ========================================================== -->
 
-    <section class="project-section alt">
+    <section class="project-section">
 
         <div class="container section-grid">
 
@@ -1748,59 +1796,70 @@
 
                 <p>
 
-                    The ALU also produces zero, negative, and overflow
-                    information from the current result.
+                    The datapath generates three status conditions used
+                    during arithmetic and comparison operations.
 
                 </p>
 
 
-                <div class="detail-list">
+                <div class="card-grid">
 
 
-                    <div class="detail-row">
+                    <div class="card">
 
-                        <div class="detail-title">
-                            Z | Zero
+                        <div class="card-label">
+                            Z
                         </div>
 
-                        <div class="detail-text">
+                        <h3>
+                            Zero
+                        </h3>
 
-                            Z is asserted when the 16-bit ALU output is zero.
+                        <p>
 
-                        </div>
+                            Asserted when the ALU result is zero.
+
+                        </p>
 
                     </div>
 
 
-                    <div class="detail-row">
+                    <div class="card">
 
-                        <div class="detail-title">
-                            N | Negative
+                        <div class="card-label">
+                            N
                         </div>
 
-                        <div class="detail-text">
+                        <h3>
+                            Negative
+                        </h3>
 
-                            N follows the most-significant bit of the result,
-                            so it indicates a negative two's-complement value.
+                        <p>
 
-                        </div>
+                            Derived from the most significant bit of the
+                            signed ALU result.
+
+                        </p>
 
                     </div>
 
 
-                    <div class="detail-row">
+                    <div class="card">
 
-                        <div class="detail-title">
-                            V | Overflow
+                        <div class="card-label">
+                            V
                         </div>
 
-                        <div class="detail-text">
+                        <h3>
+                            Overflow
+                        </h3>
 
-                            I detect signed overflow separately for addition
-                            and subtraction by comparing the operand and
-                            result sign bits.
+                        <p>
 
-                        </div>
+                            Detects signed overflow during addition and
+                            subtraction operations.
+
+                        </p>
 
                     </div>
 
@@ -1815,9 +1874,11 @@
 
 
 
-    <!-- INSTRUCTION EXECUTION -->
+    <!-- =========================================================
+         VERIFIED INSTRUCTIONS
+    ========================================================== -->
 
-    <section class="project-section">
+    <section class="project-section alt">
 
         <div class="container section-grid">
 
@@ -1829,7 +1890,7 @@
 
 
                 <h2 class="section-heading">
-                    Instruction Execution
+                    Verified Instructions
                 </h2>
 
             </div>
@@ -1839,9 +1900,9 @@
 
                 <p>
 
-                    My CPU testbench exercises immediate moves, arithmetic,
-                    logic, shifted operands, and comparison behavior across
-                    the complete CPU and datapath.
+                    At the CPU level, I exercised the instruction paths
+                    implemented by the current controller and verified their
+                    register, arithmetic, shift, logic, and status behavior.
 
                 </p>
 
@@ -1859,11 +1920,7 @@
                                 </th>
 
                                 <th>
-                                    Operation
-                                </th>
-
-                                <th>
-                                    What I Tested
+                                    Verified Behavior
                                 </th>
 
                             </tr>
@@ -1876,18 +1933,15 @@
 
                             <tr>
 
-                                <td class="instruction">
+                                <td>
                                     MOV Rn, #imm8
                                 </td>
 
                                 <td>
-                                    Sign-extended 8-bit immediate is written
-                                    directly into Rn.
-                                </td>
 
-                                <td>
-                                    I tested immediate writes to multiple
-                                    registers.
+                                    Sign-extended immediate value written
+                                    directly into the selected register.
+
                                 </td>
 
                             </tr>
@@ -1895,18 +1949,15 @@
 
                             <tr>
 
-                                <td class="instruction">
-                                    ADD Rd, Rn, Rm
+                                <td>
+                                    ADD
                                 </td>
 
                                 <td>
-                                    Adds Rn to the optionally shifted Rm
-                                    operand and writes the result to Rd.
-                                </td>
 
-                                <td>
-                                    The CPU testbench includes ADD using an
-                                    LSL-shifted second operand.
+                                    Register arithmetic, including shifted
+                                    source operands.
+
                                 </td>
 
                             </tr>
@@ -1914,18 +1965,14 @@
 
                             <tr>
 
-                                <td class="instruction">
-                                    AND Rd, Rn, Rm
+                                <td>
+                                    AND
                                 </td>
 
                                 <td>
-                                    Performs a bitwise AND and writes the
-                                    result to Rd.
-                                </td>
 
-                                <td>
-                                    I checked the resulting destination
-                                    register value.
+                                    Bitwise AND between register operands.
+
                                 </td>
 
                             </tr>
@@ -1933,18 +1980,15 @@
 
                             <tr>
 
-                                <td class="instruction">
-                                    MVN Rd, Rm
+                                <td>
+                                    MVN
                                 </td>
 
                                 <td>
-                                    Inverts the optionally shifted Rm operand
-                                    and writes the result to Rd.
-                                </td>
 
-                                <td>
-                                    I tested both unshifted MVN and MVN with
-                                    LSL #1.
+                                    Bitwise inversion of the source operand,
+                                    including shifted operand behavior.
+
                                 </td>
 
                             </tr>
@@ -1952,19 +1996,15 @@
 
                             <tr>
 
-                                <td class="instruction">
-                                    CMP Rn, Rm
+                                <td>
+                                    CMP
                                 </td>
 
                                 <td>
-                                    Subtracts the second operand for comparison
-                                    and exposes status information rather than
-                                    writing a general register result.
-                                </td>
 
-                                <td>
-                                    I tested both a negative comparison result
-                                    and a zero comparison result.
+                                    Subtraction-based comparison with
+                                    N, V, and Z status updates.
+
                                 </td>
 
                             </tr>
@@ -1984,9 +2024,11 @@
 
 
 
-    <!-- FSM -->
+    <!-- =========================================================
+         FSM
+    ========================================================== -->
 
-    <section class="project-section alt">
+    <section class="project-section">
 
         <div class="container section-grid">
 
@@ -1998,7 +2040,7 @@
 
 
                 <h2 class="section-heading">
-                    FSM Controller
+                    Multi-Cycle Control
                 </h2>
 
             </div>
@@ -2008,178 +2050,34 @@
 
                 <p>
 
-                    Instead of executing everything in one cycle, I use an
-                    FSM to sequence datapath operations. The controller
-                    changes control signals such as
-                    <span class="code">loada</span>,
-                    <span class="code">loadb</span>,
-                    <span class="code">loadc</span>,
-                    <span class="code">loads</span>,
-                    <span class="code">write</span>,
-                    <span class="code">nsel</span>, and
-                    <span class="code">vsel</span> as the instruction moves
-                    through its execution states.
+                    The finite state machine sequences instructions over
+                    multiple clock cycles so register reads, operand loading,
+                    ALU execution, write-back, and status updates happen at
+                    the correct time.
 
                 </p>
 
 
-                <div class="fsm">
+                <div class="path">
 
-
-                    <div class="fsm-path">
-
-                        <div class="fsm-label">
-                            ADD / AND / MVN
-                        </div>
-
-                        <div class="state">
-                            Wait
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state">
-                            Decode
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state">
-                            GetB
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state execute">
-                            ALUOp
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state">
-                            WriteReg
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state">
-                            Wait
-                        </div>
-
-                    </div>
-
-
-                    <div class="fsm-path">
-
-                        <div class="fsm-label">
-                            CMP
-                        </div>
-
-                        <div class="state">
-                            Wait
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state">
-                            Decode
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state">
-                            GetB
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state execute">
-                            ALUOp
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state">
-                            UpdateFlags
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state">
-                            Wait
-                        </div>
-
-                    </div>
-
-
-                    <div class="fsm-path">
-
-                        <div class="fsm-label">
-                            MOV #imm8
-                        </div>
-
-                        <div class="state">
-                            Wait
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state execute">
-                            WriteImm
-                        </div>
-
-                        <div class="state-arrow">
-                            →
-                        </div>
-
-                        <div class="state">
-                            Wait
-                        </div>
-
-                    </div>
-
+                    ADD / AND / MVN:
+                    Wait → Decode → GetB → ALUOp → WriteReg → Wait
 
                 </div>
 
 
-                <div class="callout">
+                <div class="path">
 
-                    <strong>
-                        Why multi-cycle control?
-                    </strong>
+                    CMP:
+                    Wait → Decode → GetB → ALUOp → UpdateFlags → Wait
+
+                </div>
 
 
-                    <p>
+                <div class="path">
 
-                        Breaking instruction execution into states lets the
-                        same datapath hardware be reused across different
-                        parts of an instruction. Registers can be read in one
-                        state, the ALU used in another, and the result written
-                        back on a later clock cycle.
-
-                    </p>
+                    MOV immediate:
+                    Wait → WriteImm → Wait
 
                 </div>
 
@@ -2191,9 +2089,11 @@
 
 
 
-    <!-- VERIFICATION -->
+    <!-- =========================================================
+         VERIFICATION
+    ========================================================== -->
 
-    <section class="project-section">
+    <section class="project-section alt">
 
         <div class="container section-grid">
 
@@ -2215,185 +2115,94 @@
 
                 <p>
 
-                    I wrote separate SystemVerilog testbenches for the main
-                    building blocks and a CPU-level testbench that drives
-                    complete encoded instructions through the processor.
+                    I tested the design at both the module and CPU levels.
+                    The ALU, register file, and shifter were exercised
+                    separately before checking complete instruction execution
+                    through the integrated processor.
 
                 </p>
 
 
-                <div class="verification-grid">
+                <div class="card-grid">
 
 
-                    <div class="verification-card">
+                    <div class="card">
 
-                        <span class="verified">
-                            MODULE TEST
-                        </span>
+                        <div class="card-label">
+                            Module
+                        </div>
 
                         <h3>
-                            ALU
+                            ALU Tests
                         </h3>
 
                         <p>
 
-                            I test addition, subtraction, bitwise AND,
-                            bitwise NOT, multiple operand combinations,
-                            and zero-result detection.
+                            Verified addition, subtraction, AND, inversion,
+                            zero detection, sign behavior, and overflow cases.
 
                         </p>
 
                     </div>
 
 
-                    <div class="verification-card">
+                    <div class="card">
 
-                        <span class="verified">
-                            MODULE TEST
-                        </span>
+                        <div class="card-label">
+                            Module
+                        </div>
 
                         <h3>
-                            Register File
+                            Register File Tests
                         </h3>
 
                         <p>
 
-                            I write values into R0 through R7 and read them
-                            back to check register addressing and synchronous
-                            write behavior.
+                            Checked addressing, synchronous writes,
+                            combinational reads, and stored register values.
 
                         </p>
 
                     </div>
 
 
-                    <div class="verification-card">
+                    <div class="card">
 
-                        <span class="verified">
-                            MODULE TEST
-                        </span>
+                        <div class="card-label">
+                            Module
+                        </div>
 
                         <h3>
-                            Shifter
+                            Shifter Tests
                         </h3>
 
                         <p>
 
-                            I exercise pass-through, logical shift left,
-                            logical shift right, and arithmetic shift right
-                            with several 16-bit patterns.
+                            Verified pass-through, logical left,
+                            logical right, and arithmetic right shifts.
 
                         </p>
 
                     </div>
 
 
-                    <div class="verification-card">
+                    <div class="card">
 
-                        <span class="verified">
-                            SYSTEM TEST
-                        </span>
+                        <div class="card-label">
+                            System
+                        </div>
 
                         <h3>
-                            CPU
+                            CPU Instruction Tests
                         </h3>
 
                         <p>
 
-                            I load complete 16-bit instructions, start the
-                            controller, wait for execution to complete, then
-                            inspect destination registers and status outputs.
+                            Exercised immediate moves, shifted arithmetic,
+                            logic operations, MVN, and CMP status behavior
+                            through the full processor.
 
                         </p>
-
-                    </div>
-
-
-                </div>
-
-
-                <div class="detail-list">
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            MOV Immediate
-                        </div>
-
-                        <div class="detail-text">
-
-                            The CPU-level testbench writes several immediate
-                            values into different registers and checks the
-                            register contents.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            Shifted ADD
-                        </div>
-
-                        <div class="detail-text">
-
-                            One test performs an ADD using a left-shifted
-                            register operand and checks the final destination
-                            value.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            Logic
-                        </div>
-
-                        <div class="detail-text">
-
-                            AND and MVN are tested by comparing the actual
-                            destination registers against the expected
-                            bitwise results.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            Shifted MVN
-                        </div>
-
-                        <div class="detail-text">
-
-                            I also test MVN after applying a logical left
-                            shift to the source operand.
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="detail-row">
-
-                        <div class="detail-title">
-                            CMP Flags
-                        </div>
-
-                        <div class="detail-text">
-
-                            The CPU testbench checks a negative comparison
-                            and a zero comparison using the N and Z outputs.
-
-                        </div>
 
                     </div>
 
@@ -2408,9 +2217,11 @@
 
 
 
-    <!-- IMPLEMENTATION DETAILS -->
+    <!-- =========================================================
+         FILE STRUCTURE
+    ========================================================== -->
 
-    <section class="project-section alt">
+    <section class="project-section">
 
         <div class="container section-grid">
 
@@ -2422,22 +2233,13 @@
 
 
                 <h2 class="section-heading">
-                    Implementation Details
+                    RTL Structure
                 </h2>
 
             </div>
 
 
             <div class="section-content">
-
-                <p>
-
-                    I kept the main hardware blocks separate so I could test
-                    them independently and then instantiate them inside the
-                    datapath and CPU.
-
-                </p>
-
 
                 <div class="detail-list">
 
@@ -2450,9 +2252,9 @@
 
                         <div class="detail-text">
 
-                            Instruction register, instruction decoding,
-                            register selection, sign extension, control FSM,
-                            datapath control, and top-level CPU integration.
+                            Instruction register, decoding logic,
+                            multi-cycle FSM, control generation,
+                            and datapath integration.
 
                         </div>
 
@@ -2467,10 +2269,8 @@
 
                         <div class="detail-text">
 
-                            Connects the register file, operand storage,
-                            shifter, ALU, result register, operand
-                            multiplexers, writeback selection, and status
-                            outputs.
+                            Operand registers, muxes, register file,
+                            shifter, ALU, result register, and status logic.
 
                         </div>
 
@@ -2485,8 +2285,8 @@
 
                         <div class="detail-text">
 
-                            Combinational arithmetic and logic block with
-                            ADD, SUB, AND, NOT, and N/V/Z generation.
+                            Arithmetic and bitwise execution logic with
+                            status calculations.
 
                         </div>
 
@@ -2501,8 +2301,7 @@
 
                         <div class="detail-text">
 
-                            Eight 16-bit registers with one combinational
-                            read port and one synchronous write port.
+                            Eight-entry 16-bit register file.
 
                         </div>
 
@@ -2517,8 +2316,7 @@
 
                         <div class="detail-text">
 
-                            Combinational operand shifter supporting no
-                            shift, LSL #1, LSR #1, and ASR #1.
+                            Four operand shift modes.
 
                         </div>
 
@@ -2533,29 +2331,13 @@
 
                         <div class="detail-text">
 
-                            Separate RTL tests for the ALU, register file,
-                            shifter, and complete CPU behavior.
+                            RTL tests used to verify individual modules
+                            and end-to-end processor behavior.
 
                         </div>
 
                     </div>
 
-
-                </div>
-
-
-                <div class="tags">
-
-                    <span class="tag">SystemVerilog</span>
-                    <span class="tag">RTL Design</span>
-                    <span class="tag">Digital Logic</span>
-                    <span class="tag">CPU Architecture</span>
-                    <span class="tag">FSM</span>
-                    <span class="tag">Register File</span>
-                    <span class="tag">ALU</span>
-                    <span class="tag">Shifter</span>
-                    <span class="tag">ModelSim</span>
-                    <span class="tag">FPGA</span>
 
                 </div>
 
@@ -2567,7 +2349,99 @@
 
 
 
-    <!-- FOOTER -->
+    <!-- =========================================================
+         TOOLS
+    ========================================================== -->
+
+    <section class="project-section alt">
+
+        <div class="container section-grid">
+
+            <div>
+
+                <span class="section-kicker">
+                    10
+                </span>
+
+
+                <h2 class="section-heading">
+                    Tools & Skills
+                </h2>
+
+            </div>
+
+
+            <div class="section-content">
+
+                <p>
+
+                    This project gave me hands-on experience building a
+                    processor from individual RTL blocks and reasoning about
+                    how control logic, timing, storage, arithmetic, and
+                    verification fit together as a complete digital system.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        SystemVerilog
+                    </span>
+
+                    <span class="tag">
+                        RTL Design
+                    </span>
+
+                    <span class="tag">
+                        CPU Architecture
+                    </span>
+
+                    <span class="tag">
+                        Multi-Cycle FSM
+                    </span>
+
+                    <span class="tag">
+                        Register File
+                    </span>
+
+                    <span class="tag">
+                        ALU
+                    </span>
+
+                    <span class="tag">
+                        Shifter
+                    </span>
+
+                    <span class="tag">
+                        Status Flags
+                    </span>
+
+                    <span class="tag">
+                        RTL Verification
+                    </span>
+
+                    <span class="tag">
+                        ModelSim
+                    </span>
+
+                    <span class="tag">
+                        FPGA
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
 
     <footer class="project-footer">
 
@@ -2581,14 +2455,14 @@
 
 
                 <div class="footer-description">
-                    SystemVerilog | RTL | Datapath | FSM | Verification
+                    SystemVerilog | RTL Design | CPU Architecture | Verification
                 </div>
 
             </div>
 
 
             <a
-                class="back-button"
+                class="button"
                 href="../index.html#projects">
 
                 ← Back to Projects
