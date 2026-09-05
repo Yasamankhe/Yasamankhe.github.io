@@ -866,6 +866,124 @@
 
 
 
+
+        /* =========================================================
+           FPGA SIMD PROJECT PREVIEW
+        ========================================================= */
+
+        .simd-mini {
+
+            display: grid;
+
+            grid-template-columns:
+                150px 34px 1fr;
+
+            gap: 12px;
+
+            align-items: center;
+
+            margin-top: 20px;
+
+            padding: 18px;
+
+            background:
+                var(--surface-alt);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 8px;
+        }
+
+
+        .simd-mini-box {
+
+            padding: 13px 10px;
+
+            text-align: center;
+
+            color:
+                var(--text);
+
+            background:
+                var(--surface);
+
+            border:
+                1px solid var(--border-dark);
+
+            border-radius: 6px;
+
+            font-size: 0.72rem;
+
+            font-weight: 700;
+        }
+
+
+        .simd-mini-arrow {
+
+            color:
+                var(--accent);
+
+            text-align: center;
+
+            font-size: 1rem;
+
+            font-weight: 800;
+        }
+
+
+        .simd-mini-lanes {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 6px;
+        }
+
+
+        .simd-mini-lane {
+
+            padding: 12px 4px;
+
+            color:
+                var(--accent-dark);
+
+            background:
+                var(--accent-soft);
+
+            border:
+                1px solid #cadcdf;
+
+            border-radius: 6px;
+
+            text-align: center;
+
+            font-size: 0.66rem;
+
+            font-weight: 700;
+        }
+
+
+        @media (max-width: 620px) {
+
+            .simd-mini {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .simd-mini-arrow {
+
+                transform:
+                    rotate(90deg);
+            }
+
+        }
+
+
         /* =========================================================
            EXPERIENCE
         ========================================================= */
@@ -1726,9 +1844,164 @@
                 </article>
 
 
+                <!-- =================================================
+                     03 FPGA SIMD
+                ================================================== -->
+
+                <article class="project">
+
+                    <div class="project-header">
+
+                        <div>
+
+                            <span class="project-category">
+                                Digital Hardware | FPGA
+                            </span>
+
+                            <h3>
+                                FPGA SIMD Processing Core
+                            </h3>
+
+                        </div>
+
+
+                        <div class="project-badges">
+
+                            <span class="context-badge personal">
+                                Personal Project
+                            </span>
+
+                            <span class="owner-badge">
+                                Project Owner
+                            </span>
+
+                            <span class="status in-progress">
+                                In Development
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+
+                        I am building a custom 16-bit processor in SystemVerilog
+                        with instruction fetch and decode, an 8-register file,
+                        a scalar ALU, and a four-lane SIMD execution path.
+                        I am developing and simulating each RTL block separately
+                        before integrating the complete core and moving to FPGA
+                        synthesis and performance comparison.
+
+                    </p>
+
+
+                    <div class="simd-mini">
+
+                        <div class="simd-mini-box">
+                            16-bit operands
+                        </div>
+
+                        <div class="simd-mini-arrow">
+                            →
+                        </div>
+
+                        <div class="simd-mini-lanes">
+
+                            <div class="simd-mini-lane">
+                                Lane 3<br>4-bit
+                            </div>
+
+                            <div class="simd-mini-lane">
+                                Lane 2<br>4-bit
+                            </div>
+
+                            <div class="simd-mini-lane">
+                                Lane 1<br>4-bit
+                            </div>
+
+                            <div class="simd-mini-lane">
+                                Lane 0<br>4-bit
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-highlights">
+
+                        <span>
+                            <strong>16-bit</strong>
+                            datapath
+                        </span>
+
+                        <span>
+                            <strong>4</strong>
+                            SIMD lanes
+                        </span>
+
+                        <span>
+                            <strong>8</strong>
+                            registers
+                        </span>
+
+                        <span>
+                            <strong>ADD / SUB / AND / OR</strong>
+                            current ALU ops
+                        </span>
+
+                    </div>
+
+
+                    <div class="tag-group">
+
+                        <div class="tags">
+
+                            <span class="tag">SystemVerilog</span>
+                            <span class="tag">FPGA</span>
+                            <span class="tag">SIMD</span>
+                            <span class="tag">RTL Design</span>
+                            <span class="tag">Processor Architecture</span>
+                            <span class="tag">Register File</span>
+                            <span class="tag">Instruction Decode</span>
+                            <span class="tag">ModelSim / Questa</span>
+                            <span class="tag">RTL Verification</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-actions">
+
+                        <a
+                            class="button"
+                            href="projects/fpga-simd.html">
+
+                            View Full Project →
+
+                        </a>
+
+
+                        <a
+                            class="button secondary"
+                            href="https://github.com/Yasamankhe/FPGA-SIMD-Processing-Core"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            GitHub ↗
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
 
                 <!-- =================================================
-                     03 RISC
+                     04 RISC
                 ================================================== -->
 
                 <article class="project">
@@ -1852,7 +2125,7 @@
 
 
                 <!-- =================================================
-                     04 THERMOMETER
+                     05 THERMOMETER
                 ================================================== -->
 
                 <article class="project">
@@ -1971,80 +2244,6 @@
                             View Full Project →
 
                         </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- =================================================
-                     05 FPGA SIMD
-                ================================================== -->
-
-                <article class="project">
-
-                    <div class="project-header">
-
-                        <div>
-
-                            <span class="project-category">
-                                Digital Hardware | FPGA
-                            </span>
-
-                            <h3>
-                                FPGA SIMD Processing Core & Verification Platform
-                            </h3>
-
-                        </div>
-
-
-                        <div class="project-badges">
-
-                            <span class="context-badge personal">
-                                Personal Project
-                            </span>
-
-                            <span class="owner-badge">
-                                Project Owner
-                            </span>
-
-                            <span class="status in-progress">
-                                In Development
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <p>
-
-                        I am building a pipelined SystemVerilog processing core
-                        with instruction fetch and decode, a scalar ALU and
-                        register file, BRAM-backed memory, and a four-lane SIMD
-                        datapath. I am also developing self-checking RTL tests
-                        and C/Python reference models.
-
-                    </p>
-
-
-                    <div class="tag-group">
-
-                        <div class="tags">
-
-                            <span class="tag">SystemVerilog</span>
-                            <span class="tag">FPGA</span>
-                            <span class="tag">SIMD</span>
-                            <span class="tag">RTL Design</span>
-                            <span class="tag">RTL Verification</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">C</span>
-                            <span class="tag">BRAM</span>
-                            <span class="tag">Pipelining</span>
-                            <span class="tag">Computer Architecture</span>
-
-                        </div>
 
                     </div>
 
